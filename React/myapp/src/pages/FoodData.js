@@ -28,6 +28,6 @@ export const FoodOrdData = {
         {food_name: "Bánh ngọt",type:"DoAn", price:100000,img:"image/BanhNgot.jpg",Protein:"Blank",Additives:"Sugar",Material:"Meat",decoration:"Cheese",num:3},
         {food_name: "Giáng sinh", type:"Combo",price:200000, img:"image/comboGiangSinh.jpg",Protein:"Blank",Additives:"Sugar",Material:"Meat",decoration:"Cheese", num:5}],
     isModalOpen: false,
-    currentFood:{food_name: "Gà nướng",type:"DoAn", price:100, num:1},
+    currentFood:{food_name: "Bánh ngọt",type:"DoAn", price:100000,img:"image/BanhNgot.jpg",Protein:"Blank",Additives:"Sugar",Material:"Meat",decoration:"Cheese",num:3},
     totalCost:0,
 }

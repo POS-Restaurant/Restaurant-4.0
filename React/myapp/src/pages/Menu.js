@@ -122,7 +122,7 @@ class PickFood extends Component {
     //     this.total();
     // }
     render() {
-        const food_list = this.state.food_list.map((food) => {
+        const food_list = this.state.food_display.map((food) => {
             return (
                 <div className="containCard">
                     <Card className="foodCard">
@@ -223,7 +223,7 @@ remove
             <Row className="screen">
                 <Col className="MenuCard">
                     <Row>
-                        <Button className="type-button" onClick={(e) => {this.showAll();}}>
+                        <Button className="type-button" onClick={() => {this.showAll();}}>
                             Tất cả
                         </Button>
                         <Button className="type-button" onClick={() => {this.search("DoAn");}}>
