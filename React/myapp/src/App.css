@@ -188,6 +188,7 @@ family=Lato&display=swap'); */
   width: 80px;
   height: 100px;
   float: left;
+  border-radius: 8px;
  }
  .menuFoodImg2 {
   border-radius: 10px;
