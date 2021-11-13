@@ -5,6 +5,8 @@ import { Redirect } from 'react-router';
 import Overview from './pages/Overview';
 import { Reports, ReportsOne, ReportsTwo, ReportsThree } from './pages/Reports';
 import PickFood from './pages/Menu';
+import SortBill from './pages/Manager/ManageBill';
+import SortFood from './pages/Manager/ManageFoodSell';
 import React from 'react';
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         <Route path='/reports/reports2' exact component={ReportsTwo} />
         <Route path='/reports/reports3' exact component={ReportsThree} />
         <Route path='/menu' exact component={PickFood} />
+        <Route path='/manage/bill' exact component={SortBill}/>
+        <Route path='/manage/food' exact component={SortFood}/>
         
         <Redirect to='/menu' />
       </Router>

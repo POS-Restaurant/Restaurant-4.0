@@ -3,7 +3,7 @@ import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import * as IoIcons from 'react-icons/io';
 import * as RiIcons from 'react-icons/ri';
-
+import { FaMoneyBill } from 'react-icons/fa';
 export const SidebarData = [
   {
     title: 'Nhà hàng',
@@ -80,6 +80,16 @@ export const SidebarData = [
         title: 'Thực đơn',
         path: '/messages/message2',
         icon: <IoIcons.IoIosPaper />
+      },
+      {
+        title: 'Thu nhập',
+        path: '/manage/bill',
+        icon: <FaMoneyBill />
+      },
+      {
+        title: 'Món ăn',
+        path: '/manage/food',
+        icon: <FaIcons.FaPalette />
       }
     ]
   },
