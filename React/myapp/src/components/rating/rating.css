@@ -1,0 +1,83 @@
+#ratingCpn{
+    height: 275px;
+    width: 480px;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Row1: rating Info */
+#ratingCpn #row1{
+    padding-bottom: 10px;
+    border-bottom: 1px solid #000;
+}
+.ratingInfo {
+    display: flex;
+}
+.ratingInfo #r2 {
+    margin-left: 20px;
+    height: 100px;
+    width: 150px;
+}
+.ratingInfo #r2 #nameCourseRate{
+    font-size: 16px;
+    font-weight: bold;
+    height: 45px;
+    width: 280px;
+}
+.ratingInfo #r2 #authorCourseRate{
+    font-size: 14px;
+    height: 30px
+}
+.ratingInfo #r2 #progressCourseRate{
+    height: 15px;
+}
+
+.ratingInfo #r2 .start  #progressStart{
+    width:100px;
+}
+.ratingInfo #r2 .started #progressStarted{
+    width:100px;
+}
+.ratingInfo #r2 .start #progressStarted {
+    display: none;
+}
+.ratingInfo #r2 .started #progressStart {
+    display: none;
+}
+/* titleRating */
+#ratingCpn #titleRating{
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 10px;
+}
+/* Row 2: RatingStar + Cmt */
+#ratingCpn #row2 {
+    display:flex;
+}
+#ratingCpn #row2 #ratingStar {
+    width: 270px;
+    height: 110px;
+    border-right: 1px solid #000;
+}
+#ratingCpn #row2 #ratingCmt {
+    margin-left: 20px;
+}
+#ratingCpn #row2 #ratingCmt input {
+    width: 200px;
+    height: 110px;
+    border: 1px dashed #000;
+    border-radius: 10px;
+    font-size: 12px;
+}
+#ratingCpn #row2 #ratingCmt input[type="text"]::placeholder{
+    text-align: center;
+}
+#ratingCpn #row2 #ratingStar .css-jue3ft-MuiRating-root{
+    font-size: 40px;
+}
+#ratingCpn #row2 #ratingStar .css-d0uhtl{
+    font-size: 14px;
+    padding-left: 60px;
+}
