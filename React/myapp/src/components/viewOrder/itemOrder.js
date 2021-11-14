@@ -25,11 +25,11 @@ function ItemOrder({
         return(
             <div key={index}>
                 <ItemFood 
-                    imgFood = "http://placehold.jp/96x120.png"
-                    nameFood = "Gà rán"
-                    typeFood = "Đồ ăn"
-                    priceFood = {10000}
-                    numFood = {2}
+                    imgFood = {item.img}
+                    nameFood = {item.name}
+                    typeFood = {item.type}
+                    priceFood = {item.price}
+                    numFood = {item.num}
                 />
             </div>
         )

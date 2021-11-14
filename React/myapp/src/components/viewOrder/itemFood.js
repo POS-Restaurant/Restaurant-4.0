@@ -10,8 +10,8 @@ function ItemFood({
 }) {
     return (
         <div className="item-food">
-            <div className="imgFood" style={{width: "100px"}}>
-                <img src={imgFood} alt="Img Food" />
+            <div className="imgFood" style={{width: "120px"}}>
+                <img src={imgFood} alt="Img Food" height="120px" />
             </div>
             <div className="nameFood" style={{width: "250px", paddingTop: "50px"}}>
                 Tên món: {nameFood}
