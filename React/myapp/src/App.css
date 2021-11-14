@@ -216,6 +216,33 @@ family=Lato&display=swap'); */
   margin: auto;
   margin-top: 5px;
  }
+ .Middle{
+  background-color: white;
+  justify-content: center;
+  position: absolute;
+  height: 80%;
+  width: 70%;
+  z-index: 0;
+  left: 15%;
+  padding: 0;
+  align-items: baseline;
+ }
+ .Middle input{
+  margin:10px;
+ }
+ .Middle .bottomBtn{
+  background-color: black;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 2rem;
+  padding: 1rem 30%;
+  margin-left:15%;
+ }
+ .Middle h1{
+   background-color: white;
+   color: black;
+ }
  .food-text,
  .modal-food-text {
   font-size: 15px;
