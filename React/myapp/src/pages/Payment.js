@@ -6,7 +6,7 @@ import { Form, FormGroup, Input, Button } from "reactstrap";
 import { Modal, ModalBody } from 'reactstrap';
 import { FoodOrdData } from "./FoodData";
 import { Scrollbars } from 'react-custom-scrollbars';
-
+import data from '../components/viewOrder/dataOrder.js'
 function Payment(){
         return (
             <Row className="screen">
@@ -38,6 +38,13 @@ function Payment(){
                     <input style = {{ height: 46, width: 400}} type="text" name="daynumber" placeholder="Nhập số tiền giao dịch" />
                         <img id="searchIcon" src= "image\OIP.jpg" alt="SearchIcon" />
                     <button class="bottomBtn" type="button">Xác nhận</button>
+                </Row>
+                <Row>
+                    {data.map((props)=>{
+                        return(
+                        <h1>{props.id}</h1>
+                        );
+                    })}
                 </Row>
                 </Col>
             </Row>

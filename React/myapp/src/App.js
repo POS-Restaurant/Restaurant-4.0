@@ -20,15 +20,11 @@ function App() {
         <Route path='/reports/reports2' exact component={ReportsTwo} />
         <Route path='/reports/reports3' exact component={ReportsThree} />
         <Route path='/menu' exact component={PickFood} />
-<<<<<<< Updated upstream
         <Route path='/manage/bill' exact component={SortBill}/>
         <Route path='/manage/food' exact component={SortFood}/>
-        
-        <Redirect to='/menu' />
-=======
+
         <Route path='/payment' exact component={Payment} />
         {/* <Redirect to='/menu' /> */}
->>>>>>> Stashed changes
       </Router>
     </Router>
   );
