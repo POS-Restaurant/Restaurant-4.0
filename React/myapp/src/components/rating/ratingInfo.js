@@ -1,11 +1,11 @@
 import React from 'react'
 function checkType(type) {
-    var typeOrd = "";
-    if(type === "DoAn") {typeOrd = "Đồ ăn"}
-    else if(type === "Nuoc") {typeOrd = "Nước"}
-    else if(type === "Combo") {typeOrd = "Combo"}
+    var typeFood = "";
+    if(type === "DoAn") {typeFood = "Đồ ăn"}
+    else if(type === "Nuoc") {typeFood = "Nước"}
+    else if(type === "Combo") {typeFood = "Combo"}
     return(
-        typeOrd
+        typeFood
     )
 }
 
