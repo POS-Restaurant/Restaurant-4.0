@@ -5,7 +5,7 @@ import { Card, CardBody, CardTitle, CardSubtitle, CardText } from "reactstrap";
 import { Form, FormGroup, Input, Button } from "reactstrap";
 import { Modal, ModalBody } from 'reactstrap';
 import { FoodOrdData } from "./FoodData";
-import { Scrollbars } from 'react-custom-scrollbars';
+
 
 class PickFood extends Component {
     constructor(props) {
