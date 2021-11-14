@@ -1,6 +1,5 @@
 const data = [
     {
-        id: 1,
         dateOrder: "29/02/2021", 
         dateRecv: "",
         stateOrder: 1,
@@ -14,7 +13,6 @@ const data = [
         ]
     },
     {
-        id: 2,
         dateOrder: "29/02/2021", 
         dateRecv: "1/3/2021",
         totalBill: 100000,
@@ -28,7 +26,6 @@ const data = [
         ]
     },
     {
-        id: 3,
         dateOrder: "29/02/2021", 
         dateRecv: "",
         totalBill: 100000,
@@ -42,7 +39,6 @@ const data = [
         ]
     },
     {
-        id: 4,
         dateOrder: "29/02/2021", 
         dateRecv: "1/3/2021",
         totalBill: 100000,
@@ -56,7 +52,6 @@ const data = [
         ]
     },
     {
-        id: 5,
         dateOrder: "29/02/2021", 
         dateRecv: "",
         totalBill: 100000,
@@ -70,7 +65,6 @@ const data = [
         ]
     },
     {
-        id: 6,
         dateOrder: "29/02/2021", 
         dateRecv: "1/3/2021",
         totalBill: 100000,
@@ -84,7 +78,6 @@ const data = [
         ]
     },
     {
-        id: 7,
         dateOrder: "29/02/2021", 
         dateRecv: "",
         totalBill: 100000,
@@ -98,7 +91,6 @@ const data = [
         ]
     },
     {
-        id: 8,
         dateOrder: "29/02/2021", 
         dateRecv: "1/3/2021",
         totalBill: 100000,
@@ -112,7 +104,6 @@ const data = [
         ]
     },
     {
-        id: 9,
         dateOrder: "29/02/2021", 
         dateRecv: "",
         totalBill: 100000,
@@ -126,7 +117,266 @@ const data = [
         ]
     },
     {
-        id: 10,
+        dateOrder: "29/02/2021", 
+        dateRecv: "1/3/2021",
+        totalBill: 100000,
+        stateOrder: 2,
+        listFood: [
+            {name:"Gà rán", price: 10000, no: 2},
+            {name:"Gà nướng", price: 10000, no: 2},
+            {name:"Mỳ ý", price: 10000, no: 2},
+            {name:"Pizza", price: 10000, no: 2},
+            {name:"Hamburger", price: 10000, no: 2},
+        ]
+    },
+    {
+        dateOrder: "29/02/2021", 
+        dateRecv: "",
+        stateOrder: 1,
+        totalBill: 100000,
+        listFood: [
+            {name:"Gà rán", price: 10000, no: 2},
+            {name:"Gà nướng", price: 10000, no: 2},
+            {name:"Mỳ ý", price: 10000, no: 2},
+            {name:"Pizza", price: 10000, no: 2},
+            {name:"Hamburger", price: 10000, no: 2},
+        ]
+    },
+    {
+        dateOrder: "29/02/2021", 
+        dateRecv: "1/3/2021",
+        totalBill: 100000,
+        stateOrder: 2,
+        listFood: [
+            {name:"Gà rán", price: 10000, no: 2},
+            {name:"Gà nướng", price: 10000, no: 2},
+            {name:"Mỳ ý", price: 10000, no: 2},
+            {name:"Pizza", price: 10000, no: 2},
+            {name:"Hamburger", price: 10000, no: 2},
+        ]
+    },
+    {
+        dateOrder: "29/02/2021", 
+        dateRecv: "",
+        totalBill: 100000,
+        stateOrder: 1,
+        listFood: [
+            {name:"Gà rán", price: 10000, no: 2},
+            {name:"Gà nướng", price: 10000, no: 2},
+            {name:"Mỳ ý", price: 10000, no: 2},
+            {name:"Pizza", price: 10000, no: 2},
+            {name:"Hamburger", price: 10000, no: 2},
+        ]
+    },
+    {
+        dateOrder: "29/02/2021", 
+        dateRecv: "1/3/2021",
+        totalBill: 100000,
+        stateOrder: 2,
+        listFood: [
+            {name:"Gà rán", price: 10000, no: 2},
+            {name:"Gà nướng", price: 10000, no: 2},
+            {name:"Mỳ ý", price: 10000, no: 2},
+            {name:"Pizza", price: 10000, no: 2},
+            {name:"Hamburger", price: 10000, no: 2},
+        ]
+    },
+    {
+        dateOrder: "29/02/2021", 
+        dateRecv: "",
+        totalBill: 100000,
+        stateOrder: 1,
+        listFood: [
+            {name:"Gà rán", price: 10000, no: 2},
+            {name:"Gà nướng", price: 10000, no: 2},
+            {name:"Mỳ ý", price: 10000, no: 2},
+            {name:"Pizza", price: 10000, no: 2},
+            {name:"Hamburger", price: 10000, no: 2},
+        ]
+    },
+    {
+        dateOrder: "29/02/2021", 
+        dateRecv: "1/3/2021",
+        totalBill: 100000,
+        stateOrder: 2,
+        listFood: [
+            {name:"Gà rán", price: 10000, no: 2},
+            {name:"Gà nướng", price: 10000, no: 2},
+            {name:"Mỳ ý", price: 10000, no: 2},
+            {name:"Pizza", price: 10000, no: 2},
+            {name:"Hamburger", price: 10000, no: 2},
+        ]
+    },
+    {
+        dateOrder: "29/02/2021", 
+        dateRecv: "",
+        totalBill: 100000,
+        stateOrder: 1,
+        listFood: [
+            {name:"Gà rán", price: 10000, no: 2},
+            {name:"Gà nướng", price: 10000, no: 2},
+            {name:"Mỳ ý", price: 10000, no: 2},
+            {name:"Pizza", price: 10000, no: 2},
+            {name:"Hamburger", price: 10000, no: 2},
+        ]
+    },
+    {
+        dateOrder: "29/02/2021", 
+        dateRecv: "1/3/2021",
+        totalBill: 100000,
+        stateOrder: 2,
+        listFood: [
+            {name:"Gà rán", price: 10000, no: 2},
+            {name:"Gà nướng", price: 10000, no: 2},
+            {name:"Mỳ ý", price: 10000, no: 2},
+            {name:"Pizza", price: 10000, no: 2},
+            {name:"Hamburger", price: 10000, no: 2},
+        ]
+    },
+    {
+        dateOrder: "29/02/2021", 
+        dateRecv: "",
+        totalBill: 100000,
+        stateOrder: 1,
+        listFood: [
+            {name:"Gà rán", price: 10000, no: 2},
+            {name:"Gà nướng", price: 10000, no: 2},
+            {name:"Mỳ ý", price: 10000, no: 2},
+            {name:"Pizza", price: 10000, no: 2},
+            {name:"Hamburger", price: 10000, no: 2},
+        ]
+    },
+    {
+        dateOrder: "29/02/2021", 
+        dateRecv: "1/3/2021",
+        totalBill: 100000,
+        stateOrder: 2,
+        listFood: [
+            {name:"Gà rán", price: 10000, no: 2},
+            {name:"Gà nướng", price: 10000, no: 2},
+            {name:"Mỳ ý", price: 10000, no: 2},
+            {name:"Pizza", price: 10000, no: 2},
+            {name:"Hamburger", price: 10000, no: 2},
+        ]
+    },
+    {
+        dateOrder: "29/02/2021", 
+        dateRecv: "",
+        stateOrder: 1,
+        totalBill: 100000,
+        listFood: [
+            {name:"Gà rán", price: 10000, no: 2},
+            {name:"Gà nướng", price: 10000, no: 2},
+            {name:"Mỳ ý", price: 10000, no: 2},
+            {name:"Pizza", price: 10000, no: 2},
+            {name:"Hamburger", price: 10000, no: 2},
+        ]
+    },
+    {
+        dateOrder: "29/02/2021", 
+        dateRecv: "1/3/2021",
+        totalBill: 100000,
+        stateOrder: 2,
+        listFood: [
+            {name:"Gà rán", price: 10000, no: 2},
+            {name:"Gà nướng", price: 10000, no: 2},
+            {name:"Mỳ ý", price: 10000, no: 2},
+            {name:"Pizza", price: 10000, no: 2},
+            {name:"Hamburger", price: 10000, no: 2},
+        ]
+    },
+    {
+        dateOrder: "29/02/2021", 
+        dateRecv: "",
+        totalBill: 100000,
+        stateOrder: 1,
+        listFood: [
+            {name:"Gà rán", price: 10000, no: 2},
+            {name:"Gà nướng", price: 10000, no: 2},
+            {name:"Mỳ ý", price: 10000, no: 2},
+            {name:"Pizza", price: 10000, no: 2},
+            {name:"Hamburger", price: 10000, no: 2},
+        ]
+    },
+    {
+        dateOrder: "29/02/2021", 
+        dateRecv: "1/3/2021",
+        totalBill: 100000,
+        stateOrder: 2,
+        listFood: [
+            {name:"Gà rán", price: 10000, no: 2},
+            {name:"Gà nướng", price: 10000, no: 2},
+            {name:"Mỳ ý", price: 10000, no: 2},
+            {name:"Pizza", price: 10000, no: 2},
+            {name:"Hamburger", price: 10000, no: 2},
+        ]
+    },
+    {
+        dateOrder: "29/02/2021", 
+        dateRecv: "",
+        totalBill: 100000,
+        stateOrder: 1,
+        listFood: [
+            {name:"Gà rán", price: 10000, no: 2},
+            {name:"Gà nướng", price: 10000, no: 2},
+            {name:"Mỳ ý", price: 10000, no: 2},
+            {name:"Pizza", price: 10000, no: 2},
+            {name:"Hamburger", price: 10000, no: 2},
+        ]
+    },
+    {
+        dateOrder: "29/02/2021", 
+        dateRecv: "1/3/2021",
+        totalBill: 100000,
+        stateOrder: 2,
+        listFood: [
+            {name:"Gà rán", price: 10000, no: 2},
+            {name:"Gà nướng", price: 10000, no: 2},
+            {name:"Mỳ ý", price: 10000, no: 2},
+            {name:"Pizza", price: 10000, no: 2},
+            {name:"Hamburger", price: 10000, no: 2},
+        ]
+    },
+    {
+        dateOrder: "29/02/2021", 
+        dateRecv: "",
+        totalBill: 100000,
+        stateOrder: 1,
+        listFood: [
+            {name:"Gà rán", price: 10000, no: 2},
+            {name:"Gà nướng", price: 10000, no: 2},
+            {name:"Mỳ ý", price: 10000, no: 2},
+            {name:"Pizza", price: 10000, no: 2},
+            {name:"Hamburger", price: 10000, no: 2},
+        ]
+    },
+    {
+        dateOrder: "29/02/2021", 
+        dateRecv: "1/3/2021",
+        totalBill: 100000,
+        stateOrder: 2,
+        listFood: [
+            {name:"Gà rán", price: 10000, no: 2},
+            {name:"Gà nướng", price: 10000, no: 2},
+            {name:"Mỳ ý", price: 10000, no: 2},
+            {name:"Pizza", price: 10000, no: 2},
+            {name:"Hamburger", price: 10000, no: 2},
+        ]
+    },
+    {
+        dateOrder: "29/02/2021", 
+        dateRecv: "",
+        totalBill: 100000,
+        stateOrder: 1,
+        listFood: [
+            {name:"Gà rán", price: 10000, no: 2},
+            {name:"Gà nướng", price: 10000, no: 2},
+            {name:"Mỳ ý", price: 10000, no: 2},
+            {name:"Pizza", price: 10000, no: 2},
+            {name:"Hamburger", price: 10000, no: 2},
+        ]
+    },
+    {
         dateOrder: "29/02/2021", 
         dateRecv: "1/3/2021",
         totalBill: 100000,
