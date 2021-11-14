@@ -3,7 +3,7 @@ import React from 'react'
 function RatingCmt() {
     return (
         <div id="ratingCmt">
-            <input type="text" placeholder="Leave additional comment here" />
+            <input type="text" placeholder="Vui lòng để lại bình luận của bạn." />
         </div>
     )
 }

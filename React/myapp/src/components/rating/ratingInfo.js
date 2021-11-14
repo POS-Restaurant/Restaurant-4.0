@@ -1,38 +1,35 @@
 import React from 'react'
-
+function checkType(type) {
+    var typeOrd = "";
+    if(type === "DoAn") {typeOrd = "Đồ ăn"}
+    else if(type === "Nuoc") {typeOrd = "Nước"}
+    else if(type === "Combo") {typeOrd = "Combo"}
+    return(
+        typeOrd
+    )
+}
 
 function RatingInfo({
-    nameCourse,
-    authorCourse,
-    progressScore,
-    imgCourse,
+    nameFood,
+    typeFood,
+    priceFood,
+    imgFood,
     callback = () => {}
 }) {
     return (
         <div className="ratingInfo" >
-            <div className="imgCourse" id="r1" style={{overflow: "hidden"}}>
-                <img src={imgCourse} alt = "Course Img"  style={{height: "100px"}}></img>
+            <div className="imgFood" id="r1" style={{overflow: "hidden"}}>
+                <img src={imgFood} alt = "ImgFood"  style={{height: "120px"}}></img>
             </div>
            <div id="r2">
-                <div id="nameCourseRate">
-                    <p>{nameCourse}</p>
+                <div id="nameFoodRate">
+                    Tên món: {nameFood}
                 </div>
-                <div id="authorCourseRate">
-                    <p>{authorCourse} </p>
+                <div id="typeFoodRate">
+                    Loại: {typeFood}
                 </div>
-                <div id="progressCourseRate">
-                    <svg id="progressBarBaseRate" width="230" height="15">
-                        <rect width="230" height="15" fill="#c4c4c4" />
-                        <rect width={progressScore * 230 / 100} height="15" fill="#05611E" />
-                    </svg>
-                </div>
-                <div className={progressScore === 0 ? "start" : "started"}>
-                    <div id="progressStarted">
-                        <p>{progressScore + "% COMPLETE"}</p>
-                    </div>
-                    <div id="progressStart">
-                        <p>START COURSE</p>
-                    </div>
+                <div id="priceFoodRate">
+                    Giá tiền: {priceFood}
                 </div>
            </div>
         </div>
