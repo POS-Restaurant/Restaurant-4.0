@@ -22,9 +22,14 @@
     padding-top: 20px;
 }
 /* item Order */
-.list-order .item-order{
-    display: flex;
+.list-order  #infoOpen{
     height: 50px;
+    border-bottom: 1px solid black;
+}
+.list-order .item-order #infoClose{
+    height: 500px;
+}
+.list-order .item-order{
     font-size: 20px;
     padding-left: 50px;
     padding-right: 50px;
@@ -47,6 +52,15 @@
     padding-top: 10px;
 }
 
+.btn-state-order #btn-all{
+    width: 200px;
+    background-color: yellow;
+    height: 100%;
+    text-align: center;
+    border-radius: 15px;
+    padding-top: 5px;
+    cursor: pointer;
+}
 .btn-state-order #btn-new{
     width: 200px;
     background-color: red;
@@ -55,6 +69,7 @@
     border-radius: 15px;
     padding-top: 5px;
     cursor: pointer;
+    margin-left: 20px;
 }
 .btn-state-order #btn-recv{
     width: 200px;
@@ -65,4 +80,29 @@
     border-radius: 15px;
     padding-top: 5px;
     cursor: pointer;
+}
+/* info order */
+
+.nav-menu-info.active {
+    display:flex;
+    opacity: 1;
+    background-color: #fff;
+    transition: all 0.5s ease;
+    box-shadow: 2px 5px 5px grey;
+    margin-top: 10px;
+}
+.nav-menu-info {
+    display: none;
+    width: 1150px;
+    height: 400px;
+}
+.info-order{
+    width: 100%;
+    height: 100%;
+}
+.item-food{
+    display:flex;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 10px;
 }
