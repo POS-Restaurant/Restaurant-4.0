@@ -3,8 +3,8 @@ import { Scrollbars } from 'react-custom-scrollbars';
 import ItemFood from './itemFood'
 function checkState(state) {
     var stateOrd = "";
-    if(state == 1) {stateOrd = "Đơn hàng chưa được giao"}
-    else if(state == 2) {stateOrd = "Đơn hàng đã được nhận"}
+    if(state === 1) {stateOrd = "Đơn hàng chưa được giao"}
+    else if(state === 2) {stateOrd = "Đơn hàng đã được nhận"}
     return(
         stateOrd
     )
@@ -15,12 +15,21 @@ function ItemOrder({
     dateOrder,
     dateRecv,
     stateOrder,
-    totalBill,
     listFood,
     callBack = () => {}
 }) {
     const [click, setClick] = useState(false)
     const handleClick = () => setClick(!click);
+    function TotalBill(){
+        var total = 0;
+        for (let i = 0; i <listFood.length; i++)
+        {
+            total += listFood[i].price * listFood[i].num;
+        }
+        return(
+            <p>{total}</p>
+        )
+    }
     const displayInfo = listFood.map((item,index) => {
         return(
             <div key={index}>
@@ -47,7 +56,7 @@ function ItemOrder({
                     <p>{dateRecv}</p>
                 </div>
                 <div className="totalBill" style={{width: "200px"}}>
-                    <p>{totalBill}</p>
+                    <TotalBill />
                 </div>
                 <div className="stateOrder" style={{width: "300px"}}>
                     <p>{checkState(stateOrder)}</p>

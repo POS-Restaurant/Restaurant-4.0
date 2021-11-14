@@ -1,5 +1,15 @@
 import React from 'react'
 
+function checkType(type) {
+    var typeOrd = "";
+    if(type === "DoAn") {typeOrd = "Đồ ăn"}
+    else if(type === "Nuoc") {typeOrd = "Nước"}
+    else if(type === "Combo") {typeOrd = "Combo"}
+    return(
+        typeOrd
+    )
+}
+
 function ItemFood({
     imgFood,
     nameFood,
@@ -17,7 +27,7 @@ function ItemFood({
                 Tên món: {nameFood}
             </div>
             <div className="typeFood" style={{width: "250px", paddingTop: "50px"}}>
-                Loại: {typeFood}
+                Loại: {checkType(typeFood)}
             </div>
             <div className="priceFood" style={{width: "250px", paddingTop: "50px"}}>
                 Giá tiền: {priceFood}
