@@ -32,32 +32,6 @@ export const SidebarData = [
 
   },
   {
-    title: 'Đơn hàng',
-    path: '/products',
-    icon: <FaIcons.FaCartPlus />,
-    // iconClosed: <RiIcons.RiArrowDownSFill />,
-    // iconOpened: <RiIcons.RiArrowUpSFill />,
-    // subNav: [
-    //   {
-    //     title: 'Reports',
-    //     path: '/reports/reports1',
-    //     icon: <IoIcons.IoIosPaper />,
-    //     cName: 'sub-nav'
-    //   },
-    //   {
-    //     title: 'Reports 2',
-    //     path: '/reports/reports2',
-    //     icon: <IoIcons.IoIosPaper />,
-    //     cName: 'sub-nav'
-    //   },
-    //   {
-    //     title: 'Reports 3',
-    //     path: '/reports/reports3',
-    //     icon: <IoIcons.IoIosPaper />
-    //   }
-    // ]
-  },
-  {
     title: 'Hỗ trợ',
     path: '/team',
     icon: <IoIcons.IoMdPeople />
@@ -94,8 +68,34 @@ export const SidebarData = [
     ]
   },
   {
-    title: 'Hỗ trợ',
-    path: '/support',
-    icon: <IoIcons.IoMdHelpCircle />
-  }
+    title: 'Tài khoản',
+    path: '/account',
+    icon: <FaIcons.FaUser />,
+
+    iconClosed: <RiIcons.RiArrowDownSFill />,
+    iconOpened: <RiIcons.RiArrowUpSFill />,
+
+    subNav: [
+      {
+        title: 'Cấp quyền',
+        path: '/account/permission',
+        icon: <IoIcons.IoIosPaper />
+      },
+      {
+        title: 'Đơn hàng của tôi',
+        path: '/account/vieworder',
+        icon: <IoIcons.IoIosPaper />
+      },
+      {
+        title: 'Chỉnh sửa thông tin tài khoản',
+        path: '/account/info',
+        icon: <FaIcons.FaFileInvoiceDollar />
+      }
+    ]
+  },
+  {
+    title: 'Đánh giá',
+    path: '/rating',
+    icon: <FaIcons.FaGratipay />,
+  },
 ];
