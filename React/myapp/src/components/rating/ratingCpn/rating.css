@@ -1,0 +1,54 @@
+
+#ratingResCpn #row2 #ratingCmt input[type="text"]::placeholder{
+    text-align: center;
+    font-size: 12px;
+}
+#ratingResCpn #row2 #ratingStar .css-jue3ft-MuiRating-root{
+    font-size: 30px;
+}
+#ratingResCpn #row2 #ratingStar .css-d0uhtl{
+    font-size: 14px;
+    padding-left: 30px;
+    font-weight: bold;
+}
+
+#ratingFoodCpn #row2 #ratingStar .css-jue3ft-MuiRating-root{
+    font-size: 30px;
+}
+#ratingFoodCpn #row2 #ratingStar .css-d0uhtl{
+    font-size: 14px;
+    padding-left: 30px;
+    font-weight: bold;
+}
+/* Prerating */
+.rating .opt-res{
+    height: 30px;
+    width: 250px;
+    background-color: red;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    border-radius: 15px;
+}
+.rating .opt-food{
+    height: 30px;
+    width: 250px;
+    background-color: blue;
+    font-size: 24px;
+    color: white;
+    margin-left: 20px;
+    text-align: center;
+    border-radius: 15px;
+}
+.rating{
+    height: 610px;
+    width: 1450px;
+    background-color: #c4c4c4;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+.rating .btn-opt{
+    display: flex;
+    padding-top: 10px;
+    padding-left: 20px
+}
