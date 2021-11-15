@@ -16,6 +16,7 @@ function ItemOrder({
     dateRecv,
     stateOrder,
     listFood,
+    res,
     callBack = () => {}
 }) {
     const [click, setClick] = useState(false)
@@ -39,6 +40,7 @@ function ItemOrder({
                     typeFood = {item.type}
                     priceFood = {item.price}
                     numFood = {item.num}
+                    resFood = {res}
                 />
             </div>
         )
@@ -49,11 +51,14 @@ function ItemOrder({
                 <div className="idOrder" style={{width: "250px"}}>
                     <p>{id}</p>
                 </div>
-                <div className="dateOrder" style={{width: "250px"}}>
+                <div className="dateOrder" style={{width: "230px"}}>
                     <p>{dateOrder}</p>
                 </div>
-                <div className="dateRecv" style={{width: "250px"}}>
+                <div className="dateRecv" style={{width: "230px"}}>
                     <p>{dateRecv}</p>
+                </div>
+                <div className="res" style={{width: "240px"}}>
+                    <p>{res}</p>
                 </div>
                 <div className="totalBill" style={{width: "200px"}}>
                     <TotalBill />

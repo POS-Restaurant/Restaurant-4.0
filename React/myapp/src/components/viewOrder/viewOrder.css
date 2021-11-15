@@ -1,9 +1,9 @@
 .list-order {
     background-color: grey;
     height: 600px !important;
-    width: 1250px !important;
-    margin-left: 250px;
-    margin-top: 100px;
+    width: 1450px !important;
+    margin-left: 50px;
+    margin-top: 30px;
 }
 .list-order p{
     margin: 0;
@@ -93,7 +93,7 @@
 }
 .nav-menu-info {
     display: none;
-    width: 1150px;
+    width: 1350px;
     height: 400px;
 }
 .info-order{

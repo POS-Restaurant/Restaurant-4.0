@@ -105,7 +105,7 @@ const SidebarDataCus = [
   },
   {
     title: 'Thanh toán',
-    path: '/reports',
+    path: '/payment',
     icon: <IoIcons.IoIosPaper />
   },
   {

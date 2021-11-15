@@ -23,7 +23,7 @@ const data = [
     {
         dateOrder: "29/02/2021", 
         dateRecv: "",
-        stateOrder: 1,
+        res: "Nhà hàng KFC", stateOrder: 1,
         listFood: [
             {img: BanhNgot,name:"Bánh ngọt",type: "DoAn", price: 10000, num: 2},
             {img: CaHoiTeriyaki,name:"Cá hồi sốt Teriyaki",type: "DoAn", price: 10000, num: 2},
@@ -35,7 +35,7 @@ const data = [
     {
         dateOrder: "29/02/2021", 
         dateRecv: "01/03/2021",
-        stateOrder: 2,
+        res: "Nhà hàng KFC", stateOrder: 2,
         listFood: [
             {img: Donut,name:"Bánh Donut",type: "DoAn", price: 10000, num: 1},
             {img: GaNuong,name:"Gà nướng",type: "DoAn", price: 10000, num: 1},
@@ -47,7 +47,7 @@ const data = [
     {
         dateOrder: "29/02/2021", 
         dateRecv: "",
-        stateOrder: 1,
+        res: "Nhà hàng KFC", stateOrder: 1,
         listFood: [
             {img: macaron,name:"Bánh Macaron",type: "DoAn", price: 10000, num: 3},
             {img: myY,name:"Mỳ Ý",type: "DoAn", price: 10000, num: 3},
@@ -59,7 +59,7 @@ const data = [
     {
         dateOrder: "29/02/2021", 
         dateRecv: "01/03/2021",
-        stateOrder: 2,
+        res: "Nhà hàng KFC", stateOrder: 2,
         listFood: [
             {img: pancake,name:"Pancake",type: "DoAn", price: 10000, num: 5},
             {img: pizza,name:"Pizza",type: "DoAn", price: 10000, num: 5},
@@ -71,7 +71,7 @@ const data = [
     {
         dateOrder: "29/02/2021", 
         dateRecv: "",
-        stateOrder: 1,
+        res: "Nhà hàng KFC", stateOrder: 1,
         listFood: [
             {img: BanhNgot,name:"Bánh ngọt",type: "DoAn", price: 10000, num: 2},
             {img: CaHoiTeriyaki,name:"Cá hồi sốt Teriyaki",type: "DoAn", price: 10000, num: 2},
@@ -83,7 +83,7 @@ const data = [
     {
         dateOrder: "29/02/2021", 
         dateRecv: "01/03/2021",
-        stateOrder: 2,
+        res: "Nhà hàng KFC", stateOrder: 2,
         listFood: [
             {img: Donut,name:"Bánh Donut",type: "DoAn", price: 10000, num: 1},
             {img: GaNuong,name:"Gà nướng",type: "DoAn", price: 10000, num: 1},
@@ -95,7 +95,7 @@ const data = [
     {
         dateOrder: "29/02/2021", 
         dateRecv: "",
-        stateOrder: 1,
+        res: "Nhà hàng KFC", stateOrder: 1,
         listFood: [
             {img: macaron,name:"Bánh Macaron",type: "DoAn", price: 10000, num: 3},
             {img: myY,name:"Mỳ Ý",type: "DoAn", price: 10000, num: 3},
@@ -107,7 +107,7 @@ const data = [
     {
         dateOrder: "29/02/2021", 
         dateRecv: "01/03/2021",
-        stateOrder: 2,
+        res: "Nhà hàng KFC", stateOrder: 2,
         listFood: [
             {img: pancake,name:"Pancake",type: "DoAn", price: 10000, num: 5},
             {img: pizza,name:"Pizza",type: "DoAn", price: 10000, num: 5},
@@ -119,7 +119,7 @@ const data = [
     {
         dateOrder: "29/02/2021", 
         dateRecv: "",
-        stateOrder: 1,
+        res: "Nhà hàng KFC", stateOrder: 1,
         listFood: [
             {img: BanhNgot,name:"Bánh ngọt",type: "DoAn", price: 10000, num: 2},
             {img: CaHoiTeriyaki,name:"Cá hồi sốt Teriyaki",type: "DoAn", price: 10000, num: 2},
@@ -131,7 +131,7 @@ const data = [
     {
         dateOrder: "29/02/2021", 
         dateRecv: "01/03/2021",
-        stateOrder: 2,
+        res: "Nhà hàng KFC", stateOrder: 2,
         listFood: [
             {img: Donut,name:"Bánh Donut",type: "DoAn", price: 10000, num: 1},
             {img: GaNuong,name:"Gà nướng",type: "DoAn", price: 10000, num: 1},
@@ -143,7 +143,7 @@ const data = [
     {
         dateOrder: "29/02/2021", 
         dateRecv: "",
-        stateOrder: 1,
+        res: "Nhà hàng KFC", stateOrder: 1,
         listFood: [
             {img: macaron,name:"Bánh Macaron",type: "DoAn", price: 10000, num: 3},
             {img: myY,name:"Mỳ Ý",type: "DoAn", price: 10000, num: 3},
@@ -155,7 +155,7 @@ const data = [
     {
         dateOrder: "29/02/2021", 
         dateRecv: "01/03/2021",
-        stateOrder: 2,
+        res: "Nhà hàng KFC", stateOrder: 2,
         listFood: [
             {img: pancake,name:"Pancake",type: "DoAn", price: 10000, num: 5},
             {img: pizza,name:"Pizza",type: "DoAn", price: 10000, num: 5},
@@ -167,7 +167,7 @@ const data = [
     {
         dateOrder: "29/02/2021", 
         dateRecv: "",
-        stateOrder: 1,
+        res: "Nhà hàng KFC", stateOrder: 1,
         listFood: [
             {img: BanhNgot,name:"Bánh ngọt",type: "DoAn", price: 10000, num: 2},
             {img: CaHoiTeriyaki,name:"Cá hồi sốt Teriyaki",type: "DoAn", price: 10000, num: 2},
@@ -179,7 +179,7 @@ const data = [
     {
         dateOrder: "29/02/2021", 
         dateRecv: "01/03/2021",
-        stateOrder: 2,
+        res: "Nhà hàng KFC", stateOrder: 2,
         listFood: [
             {img: Donut,name:"Bánh Donut",type: "DoAn", price: 10000, num: 1},
             {img: GaNuong,name:"Gà nướng",type: "DoAn", price: 10000, num: 1},
@@ -191,7 +191,7 @@ const data = [
     {
         dateOrder: "29/02/2021", 
         dateRecv: "",
-        stateOrder: 1,
+        res: "Nhà hàng KFC", stateOrder: 1,
         listFood: [
             {img: macaron,name:"Bánh Macaron",type: "DoAn", price: 10000, num: 3},
             {img: myY,name:"Mỳ Ý",type: "DoAn", price: 10000, num: 3},
@@ -203,7 +203,7 @@ const data = [
     {
         dateOrder: "29/02/2021", 
         dateRecv: "01/03/2021",
-        stateOrder: 2,
+        res: "Nhà hàng KFC", stateOrder: 2,
         listFood: [
             {img: pancake,name:"Pancake",type: "DoAn", price: 10000, num: 5},
             {img: pizza,name:"Pizza",type: "DoAn", price: 10000, num: 5},
@@ -215,7 +215,7 @@ const data = [
     {
         dateOrder: "29/02/2021", 
         dateRecv: "",
-        stateOrder: 1,
+        res: "Nhà hàng KFC", stateOrder: 1,
         listFood: [
             {img: BanhNgot,name:"Bánh ngọt",type: "DoAn", price: 10000, num: 2},
             {img: CaHoiTeriyaki,name:"Cá hồi sốt Teriyaki",type: "DoAn", price: 10000, num: 2},
@@ -227,7 +227,7 @@ const data = [
     {
         dateOrder: "29/02/2021", 
         dateRecv: "01/03/2021",
-        stateOrder: 2,
+        res: "Nhà hàng KFC", stateOrder: 2,
         listFood: [
             {img: Donut,name:"Bánh Donut",type: "DoAn", price: 10000, num: 1},
             {img: GaNuong,name:"Gà nướng",type: "DoAn", price: 10000, num: 1},
@@ -239,7 +239,7 @@ const data = [
     {
         dateOrder: "29/02/2021", 
         dateRecv: "",
-        stateOrder: 1,
+        res: "Nhà hàng KFC", stateOrder: 1,
         listFood: [
             {img: macaron,name:"Bánh Macaron",type: "DoAn", price: 10000, num: 3},
             {img: myY,name:"Mỳ Ý",type: "DoAn", price: 10000, num: 3},
@@ -251,7 +251,7 @@ const data = [
     {
         dateOrder: "29/02/2021", 
         dateRecv: "01/03/2021",
-        stateOrder: 2,
+        res: "Nhà hàng KFC", stateOrder: 2,
         listFood: [
             {img: pancake,name:"Pancake",type: "DoAn", price: 10000, num: 5},
             {img: pizza,name:"Pizza",type: "DoAn", price: 10000, num: 5},
@@ -263,7 +263,7 @@ const data = [
     {
         dateOrder: "29/02/2021", 
         dateRecv: "",
-        stateOrder: 1,
+        res: "Nhà hàng KFC", stateOrder: 1,
         listFood: [
             {img: BanhNgot,name:"Bánh ngọt",type: "DoAn", price: 10000, num: 2},
             {img: CaHoiTeriyaki,name:"Cá hồi sốt Teriyaki",type: "DoAn", price: 10000, num: 2},
@@ -275,7 +275,7 @@ const data = [
     {
         dateOrder: "29/02/2021", 
         dateRecv: "01/03/2021",
-        stateOrder: 2,
+        res: "Nhà hàng KFC", stateOrder: 2,
         listFood: [
             {img: Donut,name:"Bánh Donut",type: "DoAn", price: 10000, num: 1},
             {img: GaNuong,name:"Gà nướng",type: "DoAn", price: 10000, num: 1},
@@ -287,7 +287,7 @@ const data = [
     {
         dateOrder: "29/02/2021", 
         dateRecv: "",
-        stateOrder: 1,
+        res: "Nhà hàng KFC", stateOrder: 1,
         listFood: [
             {img: macaron,name:"Bánh Macaron",type: "DoAn", price: 10000, num: 3},
             {img: myY,name:"Mỳ Ý",type: "DoAn", price: 10000, num: 3},
@@ -299,7 +299,7 @@ const data = [
     {
         dateOrder: "29/02/2021", 
         dateRecv: "01/03/2021",
-        stateOrder: 2,
+        res: "Nhà hàng KFC", stateOrder: 2,
         listFood: [
             {img: pancake,name:"Pancake",type: "DoAn", price: 10000, num: 5},
             {img: pizza,name:"Pizza",type: "DoAn", price: 10000, num: 5},
@@ -311,7 +311,7 @@ const data = [
     {
         dateOrder: "29/02/2021", 
         dateRecv: "",
-        stateOrder: 1,
+        res: "Nhà hàng KFC", stateOrder: 1,
         listFood: [
             {img: BanhNgot,name:"Bánh ngọt",type: "DoAn", price: 10000, num: 2},
             {img: CaHoiTeriyaki,name:"Cá hồi sốt Teriyaki",type: "DoAn", price: 10000, num: 2},
@@ -323,7 +323,7 @@ const data = [
     {
         dateOrder: "29/02/2021", 
         dateRecv: "01/03/2021",
-        stateOrder: 2,
+        res: "Nhà hàng KFC", stateOrder: 2,
         listFood: [
             {img: Donut,name:"Bánh Donut",type: "DoAn", price: 10000, num: 1},
             {img: GaNuong,name:"Gà nướng",type: "DoAn", price: 10000, num: 1},
@@ -335,7 +335,7 @@ const data = [
     {
         dateOrder: "29/02/2021", 
         dateRecv: "",
-        stateOrder: 1,
+        res: "Nhà hàng KFC", stateOrder: 1,
         listFood: [
             {img: macaron,name:"Bánh Macaron",type: "DoAn", price: 10000, num: 3},
             {img: myY,name:"Mỳ Ý",type: "DoAn", price: 10000, num: 3},
@@ -347,7 +347,7 @@ const data = [
     {
         dateOrder: "29/02/2021", 
         dateRecv: "01/03/2021",
-        stateOrder: 2,
+        res: "Nhà hàng KFC", stateOrder: 2,
         listFood: [
             {img: pancake,name:"Pancake",type: "DoAn", price: 10000, num: 5},
             {img: pizza,name:"Pizza",type: "DoAn", price: 10000, num: 5},
@@ -359,7 +359,7 @@ const data = [
     {
         dateOrder: "29/02/2021", 
         dateRecv: "",
-        stateOrder: 1,
+        res: "Nhà hàng KFC", stateOrder: 1,
         listFood: [
             {img: BanhNgot,name:"Bánh ngọt",type: "DoAn", price: 10000, num: 2},
             {img: CaHoiTeriyaki,name:"Cá hồi sốt Teriyaki",type: "DoAn", price: 10000, num: 2},
@@ -371,7 +371,7 @@ const data = [
     {
         dateOrder: "29/02/2021", 
         dateRecv: "01/03/2021",
-        stateOrder: 2,
+        res: "Nhà hàng KFC", stateOrder: 2,
         listFood: [
             {img: Donut,name:"Bánh Donut",type: "DoAn", price: 10000, num: 1},
             {img: GaNuong,name:"Gà nướng",type: "DoAn", price: 10000, num: 1},
@@ -383,7 +383,7 @@ const data = [
     {
         dateOrder: "29/02/2021", 
         dateRecv: "",
-        stateOrder: 1,
+        res: "Nhà hàng KFC", stateOrder: 1,
         listFood: [
             {img: macaron,name:"Bánh Macaron",type: "DoAn", price: 10000, num: 3},
             {img: myY,name:"Mỳ Ý",type: "DoAn", price: 10000, num: 3},
@@ -395,7 +395,7 @@ const data = [
     {
         dateOrder: "29/02/2021", 
         dateRecv: "01/03/2021",
-        stateOrder: 2,
+        res: "Nhà hàng KFC", stateOrder: 2,
         listFood: [
             {img: pancake,name:"Pancake",type: "DoAn", price: 10000, num: 5},
             {img: pizza,name:"Pizza",type: "DoAn", price: 10000, num: 5},
@@ -407,7 +407,7 @@ const data = [
     {
         dateOrder: "29/02/2021", 
         dateRecv: "",
-        stateOrder: 1,
+        res: "Nhà hàng KFC", stateOrder: 1,
         listFood: [
             {img: BanhNgot,name:"Bánh ngọt",type: "DoAn", price: 10000, num: 2},
             {img: CaHoiTeriyaki,name:"Cá hồi sốt Teriyaki",type: "DoAn", price: 10000, num: 2},
@@ -419,7 +419,7 @@ const data = [
     {
         dateOrder: "29/02/2021", 
         dateRecv: "01/03/2021",
-        stateOrder: 2,
+        res: "Nhà hàng KFC", stateOrder: 2,
         listFood: [
             {img: Donut,name:"Bánh Donut",type: "DoAn", price: 10000, num: 1},
             {img: GaNuong,name:"Gà nướng",type: "DoAn", price: 10000, num: 1},
@@ -431,7 +431,7 @@ const data = [
     {
         dateOrder: "29/02/2021", 
         dateRecv: "",
-        stateOrder: 1,
+        res: "Nhà hàng KFC", stateOrder: 1,
         listFood: [
             {img: macaron,name:"Bánh Macaron",type: "DoAn", price: 10000, num: 3},
             {img: myY,name:"Mỳ Ý",type: "DoAn", price: 10000, num: 3},
@@ -443,7 +443,7 @@ const data = [
     {
         dateOrder: "29/02/2021", 
         dateRecv: "01/03/2021",
-        stateOrder: 2,
+        res: "Nhà hàng KFC", stateOrder: 2,
         listFood: [
             {img: pancake,name:"Pancake",type: "DoAn", price: 10000, num: 5},
             {img: pizza,name:"Pizza",type: "DoAn", price: 10000, num: 5},
@@ -455,7 +455,7 @@ const data = [
     {
         dateOrder: "29/02/2021", 
         dateRecv: "",
-        stateOrder: 1,
+        res: "Nhà hàng KFC", stateOrder: 1,
         listFood: [
             {img: BanhNgot,name:"Bánh ngọt",type: "DoAn", price: 10000, num: 2},
             {img: CaHoiTeriyaki,name:"Cá hồi sốt Teriyaki",type: "DoAn", price: 10000, num: 2},
@@ -467,7 +467,7 @@ const data = [
     {
         dateOrder: "29/02/2021", 
         dateRecv: "01/03/2021",
-        stateOrder: 2,
+        res: "Nhà hàng KFC", stateOrder: 2,
         listFood: [
             {img: Donut,name:"Bánh Donut",type: "DoAn", price: 10000, num: 1},
             {img: GaNuong,name:"Gà nướng",type: "DoAn", price: 10000, num: 1},
@@ -479,7 +479,7 @@ const data = [
     {
         dateOrder: "29/02/2021", 
         dateRecv: "",
-        stateOrder: 1,
+        res: "Nhà hàng KFC", stateOrder: 1,
         listFood: [
             {img: macaron,name:"Bánh Macaron",type: "DoAn", price: 10000, num: 3},
             {img: myY,name:"Mỳ Ý",type: "DoAn", price: 10000, num: 3},
@@ -491,7 +491,7 @@ const data = [
     {
         dateOrder: "29/02/2021", 
         dateRecv: "01/03/2021",
-        stateOrder: 2,
+        res: "Nhà hàng KFC", stateOrder: 2,
         listFood: [
             {img: pancake,name:"Pancake",type: "DoAn", price: 10000, num: 5},
             {img: pizza,name:"Pizza",type: "DoAn", price: 10000, num: 5},
