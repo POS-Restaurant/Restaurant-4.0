@@ -72,7 +72,7 @@ const SidebarDataCus = [
     subNav: [
       {
         title: 'Chọn món',
-        path: '/overview/ordFood',
+        path: '/menu',
         icon: <IoIcons.IoIosPaper/>
       },
       {

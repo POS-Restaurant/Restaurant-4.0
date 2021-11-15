@@ -337,10 +337,7 @@ family=Lato&display=swap'); */
   padding: 0;
   align-items: baseline;
  }
- .MenuCard.active {
-  width: 67%;
-  left: 14.5%;
- }
+
  #searchBar {
    margin-left: 100px;
    padding: 1px;
