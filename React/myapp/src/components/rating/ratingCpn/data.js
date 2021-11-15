@@ -4,48 +4,15 @@ import cappuccino from '../../../imageFood/cappuccino.jpg';
 import Coca from '../../../imageFood/Coca.jpg';
 import coctailRose from '../../../imageFood/coctailRose.jpg';
 import res1 from '../../../imageRes/res1.jpg';
-import res2 from '../../../imageRes/res2.jpg';
-import res3 from '../../../imageRes/res3.jpg';
-import res4 from '../../../imageRes/res4.jpg';
-import res5 from '../../../imageRes/res5.jpg';
 
-const dataRes = [
-    {
+
+const dataRes = {
         img: res1,
         name: "Nhà hàng KFC 1", 
         addr: "248, Lý Thường Kiệt, Phường 14, Quận 10, TP.HCM",
         averRate: 4.5,
         totalRate: 10000,
-    },
-    {
-        img: res2,
-        name: "Nhà hàng KFC 2", 
-        addr: "248, Lý Thường Kiệt, Phường 14, Quận 10, TP.HCM",
-        averRate: 4.5,
-        totalRate: 10000,
-    },
-    {
-        img: res3,
-        name: "Nhà hàng KFC 3", 
-        addr: "248, Lý Thường Kiệt, Phường 14, Quận 10, TP.HCM",
-        averRate: 4.5,
-        totalRate: 10000,
-    },
-    {
-        img: res4,
-        name: "Nhà hàng KFC 4", 
-        addr: "248, Lý Thường Kiệt, Phường 14, Quận 10, TP.HCM",
-        averRate: 4.5,
-        totalRate: 10000,
-    },
-    {
-        img: res5,
-        name: "Nhà hàng KFC 5", 
-        addr: "248, Lý Thường Kiệt, Phường 14, Quận 10, TP.HCM",
-        averRate: 4.5,
-        totalRate: 10000,
-    },
-];
+    };
 
 
 const dataOrder = [
