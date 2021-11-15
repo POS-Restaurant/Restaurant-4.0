@@ -1,9 +1,6 @@
 import React, { Component } from "react";
-import { FaYenSign } from "react-icons/fa";
-import { Container, Row, Col, CardImg } from "reactstrap";
-import { Card, CardBody, CardTitle, CardSubtitle, CardText } from "reactstrap";
-import { Form, FormGroup, Input, Button } from "reactstrap";
-import { Modal, ModalBody } from 'reactstrap';
+// import { FaYenSign } from "react-icons/fa";
+import { Container, Row, Col, Card, Input, Button, Modal } from "reactstrap";
 import { FoodOrdData } from "./FoodData";
 
 
@@ -133,21 +130,17 @@ class PickFood extends Component {
                             <Col>
                             <div className='menuFoodName'> {food.food_name}</div>
                             <div className='menuFoodPrice'> Giá tiền : {food.price}</div>
+                            <Button className="infobtn" onClick={()=>{this.setState({currentFood:food}); this.toggleModal()}}>Xem chi tiết </Button>
+                            <Button
+                                className="addbtn"
+                                onClick={(e) => {
+                                    this.addFood(food);
+                                }}
+                            >
+                                Thêm vào giỏ hàng
+                                </Button>
                             </Col>
                         </Row>
-                        <Row className="foodRow2">
-                            <Button className="infobtn" onClick={()=>{this.setState({currentFood:food}); this.toggleModal()}}>Xem chi tiết </Button>
-                        <Button
-                            className="addbtn"
-                            onClick={(e) => {
-                                this.addFood(food);
-                            }}
-                        >
-                            Thêm vào giỏ hàng
-                        </Button>
-                        </Row>
-                        
-                        
                     </Card>
                 </div>
             );
@@ -161,6 +154,7 @@ class PickFood extends Component {
                             <img
                                 className="menuFoodImg2"
                                 src={foodItem.img}
+                                alt="Img Food"
                             />
                             <div className="foodCartInfo">
                                 <span>{foodItem.food_name}</span>
@@ -281,7 +275,7 @@ remove
                     </div>
                 <div class="itemBody">
                 <div className="Picbox">
-                <img class={"itemPic"} src={this.state.currentFood.img}/>
+                <img class={"itemPic"} src={this.state.currentFood.img} alt="Img Food"/>
                 </div>
                 <div class="itemDetail">
                     <div class="itemPrice">

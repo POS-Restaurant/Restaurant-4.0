@@ -185,8 +185,7 @@ family=Lato&display=swap'); */
   color: white;
  }
  .menuFoodImg {
-  width: 80px;
-  height: 100px;
+  height: 136px;
   float: left;
   border-radius: 8px;
  }
@@ -198,12 +197,6 @@ family=Lato&display=swap'); */
  }
  .foodCard .foodRow {
   height: 80px;
- }
- .foodCard .foodRow2 {
-  margin-top: 30px;
-  margin-left: 0px;
-  height: 30px;
-  display: flex;
  }
  .food-item,
  .modal-food-item {
@@ -321,25 +314,24 @@ family=Lato&display=swap'); */
   width: 350px;
   height: 100%;
   padding: 1%;
-  margin-left: 15px;
   float: left;
   /* background-color: #3B5162; */
  }
  .menuFoodName {
   font-size: 18px;
   font-weight: bold;
-  margin-left: 90px;
+  margin-left: 120px;
  }
  .menuFoodPrice {
   font-size: 16px;
-  margin-left: 90px;
+  margin-left: 120px;
  }
  .MenuCard {
   background-color: #e5e5e5;
   justify-content: center;
   position: absolute;
-  height: 90%;
-  width: 80%;
+  height: 640px;
+  width: 74%;
   z-index: 0;
   left: 0%;
   padding: 0;
@@ -367,7 +359,7 @@ family=Lato&display=swap'); */
    background-color: #15171c;
  }
  .cart {
-  width: 23%;
+  width: 26%;
   right: 0%;
   position: absolute;
   transition: 350ms;
@@ -375,7 +367,7 @@ family=Lato&display=swap'); */
   box-sizing: border-box;
   background-color: #ffffff;
   border-radius: 15px;
-  height: 90%;
+  height: 400px;
  }
  .foodCartInfo > * {
   display: block;
@@ -403,7 +395,7 @@ family=Lato&display=swap'); */
   padding-left: 5%;
   top: 0%;
   border: 2px solid black;
-  width: 380px;
+  width: 340px;
   height: 160px;
  }
  .infobtn {
@@ -416,11 +408,16 @@ family=Lato&display=swap'); */
   z-index: 3;
   height: 30px;
   width: 150px;
+  margin-top: 10px;
+  margin-left: 10px;
  }
  .addbtn {
+  margin-top: 10px;
   margin-left: 10px;
   position: relative;
   right: 0%;
+  height: 30px;
+  width: 180px;
   background: #2685f8;
   border-radius: 10px;
  }
@@ -726,7 +723,7 @@ margin-left: 600px;
 }
 .scroll-div-menu{
   width: 100%;
-  height:670px;
+  height:540px;
   overflow: hidden;
   overflow-y: scroll;
 }

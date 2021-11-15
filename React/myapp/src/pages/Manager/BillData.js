@@ -1,4 +1,4 @@
-import { FoodOrdData } from "../FoodData";
+// import { FoodOrdData } from "../FoodData";
 const BillData = [{
     "idOrd": 1,
     "stateCode": 0,

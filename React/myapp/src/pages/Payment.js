@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import { FaYenSign } from "react-icons/fa";
-import { Container, Row, Col, CardImg } from "reactstrap";
-import { Card, CardBody, CardTitle, CardSubtitle, CardText } from "reactstrap";
-import { Form, FormGroup, Input, Button } from "reactstrap";
-import { Modal, ModalBody } from 'reactstrap';
-import { FoodOrdData } from "./FoodData";
-import { Scrollbars } from 'react-custom-scrollbars';
+import React from "react";
+// import { FaYenSign } from "react-icons/fa";
+import { Row, Col, Button } from "reactstrap";
+// import { Card, CardBody, CardTitle, CardSubtitle, CardText } from "reactstrap";
+// import { Form, FormGroup, Input, n } from "reactstrap";
+// import { Modal, ModalBody } from 'reactstrap';
+// import { FoodOrdData } from "./FoodData";
+// import { Scrollbars } from 'react-custom-scrollbars';
 import data from '../components/viewOrder/dataOrder.js'
 import ListOrder from '../components/viewOrder/listOrder.js'
 function Payment(){
