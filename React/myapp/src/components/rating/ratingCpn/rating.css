@@ -1,15 +1,16 @@
 
-#ratingResCpn #row2 #ratingCmt input[type="text"]::placeholder{
+#ratingResCpn #row2 #ratingCmt textarea[type="text"]::placeholder{
     text-align: center;
-    font-size: 12px;
+    font-size: 20px;
 }
 #ratingResCpn #row2 #ratingStar .css-jue3ft-MuiRating-root{
-    font-size: 30px;
+    font-size: 80px;
 }
 #ratingResCpn #row2 #ratingStar .css-d0uhtl{
-    font-size: 14px;
-    padding-left: 30px;
+    font-size: 30px;
+    margin-left: 150px;
     font-weight: bold;
+    width: 200px;
 }
 
 #ratingFoodCpn #row2 #ratingStar .css-jue3ft-MuiRating-root{

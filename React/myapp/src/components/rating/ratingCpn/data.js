@@ -8,7 +8,7 @@ import res1 from '../../../imageRes/res1.jpg';
 
 const dataRes = {
         img: res1,
-        name: "Nhà hàng KFC 1", 
+        name: "Nhà hàng KFC", 
         addr: "248, Lý Thường Kiệt, Phường 14, Quận 10, TP.HCM",
         averRate: 4.5,
         totalRate: 10000,
