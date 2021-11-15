@@ -3,6 +3,7 @@ import Sidebar from './components/Sidebar';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import { Redirect } from 'react-router';
 import Overview from './pages/Overview';
+import EditMenu from './pages/EditMenu/EditMenu';
 import { Reports, ReportsOne, ReportsTwo, ReportsThree } from './pages/Reports';
 import PickFood from './pages/Menu';
 import React from 'react';
@@ -17,8 +18,9 @@ function App() {
         <Route path='/reports/reports2' exact component={ReportsTwo} />
         <Route path='/reports/reports3' exact component={ReportsThree} />
         <Route path='/menu' exact component={PickFood} />
+        <Route path ='/messages/message2' exact component={EditMenu} />
         
-        <Redirect to='/menu' />
+        {/* <Redirect to='/messages/message2' /> */}
       </Router>
     </Router>
   );
