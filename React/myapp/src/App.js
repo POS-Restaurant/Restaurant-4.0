@@ -10,7 +10,7 @@ import SortFood from './pages/Manager/ManageFoodSell';
 import React from 'react';
 import Payment from './pages/Payment'
 import ListOrder from './components/viewOrder/listOrder'
-import Rating from './components/rating/rating'
+import Rating from './components/rating/ratingCpn/rating'
 function App() {
   return (
     <Router>
@@ -27,7 +27,7 @@ function App() {
         <Route path='/manage/bill' exact component={SortBill}/>
         <Route path='/manage/food' exact component={SortFood}/> 
         <Route path='/payment' exact component={Payment} />
-        <Redirect to='/overview' />
+        <Redirect to='/overview'/>
       </Switch>
     </Router>
   );
