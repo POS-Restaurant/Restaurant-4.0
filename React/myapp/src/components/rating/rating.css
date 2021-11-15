@@ -1,114 +1,45 @@
-#ratingCpn{
-    margin-left: 100px;
-    height: 315px;
-    width: 480px;
-    padding-top: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    border: 2px solid #000;
-}
-/* Two btn rating */
-.choice-opt #btn-rate-res{
-    width: 200px;
-    background-color: red;
-    height: 100%;
+
+#ratingResCpn #row2 #ratingCmt input[type="text"]::placeholder{
     text-align: center;
-    border-radius: 15px;
-    padding-top: 5px;
-    cursor: pointer;
-    margin-left: 20px;
-}
-.choice-opt #btn-rate-food{
-    width: 200px;
-    background-color: blue;
-    height: 100%;
-    text-align: center;
-    border-radius: 15px;
-    padding-top: 5px;
-    cursor: pointer;
-    margin-left: 20px;
-}
-/* Row1: rating Info */
-#ratingCpn #row1{
-    padding-bottom: 10px;
-    border-bottom: 1px solid #000;
-}
-/* Food */
-.ratingInfoFood {
-    display: flex;
-}
-.ratingInfoFood #r2 {
-    margin-left: 20px;
-    height: 100px;
-    width: 150px;
-}
-.ratingInfoFood #r2 #nameFoodRate{
-    font-size: 20px;
-    font-weight: bold;
-    height: 50px;
-    width: 280px;
-}
-.ratingInfoFood #r2 #typeFoodRate{
-    font-size: 16px;
-    height: 50px
-}
-.ratingInfoFood #r2 #priceFoodRate{
-    font-size: 16px;
-    height: 50px
-}
-/* Res */
-.ratingInfoRes {
-    display: flex;
-}
-.ratingInfoRes #r2 {
-    margin-left: 20px;
-    height: 100px;
-    width: 150px;
-}
-.ratingInfoRes #r2 #nameResRate{
-    font-size: 20px;
-    font-weight: bold;
-    height: 50px;
-    width: 280px;
-}
-.ratingInfoRes #r2 #addressResRate{
-    font-size: 16px;
-    height: 50px;
-    width: 300px;
-}
-/* titleRating */
-#ratingCpn #titleRating{
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    padding-bottom: 10px;
-}
-/* Row 2: RatingStar + Cmt */
-#ratingCpn #row2 {
-    display:flex;
-}
-#ratingCpn #row2 #ratingStar {
-    width: 200px;
-    height: 110px;
-    border-right: 1px solid #000;
-}
-#ratingCpn #row2 #ratingCmt {
-    margin-left: 10px;
-}
-#ratingCpn #row2 #ratingCmt input {
-    width: 270px;
-    height: 110px;
-    border: 1px dashed #000;
-    border-radius: 10px;
     font-size: 12px;
 }
-#ratingCpn #row2 #ratingCmt input[type="text"]::placeholder{
-    text-align: center;
+#ratingResCpn #row2 #ratingStar .css-jue3ft-MuiRating-root{
+    font-size: 30px;
 }
-#ratingCpn #row2 #ratingStar .css-jue3ft-MuiRating-root{
-    font-size: 40px;
-}
-#ratingCpn #row2 #ratingStar .css-d0uhtl{
+#ratingResCpn #row2 #ratingStar .css-d0uhtl{
     font-size: 14px;
-    padding-left: 60px;
+    padding-left: 30px;
+    font-weight: bold;
+}
+/* Prerating */
+.rating .opt-res{
+    height: 30px;
+    width: 250px;
+    background-color: red;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    border-radius: 15px;
+}
+.rating .opt-food{
+    height: 30px;
+    width: 250px;
+    background-color: blue;
+    font-size: 24px;
+    color: white;
+    margin-left: 20px;
+    text-align: center;
+    border-radius: 15px;
+}
+.rating{
+    height: 600px;
+    width: 1450px;
+    background-color: #c4c4c4;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+.rating .btn-opt{
+    display: flex;
+    padding-top: 10px;
+    padding-left: 20px
 }
