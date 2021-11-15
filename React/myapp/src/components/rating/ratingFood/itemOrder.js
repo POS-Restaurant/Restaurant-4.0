@@ -1,20 +1,12 @@
 import React, {useState}  from 'react'
 import { Scrollbars } from 'react-custom-scrollbars';
 import ItemFood from './itemFood'
-function checkState(state) {
-    var stateOrd = "";
-    if(state === 1) {stateOrd = "Đơn hàng chưa được giao"}
-    else if(state === 2) {stateOrd = "Đơn hàng đã được nhận"}
-    return(
-        stateOrd
-    )
-}
+
 
 function ItemOrder({
     id,
     dateOrder,
     dateRecv,
-    stateOrder,
     listFood,
     res,
     callBack = () => {}
@@ -40,20 +32,22 @@ function ItemOrder({
                     typeFood = {item.type}
                     priceFood = {item.price}
                     numFood = {item.num}
+                    averRate = {item.averRate}
+                    totalRate = {item.totalRate}
                 />
             </div>
         )
     })
     return (
-        <div className = 'item-order' style={{cursor: 'pointer'}} onClick={handleClick} id={click? "infoClose" : "infoOpen"}>
+        <div className = 'item-order'>
             <div style={{display: 'flex'}}>
                 <div className="idOrder" style={{width: "200px"}}>
                     <p>{id}</p>
                 </div>
-                <div className="dateOrder" style={{width: "300px"}}>
+                <div className="dateOrder" style={{width: "200px"}}>
                     <p>{dateOrder}</p>
                 </div>
-                <div className="dateRecv" style={{width: "300px"}}>
+                <div className="dateRecv" style={{width: "200px"}}>
                     <p>{dateRecv}</p>
                 </div>
                 <div className="res" style={{width: "300px"}}>
@@ -61,6 +55,9 @@ function ItemOrder({
                 </div>
                 <div className="totalBill" style={{width: "300px"}}>
                     <TotalBill />
+                </div>
+                <div className="btn-view-order" style={{width: "200px", cursor: 'pointer'}} onClick={handleClick} id={click? "infoClose" : "infoOpen"}>
+                    <p>Xem chi tiết</p>
                 </div>
             </div>
             <div className={click? 'nav-menu-info active' : 'nav-menu-info'}>

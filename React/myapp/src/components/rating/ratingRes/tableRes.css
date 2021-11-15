@@ -18,22 +18,22 @@
     padding-left: 20px;
     padding-right: 20px;
 }
-.itemRes .nameRes{
+.tableRes .itemRes .nameRes{
     font-size: 24px;
     font-weight: bold;
     text-transform: uppercase;
 }
-.rateContent p{
+.tableRes .rateContent p{
     margin: 0;
 }
-.rateContent #rateImgStar{
+.tableRes .rateContent #rateImgStar{
     padding-top: 10px;
     padding-bottom: 10px;
 }
-.ratingClose{
+.tableRes .ratingClose{
     display: none;
 }
-.ratingOpen{
+.tableRes .ratingOpen{
     margin-left: 20px;
     margin-top: 20px;
     width: 470px;
@@ -42,6 +42,9 @@
     border-radius: 10px;
     box-shadow: 3px 3px 3px grey;
 }
-.ratingOpen p{
+.tableRes .ratingOpen p{
     margin: 0;
+}
+.tableRes .ratingOpen #ratingCmt input{
+    width: 250px;
 }

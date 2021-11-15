@@ -11,8 +11,8 @@ function TableOrder() {
             </div>
             <div className="subtitleCol" style={{display: 'flex'}}>
                 <p style={{width: "200px"}}>Id</p>
-                <p style={{width: "300px"}}>Ngày đặt hàng</p>
-                <p style={{width: "300px"}}>Ngày nhận hàng</p>
+                <p style={{width: "200px"}}>Ngày đặt hàng</p>
+                <p style={{width: "200px"}}>Ngày nhận hàng</p>
                 <p style={{width: "300px"}}>Nhà hàng</p>
                 <p style={{width: "300px"}}>Tổng tiền</p>
             </div>

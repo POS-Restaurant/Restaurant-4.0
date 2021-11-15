@@ -6,9 +6,9 @@ function RatingFoodCpn() {
     return (
         <div>
             <div id="ratingFoodCpn">
-                <div id="titleRating" style={{textAlign:'center', borderBottom: "1px solid #000"}}><p>Vui lòng để lại đánh giá của bạn</p></div>
+                <div id="titleRating" style={{textAlign:'center', borderBottom: "1px solid #000", fontWeight: "bold", paddingBottom: "5px"}}><p>Vui lòng để lại đánh giá của bạn</p></div>
                 <div id="row2" style={{display: 'flex'}}>
-                    <div id="ratingStar" style={{paddingLeft: "20px", width: "180px", paddingTop: "30px"}}>
+                    <div id="ratingStar" style={{paddingLeft: "20px", width: "200px", paddingTop: "30px"}}>
                         <RatingStar />
                     </div>
                     <div id="ratingCmt"style ={{paddingTop: "10px"}}>
@@ -23,7 +23,7 @@ function RatingResCpn() {
     return (
         <div>
             <div id="ratingResCpn">
-                <div id="titleRating" style={{textAlign:'center', borderBottom: "1px solid #000"}}><p>Vui lòng để lại đánh giá của bạn</p></div>
+                <div id="titleRating" style={{textAlign:'center', borderBottom: "1px solid #000",fontWeight: "bold", paddingBottom: "5px"}}><p>Vui lòng để lại đánh giá của bạn</p></div>
                 <div id="row2" style={{display: 'flex'}}>
                     <div id="ratingStar" style={{paddingLeft: "20px", width: "180px", paddingTop: "30px"}}>
                         <RatingStar />
