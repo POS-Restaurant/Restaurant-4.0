@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import ItemOrder from './itemOrder'
 import './viewOrder.css'
 import datas from './dataOrder'
@@ -6,13 +6,12 @@ import { Scrollbars } from 'react-custom-scrollbars';
 
 
 function ListOrder() {
-    var list = datas;
-    const newOrders = datas.filter(data => data.stateOrder === 1)
+    const [condition,setCon] = useState(0);
     return (
         <div className="list-order">
             <div className="btn-state-order" style={{display:'flex'}}>
-                <p id="btn-new" onClick={()=>{list = datas.filter(data => data.stateOrder === 1)}} >Đơn hàng mới</p>
-                <p id="btn-recv" onClick={()=>{}}>Đơn hàng đã nhận</p>
+                <p id="btn-new" onClick={()=>setCon(1)} >Đơn hàng mới</p>
+                <p id="btn-recv" onClick={()=>setCon(2)}>Đơn hàng đã nhận</p>
             </div>
             <div className="nameCol">
                 <div className="numOfOrder" style={{width: "250px"}}>
@@ -33,7 +32,9 @@ function ListOrder() {
             </div>
             <div style={{height: "500px"}}>
                 <Scrollbars>
-                    {list.map((item, index) => {
+                    {datas.filter( val => {
+                        if (condition===0||condition===val.stateOrder) return val;
+                        }).map((item, index) => {
                         return(
                             <div key={index}>
                                 <ItemOrder 

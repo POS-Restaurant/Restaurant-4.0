@@ -22,7 +22,6 @@ function App() {
         <Route path='/menu' exact component={PickFood} />
         <Route path='/manage/bill' exact component={SortBill}/>
         <Route path='/manage/food' exact component={SortFood}/>
-
         <Route path='/payment' exact component={Payment} />
         {/* <Redirect to='/menu' /> */}
       </Router>

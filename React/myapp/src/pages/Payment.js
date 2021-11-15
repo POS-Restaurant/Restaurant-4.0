@@ -7,6 +7,7 @@ import { Modal, ModalBody } from 'reactstrap';
 import { FoodOrdData } from "./FoodData";
 import { Scrollbars } from 'react-custom-scrollbars';
 import data from '../components/viewOrder/dataOrder.js'
+import ListOrder from '../components/viewOrder/listOrder.js'
 function Payment(){
         return (
             <Row className="screen">
