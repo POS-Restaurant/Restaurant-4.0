@@ -338,7 +338,7 @@ family=Lato&display=swap'); */
   background-color: #e5e5e5;
   justify-content: center;
   position: absolute;
-  height: 90%;
+  height: 640px;
   width: 80%;
   z-index: 0;
   left: 0%;
@@ -367,7 +367,7 @@ family=Lato&display=swap'); */
    background-color: #15171c;
  }
  .cart {
-  width: 23%;
+  width: 20%;
   right: 0%;
   position: absolute;
   transition: 350ms;
@@ -375,7 +375,7 @@ family=Lato&display=swap'); */
   box-sizing: border-box;
   background-color: #ffffff;
   border-radius: 15px;
-  height: 90%;
+  height: 400px;
  }
  .foodCartInfo > * {
   display: block;
@@ -726,7 +726,7 @@ margin-left: 600px;
 }
 .scroll-div-menu{
   width: 100%;
-  height:670px;
+  height:540px;
   overflow: hidden;
   overflow-y: scroll;
 }

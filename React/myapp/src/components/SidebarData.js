@@ -26,48 +26,6 @@ export const SidebarData = [
     ]
   },
   {
-    title: 'Thanh toán',
-    path: '/reports',
-    icon: <IoIcons.IoIosPaper />
-
-  },
-  {
-    title: 'Hỗ trợ',
-    path: '/team',
-    icon: <IoIcons.IoMdPeople />
-  },
-  {
-    title: 'Quản lý',
-    path: '/messages',
-    icon: <FaIcons.FaEnvelopeOpenText />,
-
-    iconClosed: <RiIcons.RiArrowDownSFill />,
-    iconOpened: <RiIcons.RiArrowUpSFill />,
-
-    subNav: [
-      {
-        title: 'Nhân sự',
-        path: '/messages/message1',
-        icon: <IoIcons.IoIosPaper />
-      },
-      {
-        title: 'Thực đơn',
-        path: '/messages/message2',
-        icon: <IoIcons.IoIosPaper />
-      },
-      {
-        title: 'Thu nhập',
-        path: '/manage/bill',
-        icon: <FaMoneyBill />
-      },
-      {
-        title: 'Món ăn',
-        path: '/manage/food',
-        icon: <FaIcons.FaPalette />
-      }
-    ]
-  },
-  {
     title: 'Tài khoản',
     path: '/account',
     icon: <FaIcons.FaUser />,
@@ -93,6 +51,48 @@ export const SidebarData = [
       }
     ]
   },
+  {
+    title: 'Thanh toán',
+    path: '/reports',
+    icon: <IoIcons.IoIosPaper />
+
+  },
+  {
+    title: 'Hỗ trợ',
+    path: '/team',
+    icon: <IoIcons.IoMdPeople />
+  },
+  {
+    title: 'Quản lý',
+    path: '/messages',
+    icon: <FaIcons.FaEnvelopeOpenText />,
+
+    iconClosed: <RiIcons.RiArrowDownSFill />,
+    iconOpened: <RiIcons.RiArrowUpSFill />,
+    subNav: [
+      {
+        title: 'Nhân sự',
+        path: '/messages/message1',
+        icon: <IoIcons.IoIosPaper />
+      },
+      {
+        title: 'Thực đơn',
+        path: '/messages/message2',
+        icon: <IoIcons.IoIosPaper />
+      },
+      {
+        title: 'Thu nhập',
+        path: '/manage/bill',
+        icon: <FaMoneyBill />
+      },
+      {
+        title: 'Món ăn',
+        path: '/manage/food',
+        icon: <FaIcons.FaPalette />
+      }
+    ]
+  },
+  
   {
     title: 'Đánh giá',
     path: '/rating',
