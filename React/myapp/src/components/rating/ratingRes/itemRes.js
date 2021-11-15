@@ -1,6 +1,6 @@
 import React, { useState} from 'react'
-import RateContent from './rateContent'
-import {RatingResCpn} from './ratingCpn'
+import RateContent from '../ratingCpn/rateContent'
+import {RatingResCpn} from '../ratingCpn/ratingCpn'
 function ItemRes({img, name, addr, averRate, totalRate}) {
     const [click, setClick] = useState(false);
     const handleClick = () => {setClick(!click)}

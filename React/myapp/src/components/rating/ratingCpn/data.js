@@ -1,13 +1,13 @@
-import BanhNgot from '../../imageFood/BanhNgot.jpg';
-import CaHoiTeriyaki from '../../imageFood/CaHoiTeriyaki.jpg';
-import cappuccino from '../../imageFood/cappuccino.jpg';
-import Coca from '../../imageFood/Coca.jpg';
-import coctailRose from '../../imageFood/coctailRose.jpg';
-import res1 from '../../imageRes/res1.jpg';
-import res2 from '../../imageRes/res2.jpg';
-import res3 from '../../imageRes/res3.jpg';
-import res4 from '../../imageRes/res4.jpg';
-import res5 from '../../imageRes/res5.jpg';
+import BanhNgot from '../../../imageFood/BanhNgot.jpg';
+import CaHoiTeriyaki from '../../../imageFood/CaHoiTeriyaki.jpg';
+import cappuccino from '../../../imageFood/cappuccino.jpg';
+import Coca from '../../../imageFood/Coca.jpg';
+import coctailRose from '../../../imageFood/coctailRose.jpg';
+import res1 from '../../../imageRes/res1.jpg';
+import res2 from '../../../imageRes/res2.jpg';
+import res3 from '../../../imageRes/res3.jpg';
+import res4 from '../../../imageRes/res4.jpg';
+import res5 from '../../../imageRes/res5.jpg';
 
 const dataRes = [
     {

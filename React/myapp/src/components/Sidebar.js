@@ -71,9 +71,30 @@ function Sidebar({type}) {
             <NavIcon to='#'>
               <AiIcons.AiOutlineClose onClick={showSidebar} />
             </NavIcon>
-            {SidebarDataCus.map((item, index) => {
+            {/* {SidebarDataCus.map((item, index) => {
               return <SubMenu item={item} key={index} />;
-            })}
+            })} */}
+            {
+              function show(){
+                var role = 0;
+                if (localStorage.getItem('role') == 0)
+                  return SidebarDataCus.map((item, index) => {
+                    return <SubMenu item={item} key={index} />;
+                  })
+                if (localStorage.getItem('role') == 1)
+                  return SidebarDataChef.map((item, index) => {
+                    return <SubMenu item={item} key={index} />;
+                  })
+                  if (localStorage.getItem('role') == 2)
+                  return SidebarDataMngr.map((item, index) => {
+                    return <SubMenu item={item} key={index} />;
+                  })
+                  if (localStorage.getItem('role') == 3)
+                  return SidebarDataAdmin.map((item, index) => {
+                    return <SubMenu item={item} key={index} />;
+                  })
+              }
+            }
           </SidebarWrap>
         </SidebarNav>
       </IconContext.Provider>

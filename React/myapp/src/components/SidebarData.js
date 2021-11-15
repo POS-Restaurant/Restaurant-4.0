@@ -77,7 +77,7 @@ const SidebarDataCus = [
       },
       {
         title: 'Đặt bàn',
-        path: '/overview/ordTable',
+        path: '/orderTable',
         icon: <IoIcons.IoIosPaper />
       }
     ]

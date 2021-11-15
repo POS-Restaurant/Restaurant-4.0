@@ -1,8 +1,8 @@
 import React, { useState} from 'react'
 import './rating.css'
 import TableRate from './tableRate'
-import TableOrder from './tableOrder'
-import TableRes from './tableRes'
+import TableOrder from '../ratingFood/tableOrder'
+import TableRes from '../ratingRes/tableRes'
 
 function CheckOpt({option}){
     if(option === 0) {

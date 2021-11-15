@@ -1,6 +1,6 @@
 import React from 'react'
 import { Scrollbars } from 'react-custom-scrollbars';
-import {dataRes} from './data'
+import {dataRes} from '../ratingCpn/data'
 import ItemRes from './itemRes'
 import './tableRes.css'
 function TableRes() {
