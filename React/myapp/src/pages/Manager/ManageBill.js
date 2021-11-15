@@ -95,8 +95,8 @@ const SortBill = (props) => {
 }
 export default SortBill;
 const BillModal = (idOrd) => {
-  const data = BillData;
-  const bill = data.filter((bill) => bill.idOrd === idOrd)[0];
+  // const data = BillData;
+  // const bill = data.filter((bill) => bill.idOrd === idOrd)[0];
   // const user=UserList.filter((user)=>user.id==bill.customer)[0];
   return (
     <div>
