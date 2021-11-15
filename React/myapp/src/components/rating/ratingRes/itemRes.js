@@ -2,11 +2,9 @@ import React, { useState} from 'react'
 import RateContent from '../ratingCpn/rateContent'
 import {RatingResCpn} from '../ratingCpn/ratingCpn'
 function ItemRes({img, name, addr, averRate, totalRate}) {
-    const [click, setClick] = useState(false);
-    const handleClick = () => {setClick(!click)}
     return (
         <div style={{display: 'flex', height: "170px"}}>
-            <div className="itemRes" style={{height: "160px", cursor: "pointer"}} onClick={handleClick}>
+            <div className="itemRes" style={{height: "160px"}}>
                 <div className="imgRes">
                     <img src={img} alt="ImgRes" />
                 </div>
@@ -25,7 +23,7 @@ function ItemRes({img, name, addr, averRate, totalRate}) {
                     />
                 </div>
             </div>
-            <div className={click ? "ratingOpen" : "ratingClose"}>
+            <div className={"ratingOpen"}>
                     <RatingResCpn />
             </div>
         </div>
