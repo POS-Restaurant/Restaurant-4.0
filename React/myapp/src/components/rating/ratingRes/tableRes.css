@@ -62,9 +62,9 @@
 }
 .tableRes .ratingOpen #ratingCmt{
     margin-left: 10px;
-    height: 230px;
+    height: 200px;
 }
-.tableRes .ratingOpen #ratingCmt button {
+.tableRes .ratingOpen button {
     width: 120px;
     height: 30px;
     font-size: 18px;
@@ -73,6 +73,7 @@
     -webkit-border-radius: 20px;
     border-radius: 25px;
     color: #f4f4f4;
+    margin-top: 10px;
 }
 
 .tableRes .ratingOpen .btn-save {
@@ -81,11 +82,11 @@
 .tableRes .ratingOpen .btn-save.active {
     display: inline-block;
 }
-.tableRes .ratingOpen #ratingCmt #save-btn {    
+.tableRes .ratingOpen #save-btn {    
     background-color: #44bebe;
     margin-left: 80px;
 }
-.tableRes .ratingOpen #ratingCmt #cancel-btn {
+.tableRes .ratingOpen  #cancel-btn {
     background-color: #C4C4C4;
     margin-left: 40px;
 }
