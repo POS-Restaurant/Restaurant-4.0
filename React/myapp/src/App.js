@@ -22,6 +22,7 @@ import Noti from './components/Account/Noti/Noti';
 import ChefUI from './pages/Chef/ChefUI'
 import MgrInfo from './pages/Manager/mgrInfo'
 import ChefInfo from './pages/Chef/chefInfo';
+import HomePage from './pages/homePage/homePage'
 function App() {
   return (
     <Router>
@@ -51,7 +52,8 @@ function App() {
         <Route path='/forgetpass' exact component={ForgetPass} />
         <Route path='/forgetchangepass' exact component={ForgetChangePass} />
         <Route path='/payment' exact component={Payment} />
-        <Route path='/' exact component={PreLogin} />
+        <Route path='/' exact component={HomePage} />
+        <Route path='/prelogin' exact component={PreLogin} />
         <Redirect to='/'/>
       </Switch>
     </Router>
