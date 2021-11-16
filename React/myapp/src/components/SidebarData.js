@@ -21,28 +21,6 @@ const SidebarDataChef = [
       icon: <FaIcons.FaSignOutAlt />,
     },
 ];
-const SidebarDataAdmin = [
-    {
-      title: 'Cấp quyền tài khoản',
-      path: '/admin/permission',
-      icon: <IoIcons.IoIosPaper />
-    },
-    {
-      title: 'Cập nhật dữ liệu',
-      path: '/admin/updatedata',
-      icon: <FaIcons.FaFileInvoiceDollar />
-    },
-    {
-      title: 'Bảo trì hệ thống',
-      path: '/admin/maintenanceSys',
-      icon: <FaIcons.FaFileInvoiceDollar />
-    },
-    {
-      title: 'Đăng xuất',
-      path: '/',
-      icon: <FaIcons.FaSignOutAlt />,
-    },
-];
 const SidebarDataMngr = [
   {
     title: 'Cập nhật thông tin',
@@ -130,7 +108,6 @@ const SidebarDataCus = [
   },
 ];
 
-export {SidebarDataAdmin};
 export {SidebarDataChef};
 export {SidebarDataMngr};
 export default SidebarDataCus;

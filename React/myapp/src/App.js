@@ -1,7 +1,7 @@
 import './App.css';
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom"
 import { Redirect } from 'react-router';
-import OverviewCustomer, {OverviewAdmin, OverviewChef, OverviewManager} from './pages/Overview';
+import OverviewCustomer, {OverviewChef, OverviewManager} from './pages/Overview';
 import EditMenu from './pages/EditMenu/EditMenu';
 import { Reports, ReportsOne, ReportsTwo, ReportsThree } from './pages/Reports';
 import PickFood from './pages/Menu';
@@ -19,12 +19,13 @@ import ForgetPass from './components/Sign/Forget/Forget';
 import ForgetChangePass from './components/Sign/Forget/ForgetChangePass';
 import UserInfo from './components/Account/Info/UserInfo';
 import Noti from './components/Account/Noti/Noti';
+import ChefUI from './pages/Chef/ChefUI'
 function App() {
   return (
     <Router>
       <Switch>
         <Route path='/chef/overview' exact component={OverviewChef} />
-        <Route path='/admin/overview' exact component={OverviewAdmin} />
+        <Route path='/chef/vieworder' exact component={ChefUI} />
         <Route path='/customer/account/myorder' exact component={ListOrder} />
         <Route path='/customer/orderfood' exact component={PickFood} />
         <Route path='/customer/rating' exact component={Rating} />

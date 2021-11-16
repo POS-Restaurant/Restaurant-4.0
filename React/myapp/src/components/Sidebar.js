@@ -63,10 +63,6 @@ function Sidebar({type}) {
       return SidebarDataMngr.map((item, index) => {
         return <SubMenu item={item} key={index} />;
       })
-    if (type === 3)
-      return SidebarDataAdmin.map((item, index) => {
-        return <SubMenu item={item} key={index} />;
-      })
   }
   return (
     <div className={type === -1 ? "close-side-bar" : "open-side-bar"}>
