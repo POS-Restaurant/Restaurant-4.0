@@ -1,6 +1,5 @@
 import './prelogin.css'
 import {Link} from 'react-router-dom';
-import Admin from './Admin.jpg';
 import Chef from './Chef.jpg';
 import Customer from './Customer.jpg';
 import Manager from './Manager.jpg';
@@ -9,43 +8,26 @@ var typeUser = -1;
 
 
 function PreLogin() {
-    const styleComponent = {
-        width: "200px",
-        height: "250px",
-        marginLeft: "5%"
-    };
     const styleComponent1 = {
-        width: "200px",
-        height: "250px",
+        width: "320px",
+        height: "450px",
         marginLeft: "5%",
-        marginRight: "5%",
     };
     const styleComponent2 = {
-        width: "200px",
-        height: "250px",
-        marginRight: "5%",
+        width: "320px",
+        height: "450px",
+        marginRight: "10%",
+        marginLeft: "10%",
     };
     const styleComponent3 = {
-        width: "200px",
-        height: "250px",
+        width: "320px",
+        height: "450px",
         marginRight: "5%"
     };
 
     return (
         <div id = "PreLoginr"> 
             <div id = "PreLogincontainer">
-                
-                <div style= {styleComponent}>
-                    <div className = "PreLoginuser-container">
-                        <Link className="PreloginLink" to="/login" onClick = {function() {typeUser = 3}}>
-                            <div id = "PreLoginAdmin"> <img src={Admin} alt="AdminImg" /></div>
-                            <div className = "PreLoginFrame" style={{border: "solid #58BAAB"}}>
-                                <div className="PreLogintext">Admin</div>
-                            </div>
-                        </Link>
-                    </div>
-                </div>
-                
                 <div style= {styleComponent1}>
                     <div className = "PreLoginuser-container">
                         <Link className="PreloginLink" to="/login"  onClick = {function() {typeUser = 2}}>
