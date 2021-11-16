@@ -31,7 +31,7 @@ function PreLogin() {
                 <div style= {styleComponent1}>
                     <div className = "PreLoginuser-container">
                         <Link className="PreloginLink" to="/login"  onClick = {function() {typeUser = 2}}>
-                            <div id = "PreLoginManager"> <img src={Manager} alt="ManagerImg" /> </div>
+                            <div id = "PreLoginManager"> <img src={Manager} alt="ManagerImg" style={{borderRadius: "10px"}} /> </div>
                             <div className = "PreLoginFrame" style={{border: "solid #58BAAB"}}>
                                 <div className="PreLogintext">Manager</div>
                             </div>
@@ -42,7 +42,7 @@ function PreLogin() {
                 <div style= {styleComponent2}>
                     <div className = "PreLoginuser-container">
                         <Link className="PreloginLink" to="/login" onClick = {function() {typeUser = 0}}>
-                            <div id = "PreLoginCustomer"> <img src={Customer} alt="CustomerImg" /> </div>
+                            <div id = "PreLoginCustomer"> <img src={Customer} alt="CustomerImg" style={{borderRadius: "10px"}} /> </div>
                             <div className = "PreLoginFrame" style={{border: "solid #58BAAB"}}>
                                 <div className="PreLogintext">Customer</div>
                             </div>
@@ -52,7 +52,7 @@ function PreLogin() {
                 <div style= {styleComponent3}>
                     <div className = "PreLoginuser-container">
                         <Link className="PreloginLink" to="/login" onClick = {function() {typeUser = 1}}>
-                            <div id = "PreLoginChef"> <img src={Chef} alt="ChefImg" /> </div>
+                            <div id = "PreLoginChef"> <img src={Chef} alt="ChefImg" style={{borderRadius: "10px"}} /> </div>
                             <div className = "PreLoginFrame" style={{border: "solid #58BAAB"}}>
                                 <div className="PreLogintext">Chef</div>
                             </div>
