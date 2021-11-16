@@ -6,7 +6,7 @@ import PopupFoodItem from "./PopupFoodItem";
 import Sidebar from "../../components/Sidebar";
 import BanhNgot from '../../imageFood/BanhNgot.jpg';
 import { FoodOrdData } from "../FoodData";
-
+import {FaSearch} from 'react-icons/fa'
 
 
 function EditMenu() {
@@ -21,7 +21,10 @@ function EditMenu() {
             <div className={styles.container}>
                 <div className={styles.topbar}>
                     <span className={styles.topbarLabel}>Chỉnh sửa menu</span>
-                    <input className={styles.topbarInput} type='search' />
+                    <div>
+                    <input style = {{ height: 46, width: 500}} type="text" name="searchFood" className={styles.searchBar} placeholder="Tìm kiếm" />
+                    <FaSearch className = {styles.searchIcon}/>
+                    </div>
                 </div>
                 <div className={styles.filter}>
                     <button className={styles.btn}>Tất cả</button>
