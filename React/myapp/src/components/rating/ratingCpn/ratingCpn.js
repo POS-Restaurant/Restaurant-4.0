@@ -3,16 +3,27 @@ import RatingCmt from './ratingCmt'
 import RatingStar from './ratingStar'
 
 function RatingFoodCpn() {
+    const [change, setChange] = useState(false)
+    const handleChange = () => setChange(true);
+    const saved = () => setChange(false)
     return (
         <div>
             <div id="ratingFoodCpn">
                 <div id="titleRating" style={{textAlign:'center', borderBottom: "1px solid #000", fontWeight: "bold", paddingBottom: "5px"}}><p>Vui lòng để lại đánh giá của bạn</p></div>
                 <div id="row2" style={{display: 'flex'}}>
-                    <div id="ratingStar" style={{paddingLeft: "20px", width: "200px", paddingTop: "30px"}}>
+                    <div id="ratingStar" style={{paddingLeft: "20px", width: "170px", paddingTop: "30px"}} onClick={handleChange}>
                         <RatingStar />
                     </div>
-                    <div id="ratingCmt"style ={{paddingTop: "10px"}}>
+                    <div id="ratingCmt"style ={{paddingTop: "10px"}} onClick={handleChange}>
                         <RatingCmt />
+                    </div>
+                    <div>
+                        <button id="save-btn" className={change? "btn-save active" : "btn-save"} onClick={saved} >
+                            Save
+                        </button>
+                        <button id="cancel-btn" className={change? "btn-save active" : "btn-save"} onClick={saved} >
+                            Cancel
+                        </button>
                     </div>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-import React, { useState} from 'react'
+import React from 'react'
 import RateContent from '../ratingCpn/rateContent'
 import RatingFoodCpn from '../ratingCpn/ratingCpn'
 function checkType(type) {
@@ -20,10 +20,8 @@ function ItemFood({
     totalRate,
     callBack = ()=>{}
 }) {
-    const [click1, setClick1] = useState(false);
-    const handleClick1 = () => {setClick1(!click1)}
     return (
-        <div className="item-food" onClick={handleClick1}>
+        <div className="item-food">
             <div className="imgFood" style={{width: "150px"}}>
                 <img src={imgFood} alt="Img Food" height="150px" />
             </div>
@@ -45,7 +43,7 @@ function ItemFood({
                 />
             </div>
             <div style={{width: "500px"}}>
-                <div className={click1 ? "ratingOpen" : "ratingClose"}>
+                <div className="ratingOpen">
                     <RatingFoodCpn />
                 </div>
             </div>

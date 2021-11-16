@@ -69,7 +69,7 @@
     margin-top: 10px;
     width: 520px;
     height: 150px;
-    background-color: rgba(80, 243, 39, 0.664);
+    background-color: #f4f4f4;
     border-radius: 10px;
     box-shadow: 3px 3px 3px grey;
 }
@@ -99,8 +99,36 @@
     height: 40px;
     padding-top: 10px;
 }
-.tableOrder #ratingCmt input{
+.tableOrder #ratingCmt textarea{
     height: 100px;
     border: 1px dashed #000; 
     border-radius: 10px;
+    width: 250px;
+}
+
+.tableOrder .ratingOpen button {
+    width: 60px;
+    height: 30px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    -webkit-border-radius: 20px;
+    border-radius: 25px;
+    color: #f4f4f4;
+    margin-top: 10px;
+}
+
+.tableOrder .ratingOpen .btn-save {
+    display: none;
+}
+.tableOrder .ratingOpen .btn-save.active {
+    display: inline-block;
+}
+.tableOrder .ratingOpen #save-btn {    
+    background-color: #44bebe;
+    margin-left: 10px;
+}
+.tableOrder .ratingOpen  #cancel-btn {
+    background-color: #C4C4C4;
+    margin-left: 10px;
 }
