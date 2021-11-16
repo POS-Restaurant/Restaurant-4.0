@@ -9,8 +9,8 @@ import SortBill from './pages/Manager/ManageBill';
 import SortFood from './pages/Manager/ManageFoodSell';
 import React from 'react';
 import Payment from './pages/Payment'
-import Table from './pages/Table/Table-home'
-import ListOrder from './components/viewOrder/listOrder'
+// import Table from './pages/Table/Table-home'
+import ListOrder from './components/Account/viewOrder/listOrder'
 import Rating from './components/rating/ratingCpn/rating'
 import SignUp from './components/Sign/Signup/SignUp';
 import Login from './components/Sign/Login/Login';
@@ -31,7 +31,7 @@ function App() {
         <Route path='/customer/orderFood' exact component={PickFood} />
         <Route path='/customer/rating' exact component={Rating} />
         <Route path='/customer/payment' exact component={Payment} />
-        <Route path='/table' exact component={Table} />  
+        {/* <Route path='/table' exact component={Table} />   */}
         <Route path='/customer/overview' exact component={OverviewCustomer} />
         <Route path='/customer/account' exact component={UserInfo} />
         <Route path='/customer/account/notify' exact component={Noti} />

@@ -6,8 +6,7 @@ import { Row, Col, Button } from "reactstrap";
 // import { Modal, ModalBody } from 'reactstrap';
 // import { FoodOrdData } from "./FoodData";
 // import { Scrollbars } from 'react-custom-scrollbars';
-import data from '../components/viewOrder/dataOrder.js'
-import ListOrder from '../components/viewOrder/listOrder.js'
+import data from '../components/Account/viewOrder/dataOrder'
 import Sidebar from "../components/Sidebar.js"; 
 function Payment(){
         return (

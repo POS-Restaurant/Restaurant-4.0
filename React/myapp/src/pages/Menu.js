@@ -2,7 +2,8 @@ import React, { Component } from "react";
 // import { FaYenSign } from "react-icons/fa";
 import { Container, Row, Col, Card, Input, Button, Modal } from "reactstrap";
 import { FoodOrdData } from "./FoodData";
-
+import Sidebar from "../components/Sidebar"
+import {FaSearch} from "react-icons/fa";
 class PickFood extends Component {
     constructor(props) {
         super(props);
@@ -213,102 +214,105 @@ remove
         });
 
         return (
-            <Row className="screen">
-                <Col className="MenuCard">
-                    <Row>
-                        <Button className="type-button" onClick={() => {this.showAll();}}>
-                            Tất cả
-                        </Button>
-                        <Button className="type-button" onClick={() => {this.search("DoAn");}}>
-                            Món ăn
-                        </Button>
-                        <Button className="type-button" onClick={() => {this.search("Nuoc");}}>
-                            Nước uống
-                        </Button>
-                        <Button className="type-button" onClick={() => {this.search("Combo");}}>
-                            Combo
-                        </Button>
-                        <input style = {{ height: 46, width: 400}} type="text" name="searchFood" id="searchBar" placeholder="Tìm kiếm" />
-                        <img id="searchIcon" src= "image\OIP.jpg" alt="SearchIcon" />
-                    </Row>
-                    {/* <Scrollbars style={{height:640}}>
+            <div>
+                <Sidebar type={0}/>
+                <Row className="screen">
+                    <Col className="MenuCard">
                         <Row>
-                            {food_list}
+                            <Button className="type-button" onClick={() => {this.showAll();}}>
+                                Tất cả
+                            </Button>
+                            <Button className="type-button" onClick={() => {this.search("DoAn");}}>
+                                Món ăn
+                            </Button>
+                            <Button className="type-button" onClick={() => {this.search("Nuoc");}}>
+                                Nước uống
+                            </Button>
+                            <Button className="type-button" onClick={() => {this.search("Combo");}}>
+                                Combo
+                            </Button>
+                            <input style = {{ height: 46, width: 400}} type="text" name="searchFood" id="searchBar" placeholder="Tìm kiếm" />
+                            <FaSearch id = "searchIcon"/>
                         </Row>
-                    </Scrollbars> */}
-                                        <div class="scroll-bg-menu">
-                        <div class="scroll-div-menu">
-                            <div class="scroll-object-menu">
-                        
-                            {food_list}
-                    </div>
-                    </div>
-                    </div>
-                </Col>
-                <Col className="cart">
-                    {/* <HeaderCart /> */}
-                    {/* <CustomerInfo/> */}
-                    <div class="scroll-bg-cart">
-                        <div class="scroll-div-cart">
-                            <div class="scroll-object-cart">
-                        
-                    {cart_food_list}
-                    </div>
-                    </div>
-                    </div>
-                    <Container>
-                        Tổng: <h1>{this.state.totalCost}</h1>
-                        <div class="btn2" onClick={(e) => {alert("Bạn đã thanh toán thành công!");
-                            this.togglePay();
-                            }}>
-                            Thanh toán
+                        {/* <Scrollbars style={{height:640}}>
+                            <Row>
+                                {food_list}
+                            </Row>
+                        </Scrollbars> */}
+                                            <div class="scroll-bg-menu">
+                            <div class="scroll-div-menu">
+                                <div class="scroll-object-menu">
+                            
+                                {food_list}
                         </div>
-                    </Container>
-                </Col>
+                        </div>
+                        </div>
+                    </Col>
+                    <Col className="cart">
+                        {/* <HeaderCart /> */}
+                        {/* <CustomerInfo/> */}
+                        <div class="scroll-bg-cart">
+                            <div class="scroll-div-cart">
+                                <div class="scroll-object-cart">
+                            
+                        {cart_food_list}
+                        </div>
+                        </div>
+                        </div>
+                        <Container>
+                            Tổng: <h1>{this.state.totalCost}</h1>
+                            <div class="btn2" onClick={(e) => {alert("Bạn đã thanh toán thành công!");
+                                this.togglePay();
+                                }}>
+                                Thanh toán
+                            </div>
+                        </Container>
+                    </Col>
 
-                <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
-                    <div class='itemContainer'>
-                        <div class="itemHeader">
-                        <h2 class='headerName'>Thêm vào giỏ hàng</h2>
-                        <button class="closeBtn" onClick={this.toggleModal}>X</button>
-                    </div>
-                <div class="itemBody">
-                <div className="Picbox">
-                <img class={"itemPic"} src={this.state.currentFood.img} alt="Img Food"/>
-                </div>
-                <div class="itemDetail">
-                    <div class="itemPrice">
-                        <div className='itemPrice_1'>
-                            <h4>Name</h4>
-                            <h3>{this.state.currentFood.food_name}</h3>
+                    <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
+                        <div class='itemContainer'>
+                            <div class="itemHeader">
+                            <h2 class='headerName'>Thêm vào giỏ hàng</h2>
+                            <button class="closeBtn" onClick={this.toggleModal}>X</button>
                         </div>
-                        <div className='itemPrice_3'>
-                            <h4>Price</h4>
-                            <h3 class="redColor">{this.state.currentFood.price}</h3>
+                    <div class="itemBody">
+                    <div className="Picbox">
+                    <img class={"itemPic"} src={this.state.currentFood.img} alt="Img Food"/>
+                    </div>
+                    <div class="itemDetail">
+                        <div class="itemPrice">
+                            <div className='itemPrice_1'>
+                                <h4>Name</h4>
+                                <h3>{this.state.currentFood.food_name}</h3>
+                            </div>
+                            <div className='itemPrice_3'>
+                                <h4>Price</h4>
+                                <h3 class="redColor">{this.state.currentFood.price}</h3>
+                            </div>
+                        </div>
+                        <div class="itemQuantity">
+                            <div class="itemQuantityText">Quantity</div>
+                            <div class="itemQuantityBtn">
+                                <button type="button" class="addMinusBtn" onClick={(e)=>this.adjustItem(this.state.currentFood,false)}>-</button>
+                                <input type="text" class="addMinusText" value={this.state.currentFood.num} name="amount" onChange={this.adjustFood}/>
+                                <button type="button" class="addMinusBtn" onClick={(e)=>this.adjustItem(this.state.currentFood,true)}>+</button>
+                            </div>
                         </div>
                     </div>
-                    <div class="itemQuantity">
-                        <div class="itemQuantityText">Quantity</div>
-                        <div class="itemQuantityBtn">
-                            <button type="button" class="addMinusBtn" onClick={(e)=>this.adjustItem(this.state.currentFood,false)}>-</button>
-                            <input type="text" class="addMinusText" value={this.state.currentFood.num} name="amount" onChange={this.adjustFood}/>
-                            <button type="button" class="addMinusBtn" onClick={(e)=>this.adjustItem(this.state.currentFood,true)}>+</button>
+                    <div className="clear"></div>
+                    <div class="itemNutri">
+                            <h5>Protein: <span class="itemNutriText">{this.state.currentFood.Protein}</span> </h5>
+                            <h5>Additives: <span class="itemNutriText">{this.state.currentFood.Additives}</span> </h5>
+                            <h5>Baking material: <span class="itemNutriText">{this.state.currentFood.Material}</span> </h5>
+                            <h5>Food decoration: <span class="itemNutriText">{this.state.currentFood.decoration}</span> </h5>
+                        
                         </div>
+                        <button class="bottomBtn" type="button" onClick={()=>{this.addcurrFood(); this.toggleModal()}}>Xác nhận</button>
                     </div>
                 </div>
-                <div className="clear"></div>
-                <div class="itemNutri">
-                        <h5>Protein: <span class="itemNutriText">{this.state.currentFood.Protein}</span> </h5>
-                        <h5>Additives: <span class="itemNutriText">{this.state.currentFood.Additives}</span> </h5>
-                        <h5>Baking material: <span class="itemNutriText">{this.state.currentFood.Material}</span> </h5>
-                        <h5>Food decoration: <span class="itemNutriText">{this.state.currentFood.decoration}</span> </h5>
-                       
-                    </div>
-                    <button class="bottomBtn" type="button" onClick={()=>{this.addcurrFood(); this.toggleModal()}}>Xác nhận</button>
-                </div>
+                    </Modal>
+                </Row>
             </div>
-                </Modal>
-            </Row>
         );
     }
 }

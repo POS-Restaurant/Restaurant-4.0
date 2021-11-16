@@ -3,7 +3,7 @@ import ItemOrder from './itemOrder'
 import './viewOrder.css'
 import datas from './dataOrder'
 import { Scrollbars } from 'react-custom-scrollbars';
-import Sidebar from '../Sidebar'
+import Sidebar from '../../Sidebar'
 
 function ListOrder() {
     const [condition,setCon] = useState(0);

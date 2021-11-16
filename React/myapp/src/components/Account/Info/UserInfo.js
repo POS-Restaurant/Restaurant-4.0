@@ -9,8 +9,7 @@ function UserInfo() {
             <Sidebar type={0}/>
             <div className={account.UserInfo}>
                 <h1>Thông tin tài khoản</h1>
-                <div style={{display:'flex'}}>
-                    <AccountNavigation />
+                <div>
                     <div className={`${account.MainContent} ${account.info}`}>
                         <div className={account.infoInsideContent}>
                             <div className={account.field}>
