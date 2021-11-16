@@ -341,10 +341,7 @@ family=Lato&display=swap'); */
   padding: 0;
   align-items: baseline;
  }
- .MenuCard.active {
-  width: 67%;
-  left: 14.5%;
- }
+
  #searchBar {
    margin-left: 100px;
    padding: 1px;
@@ -355,8 +352,8 @@ family=Lato&display=swap'); */
  #searchIcon {
    height:20px;
    width:20px;
-   top: 8px;
-   left: -45px;
+   top: 5px;
+   left: -35px;
    position: relative;
  }
  #titleFeature {

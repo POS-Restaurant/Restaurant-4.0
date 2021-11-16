@@ -25,6 +25,26 @@ function Payment(){
                         <Button className={eda===1?'type-button active':'type-button'}  onClick={()=>setEDA(1)}>
                             Giao dịch
                         </Button>
+                    </Row>
+                    <Row>
+                        <input style = {{ height: 46, width: 400}} type="text" name="banknumber" placeholder="Nhập số thẻ/tài khoản" />
+                            <img id="searchIcon" src= "image\OIP.jpg" alt="SearchIcon" />
+                        <input style = {{ height: 46, width: 400}} type="text" name="pinnumber" placeholder="Nhập mã PIN" />
+                            <img id="searchIcon" src= "image\OIP.jpg" alt="SearchIcon" />
+                        <input style = {{ height: 46, width: 400}} type="text" name="daynumber" placeholder="Nhập dd/mm/year" />
+                            <img id="searchIcon" src= "image\OIP.jpg" alt="SearchIcon" />
+                        <input style = {{ height: 46, width: 400}} type="text" name="daynumber" placeholder="Nhập số tiền giao dịch" />
+                            <img id="searchIcon" src= "image\OIP.jpg" alt="SearchIcon" />
+                        <button class="bottomBtn" type="button">Xác nhận</button>
+                    </Row>
+                    <Row>
+                        {data.map((props)=>{
+                            return(
+                            <h1>{props.id}</h1>
+                            );
+                        })}
+                    </Row>
+                    </Col>
                 </Row>
                 <Row className={eda===1?'active':'hide'}>
                 <Row>

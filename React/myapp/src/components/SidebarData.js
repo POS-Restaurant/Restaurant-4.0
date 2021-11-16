@@ -7,46 +7,51 @@ import { FaMoneyBill } from 'react-icons/fa';
 const SidebarDataChef = [
     {
       title: 'Đơn hàng phục vụ',
-      path: '/account/vieworder',
+      path: '/chef/vieworder',
       icon: <IoIcons.IoIosPaper />
     },
     {
-      title: 'Cập nhật thông tin tài khoản',
-      path: '/account/info',
-      icon: <FaIcons.FaFileInvoiceDollar />
-    }
+      title: 'Cập nhật thông tin',
+      path: '/chef/info',
+      icon: <FaIcons.FaUser />
+    },
+    {
+      title: 'Đăng xuất',
+      path: '/',
+      icon: <FaIcons.FaSignOutAlt />,
+    },
 ];
 const SidebarDataAdmin = [
     {
       title: 'Cấp quyền tài khoản',
-      path: '/account/vieworder',
+      path: '/admin/permission',
       icon: <IoIcons.IoIosPaper />
     },
     {
       title: 'Cập nhật dữ liệu',
-      path: '/account/info',
+      path: '/admin/updatedata',
       icon: <FaIcons.FaFileInvoiceDollar />
     },
     {
       title: 'Bảo trì hệ thống',
-      path: '/account/info',
+      path: '/admin/maintenanceSys',
       icon: <FaIcons.FaFileInvoiceDollar />
+    },
+    {
+      title: 'Đăng xuất',
+      path: '/',
+      icon: <FaIcons.FaSignOutAlt />,
     },
 ];
 const SidebarDataMngr = [
   {
     title: 'Cập nhật thông tin',
-    path: '/account/info',
-    icon: <FaIcons.FaFileInvoiceDollar />,
-  },
-  {
-    title: 'Nhân sự',
-    path: '/messages/message1',
-    icon: <IoIcons.IoIosPaper />
+    path: '/manager/info',
+    icon: <FaIcons.FaUser />,
   },
   {
     title: 'Thực đơn',
-    path: '/messages/message2',
+    path: '/manager/menu',
     icon: <IoIcons.IoIosPaper />
   },
   {
@@ -54,17 +59,22 @@ const SidebarDataMngr = [
     path: '/manage/bill',
     icon: <FaMoneyBill />
   },
+  // {
+  //   title: 'Món ăn',
+  //   path: '/manage/food',
+  //   icon: <FaIcons.FaPalette />
+  // },
   {
-    title: 'Món ăn',
-    path: '/manage/food',
-    icon: <FaIcons.FaPalette />
-  }
+    title: 'Đăng xuất',
+    path: '/',
+    icon: <FaIcons.FaSignOutAlt />,
+  },
 ]
 
 const SidebarDataCus = [
   {
     title: 'Nhà hàng',
-    path: '/overview',
+    path: '/customer/overview',
     icon: <AiIcons.AiFillHome />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
@@ -72,19 +82,19 @@ const SidebarDataCus = [
     subNav: [
       {
         title: 'Chọn món',
-        path: '/overview/ordFood',
+        path: '/customer/orderFood',
         icon: <IoIcons.IoIosPaper/>
       },
       {
         title: 'Đặt bàn',
-        path: '/overview/ordTable',
+        path: '/customer/orderTable',
         icon: <IoIcons.IoIosPaper />
       }
     ]
   },
   {
     title: 'Tài khoản',
-    path: '/account',
+    path: '/customer/account',
     icon: <FaIcons.FaUser />,
 
     iconClosed: <RiIcons.RiArrowDownSFill />,
@@ -93,25 +103,35 @@ const SidebarDataCus = [
     subNav: [
       {
         title: 'Đơn hàng của tôi',
-        path: '/account/vieworder',
+        path: '/customer/account/myorder',
         icon: <IoIcons.IoIosPaper />
       },
       {
-        title: 'Cập nhật thông tin',
-        path: '/account/updateinfo',
-        icon: <FaIcons.FaFileInvoiceDollar />
+        title: 'Thông báo',
+        path: '/customer/account/notify',
+        icon: <FaIcons.FaBell />
+      },
+      {
+        title: 'Danh sách địa chỉ',
+        path: '/customer/account/myaddress',
+        icon: <FaIcons.FaMap />
       }
     ]
   },
   {
     title: 'Thanh toán',
-    path: '/payment',
+    path: '/customer/payment',
     icon: <IoIcons.IoIosPaper />
   },
   {
     title: 'Đánh giá',
-    path: '/rating',
+    path: '/customer/rating',
     icon: <FaIcons.FaGratipay />,
+  },
+  {
+    title: 'Đăng xuất',
+    path: '/',
+    icon: <FaIcons.FaSignOutAlt />,
   },
 ];
 
