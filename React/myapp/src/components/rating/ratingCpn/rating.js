@@ -3,7 +3,7 @@ import './rating.css'
 import TableRate from './tableRate'
 import TableOrder from '../ratingFood/tableOrder'
 import TableRes from '../ratingRes/tableRes'
-
+import Sidebar from '../../Sidebar'
 function CheckOpt({option}){
     if(option === 0) {
         return(
@@ -25,15 +25,18 @@ function CheckOpt({option}){
 function Rating() {
     const [option, setOpt] = useState(0);
     return (
-        <div className="rating">
-            <div className="btn-opt">
-                <div className="opt-res" style={{cursor: 'pointer'}} onClick={() =>{setOpt(1)}}>Đánh giá nhà hàng</div>
-                <div className="opt-food" style={{cursor: 'pointer'}} onClick={() =>{setOpt(2)}} >Đánh giá món ăn</div>
+        <div>
+            <Sidebar type={0} />
+            <div className="rating">
+                <div className="btn-opt">
+                    <div className="opt-res" style={{cursor: 'pointer'}} onClick={() =>{setOpt(1)}}>Đánh giá nhà hàng</div>
+                    <div className="opt-food" style={{cursor: 'pointer'}} onClick={() =>{setOpt(2)}} >Đánh giá món ăn</div>
+                </div>
+                <div className="row2">
+                    <CheckOpt option={option} />
+                </div>
+                
             </div>
-            <div className="row2">
-                <CheckOpt option={option} />
-            </div>
-            
         </div>
     )
 }
