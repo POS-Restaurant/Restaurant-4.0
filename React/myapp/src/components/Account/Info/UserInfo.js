@@ -1,7 +1,6 @@
 import { Button, Input } from "reactstrap";
 import { React } from "react";
 import account from "../Account.module.css";
-import AccountNavigation from "../AccountNavigation";
 import Sidebar from "../../Sidebar";
 function UserInfo() {
     return (
