@@ -1,14 +1,12 @@
 import React from 'react';
-import './table.css';
-import './table2.css';
-//import smallJs from './table';
+import './fix.css';
 
 class Table extends React.Component {
     render(){
         return(
     <div>
     <section id="form" data-aos="fade-up">
-    <div class="container">
+    <div class="container-table">
       <h3 class="form__title">Book Table</h3>
       <div class="form__wrapper">
         <form name="booking" method="POST" netlify>
@@ -58,7 +56,7 @@ class Table extends React.Component {
             <label for="note">Note</label>
             <textarea name="Note" id="note" rows="4"></textarea>
           </div>
-          <button type="submit" class="btn primary-btn">Xác nhận đặt bàn</button>
+          <button type="submit" class="btn-table primary-btn-table">Xác nhận đặt bàn</button>
         </form>
       </div>
     </div>
