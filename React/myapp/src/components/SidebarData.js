@@ -7,12 +7,12 @@ import { FaMoneyBill } from 'react-icons/fa';
 const SidebarDataChef = [
     {
       title: 'Đơn hàng phục vụ',
-      path: '/account/vieworder',
+      path: '/chef/vieworder',
       icon: <IoIcons.IoIosPaper />
     },
     {
       title: 'Cập nhật thông tin',
-      path: '/account/info',
+      path: '/chef/info',
       icon: <FaIcons.FaUser />
     },
     {
@@ -24,17 +24,17 @@ const SidebarDataChef = [
 const SidebarDataAdmin = [
     {
       title: 'Cấp quyền tài khoản',
-      path: '/account/vieworder',
+      path: '/admin/permission',
       icon: <IoIcons.IoIosPaper />
     },
     {
       title: 'Cập nhật dữ liệu',
-      path: '/account/info',
+      path: '/admin/updatedata',
       icon: <FaIcons.FaFileInvoiceDollar />
     },
     {
       title: 'Bảo trì hệ thống',
-      path: '/account/info',
+      path: '/admin/maintenanceSys',
       icon: <FaIcons.FaFileInvoiceDollar />
     },
     {
@@ -74,7 +74,7 @@ const SidebarDataMngr = [
 const SidebarDataCus = [
   {
     title: 'Nhà hàng',
-    path: '/overview',
+    path: '/customer/overview',
     icon: <AiIcons.AiFillHome />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
@@ -82,19 +82,19 @@ const SidebarDataCus = [
     subNav: [
       {
         title: 'Chọn món',
-        path: '/menu',
+        path: '/customer/orderFood',
         icon: <IoIcons.IoIosPaper/>
       },
       {
         title: 'Đặt bàn',
-        path: '/orderTable',
+        path: '/customer/orderTable',
         icon: <IoIcons.IoIosPaper />
       }
     ]
   },
   {
     title: 'Tài khoản',
-    path: '/account',
+    path: '/customer/account',
     icon: <FaIcons.FaUser />,
 
     iconClosed: <RiIcons.RiArrowDownSFill />,
@@ -103,24 +103,24 @@ const SidebarDataCus = [
     subNav: [
       {
         title: 'Đơn hàng của tôi',
-        path: '/account/vieworder',
+        path: '/customer/account/vieworder',
         icon: <IoIcons.IoIosPaper />
       },
       {
         title: 'Cập nhật thông tin',
-        path: '/account/updateinfo',
+        path: '/customer/account/updateinfo',
         icon: <FaIcons.FaFileInvoiceDollar />
       }
     ]
   },
   {
     title: 'Thanh toán',
-    path: '/payment',
+    path: '/customer/payment',
     icon: <IoIcons.IoIosPaper />
   },
   {
     title: 'Đánh giá',
-    path: '/rating',
+    path: '/customer/rating',
     icon: <FaIcons.FaGratipay />,
   },
   {
