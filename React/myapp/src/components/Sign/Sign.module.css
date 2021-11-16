@@ -1,3 +1,6 @@
+*{
+    font-family: Roboto;
+}
 .Login {
     background-color: red;
     height: 100%;
@@ -32,13 +35,13 @@
     /* display: flex; */
     align-items: center;
     text-align: center;
-    background-color: yellow;
+    background-color: #00000000;
     color: #000;
 }
 
 .LoginForm .field {
     /* background-color: rgba(255, 77, 77, 0.788); */
-    margin: auto;
+    margin: 10px 0px;
     width: 100%;
     display: block;
     position: relative;
@@ -49,12 +52,12 @@
     display: inline-block;
 }
 
-.switchForget {
+/* .switchForget {
     position: absolute;
     width: auto;
     right: 0%;
     top: 0%;
-}
+} */
 
 .field button {
     width: 100%;
@@ -80,9 +83,10 @@
 .LoginForm .field Input {
     width: 100%;
     height: 50px;
-
+font-size: 14px;
     background: #ebebeb;
     border-radius: 5px;
+    box-sizing: border-box;
 }
 .row {
     margin: auto;
@@ -91,15 +95,18 @@
 
 .ask {
     margin: auto;
-    width: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
 }
 .ask * {
     text-align: center;
-    margin: auto;
+    /* margin: auto; */
 }
 
 button.linkbutton{
-    display: inline;
+    /* display: inline; */
     background-color: #ffffff00;
     color: blue;
     height: fit-content;
@@ -107,17 +114,20 @@ button.linkbutton{
     vertical-align:top;
     margin: 0px 5px;
     font-size: 17px;
+    align-items: center;
+    border: none;
+    text-decoration: none;
 }
-button.switchForget{
+/* button.switchForget{
     
-}
+} */
 .LoginForm label {
     display: inline-block;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: 17px;
-
+    margin: 5px 0px;
     color: #000000;
 }
 
@@ -133,6 +143,8 @@ div .LoginForm .field .col {
 }
 
 div .LoginForm .field.change {
-    width: fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }

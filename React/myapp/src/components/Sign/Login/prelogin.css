@@ -26,20 +26,25 @@
     align-items: center;
 }
 
+#PreLoginr #PreLogincontainer #PreLoginAdmin {
+    width: 200px;
+    height: 200px;    
+}
+
 #PreLoginr #PreLogincontainer #PreLoginManager {
-    width: 320px;
-    height: 320px;
+    width: 200px;
+    height: 200px;
 
 }
 
 #PreLoginr #PreLogincontainer #PreLoginCustomer {
-    width: 320px;
-    height: 320px;
+    width: 200px;
+    height: 200px;
 
 }
 #PreLoginr #PreLogincontainer #PreLoginChef {
-    width: 320px;
-    height: 320px;
+    width: 200px;
+    height: 200px;
 
 }
 #PreLoginr #PreLogincontainer .PreLoginFrame {

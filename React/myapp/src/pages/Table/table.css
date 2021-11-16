@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Raleway:wght@400;500;600&display=swap');
+/* CSS file 1 */
+html {
+	font-size: 10px;
+	overflow-x: hidden;
+}
+body {
+	background: var(--lightGreen-2);
+	overflow-x: hidden;
+	visibility: hidden;
+}
+section {
+	padding: 100px 0;
+}
+@media only screen and (max-width: 767px) {
+	section {
+		padding: 50px 0;
+	}
+}
+.container {
+	max-width: 1200px;
+	width: 90%;
+	margin: 0 auto;
+}
+:root {
+	--green-1: #26643b;
+    --blue-1: #2f5ee0;
+	--green-2: #a2de96;
+	--lightGreen-1: #d6e5d8;
+	--lightGreen-2: #f5fcf4;
+	--black-1: #3b413a;
+	--black-2: #3f3c3c;
+	--black-3: #5b6359;
+	--white-1: #e8e8e8;
+}
+img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+h1,
+h2,
+h3,
+h4 {
+	font-family: Poppins;
+}
+p {
+	font-family: Raleway;
+	font-weight: 400;
+	line-height: 1.4em;
+	font-size: 1.8rem;
+}
+a {
+	display: inline-block;
+	text-decoration: none;
+}
+/* Global Button Styles */
+.btn {
+	color: var(--blue-1);
+	font-family: Poppins;
+	font-weight: 500;
+	border-radius: 8px;
+	font-size: 1.4rem;
+	padding: 1.2rem 2rem;
+}
+.primary-btn {
+	color: var(--white-1);
+	background: var(--blue-1);
+}
+@media only screen and (min-width: 700px) {
+	.btn {
+		padding: 1.3rem 2rem;
+		font-size: 2rem;
+	}
+}
+/* End Global Button Styles */
+
+
+/* Form Styles */
+#form {
+	padding: 5rem 0;
+}
+.form__title {
+	font-size: 1.8rem;
+	color: var(--black-1);
+	font-weight: 600;
+}
+.form__wrapper {
+	padding: 3rem 0;
+}
+.form__wrapper form {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 2rem;
+}
+.form__group label {
+	font-size: 1.6rem;
+	font-family: Poppins;
+	color: var(--black-2);
+	font-weight: 500;
+}
+.form__group input,
+.form__group textarea,
+.form__group select {
+	width: 100%;
+	border: none;
+	background-color: var(--white-1);
+	font-size: 1.4rem;
+	font-family: Raleway;
+	font-weight: 600;
+	padding: 1.5rem;
+	border-radius: 8px;
+	margin-top: 0.5rem;
+	color: var(--black-2);
+}
+.form__group textarea {
+	resize: vertical;
+}
+.form__wrapper button[type='submit'] {
+	width: max-content;
+	border: none;
+	padding: 1rem 4rem;
+	font-weight: 500;
+	letter-spacing: 0.1rem;
+}
+@media only screen and (min-width: 768px) {
+	.form__title {
+		font-size: 3.6rem;
+	}
+	.form__wrapper {
+		padding: 5rem 0;
+	}
+	.form__wrapper form {
+		grid-template-columns: 1fr 1fr;
+	}
+	.form__group__full {
+		grid-column: 1/3;
+	}
+	.form__group label {
+		font-size: 1.8rem;
+	}
+	.form__group input,
+	.form__group textarea,
+	.form__group select {
+		font-size: 1.8rem;
+		padding: 2rem;
+		margin-top: 1.5rem;
+	}
+}
+

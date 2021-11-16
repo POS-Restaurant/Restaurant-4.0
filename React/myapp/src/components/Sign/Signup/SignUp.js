@@ -47,9 +47,8 @@ function SignUp(props) {
                     </div>
                     <div className={`${sign.field} ${sign.change}`}>
                         <Row>
-                            <label>Đã có tài khoản?</label>
                             <Link to="/login">
-                                <Button className={sign.linkbutton} onClick={props.onLogin} style={{cursor: 'pointer'}}>Đăng nhập</Button>
+                                <Button className={sign.linkbutton} onClick={props.onLogin} style={{cursor: 'pointer'}}>Đã có tài khoản? Đăng nhập</Button>
                             </Link>
                         </Row>
                     </div>
