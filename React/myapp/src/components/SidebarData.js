@@ -111,11 +111,6 @@ const SidebarDataCus = [
         path: '/customer/account/notify',
         icon: <FaIcons.FaBell />
       },
-      {
-        title: 'Danh sách địa chỉ',
-        path: '/customer/account/myaddress',
-        icon: <FaIcons.FaMap />
-      }
     ]
   },
   {

@@ -19,7 +19,6 @@ import ForgetPass from './components/Sign/Forget/Forget';
 import ForgetChangePass from './components/Sign/Forget/ForgetChangePass';
 import UserInfo from './components/Account/Info/UserInfo';
 import Noti from './components/Account/Noti/Noti';
-import Address from './components/Account/Address/Address';
 function App() {
   return (
     <Router>
@@ -27,7 +26,6 @@ function App() {
         <Route path='/chef/overview' exact component={OverviewChef} />
         <Route path='/admin/overview' exact component={OverviewAdmin} />
         <Route path='/customer/account/myorder' exact component={ListOrder} />
-        <Route path='/customer/account/myaddress' exact component={Address} />
         <Route path='/customer/orderfood' exact component={PickFood} />
         <Route path='/customer/rating' exact component={Rating} />
         <Route path='/customer/payment' exact component={Payment} />
