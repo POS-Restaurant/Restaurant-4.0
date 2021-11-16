@@ -84,7 +84,7 @@ const toggleOnlyFb = () => {
 
         </Modal> */}
         <Modal isOpen={chart} toggle={toggleChart}>
-          <Chart></Chart>
+          {/* <Chart></Chart> */}
         </Modal>
       </Row>
 

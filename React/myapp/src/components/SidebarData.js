@@ -32,16 +32,16 @@ const SidebarDataMngr = [
     path: '/manager/menu',
     icon: <IoIcons.IoIosPaper />
   },
-  // {
-  //   title: 'Thu nhập',
-  //   path: '/manage/bill',
-  //   icon: <FaMoneyBill />
-  // },
-  // {
-  //   title: 'Món ăn',
-  //   path: '/manage/food',
-  //   icon: <FaIcons.FaPalette />
-  // },
+  {
+    title: 'Thu nhập',
+    path: '/manage/bill',
+    icon: <FaMoneyBill />
+  },
+  {
+    title: 'Món ăn',
+    path: '/manage/food',
+    icon: <FaIcons.FaPalette />
+  },
   {
     title: 'Đăng xuất',
     path: '/',
