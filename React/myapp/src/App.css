@@ -44,7 +44,7 @@ family=Lato&display=swap'); */
  -webkit-transition: -webkit-transform 1s,opacity 1s,background
  1s,width 1s,height 1s,font-size 1s;
  }
- .type-button:hover{
+ .type-button:hover,.type-button.active{
   background-color:#62AFFC;
   color:white;
  }
@@ -230,11 +230,15 @@ family=Lato&display=swap'); */
   outline: none;
   font-size: 2rem;
   padding: 1rem 30%;
-  margin-left:15%;
+  width:100%;
  }
  .Middle h1{
    background-color: white;
    color: black;
+ }
+ .input{
+   height: 46px;
+   width: 500px;
  }
  .food-text,
  .modal-food-text {
@@ -735,4 +739,63 @@ margin-left: 600px;
   cursor: pointer;
   width:80%;
   text-align: center;
+}
+
+.list-pay {
+  height: 400px !important;
+  width: 100%;
+}
+.list-pay p{
+  margin: 0;
+}
+/* name Column */
+.list-pay .nameCol {
+  display: flex;
+  height: 50px;
+  border-bottom: 3px solid black;
+  font-size: 20px;
+  font-weight: bold;
+}
+.list-pay .nameCol .piece{
+  padding-left: 50px;
+  width:25%;
+}
+.list-pay .nameCol p{
+  padding-top: 20px;
+}
+/* item Order */
+.list-pay  #infoOpen{
+  height: 50px;
+  border-bottom: 1px solid black;
+}
+.list-pay .item-order #infoClose{
+  height: 500px;
+}
+.list-pay .item-order{
+  font-size: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.list-pay .orderRow{
+  width:100%;
+  border-bottom: 1px solid black;
+}
+
+.list-pay .orderRow .piece{
+  width:25%;
+  float:left;
+  height:50px;
+}
+.list-pay .orderRow .piece p {
+  padding-left: 50px;
+}
+.hide{
+  width:0px;
+  height:0px;
+  visibility: hidden;
+}
+@media (max-width: 800px) {
+  .input{
+    width:300px;
+  }
 }

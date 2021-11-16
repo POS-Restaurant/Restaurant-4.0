@@ -47,6 +47,7 @@ function App() {
         <Route path='/login' exact component={Login} />
         <Route path='/forgetpass' exact component={ForgetPass} />
         <Route path='/forgetchangepass' exact component={ForgetChangePass} />
+        <Route path='/payment' exact component={Payment} />
         <Route path='/' exact component={PreLogin} />
         <Redirect to='/'/>
       </Switch>

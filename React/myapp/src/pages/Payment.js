@@ -1,53 +1,97 @@
-import React from "react";
-// import { FaYenSign } from "react-icons/fa";
+import React,{useState} from "react";
 import { Row, Col, Button } from "reactstrap";
-// import { Card, CardBody, CardTitle, CardSubtitle, CardText } from "reactstrap";
-// import { Form, FormGroup, Input, n } from "reactstrap";
-// import { Modal, ModalBody } from 'reactstrap';
-// import { FoodOrdData } from "./FoodData";
-// import { Scrollbars } from 'react-custom-scrollbars';
-import data from '../components/Account/viewOrder/dataOrder'
-import Sidebar from "../components/Sidebar.js"; 
+import { Scrollbars } from 'react-custom-scrollbars';
+import data from './Paydata'
+import Sidebar from '../components/Sidebar'
 function Payment(){
+    function fine(a){
+        if (a == 1)
+            return (
+                <p>Nạp Tiền</p>
+            );
+        else
+        return (
+            <p>Rút Tiền</p>
+        );
+    }
+    const [eda,setEDA]= useState(0);
+    const [landy,setLandy]= useState(0);
         return (
             <div>
-                <Sidebar type={0}/>
+                <Sidebar type={0} />
                 <Row className="screen">
                     <Col className="Middle">
                     <Row>
-                            <Button className="type-button">
+                            <Button className={eda===0?'type-button active':'type-button'} onClick={()=>setEDA(0)}>
                                 Lịch sử giao dịch
                             </Button>
-                            <Button className="type-button">
+                            <Button className={eda===1?'type-button active':'type-button'}  onClick={()=>setEDA(1)}>
                                 Giao dịch
                             </Button>
                     </Row>
+                    <Row className={eda===1?'active':'hide'}>
                     <Row>
                         <h1>Chọn cách thức giao dịch</h1>
-                        <Button className="type-button">
+                        <Button className={landy===0?'type-button active':'type-button'} onClick={()=>setLandy(0)}>
                             RÚT TIỀN
                         </Button>
-                        <Button className="type-button">
+                        <Button className={landy===1?'type-button active':'type-button'} onClick={()=>setLandy(1)}>
                             NẠP TIỀN
                         </Button>
                     </Row>
                     <Row>
-                        <input style = {{ height: 46, width: 400}} type="text" name="banknumber" placeholder="Nhập số thẻ/tài khoản" />
+                        <div className="inputSection">
+                        <input className="input" type="text" name="banknumber" placeholder="Nhập số thẻ/tài khoản" />
                             <img id="searchIcon" src= "image\OIP.jpg" alt="SearchIcon" />
-                        <input style = {{ height: 46, width: 400}} type="text" name="pinnumber" placeholder="Nhập mã PIN" />
+                        <input className="input" type="text" name="pinnumber" placeholder="Nhập mã PIN" />
                             <img id="searchIcon" src= "image\OIP.jpg" alt="SearchIcon" />
-                        <input style = {{ height: 46, width: 400}} type="text" name="daynumber" placeholder="Nhập dd/mm/year" />
+                        <input className="input" type="text" name="daynumber" placeholder="Nhập dd/mm/year" />
                             <img id="searchIcon" src= "image\OIP.jpg" alt="SearchIcon" />
-                        <input style = {{ height: 46, width: 400}} type="text" name="daynumber" placeholder="Nhập số tiền giao dịch" />
+                        <input className="input" type="text" name="daynumber" placeholder="Nhập số tiền giao dịch" />
                             <img id="searchIcon" src= "image\OIP.jpg" alt="SearchIcon" />
+                        </div>
                         <button class="bottomBtn" type="button">Xác nhận</button>
                     </Row>
-                    <Row>
-                        {data.map((props)=>{
+                    </Row>
+                    <Row className={eda===0?'active':'hide'}>
+                    <div className="list-pay">
+                        <div className="nameCol">
+                            <div className="piece">
+                                <p>Số thứ tự</p>
+                            </div>
+                            <div className="piece">
+                                <p>Ngày giao dịch</p>
+                            </div>
+                            <div className="piece">
+                                <p>Dạng giao dịch</p>
+                            </div>
+                            <div className="piece">
+                                <p>Số tiền</p>
+                            </div>
+                        </div>
+                        <Scrollbars>
+                        {data.map(props=>{
                             return(
-                            <h1>{props.id}</h1>
+                                <div className="orderRow">
+                                    <div className="piece">
+                                        <p>{props.id}</p>
+                                    </div>
+                                    <div className="piece">
+                                        <p>{props.date}</p>
+                                    </div>
+                                    <div className="piece">
+                                        <p>{fine(props.payment)}</p>
+                                    </div>
+                                    <div className="piece">
+                                        <p>{props.money}</p>
+                                    </div>
+                                    <div className="clear">
+                                    </div>
+                                </div>
                             );
                         })}
+                        </Scrollbars>
+                    </div>
                     </Row>
                     </Col>
                 </Row>
