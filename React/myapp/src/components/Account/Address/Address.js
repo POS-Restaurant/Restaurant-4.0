@@ -4,7 +4,7 @@ import { Button } from "reactstrap";
 import address from './Address.module.css'
 import { useState } from 'react'
 import AddAddress from "./AddAddress";
-
+import Sidebar from "../../Sidebar"
 const DUMMY_DATA = [
     {
         name: 'Hai Dang',
@@ -51,39 +51,41 @@ function Address() {
     }
 
     return (
-        <div className={address.UserAddress}>
-            
-            <h1>Địa chỉ</h1>
-            <div className={address.MainContent}>
-                <div className={address.addressInsideContent}>
-                    <div className={address.buttonBar}>
-                        <Button 
-                        onClick={popupHandler} 
-                        className={address.btn}>
-                            Thêm địa chỉ mới
-                        </Button>
-                    </div>
-                    <div className={address.addressList}>
+        <div>
+            <Sidebar type={0}/>
+            <div className={address.UserAddress}>  
+                <h1>Địa chỉ</h1>
+                <div className={address.MainContent}>
+                    <div className={address.addressInsideContent}>
+                        <div className={address.buttonBar}>
+                            <Button 
+                            onClick={popupHandler} 
+                            className={address.btn}>
+                                Thêm địa chỉ mới
+                            </Button>
+                        </div>
+                        <div className={address.addressList}>
 
-                        {DUMMY_DATA.map((addressItem) => {
-                            return (
-                                <AddressCard
-                                    // id={order.id}
-                                    name={addressItem.name}
-                                    number={addressItem.number}
-                                    location_detail={addressItem.location_detail}
-                                    location_1={addressItem.location_1}
-                                    location_2={addressItem.location_2}
-                                    location_3={addressItem.location_3}
-                                    // price={order.price}
-                                    // status={order.status}
-                                />
-                            );
-                        })}
+                            {DUMMY_DATA.map((addressItem) => {
+                                return (
+                                    <AddressCard
+                                        // id={order.id}
+                                        name={addressItem.name}
+                                        number={addressItem.number}
+                                        location_detail={addressItem.location_detail}
+                                        location_1={addressItem.location_1}
+                                        location_2={addressItem.location_2}
+                                        location_3={addressItem.location_3}
+                                        // price={order.price}
+                                        // status={order.status}
+                                    />
+                                );
+                            })}
+                        </div>
                     </div>
                 </div>
+                {addPopup && <AddAddress onAdd={onAddHandler} onCancel={onCancelHandler}/>}
             </div>
-            {addPopup && <AddAddress onAdd={onAddHandler} onCancel={onCancelHandler}/>}
         </div>
     );
 }

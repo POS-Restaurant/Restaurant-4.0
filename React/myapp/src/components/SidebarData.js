@@ -103,13 +103,18 @@ const SidebarDataCus = [
     subNav: [
       {
         title: 'Đơn hàng của tôi',
-        path: '/customer/account/vieworder',
+        path: '/customer/account/myorder',
         icon: <IoIcons.IoIosPaper />
       },
       {
-        title: 'Cập nhật thông tin',
-        path: '/customer/account/updateinfo',
-        icon: <FaIcons.FaFileInvoiceDollar />
+        title: 'Thông báo',
+        path: '/customer/account/notify',
+        icon: <FaIcons.FaBell />
+      },
+      {
+        title: 'Danh sách địa chỉ',
+        path: '/customer/account/myaddress',
+        icon: <FaIcons.FaMap />
       }
     ]
   },

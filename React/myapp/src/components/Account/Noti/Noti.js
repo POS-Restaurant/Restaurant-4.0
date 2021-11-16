@@ -2,7 +2,7 @@ import OrderCard from "./NotiCard";
 // import "./Noti.css";
 import noti from './Noti.module.css'
 import account from '../Account.module.css'
-
+import Sidebar from '../../Sidebar'
 const DUMMY_DATA = [
     {
         id: "123456789",
@@ -32,23 +32,26 @@ const DUMMY_DATA = [
 
 function Noti() {
     return (
-        <div className={noti.UserNoti}>
-            <h1>Thông báo</h1>
-            <div className={account.MainContent}>
-                <div className={noti.notiInsideContent}>
-                    <div className={noti.notiList}>
+        <div>
+            <Sidebar type={0}/>
+            <div className={noti.UserNoti}>
+                <h1>Thông báo</h1>
+                <div className={account.MainContent}>
+                    <div className={noti.notiInsideContent}>
+                        <div className={noti.notiList}>
 
-                        {DUMMY_DATA.map((order) => {
-                            return (
-                                <OrderCard
-                                    // id={order.id}
-                                    date={order.date}
-                                    description={order.description}
-                                    // price={order.price}
-                                    // status={order.status}
-                                />
-                            );
-                        })}
+                            {DUMMY_DATA.map((order) => {
+                                return (
+                                    <OrderCard
+                                        // id={order.id}
+                                        date={order.date}
+                                        description={order.description}
+                                        // price={order.price}
+                                        // status={order.status}
+                                    />
+                                );
+                            })}
+                        </div>
                     </div>
                 </div>
             </div>

@@ -9,8 +9,7 @@ import SortBill from './pages/Manager/ManageBill';
 import SortFood from './pages/Manager/ManageFoodSell';
 import React from 'react';
 import Payment from './pages/Payment'
-
-import Table from './pages/Table/Table-home' //Nếu thấy sửa ko được thì ngắt import vs path này
+import Table from './pages/Table/Table-home'
 import ListOrder from './components/viewOrder/listOrder'
 import Rating from './components/rating/ratingCpn/rating'
 import SignUp from './components/Sign/Signup/SignUp';
@@ -18,18 +17,24 @@ import Login from './components/Sign/Login/Login';
 import PreLogin from './components/Sign/Login/prelogin';
 import ForgetPass from './components/Sign/Forget/Forget';
 import ForgetChangePass from './components/Sign/Forget/ForgetChangePass';
-
+import UserInfo from './components/Account/Info/UserInfo';
+import Noti from './components/Account/Noti/Noti';
+import Address from './components/Account/Address/Address';
 function App() {
   return (
     <Router>
       <Switch>
         <Route path='/chef/overview' exact component={OverviewChef} />
         <Route path='/admin/overview' exact component={OverviewAdmin} />
-        <Route path='/account/vieworder' exact component={ListOrder} />
+        <Route path='/customer/account/myorder' exact component={ListOrder} />
+        <Route path='/customer/account/myaddress' exact component={Address} />
         <Route path='/customer/orderFood' exact component={PickFood} />
         <Route path='/customer/rating' exact component={Rating} />
         <Route path='/customer/payment' exact component={Payment} />
+        <Route path='/table' exact component={Table} />  
         <Route path='/customer/overview' exact component={OverviewCustomer} />
+        <Route path='/customer/account' exact component={UserInfo} />
+        <Route path='/customer/account/notify' exact component={Noti} />
         <Route path='/manager/overview' exact component={OverviewManager} />
         <Route path='/reports' exact component={Reports} />
         <Route path='/reports/reports1' exact component={ReportsOne} />
@@ -37,10 +42,7 @@ function App() {
         <Route path='/reports/reports3' exact component={ReportsThree} />
         <Route path ='/manager/menu' exact component={EditMenu} />
         <Route path='/manage/bill' exact component={SortBill}/>
-        <Route path='/manage/food' exact component={SortFood}/>
-        <Route path='/table' exact component={Table} />  
-
-        <Route path='/payment' exact component={Payment} />
+        <Route path='/manage/food' exact component={SortFood}/> 
         <Route path='/signup' exact component={SignUp} />
         <Route path='/login' exact component={Login} />
         <Route path='/forgetpass' exact component={ForgetPass} />
