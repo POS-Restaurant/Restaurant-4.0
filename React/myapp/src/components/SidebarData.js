@@ -82,12 +82,12 @@ const SidebarDataCus = [
     subNav: [
       {
         title: 'Chọn món',
-        path: '/customer/orderFood',
+        path: '/customer/orderfood',
         icon: <IoIcons.IoIosPaper/>
       },
       {
         title: 'Đặt bàn',
-        path: '/customer/orderTable',
+        path: '/customer/ordertable',
         icon: <IoIcons.IoIosPaper />
       }
     ]
