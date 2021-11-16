@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import { Container, Row, Col, Card, Input, Button, Modal } from "reactstrap";
 import { FoodOrdData } from "./FoodData";
 
-
 class PickFood extends Component {
     constructor(props) {
         super(props);

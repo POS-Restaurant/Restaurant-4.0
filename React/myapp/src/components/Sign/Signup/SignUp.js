@@ -1,6 +1,4 @@
-// import React, { Component } from "react";
-// import { Switch, Route, Redirect } from "react-router-dom";
-// import styled from "styled-components";
+
 import { Input, Row, Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import sign from '../Sign.module.css'
@@ -43,12 +41,12 @@ function SignUp(props) {
                         <Input name="pwd" type="password" required />
                     </div>
                     <div className={sign.field}>
-                        <Button>Đăng ký</Button>
+                        <Button style={{cursor: 'pointer'}}>Đăng ký</Button>
                     </div>
                     <div className={`${sign.field} ${sign.change}`}>
                         <Row>
                             <label>Đã có tài khoản?</label>
-                            <Button className={sign.linkbutton} onClick={props.onLogin}>Đăng nhập</Button>
+                            <Button className={sign.linkbutton} onClick={props.onLogin} style={{cursor: 'pointer'}}>Đăng nhập</Button>
                         </Row>
                     </div>
                 </div>

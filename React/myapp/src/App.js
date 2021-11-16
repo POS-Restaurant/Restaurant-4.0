@@ -12,10 +12,13 @@ import React from 'react';
 import Payment from './pages/Payment'
 import ListOrder from './components/viewOrder/listOrder'
 import Rating from './components/rating/ratingCpn/rating'
+import SignUp from './components/Sign/Signup/SignUp';
+import Login from './components/Sign/Login/Login';
+import PreLogin from './components/Sign/Login/prelogin';
 function App() {
   return (
     <Router>
-      <Sidebar/>
+      <Sidebar type = {-1}/>
       <Switch>
         <Route path='/overview' exact component={Overview} />
         <Route path='/account/vieworder' exact component={ListOrder} />
@@ -31,7 +34,10 @@ function App() {
         <Route path='/manage/bill' exact component={SortBill}/>
         <Route path='/manage/food' exact component={SortFood}/> 
         <Route path='/payment' exact component={Payment} />
-        <Redirect to='/overview'/>
+        <Route path='/signup' exact component={SignUp} />
+        <Route path='/login' exact component={Login} />
+        <Route path='/prelogin' exact component={PreLogin} />
+        <Redirect to='/prelogin'/>
       </Switch>
     </Router>
   );

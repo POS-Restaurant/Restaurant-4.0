@@ -6,7 +6,7 @@ import * as AiIcons from 'react-icons/ai';
 import SidebarDataCus, {SidebarDataAdmin, SidebarDataChef, SidebarDataMngr} from './SidebarData';
 import SubMenu from './SubMenu';
 import { IconContext } from 'react-icons/lib';
-
+import './Sidebar.css'
 // import { Form, FormGroup, Input, Button } from 'reactstrap';
 const Nav = styled.div`
   background: #15171c;
@@ -56,27 +56,27 @@ function Sidebar({type}) {
     if (x !=null)
         x.classList.toggle('active');
   }
-  localStorage.setItem('role',0);
   function show(){
-    if (localStorage.getItem('role') == 0)
+    if (type === -1) return <div></div>
+    if (type === 0)
       return SidebarDataCus.map((item, index) => {
         return <SubMenu item={item} key={index} />;
       })
-    if (localStorage.getItem('role') == 1)
+    if (type === 1)
       return SidebarDataChef.map((item, index) => {
         return <SubMenu item={item} key={index} />;
       })
-      if (localStorage.getItem('role') == 2)
+    if (type === 2)
       return SidebarDataMngr.map((item, index) => {
         return <SubMenu item={item} key={index} />;
       })
-      if (localStorage.getItem('role') == 3)
+    if (type === 3)
       return SidebarDataAdmin.map((item, index) => {
         return <SubMenu item={item} key={index} />;
       })
   }
   return (
-    <>
+    <div className={type === -1 ? "close-side-bar" : "open-side-bar"}>
       <IconContext.Provider value={{ color: '#fff' }}>
         <Nav>
           <NavIcon to='#'>
@@ -89,14 +89,11 @@ function Sidebar({type}) {
             <NavIcon to='#'>
               <AiIcons.AiOutlineClose onClick={showSidebar} />
             </NavIcon>
-            {/* {type1.map((item, index) => {
-              return <SubMenu item={item} key={index} />;
-            })} */}
             {show()}
           </SidebarWrap>
         </SidebarNav>
       </IconContext.Provider>
-    </>
+    </div>
   );
 };
 
