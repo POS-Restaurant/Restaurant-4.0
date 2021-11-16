@@ -2,10 +2,11 @@ import { Button, Input } from "reactstrap";
 import { React } from "react";
 import account from "../Account.module.css";
 import Sidebar from "../../Sidebar";
-function UserInfo() {
+
+function Info({data, type}) {
     return (
         <div>
-            <Sidebar type={0}/>
+            <Sidebar type={type}/>
             <div className={account.UserInfo}>
                 <h1>Thông tin tài khoản</h1>
                 <div>
@@ -16,7 +17,7 @@ function UserInfo() {
                                 <Input style={{cursor: 'pointer'}}
                                     name="Name"
                                     type="text"
-                                    defaultValue="Nguyễn Trường Hải Đăng"
+                                    defaultValue={data.name}
                                     required
                                 />
                             </div>
@@ -25,7 +26,7 @@ function UserInfo() {
                                 <Input style={{cursor: 'pointer'}}
                                     name="Phone"
                                     type="text"
-                                    defaultValue="0768803077"
+                                    defaultValue={data.phone}
                                     required
                                 />
                             </div>
@@ -35,7 +36,7 @@ function UserInfo() {
                                 <Input style={{cursor: 'pointer'}}
                                     name="email"
                                     type="email"
-                                    defaultValue="dang@gmail.com"
+                                    defaultValue={data.mail}
                                 />
                             </div>
                             <div className={account.field}>
@@ -44,7 +45,7 @@ function UserInfo() {
                                 <Input style={{cursor: 'pointer'}}
                                     name="bdate"
                                     type="date"
-                                    defaultValue="2001-04-16"
+                                    defaultValue={data.bdate}
                                 />
                             </div>
                             <div className={account.field}>
@@ -99,4 +100,4 @@ function UserInfo() {
         </div>
     );
 }
-export default UserInfo;
+export default Info;

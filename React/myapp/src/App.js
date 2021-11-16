@@ -17,24 +17,28 @@ import Login from './components/Sign/Login/Login';
 import PreLogin from './components/Sign/Login/prelogin';
 import ForgetPass from './components/Sign/Forget/Forget';
 import ForgetChangePass from './components/Sign/Forget/ForgetChangePass';
-import UserInfo from './components/Account/Info/UserInfo';
+import CusInfo from './components/Account/cusInfo';
 import Noti from './components/Account/Noti/Noti';
 import ChefUI from './pages/Chef/ChefUI'
+import MgrInfo from './pages/Manager/mgrInfo'
+import ChefInfo from './pages/Chef/chefInfo';
 function App() {
   return (
     <Router>
       <Switch>
         <Route path='/chef/overview' exact component={OverviewChef} />
         <Route path='/chef/vieworder' exact component={ChefUI} />
+        <Route path='/chef/info' exact component={ChefInfo} />
         <Route path='/customer/account/myorder' exact component={ListOrder} />
         <Route path='/customer/orderfood' exact component={PickFood} />
         <Route path='/customer/rating' exact component={Rating} />
         <Route path='/customer/payment' exact component={Payment} />
         <Route path='/customer/ordertable' exact component={OrdTable} />  
         <Route path='/customer/overview' exact component={OverviewCustomer} />
-        <Route path='/customer/account' exact component={UserInfo} />
+        <Route path='/customer/account' exact component={CusInfo} />
         <Route path='/customer/account/notify' exact component={Noti} />
         <Route path='/manager/overview' exact component={OverviewManager} />
+        <Route path='/manager/info' exact component={MgrInfo} />
         <Route path='/reports' exact component={Reports} />
         <Route path='/reports/reports1' exact component={ReportsOne} />
         <Route path='/reports/reports2' exact component={ReportsTwo} />
