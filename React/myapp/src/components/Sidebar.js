@@ -48,14 +48,31 @@ const SidebarWrap = styled.div`
 //   else if(type === 2) return {SidebarDataMngr} 
 //   else if(type === 3) return {SidebarDataAdmin} 
 // }
-
 function Sidebar({type}) {
   const [sidebar, setSidebar] = useState(false);
-
   const showSidebar = () =>{setSidebar(!sidebar);
     let x = document.querySelector(".MenuCard")
     if (x !=null)
         x.classList.toggle('active');
+  }
+  localStorage.setItem('role',0);
+  function show(){
+    if (localStorage.getItem('role') == 0)
+      return SidebarDataCus.map((item, index) => {
+        return <SubMenu item={item} key={index} />;
+      })
+    if (localStorage.getItem('role') == 1)
+      return SidebarDataChef.map((item, index) => {
+        return <SubMenu item={item} key={index} />;
+      })
+      if (localStorage.getItem('role') == 2)
+      return SidebarDataMngr.map((item, index) => {
+        return <SubMenu item={item} key={index} />;
+      })
+      if (localStorage.getItem('role') == 3)
+      return SidebarDataAdmin.map((item, index) => {
+        return <SubMenu item={item} key={index} />;
+      })
   }
   return (
     <>
@@ -71,9 +88,10 @@ function Sidebar({type}) {
             <NavIcon to='#'>
               <AiIcons.AiOutlineClose onClick={showSidebar} />
             </NavIcon>
-            {SidebarDataCus.map((item, index) => {
+            {/* {type1.map((item, index) => {
               return <SubMenu item={item} key={index} />;
-            })}
+            })} */}
+            {show()}
           </SidebarWrap>
         </SidebarNav>
       </IconContext.Provider>

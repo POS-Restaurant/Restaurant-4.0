@@ -305,7 +305,7 @@ remove
                         <h5>Food decoration: <span class="itemNutriText">{this.state.currentFood.decoration}</span> </h5>
                        
                     </div>
-                    <button class="bottomBtn" type="button" onClick={()=>{this.addcurrFood(); this.toggleModal()}}>Xác nhận</button>
+                    <button class="bottomBtn" type="button" onClick={()=>{this.addcurrFood(); this.toggleModal();}}>Xác nhận</button>
                 </div>
             </div>
                 </Modal>
