@@ -22,7 +22,7 @@ class Table extends React.Component {
             <label for="email">Email</label>
             <input type="email" id="email" name="Email" required />
           </div>
-          <div class="form__group">
+          {/* <div class="form__group">
             <label for="tableType">Table Type</label>
             <select name="Table Type" id="tableType" required>
               <option selected disabled>Choose</option>
@@ -30,12 +30,12 @@ class Table extends React.Component {
               <option value="medium">Small(4 persons)</option>
               <option value="large">large(6 persons)</option>
             </select>
-          </div>
+          </div> */}
           <div class="form__group">
             <label for="guestNumber">Guest Number</label>
             <input type="number" id="guestNumber" name="Guest Number" min="1" max="10" required />
           </div>
-          <div class="form__group">
+          {/* <div class="form__group">
             <label for="placement">Placement</label>
             <select name="Placement" id="placement">
               <option selected disabled>Choose</option>
@@ -43,7 +43,7 @@ class Table extends React.Component {
               <option value="indoor">Indoor</option>
               <option value="rooftop">rooftop</option>
             </select>
-          </div>
+          </div> */}
           <div class="form__group">
             <label for="date">Date</label>
             <input type="date" id="date" name="Date" required />
