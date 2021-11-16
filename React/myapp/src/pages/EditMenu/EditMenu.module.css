@@ -3,6 +3,7 @@
 
 *{
     font-family: 'Barlow', sans-serif;
+    
 }
 .container{
     background-color: #f1f1f1;
@@ -55,7 +56,7 @@
     cursor: pointer;
     padding: 10px 15px;
     border-radius: 50px;
-    margin-bottom: 12px;
+    /* margin-bottom: 12px; */
 }
 .btn:hover{
     background-color: #2685f8;
@@ -82,6 +83,7 @@
     text-overflow: ellipsis;
     margin-bottom: 15px;
     margin-left: 15px;
+    justify-content: space-between;
 }
 
 .itemContainer1{
@@ -106,24 +108,27 @@
 .itemBody{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     justify-content: space-between;
     margin-bottom: 10px;
 }
 
 .itemPic{
-    width: 50%;
-    height: 70%;
+    width: 175px;
+    height: 200px;
     border-radius: 10px;
 }
 .itemInfo{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 145px;
+    height: 100%;
 }
 .itemName{
-    text-align: center;
-    width: 100%;
+    /* text-align: center; */
+    /* text-overflow:ellipsis ; */
+    
     font-size: 25px;
     font-weight: 600;
 }
@@ -139,7 +144,7 @@
 .itemPrice{
     color: blue;
     font-size: 25px;
-    text-align:center
+    /* text-align:center */
 }
 
 .btn1{
