@@ -3,6 +3,7 @@ import { Row, Col, Button } from "reactstrap";
 import { Scrollbars } from 'react-custom-scrollbars';
 import data from './Paydata'
 import Sidebar from '../components/Sidebar'
+import searchIcon from '../image/OIP.jpg'
 function Payment(){
     function fine(a){
         if (a == 1)
@@ -21,14 +22,14 @@ function Payment(){
                 <Sidebar type={0} />
                 <Row className="screen">
                     <Col className="Middle">
-                    <Row>
+                    <div style={{display: 'flex'}}>
                             <Button className={eda===0?'type-button active':'type-button'} onClick={()=>setEDA(0)}>
                                 Lịch sử giao dịch
                             </Button>
                             <Button className={eda===1?'type-button active':'type-button'}  onClick={()=>setEDA(1)}>
                                 Giao dịch
                             </Button>
-                    </Row>
+                    </div>
                     <Row className={eda===1?'active':'hide'}>
                     <Row>
                         <h1>Chọn cách thức giao dịch</h1>
@@ -42,13 +43,13 @@ function Payment(){
                     <Row>
                         <div className="inputSection">
                         <input className="input" type="text" name="banknumber" placeholder="Nhập số thẻ/tài khoản" />
-                            <img id="searchIcon" src= "image\OIP.jpg" alt="SearchIcon" />
+                            <img id="searchIcon" src= {searchIcon} alt="SearchIcon" />
                         <input className="input" type="text" name="pinnumber" placeholder="Nhập mã PIN" />
-                            <img id="searchIcon" src= "image\OIP.jpg" alt="SearchIcon" />
+                            <img id="searchIcon" src= {searchIcon} alt="SearchIcon" />
                         <input className="input" type="text" name="daynumber" placeholder="Nhập dd/mm/year" />
-                            <img id="searchIcon" src= "image\OIP.jpg" alt="SearchIcon" />
+                            <img id="searchIcon" src= {searchIcon} alt="SearchIcon" />
                         <input className="input" type="text" name="daynumber" placeholder="Nhập số tiền giao dịch" />
-                            <img id="searchIcon" src= "image\OIP.jpg" alt="SearchIcon" />
+                            <img id="searchIcon" src= {searchIcon} alt="SearchIcon" />
                         </div>
                         <button class="bottomBtn" type="button">Xác nhận</button>
                     </Row>
