@@ -147,11 +147,11 @@ function ChefUI() {
                         })}
                     </div>
                 </div>
-                <div className={chef.paging}>
+                {/* <div className={chef.paging}>
                     <Pagination itemsCountPerPage={10}
                     totalItemsCount={450}
                     pageRangeDisplayed={5} />
-                </div>
+                </div> */}
                 {/* <Pagination
                     activePage={this.state.activePage}
                     itemsCountPerPage={10}
