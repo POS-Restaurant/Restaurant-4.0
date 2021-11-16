@@ -9,6 +9,7 @@ import SortBill from './pages/Manager/ManageBill';
 import SortFood from './pages/Manager/ManageFoodSell';
 import React from 'react';
 import Payment from './pages/Payment'
+import Table from './pages/Table/Table-home' //Nếu thấy sửa ko được thì ngắt import vs path này
 function App() {
   return (
     <Router>
@@ -22,6 +23,7 @@ function App() {
         <Route path='/menu' exact component={PickFood} />
         <Route path='/manage/bill' exact component={SortBill}/>
         <Route path='/manage/food' exact component={SortFood}/>
+        <Route path='/table' exact component={Table} />  
 
         <Route path='/payment' exact component={Payment} />
         {/* <Redirect to='/menu' /> */}
