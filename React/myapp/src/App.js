@@ -1,8 +1,7 @@
 import './App.css';
-import Sidebar from './components/Sidebar';
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom"
 import { Redirect } from 'react-router';
-import Overview from './pages/Overview';
+import OverviewCustomer, {OverviewAdmin, OverviewChef, OverviewManager} from './pages/Overview';
 import EditMenu from './pages/EditMenu/EditMenu';
 import { Reports, ReportsOne, ReportsTwo, ReportsThree } from './pages/Reports';
 import PickFood from './pages/Menu';
@@ -15,12 +14,16 @@ import Rating from './components/rating/ratingCpn/rating'
 import SignUp from './components/Sign/Signup/SignUp';
 import Login from './components/Sign/Login/Login';
 import PreLogin from './components/Sign/Login/prelogin';
+import ForgetPass from './components/Sign/Forget/Forget';
+import ForgetChangePass from './components/Sign/Forget/ForgetChangePass';
 function App() {
   return (
     <Router>
-      <Sidebar type = {-1}/>
       <Switch>
-        <Route path='/overview' exact component={Overview} />
+        <Route path='/customer/overview' exact component={OverviewCustomer} />
+        <Route path='/chef/overview' exact component={OverviewChef} />
+        <Route path='/manager/overview' exact component={OverviewManager} />
+        <Route path='/admin/overview' exact component={OverviewAdmin} />
         <Route path='/account/vieworder' exact component={ListOrder} />
         <Route path='/rating' exact component={Rating} />
         <Route path='/reports' exact component={Reports} />
@@ -29,15 +32,15 @@ function App() {
         <Route path='/reports/reports3' exact component={ReportsThree} />
         <Route path='/menu' exact component={PickFood} />
         <Route path ='/messages/message2' exact component={EditMenu} />
-        
-        {/* <Redirect to='/messages/message2' /> */}
         <Route path='/manage/bill' exact component={SortBill}/>
         <Route path='/manage/food' exact component={SortFood}/> 
         <Route path='/payment' exact component={Payment} />
         <Route path='/signup' exact component={SignUp} />
         <Route path='/login' exact component={Login} />
-        <Route path='/prelogin' exact component={PreLogin} />
-        <Redirect to='/prelogin'/>
+        <Route path='/forgetpass' exact component={ForgetPass} />
+        <Route path='/forgetchangepass' exact component={ForgetChangePass} />
+        <Route path='/' exact component={PreLogin} />
+        <Redirect to='/'/>
       </Switch>
     </Router>
   );

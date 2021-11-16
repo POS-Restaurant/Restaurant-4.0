@@ -42,13 +42,6 @@ const SidebarWrap = styled.div`
   width: 100%;
 `;
 
-// function checkUser({type}) {
-//   if(type === 0) return {SidebarDataCus}
-//   else if(type === 1) return {SidebarDataChef} 
-//   else if(type === 2) return {SidebarDataMngr} 
-//   else if(type === 3) return {SidebarDataAdmin} 
-// }
-
 function Sidebar({type}) {
   const [sidebar, setSidebar] = useState(false);
   const showSidebar = () =>{setSidebar(!sidebar);

@@ -41,12 +41,16 @@ function SignUp(props) {
                         <Input name="pwd" type="password" required />
                     </div>
                     <div className={sign.field}>
-                        <Button style={{cursor: 'pointer'}}>Đăng ký</Button>
+                        <Link to="/login">
+                            <Button style={{cursor: 'pointer'}}>Đăng ký</Button>
+                        </Link>
                     </div>
                     <div className={`${sign.field} ${sign.change}`}>
                         <Row>
                             <label>Đã có tài khoản?</label>
-                            <Button className={sign.linkbutton} onClick={props.onLogin} style={{cursor: 'pointer'}}>Đăng nhập</Button>
+                            <Link to="/login">
+                                <Button className={sign.linkbutton} onClick={props.onLogin} style={{cursor: 'pointer'}}>Đăng nhập</Button>
+                            </Link>
                         </Row>
                     </div>
                 </div>

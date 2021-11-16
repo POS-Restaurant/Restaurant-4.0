@@ -20,9 +20,9 @@ function ForgetPass(props) {
 
                     <div className={sign.field}>
                         <Row>
-                            <Link to="">
-                                <Button>Gửi mã xác nhận</Button>
-                            </Link>
+                            {/* <Link to=""> */}
+                                <Button style={{cursor: 'pointer'}}>Gửi mã xác nhận</Button>
+                            {/* </Link> */}
                         </Row>
                     </div>
 
@@ -35,15 +35,19 @@ function ForgetPass(props) {
 
                     <div className={sign.field}>
                         <Row>
-                            <Button onClick={props.onChange}>
+                            <Link to="/forgetchangepass">
+                            <Button style={{cursor: 'pointer'}} onClick={props.onChange}>
                                 Đổi mật khẩu
                             </Button>
+                            </Link>
                         </Row>
                     </div>
 
                     <div className={`${sign.field} ${sign.change}`}>
                         <Row>
-                            <Button className={sign.linkbutton} onClick={props.onLogin}>Đăng nhập</Button>
+                            <Link to="/login" style={{textDecoration: 'none'}}>
+                                <Button style={{cursor: 'pointer'}} className={sign.linkbutton} onClick={props.onLogin}>Đăng nhập</Button>
+                            </Link>
                         </Row>
                     </div>
                 </div>

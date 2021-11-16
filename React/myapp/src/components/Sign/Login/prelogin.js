@@ -37,7 +37,7 @@ function PreLogin() {
                 
                 <div style= {styleComponent}>
                     <div className = "PreLoginuser-container">
-                        <Link className="PreloginLink" to="/login" onClick = {function() {typeUser = 0}}>
+                        <Link className="PreloginLink" to="/login" onClick = {function() {typeUser = 3}}>
                             <div id = "PreLoginAdmin"> <img src={Admin} alt="AdminImg" /></div>
                             <div className = "PreLoginFrame" style={{border: "solid #58BAAB"}}>
                                 <div className="PreLogintext">Admin</div>
@@ -48,7 +48,7 @@ function PreLogin() {
                 
                 <div style= {styleComponent1}>
                     <div className = "PreLoginuser-container">
-                        <Link className="PreloginLink" to="/login"  onClick = {function() {typeUser = 1}}>
+                        <Link className="PreloginLink" to="/login"  onClick = {function() {typeUser = 2}}>
                             <div id = "PreLoginManager"> <img src={Manager} alt="ManagerImg" /> </div>
                             <div className = "PreLoginFrame" style={{border: "solid #58BAAB"}}>
                                 <div className="PreLogintext">Manager</div>
@@ -59,7 +59,7 @@ function PreLogin() {
 
                 <div style= {styleComponent2}>
                     <div className = "PreLoginuser-container">
-                        <Link className="PreloginLink" to="/login" onClick = {function() {typeUser = 2}}>
+                        <Link className="PreloginLink" to="/login" onClick = {function() {typeUser = 0}}>
                             <div id = "PreLoginCustomer"> <img src={Customer} alt="CustomerImg" /> </div>
                             <div className = "PreLoginFrame" style={{border: "solid #58BAAB"}}>
                                 <div className="PreLogintext">Customer</div>
@@ -69,7 +69,7 @@ function PreLogin() {
                 </div>
                 <div style= {styleComponent3}>
                     <div className = "PreLoginuser-container">
-                        <Link className="PreloginLink" to="/login" onClick = {function() {typeUser = 3}}>
+                        <Link className="PreloginLink" to="/login" onClick = {function() {typeUser = 1}}>
                             <div id = "PreLoginChef"> <img src={Chef} alt="ChefImg" /> </div>
                             <div className = "PreLoginFrame" style={{border: "solid #58BAAB"}}>
                                 <div className="PreLogintext">Chef</div>

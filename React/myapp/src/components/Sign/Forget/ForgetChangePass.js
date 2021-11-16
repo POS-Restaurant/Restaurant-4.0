@@ -2,7 +2,7 @@
 // import { Switch, Route, Redirect } from "react-router-dom";
 // import styled from "styled-components";
 import { Input, Row, Button } from "reactstrap";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import sign from '../Sign.module.css'
 
 function ForgetChangePass(props) {
@@ -13,20 +13,21 @@ function ForgetChangePass(props) {
                 <h1>Thay mật khẩu</h1>
                     <div className={sign.field}>
                         <Row>
-                            <label>Họ</label>
+                            <label>Mật khẩu mới</label>
                         </Row>
                         <Input name="Phone" type="email" required />
                     </div>
                     <div className={sign.field}>
                         <Row>
-                            <label>Tên</label>
+                            <label>Nhập lại mật khẩu mới</label>
                         </Row>
                         <Input name="Phone" type="email" required />
                     </div>
                     <div className={sign.field}>
                         <Row>
-                            {/* <Link to='/'><Button>Xác nhận</Button></Link> */}
-                            <Button onClick={props.onLogin}>Xác nhận</Button>
+                            <Link to='/forgetpass'>
+                                <Button style={{cursor: 'pointer'}} onClick={props.onLogin}>Xác nhận</Button>
+                            </Link>
                         </Row>
                     </div>
 
