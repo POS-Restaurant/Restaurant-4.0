@@ -23,17 +23,18 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path='/customer/overview' exact component={OverviewCustomer} />
         <Route path='/chef/overview' exact component={OverviewChef} />
-        <Route path='/manager/overview' exact component={OverviewManager} />
         <Route path='/admin/overview' exact component={OverviewAdmin} />
         <Route path='/account/vieworder' exact component={ListOrder} />
-        <Route path='/rating' exact component={Rating} />
+        <Route path='/customer/orderFood' exact component={PickFood} />
+        <Route path='/customer/rating' exact component={Rating} />
+        <Route path='/customer/payment' exact component={Payment} />
+        <Route path='/customer/overview' exact component={OverviewCustomer} />
+        <Route path='/manager/overview' exact component={OverviewManager} />
         <Route path='/reports' exact component={Reports} />
         <Route path='/reports/reports1' exact component={ReportsOne} />
         <Route path='/reports/reports2' exact component={ReportsTwo} />
         <Route path='/reports/reports3' exact component={ReportsThree} />
-        <Route path='/menu' exact component={PickFood} />
         <Route path ='/manager/menu' exact component={EditMenu} />
         <Route path='/manage/bill' exact component={SortBill}/>
         <Route path='/manage/food' exact component={SortFood}/>
