@@ -3,7 +3,7 @@ import chef from "./Chef.module.css";
 import OrderCard from "./OrderCard";
 //import OrderStatePopup from "./OrderStatePopup";
 // import Pagination from "@mui/material/Pagination";
-import Pagination from "react-js-pagination";
+//import Pagination from "react-js-pagination";
 //import ConfirmState from "./ConfirmState";
 import OrderDetail from "./OrderDetail/OrderDetail";
 // import Stack from '@mui/material/Stack';
