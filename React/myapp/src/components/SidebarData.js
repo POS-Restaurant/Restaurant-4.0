@@ -11,10 +11,15 @@ const SidebarDataChef = [
       icon: <IoIcons.IoIosPaper />
     },
     {
-      title: 'Cập nhật thông tin tài khoản',
+      title: 'Cập nhật thông tin',
       path: '/account/info',
-      icon: <FaIcons.FaFileInvoiceDollar />
-    }
+      icon: <FaIcons.FaUser />
+    },
+    {
+      title: 'Đăng xuất',
+      path: '/',
+      icon: <FaIcons.FaSignOutAlt />,
+    },
 ];
 const SidebarDataAdmin = [
     {
@@ -32,21 +37,21 @@ const SidebarDataAdmin = [
       path: '/account/info',
       icon: <FaIcons.FaFileInvoiceDollar />
     },
+    {
+      title: 'Đăng xuất',
+      path: '/',
+      icon: <FaIcons.FaSignOutAlt />,
+    },
 ];
 const SidebarDataMngr = [
   {
     title: 'Cập nhật thông tin',
-    path: '/account/info',
-    icon: <FaIcons.FaFileInvoiceDollar />,
-  },
-  {
-    title: 'Nhân sự',
-    path: '/messages/message1',
-    icon: <IoIcons.IoIosPaper />
+    path: '/manager/info',
+    icon: <FaIcons.FaUser />,
   },
   {
     title: 'Thực đơn',
-    path: '/messages/message2',
+    path: '/manager/menu',
     icon: <IoIcons.IoIosPaper />
   },
   {
@@ -54,11 +59,16 @@ const SidebarDataMngr = [
     path: '/manage/bill',
     icon: <FaMoneyBill />
   },
+  // {
+  //   title: 'Món ăn',
+  //   path: '/manage/food',
+  //   icon: <FaIcons.FaPalette />
+  // },
   {
-    title: 'Món ăn',
-    path: '/manage/food',
-    icon: <FaIcons.FaPalette />
-  }
+    title: 'Đăng xuất',
+    path: '/',
+    icon: <FaIcons.FaSignOutAlt />,
+  },
 ]
 
 const SidebarDataCus = [
@@ -112,6 +122,11 @@ const SidebarDataCus = [
     title: 'Đánh giá',
     path: '/rating',
     icon: <FaIcons.FaGratipay />,
+  },
+  {
+    title: 'Đăng xuất',
+    path: '/',
+    icon: <FaIcons.FaSignOutAlt />,
   },
 ];
 
