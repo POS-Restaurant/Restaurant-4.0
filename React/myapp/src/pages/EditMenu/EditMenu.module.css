@@ -76,12 +76,12 @@
     flex-wrap: wrap;
     flex-direction: column;
     background-color: white;
-    width: 21%;
-    min-height: 290px;
+    width: 350px;
+    min-height: 270px;
     padding: 10px;
     border-radius: 10px;
     text-overflow: ellipsis;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     margin-left: 15px;
     justify-content: space-between;
 }
