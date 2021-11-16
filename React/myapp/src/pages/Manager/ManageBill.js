@@ -9,7 +9,7 @@ import { useState } from "react";
 import { Paper } from "@material-ui/core";
 import { Title } from "@devexpress/dx-react-chart-material-ui";
 import { PieSeries } from "@devexpress/dx-react-chart-material-ui";
-
+import Sidebar from "../../components/Sidebar";
 
 const SortBill = (props) => {
   
@@ -49,54 +49,57 @@ const SortBill = (props) => {
   ];
 
   return (
-    <Container >
-      <Row><Col xs={1} />
-        <Col>
-        <Button className='addCartItem' onClick={toggleOnlyFb}>Chỉ xem FeedBack</Button>
-          <MaterialTable style={{ zIndex: 0 }}
-            options={{
-              search: true,
-              exportButton: true,
-              grouping: group,
-              sorting: true
-            }}
-            actions={[
-              {
-                icon: FaInfo,
-                tooltip: "Xem chi tiết",
-                onClick: (event, rowData) => FullBill(rowData.idOrd),
-              },
-              {
-                icon: tableIcons.Add,
-                tooltip: "Groupby",
-                isFreeAction: true,
-                onClick: (event) => toggleGroup(),
-              },
-            ]}
-            columns={columns}
-            data={data}
-            title="Danh sách đơn đặt hàng"
-          />
+    <div>
+      <Sidebar type={2}/>
+      <Container >
+        <Row><Col xs={1} />
+          <Col>
+          <Button className='addCartItem' onClick={toggleOnlyFb}>Chỉ xem FeedBack</Button>
+            <MaterialTable style={{ zIndex: 0 }}
+              options={{
+                search: true,
+                exportButton: true,
+                grouping: group,
+                sorting: true
+              }}
+              actions={[
+                {
+                  icon: FaInfo,
+                  tooltip: "Xem chi tiết",
+                  onClick: (event, rowData) => FullBill(rowData.idOrd),
+                },
+                {
+                  icon: tableIcons.Add,
+                  tooltip: "Groupby",
+                  isFreeAction: true,
+                  onClick: (event) => toggleGroup(),
+                },
+              ]}
+              columns={columns}
+              data={data}
+              title="Danh sách đơn đặt hàng"
+            />
 
-        </Col>
-        <Modal isOpen={open} toggle={toggleModal}>
-          <Button onClick={toggleModal} style={{ zIndex: 1 }}>XXXXXX</Button>
-          <BillModal id={id} />
+          </Col>
+          <Modal isOpen={open} toggle={toggleModal}>
+            <Button onClick={toggleModal} style={{ zIndex: 1 }}>XXXXXX</Button>
+            <BillModal id={id} />
 
 
-        </Modal>
-        <Modal isOpen={chart} toggle={toggleChart}>
-          <Chart></Chart>
-        </Modal>
-      </Row>
+          </Modal>
+          <Modal isOpen={chart} toggle={toggleChart}>
+            <Chart></Chart>
+          </Modal>
+        </Row>
 
-    </Container>
+      </Container>
+    </div>
   )
 }
 export default SortBill;
 const BillModal = (idOrd) => {
-  const data = BillData;
-  const bill = data.filter((bill) => bill.idOrd === idOrd)[0];
+  // const data = BillData;
+  // const bill = data.filter((bill) => bill.idOrd === idOrd)[0];
   // const user=UserList.filter((user)=>user.id==bill.customer)[0];
   return (
     <div>

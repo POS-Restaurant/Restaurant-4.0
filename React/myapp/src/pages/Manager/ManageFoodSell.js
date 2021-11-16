@@ -4,7 +4,7 @@ import './manage_order.css';
 import MaterialTable from "material-table";
 import tableIcons from "./MaterialTableIcons";
 import { FoodOrdData } from "../FoodData";
-import { FaEdit, FaInfo } from "react-icons/fa";
+import { FaEdit } from "react-icons/fa";
 import { useState } from "react";
 import { Paper } from "@material-ui/core";
 import { Title } from "@devexpress/dx-react-chart-material-ui";

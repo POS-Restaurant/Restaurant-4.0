@@ -16,6 +16,7 @@ function ItemFood({
     typeFood,
     priceFood,
     numFood,
+    resFood,
     callBack = ()=>{}
 }) {
     return (
@@ -26,13 +27,16 @@ function ItemFood({
             <div className="nameFood" style={{width: "250px", paddingTop: "50px"}}>
                 Tên món: {nameFood}
             </div>
-            <div className="typeFood" style={{width: "250px", paddingTop: "50px"}}>
+            <div className="typeFood" style={{width: "200px", paddingTop: "50px"}}>
                 Loại: {checkType(typeFood)}
             </div>
-            <div className="priceFood" style={{width: "250px", paddingTop: "50px"}}>
+            <div className="resFood" style={{width: "300px", paddingTop: "50px"}}>
+                Nhà hàng: {resFood}
+            </div>
+            <div className="priceFood" style={{width: "225px", paddingTop: "50px"}}>
                 Giá tiền: {priceFood}
             </div>
-            <div className="numFood" style={{width: "250px", paddingTop: "50px"}}>
+            <div className="numFood" style={{width: "225px", paddingTop: "50px"}}>
                 Số lượng mua: {numFood}
             </div>
         </div>

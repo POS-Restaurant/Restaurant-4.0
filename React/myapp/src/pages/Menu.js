@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import { Container, Row, Col, Card, Input, Button, Modal } from "reactstrap";
 import { FoodOrdData } from "./FoodData";
 
-
 class PickFood extends Component {
     constructor(props) {
         super(props);
@@ -130,21 +129,17 @@ class PickFood extends Component {
                             <Col>
                             <div className='menuFoodName'> {food.food_name}</div>
                             <div className='menuFoodPrice'> Giá tiền : {food.price}</div>
+                            <Button className="infobtn" onClick={()=>{this.setState({currentFood:food}); this.toggleModal()}}>Xem chi tiết </Button>
+                            <Button
+                                className="addbtn"
+                                onClick={(e) => {
+                                    this.addFood(food);
+                                }}
+                            >
+                                Thêm vào giỏ hàng
+                                </Button>
                             </Col>
                         </Row>
-                        <Row className="foodRow2">
-                            <Button className="infobtn" onClick={()=>{this.setState({currentFood:food}); this.toggleModal()}}>Xem chi tiết </Button>
-                        <Button
-                            className="addbtn"
-                            onClick={(e) => {
-                                this.addFood(food);
-                            }}
-                        >
-                            Thêm vào giỏ hàng
-                        </Button>
-                        </Row>
-                        
-                        
                     </Card>
                 </div>
             );
