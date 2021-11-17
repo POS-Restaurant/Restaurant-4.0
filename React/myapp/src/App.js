@@ -1,7 +1,7 @@
 import './App.css';
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom"
 import { Redirect } from 'react-router';
-import OverviewCustomer, {OverviewChef, OverviewManager} from './pages/Overview';
+import OverviewCustomer, {OverviewChef, OverviewManager} from './pages/OverView/Overview';
 import EditMenu from './pages/EditMenu/EditMenu';
 import { Reports, ReportsOne, ReportsTwo, ReportsThree } from './pages/Reports';
 import PickFood from './pages/Menu';

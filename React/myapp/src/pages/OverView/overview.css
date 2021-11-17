@@ -1,0 +1,11 @@
+.carousel-item img {
+    width: 500px!important;
+}
+.carousel-inner {
+    display: flex;
+    width: 500px;
+    overflow: hidden;
+}
+.carousel-indicators{
+    display: none;
+}

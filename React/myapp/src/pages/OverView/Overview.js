@@ -1,6 +1,6 @@
 import React from 'react';
-import Sidebar from '../components/Sidebar'
-import OverViewCpn from './overViewCpn';
+import Sidebar from '../../components/Sidebar'
+import Carousel from 'react-elastic-carousel';
 function OverviewCustomer() {
   return (
     <div className='home'>
