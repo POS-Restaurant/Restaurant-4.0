@@ -27,7 +27,14 @@ function OverviewChef() {
   return (
     <div className='home'>
       <Sidebar type={1}/>
-      <h1>Chào mừng bạn đã đến website của chúng tôi!</h1>
+      <h1 style={{textAlign:'center'}}>Chào mừng bạn đã đến nhà hàng của chúng tôi!</h1>
+      <Carousel>
+        <Card img = {slide1} />
+        <Card img = {slide2} />
+        <Card img = {slide3} />
+        <Card img = {slide4} />
+        <Card img = {slide5} />
+      </Carousel>
     </div>
   );
 };
@@ -35,7 +42,14 @@ function OverviewManager() {
   return (
     <div className='home'>
       <Sidebar type={2}/>
-      <h1>Chào mừng bạn đã đến website của chúng tôi!</h1>
+      <h1 style={{textAlign:'center'}}>Chào mừng bạn đã đến nhà hàng của chúng tôi!</h1>
+      <Carousel>
+        <Card img = {slide1} />
+        <Card img = {slide2} />
+        <Card img = {slide3} />
+        <Card img = {slide4} />
+        <Card img = {slide5} />
+      </Carousel>
     </div>
   );
 };
