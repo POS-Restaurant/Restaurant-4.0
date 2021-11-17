@@ -1,12 +1,25 @@
 import React from 'react';
 import Sidebar from '../../components/Sidebar'
 import Carousel from 'react-elastic-carousel';
+import Card from './card'
+import './overview.css'
+import slide1 from './slide1.jpg'
+import slide2 from './slide2.jpg'
+import slide3 from './slide3.jpg'
+import slide4 from './slide4.jpg'
+import slide5 from './slide5.jpg'
 function OverviewCustomer() {
   return (
     <div className='home'>
       <Sidebar type={0}/>
-      <h1>Chào mừng bạn đã đến website của chúng tôi!</h1>
-      <OverViewCpn />
+      <h1 style={{textAlign:'center'}}>Chào mừng bạn đã đến nhà hàng của chúng tôi!</h1>
+      <Carousel>
+        <Card img = {slide1} />
+        <Card img = {slide2} />
+        <Card img = {slide3} />
+        <Card img = {slide4} />
+        <Card img = {slide5} />
+      </Carousel> 
     </div>
   );
 };
@@ -15,7 +28,6 @@ function OverviewChef() {
     <div className='home'>
       <Sidebar type={1}/>
       <h1>Chào mừng bạn đã đến website của chúng tôi!</h1>
-      <OverViewCpn />
     </div>
   );
 };
@@ -24,7 +36,6 @@ function OverviewManager() {
     <div className='home'>
       <Sidebar type={2}/>
       <h1>Chào mừng bạn đã đến website của chúng tôi!</h1>
-      <OverViewCpn />
     </div>
   );
 };
