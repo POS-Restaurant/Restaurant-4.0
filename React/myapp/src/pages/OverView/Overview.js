@@ -10,7 +10,7 @@ import slide4 from './slide4.jpg'
 import slide5 from './slide5.jpg'
 function OverviewCustomer() {
   return (
-    <div className='home'>
+    <div className='overView'>
       <Sidebar type={0}/>
       <h1 style={{textAlign:'center'}}>Chào mừng bạn đã đến nhà hàng của chúng tôi!</h1>
       <Carousel>
