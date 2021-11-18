@@ -1,0 +1,122 @@
+.orderDetail{
+    width: 80%;
+    height: 100vh;
+    /* background-color: red; */
+    display:flex;
+    flex-direction: column;
+
+}
+/**/
+.generalDetail{
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+    height: 200px;
+    /* background-color: blue; */
+}
+
+.orderId{
+    font-size: 32px;
+    margin: 10px 0px;
+}
+
+.detailInfoBar
+{
+    background-color: dodgerblue;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.detailInfoBar > div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+}
+
+.orderDetailList{
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 20px 20px 0px #c9c9c950;
+}
+
+.total{
+    height: 100px;
+    width: 30%;
+    /* background-color: green; */
+    align-self: flex-end;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.totalPay{
+    color: red;
+    font-size: 32px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+.orderDetailCard{
+    height: 150px;
+    width: 100%;
+    /* background-color: green; */
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid 1px #dddddd;
+}
+
+.orderDetailCard > div{
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+.product{
+    height: 100%;
+    width: 30%;
+    /* background-color: magenta; */
+    align-items: center;
+    justify-content: space-between;
+}
+
+.productPic{
+    width: 100px;
+    height: 100px;
+    background-color: dodgerblue;
+    border-radius: 10px;
+}
+
+.productName{
+    text-transform: uppercase;
+    width: calc(100% - 100px);
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.price{
+    height: 100%;
+    width: 10%;
+    /* background-color: magenta; */
+    justify-content: center;
+}
+.quantity{
+    height: 100%;
+    width: 10%;
+    /* background-color: magenta; */
+    justify-content: center;
+}
+.note{
+    height: 100%;
+    width: 30%;
+    /* background-color: magenta; */
+}
+.tempPay{
+    height: 100%;
+    width: 15%;
+    /* background-color: magenta; */
+    justify-content: center;
+}

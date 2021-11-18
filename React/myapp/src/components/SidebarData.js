@@ -21,28 +21,6 @@ const SidebarDataChef = [
       icon: <FaIcons.FaSignOutAlt />,
     },
 ];
-const SidebarDataAdmin = [
-    {
-      title: 'Cấp quyền tài khoản',
-      path: '/admin/permission',
-      icon: <IoIcons.IoIosPaper />
-    },
-    {
-      title: 'Cập nhật dữ liệu',
-      path: '/admin/updatedata',
-      icon: <FaIcons.FaFileInvoiceDollar />
-    },
-    {
-      title: 'Bảo trì hệ thống',
-      path: '/admin/maintenanceSys',
-      icon: <FaIcons.FaFileInvoiceDollar />
-    },
-    {
-      title: 'Đăng xuất',
-      path: '/',
-      icon: <FaIcons.FaSignOutAlt />,
-    },
-];
 const SidebarDataMngr = [
   {
     title: 'Cập nhật thông tin',
@@ -59,11 +37,11 @@ const SidebarDataMngr = [
     path: '/manage/bill',
     icon: <FaMoneyBill />
   },
-  // {
-  //   title: 'Món ăn',
-  //   path: '/manage/food',
-  //   icon: <FaIcons.FaPalette />
-  // },
+  {
+    title: 'Món ăn',
+    path: '/manage/food',
+    icon: <FaIcons.FaPalette />
+  },
   {
     title: 'Đăng xuất',
     path: '/',
@@ -82,12 +60,12 @@ const SidebarDataCus = [
     subNav: [
       {
         title: 'Chọn món',
-        path: '/customer/orderFood',
+        path: '/customer/orderfood',
         icon: <IoIcons.IoIosPaper/>
       },
       {
         title: 'Đặt bàn',
-        path: '/customer/orderTable',
+        path: '/customer/ordertable',
         icon: <IoIcons.IoIosPaper />
       }
     ]
@@ -111,11 +89,6 @@ const SidebarDataCus = [
         path: '/customer/account/notify',
         icon: <FaIcons.FaBell />
       },
-      {
-        title: 'Danh sách địa chỉ',
-        path: '/customer/account/myaddress',
-        icon: <FaIcons.FaMap />
-      }
     ]
   },
   {
@@ -135,7 +108,6 @@ const SidebarDataCus = [
   },
 ];
 
-export {SidebarDataAdmin};
 export {SidebarDataChef};
 export {SidebarDataMngr};
 export default SidebarDataCus;

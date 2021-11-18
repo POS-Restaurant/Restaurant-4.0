@@ -11,6 +11,7 @@ import { Title } from "@devexpress/dx-react-chart-material-ui";
 import { PieSeries } from "@devexpress/dx-react-chart-material-ui";
 import { Switch } from "@material-ui/core";
 import { Redirect } from "react-router";
+import Sidebar from "../../components/Sidebar";
 const SortFood = (props) => {
   
 //   const [open, setOpen] = useState(true);
@@ -48,6 +49,7 @@ const toggleOnlyFb = () => {
 
   return (
     <Container >
+      <Sidebar type={2}/>
       <Row><Col xs={1} />
         <Col>
         <Button className='addCartItem' onClick={toggleOnlyFb}>Chỉ xem FeedBack</Button>
@@ -84,7 +86,7 @@ const toggleOnlyFb = () => {
 
         </Modal> */}
         <Modal isOpen={chart} toggle={toggleChart}>
-          <Chart></Chart>
+          {/* <Chart></Chart> */}
         </Modal>
       </Row>
 

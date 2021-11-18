@@ -1,0 +1,79 @@
+.orderTable .container-table {
+	max-width: 1200px;
+	width: 70%;
+	margin: 0 auto;
+}
+
+.orderTable h3{
+	margin: 0;
+}
+:root {
+	--green-1: #26643b;
+    --blue-1: #2f5ee0;
+	--green-2: #a2de96;
+	--lightGreen-1: #d6e5d8;
+	--lightGreen-2: #f5fcf4;
+	--black-1: #3b413a;
+	--black-2: #3f3c3c;
+	--black-3: #5b6359;
+	--white-1: #e8e8e8;
+}
+
+.orderTable .btn-table {
+	color: var(--blue-1);
+	font-family: Poppins;
+	font-weight: 500;
+	border-radius: 8px;
+	font-size: 1.4rem;
+	padding: 1.2rem 2rem;
+}
+.orderTable .primary-btn-table {
+	color: var(--white-1);
+	background: var(--blue-1);
+}
+
+.orderTable .form__title {
+	font-size: 3rem; /*1.8*/
+	color: var(--black-1);
+	font-weight: 1500;
+}
+.orderTable .form__wrapper {
+	padding: 2rem 0;
+}
+.orderTable .form__wrapper form {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 2rem;
+}
+.orderTable .form__group label {
+	font-size: 1.6rem;
+	font-family: Poppins;
+	color: var(--black-2);
+	font-weight: 500;
+}
+.orderTable .form__group input,
+.orderTable .form__group textarea,
+.orderTable .form__group select {
+	width: 100%;
+	border: none;
+	background-color: var(--white-1);
+	font-size: 1.4rem;
+	font-family: Raleway;
+	font-weight: 600;
+	padding: 1.5rem;
+	border-radius: 8px;
+	margin-top: 0.5rem;
+	color: var(--black-2);
+	cursor: pointer;
+}
+.orderTable .form__group textarea {
+	resize: vertical;
+}
+.orderTable .form__wrapper button[type='submit'] {
+	width: max-content;
+	border: none;
+	padding: 1rem 4rem;
+	font-weight: 500;
+	letter-spacing: 0.1rem;
+	cursor: pointer;
+}

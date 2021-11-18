@@ -36,13 +36,13 @@ family=Lato&display=swap'); */
   border: 1px solid #458FF6;
   Width :120px;
   margin: 10px;
- Height :50px;
- Top :145px;
- Left :111px;
+  Height :50px;
+  Top :145px;
+  Left :111px;
  font-size: 24;
  font-family: 'Barlow';
- -webkit-transition: -webkit-transform 1s,opacity 1s,background
- 1s,width 1s,height 1s,font-size 1s;
+ /* -webkit-transition: -webkit-transform 1s,opacity 1s,background
+ 1s,width 1s,height 1s,font-size 1s; */
  }
  .type-button:hover,.type-button.active{
   background-color:#62AFFC;

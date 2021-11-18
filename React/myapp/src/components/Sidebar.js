@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
-import SidebarDataCus, {SidebarDataAdmin, SidebarDataChef, SidebarDataMngr} from './SidebarData';
+import SidebarDataCus, {SidebarDataChef, SidebarDataMngr} from './SidebarData';
 import SubMenu from './SubMenu';
 import { IconContext } from 'react-icons/lib';
 import './Sidebar.css'
@@ -61,10 +61,6 @@ function Sidebar({type}) {
       })
     if (type === 2)
       return SidebarDataMngr.map((item, index) => {
-        return <SubMenu item={item} key={index} />;
-      })
-    if (type === 3)
-      return SidebarDataAdmin.map((item, index) => {
         return <SubMenu item={item} key={index} />;
       })
   }

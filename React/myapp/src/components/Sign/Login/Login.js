@@ -4,7 +4,7 @@
 import { Input, Row, Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import sign from "../Sign.module.css";
-import {typeUser} from './prelogin';
+import { typeUser } from './prelogin';
 function Login(props) {
     function handleUserType(Utype) {
         if (Utype === 0) {
@@ -17,7 +17,7 @@ function Login(props) {
             return "admin";
         }
     }
-    let type=handleUserType(typeUser)
+    let type = handleUserType(typeUser)
     return (
         <div className={sign.Login}>
             <div className={sign.Login}>
@@ -36,33 +36,34 @@ function Login(props) {
                                     <label>Mật khẩu</label>
                                 </div>
                                 <div className={sign.col}>
-                                    <Link to={"/forgetpass"} >
-                                        <Button
-                                            className={`${sign.linkbutton} ${sign.switchForget}`}
-                                            onClick={props.onForget}
-                                            style={{cursor: 'pointer'}}
-                                        >
-                                            Quên mật khẩu
-                                        </Button>
-                                    </Link>
+
                                 </div>
                             </div>
                             <Input name="pwd" type="password" required />
                         </div>
                         <div className={sign.field}>
-                            <Link to={"/"+type+"/overview"}>
-                                <Button onClick={props.onQuit} style={{cursor: 'pointer'}}>
+                            <Link to={"/" + type + "/overview"}>
+                                <Button onClick={props.onQuit} style={{ cursor: 'pointer' }}>
                                     Đăng nhập
                                 </Button>
                             </Link>
                         </div>
                         <div className={`${sign.field} ${sign.change}`}>
                             <Row className={sign.ask}>
+                                <Link to={"/forgetpass"} >
+                                    <Button
+                                        className={`${sign.linkbutton} ${sign.switchForget}`}
+                                        onClick={props.onForget}
+                                        style={{ cursor: 'pointer' }}
+
+                                    >
+                                        Quên mật khẩu
+                                    </Button>
+                                </Link>
                                 <Link to={"/signup"}>
-                                <label>Chưa có tài khoản?</label>
-                                <Button className={sign.linkbutton} onClick={props.onSignup} style={{cursor: 'pointer'}}>
-                                    Đăng ký
-                                </Button>
+                                    <Button className={sign.linkbutton} onClick={props.onSignup} style={{ cursor: 'pointer' }}>
+                                        Chưa có tài khoản? Đăng ký
+                                    </Button>
                                 </Link>
                             </Row>
                         </div>

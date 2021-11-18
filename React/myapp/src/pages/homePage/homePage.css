@@ -1,0 +1,47 @@
+.homePage .titlePage{
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+.homePage .bodyPage{
+    height: 93.5vh;
+}
+.homePage{
+    background-color: #f1f1f1;
+}
+.homePage .resCard{
+    height: 390px;
+    width: 270px;
+    margin: 10px;
+}
+.containCardRes{
+    float: left;
+    width: 270px;
+    padding: 1%;
+}
+.homePage .scroll-bg-menu{
+    width: 100%;
+}
+.homePage .scroll-div-menu{
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.homePage .unitResLink{
+    text-decoration: none;
+}
+.homePage .btn-goto{
+    color: #fff;
+    background-color: rgba(255, 0, 0, 0.63);
+    width: 100px;
+    height: 25px;
+    margin: 1% auto;
+    border-radius: 10px;
+    padding-top: 1%;
+}
+.homePage .btn-goto:hover{
+    color: rgba(255, 0, 0, 0.63);
+    background-color: #fff;
+    border: 1px solid rgba(255, 0, 0, 0.63);
+}

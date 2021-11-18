@@ -4,18 +4,27 @@ import FoodItem from "./FoodItem";
 import {AiOutlinePlusCircle} from 'react-icons/ai';
 import PopupFoodItem from "./PopupFoodItem";
 import Sidebar from "../../components/Sidebar";
-
+import BanhNgot from '../../imageFood/BanhNgot.jpg';
+import { FoodOrdData } from "../FoodData";
+import {FaSearch} from 'react-icons/fa'
 
 
 function EditMenu() {
     const [buttonPopup, setButtonPopup] = useState(false);
+    const data=FoodOrdData.food_list;
+    const foodItems = data.map(e => (
+        <FoodItem onClick={() => setButtonPopup(true)} name={e.food_name} src={e.img} price={e.price} protein={e.Protein} material={e.Material} decoration={e.decoration} />
+      ));
     return (
         <div>
             <Sidebar type={2}/>
             <div className={styles.container}>
                 <div className={styles.topbar}>
                     <span className={styles.topbarLabel}>Chỉnh sửa menu</span>
-                    <input className={styles.topbarInput} type='search' />
+                    <div>
+                    <input style = {{ height: 46, width: 500}} type="text" name="searchFood" className={styles.searchBar} placeholder="Tìm kiếm" />
+                    <FaSearch className = {styles.searchIcon}/>
+                    </div>
                 </div>
                 <div className={styles.filter}>
                     <button className={styles.btn}>Tất cả</button>
@@ -28,30 +37,11 @@ function EditMenu() {
                         <AiOutlinePlusCircle className={styles.itemIcon} onClick={() => setButtonPopup(true)} />
                         <p className={styles.addItemLabel} onClick={() => setButtonPopup(true)} >Thêm món mới</p>
                     </div>
-                    <FoodItem onClick={() => setButtonPopup(true)} name='Bánh ngọt' src='../image/BanhNgot.jpg' price='40000' protein='Blank' material='Meat' decoration='Cheese' />
-                    <FoodItem onClick={() => setButtonPopup(true)} name='Bánh ngọt' src='../image/BanhNgot.jpg' price='40000' protein='Blank' material='Meat' decoration='Cheese' />
-                    <FoodItem onClick={() => setButtonPopup(true)} name='Bánh ngọt' src='../image/BanhNgot.jpg' price='40000' protein='Blank' material='Meat' decoration='Cheese' />
-                    <FoodItem onClick={() => setButtonPopup(true)} name='Bánh ngọt' src='../image/BanhNgot.jpg' price='40000' protein='Blank' material='Meat' decoration='Cheese' />
-                    <FoodItem onClick={() => setButtonPopup(true)} name='Bánh ngọt' src='../image/BanhNgot.jpg' price='40000' protein='Blank' material='Meat' decoration='Cheese' />
-                    <FoodItem onClick={() => setButtonPopup(true)} name='Bánh ngọt' src='../image/BanhNgot.jpg' price='40000' protein='Blank' material='Meat' decoration='Cheese' />
-                    <FoodItem onClick={() => setButtonPopup(true)} name='Bánh ngọt' src='../image/BanhNgot.jpg' price='40000' protein='Blank' material='Meat' decoration='Cheese' />
-                    <FoodItem onClick={() => setButtonPopup(true)} name='Bánh ngọt' src='../image/BanhNgot.jpg' price='40000' protein='Blank' material='Meat' decoration='Cheese' />
-                    <FoodItem onClick={() => setButtonPopup(true)} name='Bánh ngọt' src='../image/BanhNgot.jpg' price='40000' protein='Blank' material='Meat' decoration='Cheese' />
-                    <FoodItem onClick={() => setButtonPopup(true)} name='Bánh ngọt' src='../image/BanhNgot.jpg' price='40000' protein='Blank' material='Meat' decoration='Cheese' />
-                    <FoodItem onClick={() => setButtonPopup(true)} name='Bánh ngọt' src='../image/BanhNgot.jpg' price='40000' protein='Blank' material='Meat' decoration='Cheese' />
-                    <FoodItem onClick={() => setButtonPopup(true)} name='Bánh ngọt' src='../image/BanhNgot.jpg' price='40000' protein='Blank' material='Meat' decoration='Cheese' />
-                    <FoodItem onClick={() => setButtonPopup(true)} name='Bánh ngọt' src='../image/BanhNgot.jpg' price='40000' protein='Blank' material='Meat' decoration='Cheese' />
-                    <FoodItem onClick={() => setButtonPopup(true)} name='Bánh ngọt' src='../image/BanhNgot.jpg' price='40000' protein='Blank' material='Meat' decoration='Cheese' />
-                    <FoodItem onClick={() => setButtonPopup(true)} name='Bánh ngọt' src='../image/BanhNgot.jpg' price='40000' protein='Blank' material='Meat' decoration='Cheese' />
-                    <FoodItem onClick={() => setButtonPopup(true)} name='Bánh ngọt' src='../image/BanhNgot.jpg' price='40000' protein='Blank' material='Meat' decoration='Cheese' />
-                    <FoodItem onClick={() => setButtonPopup(true)} name='Bánh ngọt' src='../image/BanhNgot.jpg' price='40000' protein='Blank' material='Meat' decoration='Cheese' />
-                    <FoodItem onClick={() => setButtonPopup(true)} name='Bánh ngọt' src='../image/BanhNgot.jpg' price='40000' protein='Blank' material='Meat' decoration='Cheese' />
-                    <FoodItem onClick={() => setButtonPopup(true)} name='Bánh ngọt' src='../image/BanhNgot.jpg' price='40000' protein='Blank' material='Meat' decoration='Cheese' />
-                    <FoodItem onClick={() => setButtonPopup(true)} name='Bánh ngọt' src='../image/BanhNgot.jpg' price='40000' protein='Blank' material='Meat' decoration='Cheese' />
-                    <FoodItem onClick={() => setButtonPopup(true)} name='Bánh ngọt' src='../image/BanhNgot.jpg' price='40000' protein='Blank' material='Meat' decoration='Cheese' />
+                    
+                    {foodItems}
                 </div>
 
-                <PopupFoodItem trigger={buttonPopup}  setTrigger={setButtonPopup} img='../image/BanhNgot.jpg'/>
+                <PopupFoodItem trigger={buttonPopup}  setTrigger={setButtonPopup} img={BanhNgot}/>
             </div>
         </div>
         

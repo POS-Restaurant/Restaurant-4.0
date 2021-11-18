@@ -3,6 +3,7 @@
 
 *{
     font-family: 'Barlow', sans-serif;
+    
 }
 .container{
     background-color: #f1f1f1;
@@ -48,14 +49,14 @@
     border: none;
     color: black;
     background-color: white;
-    min-width: 275px;
-    text-overflow: ellipsis;
+    min-width: 200px;
+    /* text-overflow: ellipsis; */
     font-size: 20px;
     font-weight: 500;
     cursor: pointer;
     padding: 10px 15px;
     border-radius: 50px;
-    margin-bottom: 12px;
+    /* margin-bottom: 12px; */
 }
 .btn:hover{
     background-color: #2685f8;
@@ -67,7 +68,7 @@
     display: flex;
     flex-wrap: wrap;
     margin: 3%;
-    justify-content: flex-start;
+    justify-content:space-between;
 }
 
 .itemContainer{
@@ -75,13 +76,14 @@
     flex-wrap: wrap;
     flex-direction: column;
     background-color: white;
-    width: 355px;
-    min-height: 290px;
+    width: 350px;
+    min-height: 270px;
     padding: 10px;
     border-radius: 10px;
     text-overflow: ellipsis;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     margin-left: 15px;
+    justify-content: space-between;
 }
 
 .itemContainer1{
@@ -106,24 +108,27 @@
 .itemBody{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     justify-content: space-between;
     margin-bottom: 10px;
 }
 
 .itemPic{
-    width: 50%;
-    height: 70%;
+    width: 175px;
+    height: 200px;
     border-radius: 10px;
 }
 .itemInfo{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 145px;
+    height: 100%;
 }
 .itemName{
-    text-align: center;
-    width: 100%;
+    /* text-align: center; */
+    /* text-overflow:ellipsis ; */
+    
     font-size: 25px;
     font-weight: 600;
 }
@@ -139,7 +144,7 @@
 .itemPrice{
     color: blue;
     font-size: 25px;
-    text-align:center
+    /* text-align:center */
 }
 
 .btn1{
@@ -354,4 +359,18 @@
 .btn3:hover{
     background-color: rgb(243, 255, 173);
     color: rgb(0, 0, 0);
+}
+.searchIcon {
+    height:20px;
+    width:20px;
+    top: 5px;
+    left: -35px;
+    position: relative;
+}
+.searchBar{
+    border-radius: 20px;
+    border: 1px solid black;
+    border: none;
+    font-size: 22px;
+    min-width: 800px;
 }
