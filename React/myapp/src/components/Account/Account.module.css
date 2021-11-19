@@ -1,11 +1,16 @@
 * {
     font-family: Roboto;
+    /* background-color: none; */
 }
 
-.Info{
+h1{
+    background-color: #00000000;
+    color: black;
+}
+
+.Info {
     position: relative;
 }
-
 
 .Content {
     top: 0%;
@@ -75,7 +80,9 @@
     height: 240px;
 }
 .UserInfo {
+    position: relative;
     display: inline-block;
+    width: 100%;
 }
 
 .UserInfo .MainContent {
@@ -88,7 +95,7 @@
     /* background-color: white; */
 }
 
-.MainContent.info{
+.MainContent.info {
     background-color: white;
 }
 
@@ -99,30 +106,36 @@
 
 .UserInfo .MainContent .infoInsideContent {
     margin: auto;
-    padding: 20px 0px; 
+    padding: 20px 0px;
     width: 70%;
     /* background-color: #ffffff; */
 }
 
-.field{
+.field {
     /* background-color: #796fff; */
+    display: flex;
+    justify-content: space-between;
     margin: 20px;
     position: relative;
 }
 
-.field label{
+.field * {
+    font-size: 14px;
+}
+
+.field label {
     display: inline-block;
     height: 100%;
     box-sizing: border-box;
 }
 
-.field input{
+.field input {
     position: absolute;
     display: inline-block;
     width: 80%;
     height: 40px;
     right: 0px;
-    font-size: 20px;
+    /* font-size: 20px; */
     background: #efefef;
     border: 1px solid #868686;
     padding: 10px;
@@ -134,17 +147,23 @@
     display: block;
     width: 200px;
     height: 50px;
-    font-size: 20px;
+    /* font-size: 20px; */
     color: white;
     margin: 20px auto;
     border-radius: 5px;
 }
 
-.changeInfo {
+.changePassword.update {
     background-color: #cc101c;
 }
-.changePassword {
-    background-color: #1b10cc;
+.changeInfo.update {
+    background-color: #0755ff;
+}
+.changePassword.update:hover {
+    background-color: #aa0c16;
+}
+.changeInfo.update:hover {
+    background-color: #084bdd;
 }
 .UserInfo label {
     display: inline-block;
@@ -160,9 +179,10 @@
     /* height: 50px; */
 }
 
-.inputGender{
-    position: absolute;
-    display: inline-block;
+.inputGender {
+    /* position: absolute; */
+    display: flex;
+    justify-content: space-between;
     right: 0%;
     width: 80%;
     height: 100%;
@@ -170,9 +190,18 @@
     /* background-color: red; */
 }
 
-.selectGender{
-    width: 15%;
+.genderValue {
     display: inline-block;
+    width: 80%;
+    height: 40px;
+    /* background-color: red;; */
+}
+
+.selectGender {
+    width: 15%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     position: relative;
     /* position: absolute; */
     top: 50%;
@@ -181,11 +210,11 @@
     margin: 0px 40px;
 }
 
-.selectGender label{
-    width: fit-content
+.selectGender label {
+    width: fit-content;
 }
 
-.selectGender input{
+.selectGender input {
     display: inline-block;
     width: 20px;
     height: 20px;
@@ -194,4 +223,85 @@
     transform: translateY(-50%);
     padding: 0px;
     margin: 0px;
+}
+
+.changePass {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    position: absolute;
+    width: 80%;
+    /* top: 80%; */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    padding: 40px 0px;
+}
+
+.changePassForm {
+    /* position: absolute; */
+    /* background-color: red; */
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.changePassForm button {
+    margin: 10px 0px;
+}
+
+.changePassConfirm,
+.changePassCancel {
+    width: 180px;
+    height: 50px;
+}
+
+.changePassCancel{
+    background-color: #cc101c!important;
+}
+.changePassConfirm {
+    background-color: #0755ff !important;
+}
+.changePassCancel:hover{
+    background-color: #ad101b!important;
+}
+.changePassConfirm:hover {
+    background-color: #0945c7 !important;
+}
+
+/* .changePassCancel {
+    background-color: #ff313f;
+}
+.changePassCancel:hover {
+    background-color: #cc101c;
+}
+
+.changePassCancel:active {
+    background-color: #94000a;
+} */
+
+.passField {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+.passField label {
+    width: 30%;
+    display: inline-block;
+}
+.passField input {
+    /* position: absolute; */
+    display: inline-block;
+    width: 70%;
+    height: 40px;
+    right: 0px;
+    /* font-size: 14px; */
+    background: #efefef;
+    border: 1px solid #dddddd;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
 }
