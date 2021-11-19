@@ -13,7 +13,7 @@ let Restaurant = new Schema({
     address: {
         type: String,
     },
-    rating: {
+    rateScore: {
         type: Number
     },
     foodList: {
