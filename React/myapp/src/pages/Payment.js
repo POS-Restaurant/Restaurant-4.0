@@ -18,7 +18,7 @@ function Payment(){
               if (warning !== null && warning !== undefined) {
                   alert(warning);
               } else if (token) {
-                alert("Success");
+                alert(res.data.Customer.id);
               }
           }
       ).catch((err) => {
