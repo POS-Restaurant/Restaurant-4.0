@@ -26,18 +26,19 @@ mongoose
   );
 
 const FoodRoutes = require("./Route/Food.router");
-const OrderRoutes = require("./Route/Order.router");
+const StaffRoutes = require("./Route/Staff.router");
 const RestaurantRoutes = require("./Route/Restaurant.router");
 const ClientRoutes = require("./Route/Client.router");
+const OrderRoutes = require("./Route/Order.router");
 app.use(cors());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use("/Food/", FoodRoutes);
-app.use("/Order/", OrderRoutes);
-app.use("/Restaurant/", OrderRoutes);
+app.use("/Staff/", StaffRoutes);
+app.use("/Restaurant/", RestaurantRoutes);
 app.use("/Client/", ClientRoutes);
-
+app.use("/Order/", OrderRoutes);
 app.use(
   session({
     secret: "kjcxlchiy48236",

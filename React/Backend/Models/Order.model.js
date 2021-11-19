@@ -2,33 +2,39 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 // Define collection and schema for login
-let Staff = new Schema({
+let Order = new Schema({
     id: {
         type: String,
         unique: true
     },
-    name:{
+    Restaurant: {
         type: String
     },
-    phone:{
+    name: {
+        type: String,
+        unique: true
+    },
+    kind: {
         type: String
     },
-    email: {
-        type: String
+    img: {
+        type:String
     },
-    Bday: {
-        type: Date
+    protein: {
+        type:Date
     },
-    sex: {
+    material: {
+        type:String
+    }
+    ,
+    decoration: {
+        type:String
+    }
+    ,
+    rating: {
         type: Number
-    },
-    IDres: {
-        type: String
-    },
-    type : {
-        type: String
     }
 }
 );
 
-module.exports = mongoose.model('Staff', Staff, "Staff");
+module.exports = mongoose.model('Food', Food, "Food");
