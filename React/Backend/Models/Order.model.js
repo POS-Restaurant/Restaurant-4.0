@@ -10,28 +10,16 @@ let Order = new Schema({
     Restaurant: {
         type: String
     },
-    name: {
-        type: String,
-        unique: true
+    statAs:{
+        type: string
     },
-    kind: {
-        type: String
+    FoodIDs:{
+        type: Array
     },
-    img: {
-        type:String
+    FoodAmount:{
+        type: Array
     },
-    protein: {
-        type:Date
-    },
-    material: {
-        type:String
-    }
-    ,
-    decoration: {
-        type:String
-    }
-    ,
-    rating: {
+    total:{
         type: Number
     }
 }

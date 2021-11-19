@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 // Define collection and schema for login
-let Order = new Schema({
+let Staff = new Schema({
     id: {
         type: String,
         unique: true
@@ -27,14 +27,8 @@ let Order = new Schema({
     },
     type : {
         type: String
-    },
-    FoodIDs:{
-        type: Array
-    },
-    total:{
-        type: Number
     }
 }
 );
 
-module.exports = mongoose.model('Order', Order, "Order");
+module.exports = mongoose.model('Staff', Staff, "Staff");
