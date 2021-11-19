@@ -30,7 +30,7 @@ const SortBill = (props) => {
     setChart(!chart)
   }
   const FullBill = (idOrd) => {
-    if (id != idOrd) {
+    if (id !== idOrd) {
       setId(idOrd);
       setOpen(true);
 
