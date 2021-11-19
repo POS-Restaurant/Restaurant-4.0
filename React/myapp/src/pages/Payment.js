@@ -4,7 +4,27 @@ import { Scrollbars } from 'react-custom-scrollbars';
 import data from './Paydata'
 import Sidebar from '../components/Sidebar'
 import searchIcon from '../image/OIP.jpg'
+import axios from 'axios';
 function Payment(){
+    function handleSubmit() {
+        const client = {
+          username: "1",
+          password: "2",
+        }
+        const response = axios.post('http://localhost:3000/Client/', client).then(
+          (res) => {
+              const token = res.data.token;
+              const warning = res.data.msg;
+              if (warning !== null && warning !== undefined) {
+                  alert(warning);
+              } else if (token) {
+                alert("Success");
+              }
+          }
+      ).catch((err) => {
+        alert("Error");
+        })
+      }
     function fine(a){
         if (a == 1)
             return (
@@ -51,7 +71,7 @@ function Payment(){
                         <input className="input" type="text" name="daynumber" placeholder="Nhập số tiền giao dịch" />
                             <img id="searchIcon" src= {searchIcon} alt="SearchIcon" />
                         </div>
-                        <button class="bottomBtn" type="button">Xác nhận</button>
+                        <button class="bottomBtn" type="button" onClick={()=>handleSubmit()}>Xác nhận</button>
                     </Row>
                     </Row>
                     <Row className={eda===0?'active':'hide'}>
