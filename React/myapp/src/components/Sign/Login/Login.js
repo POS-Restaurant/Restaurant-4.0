@@ -4,6 +4,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import { Input, Row, Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import sign from "../Sign.module.css";
+
 import { typeUser } from "./prelogin";
 import { useState } from "react";
 import axios from "axios";
@@ -20,8 +21,31 @@ function Login(props) {
             return "admin";
         }
     }
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    let type = handleUserType(typeUser)
+    if (localStorage.getItem("id")) {
+        return (
+            <Switch>
+                <Redirect to={"/" + type + "/overview"} />
+            </Switch>
+        );
+    } else return (
+        <div className={sign.Login}>
+            <div className={sign.Login}>
+                <div className={sign.LoginForm}>
+                    <div className={sign.logContent}>
+                        <h1>Đăng Nhập</h1>
+                        <div className={sign.field}>
+                            <Row>
+                                <label>Email</label>
+                            </Row>
+                            <Input name="Phone" type="email" required />
+                        </div>
+                        <div className={sign.field}>
+                            <div>
+                                <div className={sign.col}>
+                                    <label>Mật khẩu</label>
+                                </div>
+                                <div className={sign.col}>
 
     function onSubmit(event) {
         event.preventDefault();
@@ -70,6 +94,7 @@ function Login(props) {
                                     required
                                 />
                             </div>
+
                             <div className={sign.field}>
                                 {/* <Link to={"/" + type + "/overview"}> */}
                                 <Button

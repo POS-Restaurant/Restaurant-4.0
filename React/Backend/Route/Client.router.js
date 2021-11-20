@@ -11,6 +11,18 @@ ClientRoutes.get("/username", (req, res) => {
     });
 });
 
+ClientRoutes.get("/username",(req,res)=>{
+    Client.find((err,results)=>{res.json(results[0])})
+})
+
+
+ClientRoutes.post('/changepwd', (req,res)=>{
+    console.log(req.query.name);//{ name: 'VHP' }
+    Client.updateOne({name: req.query.name},{name: req.query.newname},(err,results)=>{res.json(req.query.newname)})
+})
+
+
+
 ClientRoutes.post("/", async (req, res) => {
     // return res.json({ status:403,msg: "Password is Invalid!" });
     try {
