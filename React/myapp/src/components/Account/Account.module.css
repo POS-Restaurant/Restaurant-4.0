@@ -282,17 +282,17 @@ h1{
     background-color: #94000a;
 } */
 
-.passField {
+.control {
     width: 100%;
     height: 60px;
     display: flex;
     align-items: center;
 }
-.passField label {
+.control label {
     width: 30%;
     display: inline-block;
 }
-.passField input {
+.control input {
     /* position: absolute; */
     display: inline-block;
     width: 70%;

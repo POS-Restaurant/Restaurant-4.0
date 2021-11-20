@@ -1,10 +1,15 @@
-const express = require('express');
+const express = require("express");
 const ClientRoutes = express.Router();
-const config = require('../configure.js');
-const jwt = require('jsonwebtoken');
+const config = require("../configure.js");
+const jwt = require("jsonwebtoken");
 
-let Client = require('../Models/Client.model');
+let Client = require("../Models/Client.model");
 
+ClientRoutes.get("/username", (req, res) => {
+    Client.find((err, results) => {
+        res.json(results[0]);
+    });
+});
 
 ClientRoutes.get("/username",(req,res)=>{
     Client.find((err,results)=>{res.json(results[0])})
@@ -34,16 +39,16 @@ ClientRoutes.post("/", async (req, res) => {
         //     return res.json({ status:403,msg: "Password is Invalid!" });
 
         //jwt secret
-        const token = jwt.sign({ id: "1234" }, config.JWT_SECRET, { expiresIn: '1h' });
+        const token = jwt.sign({ id: "1234" }, config.JWT_SECRET, {
+            expiresIn: "1h",
+        });
         res.status(200).json({
             token,
             Customer: {
-                id:username,
-                name:password,
+                id: username,
+                name: password,
             },
         });
-
-
     } catch (err) {
         res.status(400).json({ msg: "Validation Error" });
         console.log("Error is ", err);
@@ -66,21 +71,36 @@ ClientRoutes.post("/search", async (req, res) => {
         //     return res.json({ status:403,msg: "Password is Invalid!" });
 
         //jwt secret
-        const token = jwt.sign({ id: "1234" }, config.JWT_SECRET, { expiresIn: '1h' });
+        const token = jwt.sign({ id: "1234" }, config.JWT_SECRET, {
+            expiresIn: "1h",
+        });
         res.status(200).json({
             token,
             Customer: {
-                id:username,
-                name:password,
+                id: username,
+                name: password,
             },
         });
-
-
     } catch (err) {
         res.status(400).json({ msg: "Validation Error" });
         console.log("Error is ", err);
     }
 });
 
-module.exports = ClientRoutes;
+ClientRoutes.post("/change_pass", async (req, res) => {
+    const filter = { _id: req.query.id };
+    const update = { password: req.query.newPass };
+    await Client.findOneAndUpdate(filter, update, (err, result) => {
+        if (err) res.json(err);
+        else res.json("Successfully removed");
+    });
+});
 
+// RestaurantRoutes.post("/delete/ResInfo", async (req, res) => {
+//     await Restaurant.find({ id: req.query.id }, function (err, result) {
+//         if (err) res.json(err);
+//         else res.json('Successfully removed');
+//     });
+// });
+
+module.exports = ClientRoutes;

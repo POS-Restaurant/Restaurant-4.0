@@ -2,8 +2,19 @@
 import { Input, Row, Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import sign from '../Sign.module.css'
+import { useState } from "react";
 
 function SignUp(props) {
+    const [lname, setLname] = useState('')
+    const [fname, setFname] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
+    function onSubmit(event){
+        event.prevenrDefault();
+
+
+    }
     return (
         <div className={sign.Login}>
             <div className={sign.LoginForm}>
@@ -13,37 +24,37 @@ function SignUp(props) {
                         <Row>
                             <label>Họ</label>
                         </Row>
-                        <Input name="Phone" type="email" required />
+                        <Input name="Phone" type="email" innerRef={(input)=>setLname(input)} required />
                     </div>
                     <div className={sign.field}>
                         <Row>
                             <label>Tên</label>
                         </Row>
-                        <Input name="Phone" type="email" required />
+                        <Input name="Phone" type="email" innerRef={(input)=>setFname(input)} required />
                     </div>
                     <div className={sign.field}>
                         <Row>
                             <label>Email</label>
                         </Row>
-                        <Input name="Phone" type="email" required />
+                        <Input name="Phone" type="email" innerRef={(input)=>setEmail(input)} required />
                     </div>
                     <div className={sign.field}>
                         <Row>
                             <label>Nhập mật khẩu</label>
                         </Row>
-                        <Input name="Phone" type="email" required />
+                        <Input name="Phone" type="email" innerRef={(input)=>setPassword(input)} required />
                     </div>
-                    <div className={sign.field}>
+                    {/* <div className={sign.field}>
                         <Row>
                             <label>Xác nhận mật khẩu</label>
                         </Row>
 
                         <Input name="pwd" type="password" required />
-                    </div>
+                    </div> */}
                     <div className={sign.field}>
-                        <Link to="/login">
-                            <Button style={{cursor: 'pointer'}}>Đăng ký</Button>
-                        </Link>
+                        {/* <Link to="/login"> */}
+                            <Button onClick={onSubmit} style={{cursor: 'pointer'}}>Đăng ký</Button>
+                        {/* </Link> */}
                     </div>
                     <div className={`${sign.field} ${sign.change}`}>
                         <Row>
