@@ -4,7 +4,7 @@ import res3 from '../../imageRes/res3.jpg'
 import res4 from '../../imageRes/res4.jpg'
 import res5 from '../../imageRes/res5.jpg'
 
-export const data = [
+export const dataRes = [
     {img: res1, name: "Nhà hàng KFC 1", address: "Bạc Liêu"},
     {img: res2, name: "Nhà hàng KFC 2", address: "Đà Lạt"},
     {img: res3, name: "Nhà hàng KFC 3", address: "An Giang"},

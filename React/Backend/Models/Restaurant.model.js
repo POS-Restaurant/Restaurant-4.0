@@ -29,7 +29,10 @@ let Restaurant = new Schema({
     ,
     chefIDs: {
         type: Array
-    }
+    },
+    img:{
+        type:String
+    },
 }
 );
 

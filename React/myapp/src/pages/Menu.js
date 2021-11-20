@@ -1,13 +1,20 @@
 import React, { Component } from "react";
 // import { FaYenSign } from "react-icons/fa";
 import { Container, Row, Col, Card, Input, Button, Modal } from "reactstrap";
-import { FoodOrdData } from "./FoodData";
+//import { FoodOrdData } from "./FoodData";
 import Sidebar from "../components/Sidebar"
 import {FaSearch} from "react-icons/fa";
+import axios from 'axios';
 class PickFood extends Component {
     constructor(props) {
         super(props);
-        this.state = FoodOrdData;
+        this.state ={
+            food_list:[],
+            food_display:[],
+            cart: [],
+            isModalOpen: false,
+        currentFood:{},
+        totalCost:0,};// FoodOrdData;
         this.state.isModalOpen=false;
         this.togglePay=this.togglePay.bind(this);
         this.adjustItem = this.adjustItem.bind(this);
@@ -20,7 +27,6 @@ class PickFood extends Component {
         //     this.addDrug = this.addDrug.bind(this);
     }
     rmvItem(food) {
-        
         const newCart = this.state.cart.filter((item) => item.food_name !== food.food_name);
         this.state.cart=newCart;
         food.num=1;
@@ -43,7 +49,7 @@ class PickFood extends Component {
         }
     }
     adjustFood(event){
-        const fix=this.state.currentCart
+        const fix=this.state.currentCart;
         const newCart=this.state.cart.map(
             (item)=>{
                 if (item===fix) {item.num=event.target.value;}
@@ -72,7 +78,6 @@ class PickFood extends Component {
                 carts: this.state.cart.push(food),
             });
         }
-        
         this.total();
     }
 
@@ -109,17 +114,25 @@ class PickFood extends Component {
     }
 
     componentDidMount() {
-        this.setState(FoodOrdData);
-        this.setState({
+        const idRes=localStorage.getItem("currentRes");
+    axios.get('http://localhost:3000/Food/get/menu',{params:{id:idRes}}).then(res=>{
+    const FoodList=res.data.result;
+    const returnValue = FoodList.map((food)=>{
+        var newfood=food;
+        newfood.num=1;
+        return newfood;
+    });
+    this.setState({food_list:returnValue});
+    console.log(this.state.food_list);
+    this.setState({
             food_display: this.state.food_list,
         });
         this.total();
+        console.log(this.state);
+})
     }
-    // componentDidUpdate(){
-    //     this.total();
-    // }
     render() {
-        const food_list = this.state.food_display.map((food) => {
+        let food_list = this.state.food_display.map((food) => {
             return (
                 <div className="containCard">
                     <Card className="foodCard">
