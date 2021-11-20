@@ -5,7 +5,24 @@ import { Input, Row, Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import sign from "../Sign.module.css";
 import { typeUser } from './prelogin';
+import axios from 'axios'
 function Login(props) {
+    // function onSubmit(event) {
+    //     event.preventDefault();
+    //     axios.get("localhost:3000/Client/username").then((res) => {
+    //         console.log(res.data);
+    //     });
+    //     localStorage.setItem("userID","res.data._id;
+
+
+    // }
+    function onSubmit(event) {
+        event.preventDefault();
+        axios.get("http://localhost:3000/Client/username").then((res) => {
+            localStorage.setItem("id", res.data._id);
+            console.log(localStorage.getItem("id"));
+        });
+    }
     function handleUserType(Utype) {
         if (Utype === 0) {
             return "customer";
@@ -18,7 +35,13 @@ function Login(props) {
         }
     }
     let type = handleUserType(typeUser)
-    return (
+    if (localStorage.getItem("id")) {
+        return (
+            <Switch>
+                <Redirect to={"/" + type + "/overview"} />
+            </Switch>
+        );
+    } else return (
         <div className={sign.Login}>
             <div className={sign.Login}>
                 <div className={sign.LoginForm}>
@@ -43,7 +66,7 @@ function Login(props) {
                         </div>
                         <div className={sign.field}>
                             <Link to={"/" + type + "/overview"}>
-                                <Button onClick={props.onQuit} style={{ cursor: 'pointer' }}>
+                                <Button style={{ cursor: 'pointer' }}>
                                     Đăng nhập
                                 </Button>
                             </Link>
@@ -53,7 +76,7 @@ function Login(props) {
                                 <Link to={"/forgetpass"} >
                                     <Button
                                         className={`${sign.linkbutton} ${sign.switchForget}`}
-                                        onClick={props.onForget}
+                                        onClick={onSubmit}
                                         style={{ cursor: 'pointer' }}
 
                                     >

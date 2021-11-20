@@ -2,8 +2,14 @@ import React, { Component } from "react";
 import { Input } from "reactstrap";
 import style from "../Account.module.css";
 import Button from "@mui/material/Button";
+import axios from 'axios'
 
 function ChangePass(props) {
+    const submit = () => {
+        //check mk cũ
+        //check mk mới và check mk confirm
+        axios.post('localhost:3000/client/changepwd', {oldpwd: '123456',newpwd: 'trungkien'});
+    }
     return (
         <div className={style.changePass}>
             <h1>Sửa mật khẩu</h1>
@@ -24,6 +30,7 @@ function ChangePass(props) {
                     className={style.changePassConfirm}
                     variant="contained"
                     size="large"
+                    onClick={submit}
                 >
                     Sửa mật khẩu
                 </Button>
