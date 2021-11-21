@@ -170,7 +170,7 @@ class PickFood extends Component {
                             {" "}
                             <img
                                 className="menuFoodImg2"
-                                src={foodItem.img}
+                                src={foodItem.img+'.png'}
                                 alt="Img Food"
                             />
                             <div className="foodCartInfo">
