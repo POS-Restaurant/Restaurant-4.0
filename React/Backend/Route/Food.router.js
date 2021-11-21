@@ -14,8 +14,9 @@ Food.find ((err,food)=>{
 })
 });
 
-FoodRoutes.get("/get/menu", async (req, res) => {
-    Food.find ({Restaurant:req.query.id},async(err,results)=>{
+FoodRoutes.get("/get/menu", (req, res) => {
+    console.log(req.query);
+    Food.find ({Restaurant:req.query.id},(err,results)=>{
         res.json({result:results});
     })
 });
@@ -28,15 +29,26 @@ FoodRoutes.get("/get/food", (req, res) => {
 
 
 FoodRoutes.post("/edit/food", async (req, res) => {
-Food.findByIdAndUpdate(req.body.params.id, req.body.params,function (err, results) {
+    console.log(req);
+Food.findOneAndUpdate({id:req.body.params.id}, req.body.params,function (err, results) {
     if (err) {
         console.log(err);
     }
     else {
-        res.json(results);
+        res.json("Thay đổi thành công");
     }
 })
 });
+FoodRoutes.post("/delete/food", async (req, res) => {
+    Food.findOneAndRemove({id:req.body.params.id}, req.body.params,function (err, results) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            res.json({msg:'Xóa món ăn thành công'});
+        }
+    })
+    });
 FoodRoutes.post("/add/food", async (req, res) => {
     Food.create( req.body.params,function (err, results) {
         if (err) {

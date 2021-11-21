@@ -33,6 +33,9 @@ let Food = new Schema({
     ,
     rating: {
         type: Number
+    },
+    price:{
+        type:Number
     }
 }
 );

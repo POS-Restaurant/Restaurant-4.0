@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { Container, Row, Col, Card, Input, Button, Modal } from "reactstrap";
 //import { FoodOrdData } from "./FoodData";
 import Sidebar from "../components/Sidebar"
-import {FaSearch} from "react-icons/fa";
+import {FaClosedCaptioning, FaSearch} from "react-icons/fa";
 import axios from 'axios';
 class PickFood extends Component {
     constructor(props) {
@@ -14,7 +14,8 @@ class PickFood extends Component {
             cart: [],
             isModalOpen: false,
         currentFood:{},
-        totalCost:0,};// FoodOrdData;
+        totalCost:0,
+    searchTxt:"",};// FoodOrdData;
         this.state.isModalOpen=false;
         this.togglePay=this.togglePay.bind(this);
         this.adjustItem = this.adjustItem.bind(this);
@@ -24,10 +25,11 @@ class PickFood extends Component {
         this.addcurrFood=this.addcurrFood.bind(this);
         this.rmvItem=this.rmvItem.bind(this);
         this.total=this.total.bind(this);
+        this.searchText=this.searchText.bind(this);
         //     this.addDrug = this.addDrug.bind(this);
     }
     rmvItem(food) {
-        const newCart = this.state.cart.filter((item) => item.food_name !== food.food_name);
+        const newCart = this.state.cart.filter((item) => item.name !== food.name);
         this.state.cart=newCart;
         food.num=1;
         this.total();
@@ -58,18 +60,13 @@ class PickFood extends Component {
         )
         this.setState({cart:newCart})
         this.total();
-    //     const editFood=this.state.cart.filter(
-    //         (item)=> if (item.food_name === event
-    //     )
-    //     newFood.num=event.target.value;
-    //     this.setState({currentFood:newFood});
     }
     addcurrFood(){
         this.addFood(this.state.currentFood)
     }
     addFood(food) {
         const exist = this.state.cart.filter(
-            (item) => item.food_name===food.food_name
+            (item) => item.name===food.name
         );
         if (exist.length > 0) {
             this.adjustItem(exist[0], true);
@@ -84,9 +81,17 @@ class PickFood extends Component {
     search(type) {
         this.setState({
             food_display: this.state.food_list.filter(
-                (food) => food.type===type
+                (food) => food.kind===type
             ),
         });
+    }
+    searchText() {
+        this.setState({
+            food_display: this.state.food_list.filter(
+                (food) => food.name.includes(this.state.searchTxt)
+            ),
+        });
+        console.log(this.state.searchTxt);
     }
     showAll() {
         this.setState({
@@ -112,7 +117,6 @@ class PickFood extends Component {
           totalCost:0,
         });
     }
-
     componentDidMount() {
         const idRes=localStorage.getItem("currentRes");
     axios.get('http://localhost:3000/Food/get/menu',{params:{id:idRes}}).then(res=>{
@@ -123,30 +127,29 @@ class PickFood extends Component {
         return newfood;
     });
     this.setState({food_list:returnValue});
-    console.log(this.state.food_list);
     this.setState({
             food_display: this.state.food_list,
         });
         this.total();
-        console.log(this.state);
 })
     }
     render() {
         let food_list = this.state.food_display.map((food) => {
             return (
-                <div className="containCard">
+                <div key={food.id} className="containCard">
                     <Card className="foodCard">
                         <Row className="foodRow">
                             <Col>
                             <img className= 'menuFoodImg' src={food.img} alt="None"/>
                             </Col>
                             <Col>
-                            <div className='menuFoodName'> {food.food_name}</div>
+                            <div className='menuFoodName'> {food.name}</div>
                             <div className='menuFoodPrice'> Giá tiền : {food.price}</div>
                             <Button className="infobtn" onClick={()=>{this.setState({currentFood:food}); this.toggleModal()}}>Xem chi tiết </Button>
                             <Button
                                 className="addbtn"
-                                onClick={(e) => {
+                                onClick={(e) => {this.setState({currentFood:food});
+                                console.log(food);
                                     this.addFood(food);
                                 }}
                             >
@@ -170,7 +173,7 @@ class PickFood extends Component {
                                 alt="Img Food"
                             />
                             <div className="foodCartInfo">
-                                <span>{foodItem.food_name}</span>
+                                <span>{foodItem.name}</span>
                                 <a className="singleCost">${foodItem.price}</a>
                             </div>
                             <div className="qty">
@@ -235,23 +238,24 @@ remove
                             <Button className="type-button" onClick={() => {this.showAll();}}>
                                 Tất cả
                             </Button>
-                            <Button className="type-button" onClick={() => {this.search("DoAn");}}>
+                            <Button className="type-button" onClick={() => {this.search("Food");}}>
                                 Món ăn
                             </Button>
-                            <Button className="type-button" onClick={() => {this.search("Nuoc");}}>
+                            <Button className="type-button" onClick={() => {this.search("Drink");}}>
                                 Nước uống
                             </Button>
                             <Button className="type-button" onClick={() => {this.search("Combo");}}>
                                 Combo
                             </Button>
-                            <input style = {{ height: 46, width: 400}} type="text" name="searchFood" id="searchBar" placeholder="Tìm kiếm" />
-                            <FaSearch id = "searchIcon"/>
+                            <Input style = {{ height: 46, width: 400}} type="text" 
+                            name="searchFood" id="searchBar" placeholder="Tìm kiếm" 
+                            onChange={(e) => {
+                                this.setState({searchTxt:e.target.value})
+                            }} />
+                    
+                            <FaSearch id = "searchIcon" onClick={(e)=>this.searchText()}/>
+                     
                         </Row>
-                        {/* <Scrollbars style={{height:640}}>
-                            <Row>
-                                {food_list}
-                            </Row>
-                        </Scrollbars> */}
                                             <div class="scroll-bg-menu">
                             <div class="scroll-div-menu">
                                 <div class="scroll-object-menu">
@@ -262,8 +266,6 @@ remove
                         </div>
                     </Col>
                     <Col className="cart">
-                        {/* <HeaderCart /> */}
-                        {/* <CustomerInfo/> */}
                         <div class="scroll-bg-cart">
                             <div class="scroll-div-cart">
                                 <div class="scroll-object-cart">
@@ -296,7 +298,7 @@ remove
                         <div class="itemPrice">
                             <div className='itemPrice_1'>
                                 <h4>Name</h4>
-                                <h3>{this.state.currentFood.food_name}</h3>
+                                <h3>{this.state.currentFood.name}</h3>
                             </div>
                             <div className='itemPrice_3'>
                                 <h4>Price</h4>
@@ -314,11 +316,11 @@ remove
                     </div>
                     <div className="clear"></div>
                     <div class="itemNutri">
-                            <h5>Protein: <span class="itemNutriText">{this.state.currentFood.Protein}</span> </h5>
-                            <h5>Additives: <span class="itemNutriText">{this.state.currentFood.Additives}</span> </h5>
-                            <h5>Baking material: <span class="itemNutriText">{this.state.currentFood.Material}</span> </h5>
+                            <h5>Protein: <span class="itemNutriText">{this.state.currentFood.protein}</span> </h5>
+                            <h5>Baking material: <span class="itemNutriText">{this.state.currentFood.material}</span> </h5>
                             <h5>Food decoration: <span class="itemNutriText">{this.state.currentFood.decoration}</span> </h5>
-                        
+                        <h5>Rating: <span class="itemNutriText">{this.state.currentFood.rating}</span> </h5>
+                            
                         </div>
                         <button class="bottomBtn" type="button" onClick={()=>{this.addcurrFood(); this.toggleModal()}}>Xác nhận</button>
                     </div>
@@ -331,21 +333,3 @@ remove
 }
 
 export default PickFood;
-// class HeaderCart extends Component {
-//     render() {
-//         const { customerName, Role } = this.props;
-//         return <CustomerInfo props={this.props} />;
-//     }
-// }
-// class CustomerInfo extends Component {
-//     render() {
-//         const { customerName, Role } = this.props;
-
-//         return (
-//             <h6>
-//                 <Row> Người dùng: Nguyễn Trường Hải Đăng </Row>
-//                 <Row> Vai trò: Khách hàng</Row>
-//             </h6>
-//         );
-//     }
-// }
