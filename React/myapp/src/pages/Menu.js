@@ -135,12 +135,13 @@ class PickFood extends Component {
     }
     render() {
         let food_list = this.state.food_display.map((food) => {
+            console.log(food.img)
             return (
                 <div key={food.id} className="containCard">
                     <Card className="foodCard">
                         <Row className="foodRow">
                             <Col>
-                            <img className= 'menuFoodImg' src={food.img} alt="None"/>
+                            <img className= 'menuFoodImg' src={food.img+'.png'} alt="None"/>
                             </Col>
                             <Col>
                             <div className='menuFoodName'> {food.name}</div>

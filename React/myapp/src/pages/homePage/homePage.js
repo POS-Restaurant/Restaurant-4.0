@@ -35,13 +35,13 @@ function HomePage() {
         localStorage.setItem('currentRes',id);
     }
     const res_list = data.map((res) => { 
-        console.log(`../../imageRes/res${res.id}.jpg`);
+        console.log(res.img);
         return (
             <div className="containCardRes" key={res.id}>
                 <Card className="resCard">
                     <Col className="resRow">
                         <Row>
-                        <img className= 'resImg' src={res.img} alt="ResImg" width="250px" style={{borderRadius: "10px"}}/>
+                        <img className= 'resImg' src={res.img+'.png'} alt="ResImg" width="250px" style={{borderRadius: "10px"}}/>
                         </Row>
                         <Row>
                         <div className='resName' style={{textAlign:'center'}}> {res.name}</div>
