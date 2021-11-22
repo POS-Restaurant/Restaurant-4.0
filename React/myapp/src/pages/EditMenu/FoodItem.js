@@ -5,7 +5,7 @@ import BanhNgot from '../../imageFood/BanhNgot.jpg';
 
 const FoodItem = (props) => {
     const [popUp, setPopUp] = useState(false);
-    const [buttonPopup, setButtonPopup] = useState(false);
+    // const [buttonPopup, setButtonPopup] = useState(false);
     localStorage.setItem("currentFood", props.id);
     return (
         <div className={styles.itemContainer}>
@@ -20,8 +20,8 @@ const FoodItem = (props) => {
                     <div className={styles.itemPrice} >{props.price}đ</div>
                 </div>
             </div>
-            <button onClick={setPopUp(true)} className={`${styles.btn} ${styles.btn1}`} >Chỉnh sửa</button>
-            {popUp && <PopupFoodItem type="edit" trigger={buttonPopup} setTrigger={setButtonPopup} />}
+            <button onClick={setPopUp()} className={`${styles.btn} ${styles.btn1}`} >Chỉnh sửa</button>
+            {popUp && <PopupFoodItem type="edit" onCancel={()=>setPopUp(false)} />}
         </div>
     )
 }

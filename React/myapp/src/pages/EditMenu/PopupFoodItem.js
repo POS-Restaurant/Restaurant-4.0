@@ -28,7 +28,7 @@ return (props.trigger) ? (
     <div className={styles.popupContainer}>
         <div className={styles.popupHeader}>
             <p className={styles.popupHeaderLabel}>Chỉnh sửa món ăn</p>
-            <button className={styles.popupHeaderButton} onClick={() => props.setTrigger(false)}> <AiOutlineCloseCircle /> </button>
+            <button className={styles.popupHeaderButton} onClick={props.Cancel}> <AiOutlineCloseCircle /> </button>
         </div>
         <div className={styles.popupBody}>
             <div className={styles.popupBodyPicture}>

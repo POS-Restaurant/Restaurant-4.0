@@ -41,7 +41,7 @@ function EditMenu() {
             setDisplay(data.filter((food) => food.kind === type));
         }
     const foodItems = (display) ? display.map(e => (
-        <FoodItem id={e.id} name={e.name} src={e.img} price={e.price} protein={e.protein} material={e.material} decoration={e.decoration} />
+        <FoodItem id={e.id} name={e.food_name} src={e.img} price={e.price} protein={e.Protein} material={e.Material} decoration={e.decoration} />
     )) : <div />;
 
     return (
@@ -65,14 +65,14 @@ function EditMenu() {
                     <button className={styles.btn} onClick={(e) => searchKind("Combo")}>Combo</button>
                 </div>
                 <div className={styles.foodsList}>
-                    <div className={`${styles.itemContainer} ${styles.itemContainer1}`}>
-                        <AiOutlinePlusCircle className={styles.itemIcon} onClick={() => setButtonPopup(true)} />
-                        <p className={styles.addItemLabel} onClick={() => setButtonPopup(true)} >Thêm món mới</p>
-                    </div>
+                    <button onClick={() => setButtonPopup(true)}  className={`${styles.itemContainer} ${styles.itemContainer1}`}>
+                        <AiOutlinePlusCircle className={styles.itemIcon} />
+                        <p className={styles.addItemLabel} >Thêm món mới</p>
+                    </button>
 
                     {foodItems}
                 </div>
-                <PopupFoodItem type="add" trigger={buttonPopup} setTrigger={setButtonPopup} img={BanhNgot} />
+                {buttonPopup&&<PopupFoodItem type="add" onCancel={()=>setButtonPopup(false)} img={BanhNgot} />}
             </div>
         </div>
 
