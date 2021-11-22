@@ -3,10 +3,6 @@ const Schema = mongoose.Schema;
 
 // Define collection and schema for login
 let Client = new Schema({
-    id: {
-        type: String,
-        unique: true
-    },
     name: {
         type: String
     },
