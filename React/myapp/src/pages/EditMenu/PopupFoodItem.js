@@ -70,8 +70,9 @@ return (props.trigger) ? (
             </div>
         </div>
         <div className={styles.popupFooter}>
-            <button onClick={deleteFood} className={`${styles.btn} ${styles.btn2}`}>Xóa món ăn</button>
-            <button onClick={update} className={`${styles.btn} ${styles.btn3}`}>Xác nhận chỉnh sửa</button>
+            {(props.type==="update")&&<button onClick={deleteFood} className={`${styles.btn} ${styles.btn2}`}>Xóa món ăn</button>}
+            {(props.type==="update")&&<button onClick={update} className={`${styles.btn} ${styles.btn3}`}>Xác nhận chỉnh sửa</button>}
+            {(props.type==="add")&&<button onClick={update} className={`${styles.btn} ${styles.btn3}`}>Thêm món ăn</button>}
         </div>
     </div>
 ) : "";
