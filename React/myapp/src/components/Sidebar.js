@@ -71,7 +71,7 @@ function Sidebar({type}) {
           <NavIcon to='#'>
             <FaIcons.FaBars onClick={showSidebar} />
           </NavIcon>
-          <h1 font-color='#000' id = "titleFeature" style={{marginLeft: "20px"}}>Qui Take</h1>
+          <h1 id = "titleFeature" style={{marginLeft: "20px", color:"white"}}>Qui Take</h1>
         </Nav>
         <SidebarNav sidebar={sidebar}>
           <SidebarWrap>
