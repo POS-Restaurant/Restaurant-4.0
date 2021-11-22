@@ -2,7 +2,7 @@ import React, { useState }from 'react'
 import styles from './EditMenu.module.css'
 import PopupFoodItem from "./PopupFoodItem";
 import BanhNgot from '../../imageFood/BanhNgot.jpg';
-
+import Button from "@mui/material/Button";
 const FoodItem = (props) => {
     const [popUp, setPopUp] = useState(false);
     // const [buttonPopup, setButtonPopup] = useState(false);
@@ -20,8 +20,8 @@ const FoodItem = (props) => {
                     <div className={styles.itemPrice} >{props.price}đ</div>
                 </div>
             </div>
-            <button onClick={setPopUp()} className={`${styles.btn} ${styles.btn1}`} >Chỉnh sửa</button>
-            {popUp && <PopupFoodItem type="edit" onCancel={()=>setPopUp(false)} />}
+            <Button variant="contained" onClick={()=>setPopUp(true)} className={`${styles.btn} ${styles.btn1}`} >Chỉnh sửa</Button>
+            {popUp && <PopupFoodItem type="update" onCancel={()=>setPopUp(false)} />}
         </div>
     )
 }

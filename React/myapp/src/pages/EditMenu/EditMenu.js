@@ -9,10 +9,10 @@ import { FoodOrdData } from "../FoodData";
 import { FaSearch } from 'react-icons/fa'
 import axios from 'axios'; import { Input } from "reactstrap";
 import { useEffect } from "react";
-
+import Button from "@mui/material/Button";
 
 function EditMenu() {
-    const [buttonPopup, setButtonPopup] = useState(false);
+    const [ButtonPopup, setButtonPopup] = useState(false);
     const [searchtxt, setTxt] = useState("");
     const [data, setData] = useState(FoodOrdData);
     const [display, setDisplay] = useState(FoodOrdData.food_list);
@@ -51,7 +51,7 @@ function EditMenu() {
                 <div className={styles.topbar}>
                     <span className={styles.topbarLabel}>Chỉnh sửa menu</span>
                     <div>
-                        <Input style={{ height: 46, width: 500 }} type="text" name="searchFood" className={styles.searchBar} placeholder="Tìm kiếm"
+                        <Input style={{ height: 46, width: 500}} type="text" name="searchFood" className={styles.searchBar} placeholder="Tìm kiếm"
                             onChange={(e) => {
                                 setTxt(e.target.value)
                             }} />
@@ -59,20 +59,20 @@ function EditMenu() {
                     </div>
                 </div>
                 <div className={styles.filter}>
-                    <button className={styles.btn} onClick={(e) => setDisplay(data)}>Tất cả</button>
-                    <button className={styles.btn} onClick={(e) => searchKind("Food")} >Món ăn</button>
-                    <button className={styles.btn} onClick={(e) => searchKind("Drink")}>Thức uống</button>
-                    <button className={styles.btn} onClick={(e) => searchKind("Combo")}>Combo</button>
+                    <Button className={`${styles.btn} ${styles.category}`} onClick={(e) => setDisplay(data)}>Tất cả</Button>
+                    <Button className={`${styles.btn} ${styles.category}`} onClick={(e) => searchKind("Food")} >Món ăn</Button>
+                    <Button className={`${styles.btn} ${styles.category}`} onClick={(e) => searchKind("Drink")}>Thức uống</Button>
+                    <Button className={`${styles.btn} ${styles.category}`} onClick={(e) => searchKind("Combo")}>Combo</Button>
                 </div>
                 <div className={styles.foodsList}>
-                    <button onClick={() => setButtonPopup(true)}  className={`${styles.itemContainer} ${styles.itemContainer1}`}>
+                    <Button  onClick={() => setButtonPopup(true)}  className={`${styles.itemContainer} ${styles.itemContainer1}`}>
                         <AiOutlinePlusCircle className={styles.itemIcon} />
                         <p className={styles.addItemLabel} >Thêm món mới</p>
-                    </button>
+                    </Button>
 
                     {foodItems}
                 </div>
-                {buttonPopup&&<PopupFoodItem type="add" onCancel={()=>setButtonPopup(false)} img={BanhNgot} />}
+                {ButtonPopup&&<PopupFoodItem type="add" onCancel={()=>setButtonPopup(false)} img={BanhNgot} />}
             </div>
         </div>
 
