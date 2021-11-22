@@ -3,8 +3,8 @@ import { Scrollbars } from 'react-custom-scrollbars';
 import ItemFood from './itemFood'
 function checkState(state) {
     var stateOrd = "";
-    if(state === 1) {stateOrd = "Đơn hàng chưa được giao"}
-    else if(state === 2) {stateOrd = "Đơn hàng đã được nhận"}
+    if(state === "Done") {stateOrd = "Đơn hàng đã được nhận"}
+    else if (state === "New") {stateOrd = "Đơn hàng chưa được giao"}
     return(
         stateOrd
     )
@@ -48,13 +48,13 @@ function ItemOrder({
     return (
         <div className = 'item-order' style={{cursor: 'pointer'}} onClick={handleClick} id={click? "infoClose" : "infoOpen"}>
             <div style={{display: 'flex'}}>
-                <div className="idOrder" style={{width: "250px"}}>
+                <div className="idOrder" style={{width: "160px"}}>
                     <p>{id}</p>
                 </div>
-                <div className="dateOrder" style={{width: "230px"}}>
+                <div className="dateOrder" style={{width: "300px"}}>
                     <p>{dateOrder}</p>
                 </div>
-                <div className="dateRecv" style={{width: "230px"}}>
+                <div className="dateRecv" style={{width: "300px"}}>
                     <p>{dateRecv}</p>
                 </div>
                 <div className="res" style={{width: "240px"}}>
@@ -63,7 +63,7 @@ function ItemOrder({
                 <div className="totalBill" style={{width: "200px"}}>
                     <TotalBill />
                 </div>
-                <div className="stateOrder" style={{width: "300px"}}>
+                <div className="stateOrder" style={{width: "250px"}}>
                     <p>{checkState(stateOrder)}</p>
                 </div>
             </div>
