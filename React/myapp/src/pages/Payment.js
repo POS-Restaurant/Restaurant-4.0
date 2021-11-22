@@ -4,7 +4,7 @@ import { Scrollbars } from 'react-custom-scrollbars';
 import data from './Paydata'
 import Sidebar from '../components/Sidebar'
 import searchIcon from '../image/OIP.jpg'
-import axios from 'axios';
+import axios from 'react-axios';
 function Payment(){
     function handleSubmit() {
         const client = {
