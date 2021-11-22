@@ -12,19 +12,22 @@ let Restaurant = new Schema({
     rateScore: {
         type: Number
     },
-    foodList: {
-        type: Array
-    },
+    listFood: [{
+        type: Schema.Types.ObjectId,
+        num: {type: Number},
+        ref: 'Food'
+    }],
     tableList: {
         type: Array
-    }
-    ,
+    },
     managerID: {
-        type: String
+        type: Schema.Types.ObjectId,
+        ref: 'Staff'
     }
     ,
     chefIDs: {
-        type: Array
+        type: Schema.Types.ObjectId,
+        ref: 'Staff'
     },
     img:{
         type:String

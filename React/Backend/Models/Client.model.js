@@ -15,9 +15,10 @@ let Client = new Schema({
     sex: {
         type: Number
     },
-    listOrder: {
-        type: Array
-    },
+    listOrder: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Order'
+    }],
     money:{
         type: Number
     }

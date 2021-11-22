@@ -3,10 +3,6 @@ const Schema = mongoose.Schema;
 
 // Define collection and schema for login
 let Staff = new Schema({
-    id: {
-        type: String,
-        unique: true
-    },
     name:{
         type: String
     },
@@ -23,7 +19,8 @@ let Staff = new Schema({
         type: Number
     },
     IDres: {
-        type: String
+        type: Schema.Types.ObjectId,
+        ref: 'Restaurant'
     },
     type : {
         type: String

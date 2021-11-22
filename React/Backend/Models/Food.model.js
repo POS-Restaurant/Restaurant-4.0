@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 // Define collection and schema for login
 let Food = new Schema({
     Restaurant: {
-        type: String
+        type: Schema.Types.ObjectId,
+        ref: 'Restaurant'
     },
     name: {
         type: String,
