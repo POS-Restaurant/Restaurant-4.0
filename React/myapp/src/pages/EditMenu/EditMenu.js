@@ -20,18 +20,16 @@ function EditMenu() {
     const checkData = async () => {
         await axios.get('http://localhost:3000/Food/get/menu', { params: { id: localStorage.getItem("currentRes") } }).then(res => {
             setData(res.data.result);
-            setDisplay(res.data.result);
         }
-        );
+        ).then(()=>setDisplay(data));
     }
     useEffect(() => {
         setTimeout(() => {
             if (init) {
                 setInit(false);
                 checkData();
-
             }
-        }, 1000);
+        }, 100);
     }, []);
     const search = () => {
         setDisplay(data.filter((food) => food.name.includes(searchtxt)))
@@ -41,7 +39,7 @@ function EditMenu() {
             setDisplay(data.filter((food) => food.kind === type));
         }
     const foodItems = (display) ? display.map(e => (
-        <FoodItem id={e.id} name={e.food_name} src={e.img} price={e.price} protein={e.Protein} material={e.Material} decoration={e.decoration} />
+        <FoodItem id={e.id} name={e.name} src={e.img+'.png'} price={e.price} protein={e.protein} material={e.material} decoration={e.decoration} />
     )) : <div />;
 
     return (
