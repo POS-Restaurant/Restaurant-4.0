@@ -10,26 +10,31 @@ import axios from 'axios';
 function ChefUI() {
     const [orders,setOrders]=useState([]);
     const [clients,setClients]=useState([]);
-    const [foods,setFoods]=useState([]);
+    const idRes=localStorage.getItem("currentRes");
+    const [init, setInit] = useState(true);
     const  checkData=async ()=>{
-        await axios.get('http://localhost:3000/Order/list').then(res=>{
-                // console.log(res.data.results);
-                setOrders(res.data.results);}
-        );
+        // await axios.get('http://localhost:3000/Order/list').then(res=>{
+        //         // console.log(res.data.results);
+        //         setOrders(res.data.results);}
+        // );
+        await axios.get('http://localhost:3000/Order/get/list',{ params: {id: idRes}}).then(res=>{
+        setOrders(res.data.results);
+        });
         await axios.get('http://localhost:3000/Client/list').then(res=>{
                 // console.log(res.data.results);
                 setClients(res.data.results);}
         );
-        await axios.get('http://localhost:3000/Food/list').then(res=>{
-                // console.log(res.data.results);
-                setFoods(res.data.results);}
-        );
     }
+
     useEffect(() => {
         setTimeout(() => {
-            checkData();
-        }, 1500);
+            if (init) {
+                setInit(false);
+                checkData();
+            }
+        }, 100);
     },[]);
+    console.log(orders);
     const searchInfoCus = (data, id) => {
         if(data) {
             for(let i = 0; i < data.length; i++) {
