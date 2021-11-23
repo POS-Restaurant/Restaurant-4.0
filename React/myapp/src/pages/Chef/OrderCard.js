@@ -3,9 +3,10 @@ import chef from "./Chef.module.css";
 import OrderStatePopup from "./OrderStatePopup";
 import OrderDetail from "./OrderDetail/OrderDetail";
 
+
 function OrderCard(props) {
     const [popUp, setPopUp] = useState(false);
-
+    localStorage.setItem("currentOrder", props.id);
     function translate(status) {
         if (status === "Done") return "Hoàn thành";
         else if (status === "Pending") return "Đang chờ";
@@ -19,16 +20,7 @@ function OrderCard(props) {
         if (!chooseStatePopup) setchooseStatePopup(true);
         else setchooseStatePopup(false);
     }
-    function acceptHandler() {
-        setchooseStatePopup(false);
-    }
-    function cancelHandler() {
-        setchooseStatePopup(false);
-    }
-    function finishHandler() {
-        setchooseStatePopup(false);
-    }
-    function chooseStateHideHandler(status) {
+    function chooseStateHideHandler() {
         setchooseStatePopup(false);
     }
     function getStatus(status) {
@@ -59,14 +51,11 @@ function OrderCard(props) {
                     className={chef.changeStateButton}
                 >
                     <span class="material-icons-outlined">more_horiz</span>
-                    {/* {chooseStatePopup && <OrderStatePopup onAccept={acceptHandler} onCancel={cancelHandler} onFinish={finishHandler}/>} */}
                 </button>
             </div>
-            {/* {chooseStatePopup && <OrderStatePopup onAccept={acceptHandler} onCancel={cancelHandler} onFinish={finishHandler}/>} */}
             {chooseStatePopup && (
                 <OrderStatePopup onChooseState={chooseStateHideHandler} />
             )}
-            {/* <OrderStatePopup/> */}
             {popUp&&<OrderDetail 
                 onHide={()=>setPopUp(false)}
                 name={props.name}

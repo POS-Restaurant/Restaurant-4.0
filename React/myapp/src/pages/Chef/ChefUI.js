@@ -5,23 +5,16 @@ import Sidebar from "../../components/Sidebar";
 import React,{ useState, useEffect} from 'react'
 import axios from 'axios';
 
-
-
 function ChefUI() {
     const [orders,setOrders]=useState([]);
     const [clients,setClients]=useState([]);
     const idRes=localStorage.getItem("currentRes");
     const [init, setInit] = useState(true);
     const  checkData=async ()=>{
-        // await axios.get('http://localhost:3000/Order/list').then(res=>{
-        //         // console.log(res.data.results);
-        //         setOrders(res.data.results);}
-        // );
         await axios.get('http://localhost:3000/Order/get/list',{ params: {id: idRes}}).then(res=>{
         setOrders(res.data.results);
         });
         await axios.get('http://localhost:3000/Client/list').then(res=>{
-                // console.log(res.data.results);
                 setClients(res.data.results);}
         );
     }

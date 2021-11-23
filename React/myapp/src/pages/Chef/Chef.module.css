@@ -188,7 +188,7 @@
     font-weight: bold;
 }
 .orderCardID {
-    width: 24%;
+    width: 25%;
 }
 .orderCardTime {
     width: 24%;
@@ -197,7 +197,7 @@
     width: 15%;
 }
 .orderCardPrice {
-    width: 16%;
+    width: 15%;
 }
 .orderCardStatus {
     width: 16%;
