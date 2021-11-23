@@ -15,7 +15,6 @@ let Restaurant = new Schema({
     listFood: [{
         type: Schema.Types.ObjectId,
         num: {type: Number},
-        ref: 'Food'
     }],
     tableList: {
         type: Array

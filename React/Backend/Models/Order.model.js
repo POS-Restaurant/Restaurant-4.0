@@ -1,14 +1,14 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+
 
 // Define collection and schema for login
-let Order = new Schema({
+let Order = new mongoose.Schema({
     restaurant: {
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'Restaurant'
     },
     customer: {
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'Client'
     },
     dateOfPurchase: {
@@ -21,10 +21,9 @@ let Order = new Schema({
         type: String
     },
     listFood: [{
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         num: {type: Number},
         note: {type: String},
-        ref: 'Food'
     }],
     total:{
         type: Number
