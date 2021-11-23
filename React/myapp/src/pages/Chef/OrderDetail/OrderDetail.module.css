@@ -1,11 +1,11 @@
 .orderDetail {
-    width: 80vw;
+    width: 100vw;
     height: 80vh;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgb(255, 255, 255);
+    background-color: #dddddd;
     display: flex;
     flex-direction: column;
 }
@@ -20,7 +20,7 @@
 
 .orderId {
     font-size: 32px;
-    margin: 10px 0px;
+    margin: 5px 0px;
 }
 
 .detailInfoBar {
@@ -44,6 +44,7 @@
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0px 20px 20px 0px #c9c9c950;
+    background-color: #fff;
 }
 
 .total {
@@ -54,11 +55,11 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    font-size: 32px;
+    font-weight: bold;
 }
 .totalPay {
     color: red;
-    font-size: 32px;
-    font-weight: bold;
     margin-left: 5px;
 }
 .orderDetailCard {
@@ -122,6 +123,10 @@
     /* background-color: magenta; */
     justify-content: center;
 }
-.close {
-    display: none;
+.btnClose {
+    cursor: pointer;
+    background-color: rgba(255, 0, 0, 0.486);
+}
+.btnClose:hover {
+    background-color: red;
 }

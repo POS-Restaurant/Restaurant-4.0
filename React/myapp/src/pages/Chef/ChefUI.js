@@ -50,26 +50,6 @@ function ChefUI() {
         <div>
             <Sidebar type={1}/>
             <div class={chef.chef_ui}>
-                {/* <header className={chef.header}>
-                    <h1 className={chef.title}>Quản lý đơn hàng</h1>
-                    <div className={chef.right}>
-                        <div className={chef.searchBar}>
-                            <input className={chef.inputSearch} type="text" />{" "}
-                            <button className={chef.searchButton}>
-                                <span
-                                    className={`${chef.materialIconsOutlined} ${chef.buttonSearch}`}
-                                >
-                                    search
-                                </span>
-                            </button>
-                        </div>
-                        <button className={chef.notiButton}>
-                            <span className={chef.materialIconsOutlined}>
-                                notifications
-                            </span>
-                        </button>
-                    </div>
-                </header> */}
                 <div className={chef.mainContent}>
                     <div className={chef.buttonBar}>
                         <button className={`${chef.btnAll} ${chef.active}`}>

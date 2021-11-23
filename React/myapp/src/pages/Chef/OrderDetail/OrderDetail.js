@@ -5,7 +5,7 @@ import OrderDetailCard from "./OrderDetailCard";
 function OrderDetail(props) {
     return (
         <div className={detail.orderDetail}>
-            <div onClick={props.onHide}>Dấu tắt popup</div>
+            <button className={detail.btnClose} onClick={props.onHide}>X</button>
             <div className={detail.generalDetail}>
                 <span className={detail.orderId}>Mã đơn hàng: #123456789</span>
                 <span className={detail.timeOrder}>

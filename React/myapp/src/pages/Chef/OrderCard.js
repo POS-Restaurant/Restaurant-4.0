@@ -40,7 +40,7 @@ function OrderCard(props) {
 
     return (
         <div className={chef.orderCard}>
-            <div className={chef.orderCardID} onClick={()=>setPopUp(true)}>#{props.id}</div>
+            <div className={chef.orderCardID} style={{color: "blue", cursor: "pointer"}} onClick={()=>setPopUp(true)}>#{props.id}</div>
             <div className={chef.orderCardTime}>{props.time}</div>
             <div className={chef.orderCardName}>{props.name}</div>
             <div className={chef.orderCardPrice}>{props.price}đ</div>
