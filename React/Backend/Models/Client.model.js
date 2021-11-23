@@ -2,6 +2,15 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 // Define collection and schema for login
+let subObj = new Schema({
+    note:{
+        type: String
+    },
+    num: {
+        type: Number
+    }
+});
+
 let Client = new Schema({
     name: {
         type: String
@@ -18,10 +27,10 @@ let Client = new Schema({
     sex: {
         type: Number
     },
-    listOrder: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Order'
-    }],
+    listOrder: {
+        type: [subObj],
+        required: false
+    },
     money:{
         type: Number
     },
@@ -47,4 +56,4 @@ let Client = new Schema({
 }
 );
 
-module.exports = mongoose.model('Client', Client, "Client");
+module.exports = mongoose.model('Client', Client);

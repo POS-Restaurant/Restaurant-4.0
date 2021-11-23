@@ -21,6 +21,26 @@ ClientRoutes.post('/changepwd', (req,res)=>{
     Client.updateOne({name: req.query.name},{name: req.query.newname},(err,results)=>{res.json(req.query.newname)})
 })
 
+ClientRoutes.get("/cqqjz", (req, res) => {
+    Client.find( (err, results) => {
+        if (!err) {
+            res.json(results);
+        } else {
+            res.status(400).json({ error: "error" });
+        }
+    });
+});
+
+
+ClientRoutes.post('/changepwd', (req,res)=>{
+    console.log(req.query.name);//{ name: 'VHP' }
+    Client.updateOne({name: req.query.name},{name: req.query.newname},(err,results)=>{res.json(req.query.newname)})
+})
+
+ClientRoutes.post('/update', (req,res)=>{
+    console.log(req.query);
+    Client.updateOne({_id: req.query.id},req.query,(err,results)=>{res.json(req.query)});
+});
 
 ClientRoutes.get("/list", (req, res) => {
     Client.find(function (err, results) {
