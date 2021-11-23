@@ -2,9 +2,10 @@ import React from "react";
 import detail from "./OrderDetail.module.css";
 import OrderDetailCard from "./OrderDetailCard";
 //
-function OrderDetail() {
+function OrderDetail(props) {
     return (
         <div className={detail.orderDetail}>
+            <div onClick={props.onHide}>Dấu tắt popup</div>
             <div className={detail.generalDetail}>
                 <span className={detail.orderId}>Mã đơn hàng: #123456789</span>
                 <span className={detail.timeOrder}>

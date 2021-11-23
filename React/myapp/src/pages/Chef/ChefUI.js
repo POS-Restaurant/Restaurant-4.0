@@ -1,99 +1,56 @@
-import React from "react";
+
 import chef from "./Chef.module.css";
 import OrderCard from "./OrderCard";
-//import OrderStatePopup from "./OrderStatePopup";
-// import Pagination from "@mui/material/Pagination";
-//import Pagination from "react-js-pagination";
-//import ConfirmState from "./ConfirmState";
-import OrderDetail from "./OrderDetail/OrderDetail";
-// import Stack from '@mui/material/Stack';
 import Sidebar from "../../components/Sidebar"
-const DUMMY_DATA = [
-    {
-        id: 123456756,
-        time: "01/01/2021 10:24AM",
-        name: "Hải Đăng",
-        price: 130000,
-        status: "done",
-    },
-    {
-        id: 123456764,
-        time: "01/01/2021 10:24AM",
-        name: "Hải Đăng",
-        price: 126000,
-        status: "pending",
-    },
-    {
-        id: 123456789,
-        time: "01/01/2021 10:24AM",
-        name: "Hải Đăng",
-        price: 170000,
-        status: "canceled",
-    },
-    {
-        id: 123456764,
-        time: "01/01/2021 10:24AM",
-        name: "Hải Đăng",
-        price: 130000,
-        status: "done",
-    },
-    {
-        id: 123456789,
-        time: "01/01/2021 10:24AM",
-        name: "Hải Đăng",
-        price: 130000,
-        status: "doing",
-    },
-    {
-        id: 123456764,
-        time: "01/01/2021 10:24AM",
-        name: "Hải Đăng",
-        price: 130000,
-        status: "done",
-    },
-    {
-        id: 123456789,
-        time: "01/01/2021 10:24AM",
-        name: "Hải Đăng",
-        price: 130000,
-        status: "done",
-    },
-    {
-        id: 123456764,
-        time: "01/01/2021 10:24AM",
-        name: "Hải Đăng",
-        price: 130000,
-        status: "done",
-    },
-    {
-        id: 123456789,
-        time: "01/01/2021 10:24AM",
-        name: "Hải Đăng",
-        price: 130000,
-        status: "done",
-    },
-    {
-        id: 123456764,
-        time: "01/01/2021 10:24AM",
-        name: "Hải Đăng",
-        price: 130000,
-        status: "done",
-    },
-    {
-        id: 123456789,
-        time: "01/01/2021 10:24AM",
-        name: "Hải Đăng",
-        price: 130000,
-        status: "done",
-    },
-];
+import React,{ useState, useEffect} from 'react'
+import axios from 'axios';
+
+
 
 function ChefUI() {
+    const [orders,setOrders]=useState([]);
+    const [clients,setClients]=useState([]);
+    const [foods,setFoods]=useState([]);
+    const  checkData=async ()=>{
+        await axios.get('http://localhost:3000/Order/list').then(res=>{
+                // console.log(res.data.results);
+                setOrders(res.data.results);}
+        );
+        await axios.get('http://localhost:3000/Client/list').then(res=>{
+                // console.log(res.data.results);
+                setClients(res.data.results);}
+        );
+        await axios.get('http://localhost:3000/Food/list').then(res=>{
+                // console.log(res.data.results);
+                setFoods(res.data.results);}
+        );
+    }
+    useEffect(() => {
+        setTimeout(() => {
+            checkData();
+        }, 1500);
+    },[]);
+    const searchInfoCus = (data, id) => {
+        if(data) {
+            for(let i = 0; i < data.length; i++) {
+                if(data[i]._id === id) {return data[i].name}
+            }
+        }
+    }
+    const list = (data) => {
+        let arr = [];
+        for(let i = 0; i < data.length; i++) {
+            for(let j = 0; j < foods && foods.length; j++) {
+                if(data[i]._id === foods[j]._id) arr.push(foods[j]);
+            }
+        }
+        return arr;
+    }
     return (
         <div>
             <Sidebar type={1}/>
             <div class={chef.chef_ui}>
-                <header className={chef.header}>
+                {/* <header className={chef.header}>
                     <h1 className={chef.title}>Quản lý đơn hàng</h1>
                     <div className={chef.right}>
                         <div className={chef.searchBar}>
@@ -112,7 +69,7 @@ function ChefUI() {
                             </span>
                         </button>
                     </div>
-                </header>
+                </header> */}
                 <div className={chef.mainContent}>
                     <div className={chef.buttonBar}>
                         <button className={`${chef.btnAll} ${chef.active}`}>
@@ -135,34 +92,21 @@ function ChefUI() {
                             <div className={chef.orderUpdateState}></div>
                         </div>
                         <div className={chef.orderList}>
-                            {DUMMY_DATA.map((order) => {
+                            {orders && orders.map((order) => {
                                 return (
                                     <OrderCard
                                         key={order.id}
-                                        id={order.id}
-                                        time={order.time}
-                                        name={order.name}
-                                        price={order.price}
-                                        status={order.status}
+                                        id={order._id}
+                                        time={order.dateOfPurchase}
+                                        name={searchInfoCus(clients, order.customer)}
+                                        price={order.total}
+                                        status={order.state}
                                     />
                                 );
                             })}
                         </div>
                     </div>
-                    {/* <div className={chef.paging}>
-                        <Pagination itemsCountPerPage={10}
-                        totalItemsCount={450}
-                        pageRangeDisplayed={5} />
-                    </div> */}
-                    {/* <Pagination
-                        activePage={this.state.activePage}
-                        itemsCountPerPage={10}
-                        totalItemsCount={450}
-                        pageRangeDisplayed={5}
-                        onChange={this.handlePageChange.bind(this)}
-                    /> */}
                 </div>
-                <OrderDetail/>
             </div>
         </div>
     );

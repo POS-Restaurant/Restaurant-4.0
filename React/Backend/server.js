@@ -1,4 +1,5 @@
 const express = require("express");
+const morgan = require('morgan')
 const app = express();
 const bodyParser = require('body-parser');
 const PORT = 3000;
@@ -26,16 +27,14 @@ mongoose
   );
 
 const FoodRoutes = require("./Route/Food.router");
-const StaffRoutes = require("./Route/Staff.router");
 const RestaurantRoutes = require("./Route/Restaurant.router");
 const ClientRoutes = require("./Route/Client.router");
 const OrderRoutes = require("./Route/Order.router");
 app.use(cors());
-
+app.use(morgan('combined'))
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use("/Food/", FoodRoutes);
-app.use("/Staff/", StaffRoutes);
 app.use("/Restaurant/", RestaurantRoutes);
 app.use("/Client/", ClientRoutes);
 app.use("/Order/", OrderRoutes);

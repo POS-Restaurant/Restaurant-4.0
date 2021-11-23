@@ -102,13 +102,13 @@ function Info({ data, type }) {
                                 </div>
                             </div>
                             <Button variant="contained"
-                                style={{ cursor: "pointer" }}
+                                style={{ cursor: "pointer", fontSize: "14px" }}
                                 className={`${account.changeInfo} ${account.update}`}
                             >
                                 Cập nhật thông tin
                             </Button>
                             <Button variant="contained"
-                                style={{ cursor: "pointer" }}
+                                style={{ cursor: "pointer",  fontSize: "14px" }}
                                 className={`${account.changePassword} ${account.update}`}
                                 onClick={() => setChangePass(true)}
                             >

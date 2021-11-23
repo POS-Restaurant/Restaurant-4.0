@@ -1,45 +1,45 @@
-import React,{useState} from "react";
-import { Row, Col, Button } from "reactstrap";
-import { Scrollbars } from 'react-custom-scrollbars';
-import data from './Paydata'
-import Sidebar from '../components/Sidebar'
-import searchIcon from '../image/OIP.jpg'
-import axios from 'axios';
+// import React,{useState} from "react";
+// import { Row, Col, Button } from "reactstrap";
+// import { Scrollbars } from 'react-custom-scrollbars';
+// import data from './Paydata';
+// import Sidebar from '../components/Sidebar';
+// import searchIcon from '../image/OIP.jpg';
+// import axios from 'axios';
 function Payment(){
-    function handleSubmit() {
-        const client = {
-          username: "1",
-          password: "2",
-        }
-        const response = axios.post('http://localhost:3000/Client/', client).then(
-          (res) => {
-              const token = res.data.token;
-              const warning = res.data.msg;
-              if (warning !== null && warning !== undefined) {
-                  alert(warning);
-              } else if (token) {
-                alert(res.data.Customer.id);
-              }
-          }
-      ).catch((err) => {
-        alert("Error");
-        })
-      }
-    function fine(a){
-        if (a == 1)
-            return (
-                <p>Nạp Tiền</p>
-            );
-        else
-        return (
-            <p>Rút Tiền</p>
-        );
-    }
-    const [eda,setEDA]= useState(0);
-    const [landy,setLandy]= useState(0);
+    // function handleSubmit() {
+    //     const client = {
+    //       username: "1",
+    //       password: "2",
+    //     }
+    //     const response = axios.post('http://localhost:3000/Client/', client).then(
+    //       (res) => {
+    //           const token = res.data.token;
+    //           const warning = res.data.msg;
+    //           if (warning !== null && warning !== undefined) {
+    //               alert(warning);
+    //           } else if (token) {
+    //             alert(res.data.Customer.id);
+    //           }
+    //       }
+    //   ).catch((err) => {
+    //     alert("Error");
+    //     })
+    //   }
+    // function fine(a){
+    //     if (a == 1)
+    //         return (
+    //             <p>Nạp Tiền</p>
+    //         );
+    //     else
+    //     return (
+    //         <p>Rút Tiền</p>
+    //     );
+    // }
+    // const [eda,setEDA]= useState(0);
+    // const [landy,setLandy]= useState(0);
         return (
             <div>
-                <Sidebar type={0} />
+                {/* <Sidebar type={0} />
                 <Row className="screen">
                     <Col className="Middle">
                     <div style={{display: 'flex'}}>
@@ -115,7 +115,7 @@ function Payment(){
                     </div>
                     </Row>
                     </Col>
-                </Row>
+                </Row> */}
             </div>
         );
 }

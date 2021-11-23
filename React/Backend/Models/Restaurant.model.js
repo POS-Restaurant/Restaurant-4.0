@@ -3,10 +3,6 @@ const Schema = mongoose.Schema;
 
 // Define collection and schema for login
 let Restaurant = new Schema({
-    id: {
-        type: String,
-        unique: true
-    },
     name: {
         type: String
     },
@@ -16,20 +12,25 @@ let Restaurant = new Schema({
     rateScore: {
         type: Number
     },
-    foodList: {
-        type: Array
-    },
+    listFood: [{
+        type: Schema.Types.ObjectId,
+        num: {type: Number},
+    }],
     tableList: {
         type: Array
-    }
-    ,
+    },
     managerID: {
-        type: String
+        type: Schema.Types.ObjectId,
+        ref: 'Staff'
     }
     ,
     chefIDs: {
-        type: Array
-    }
+        type: Schema.Types.ObjectId,
+        ref: 'Staff'
+    },
+    img:{
+        type:String
+    },
 }
 );
 
