@@ -32,8 +32,8 @@ function OrderDetail(props) {
 
     return (
         <div className={detail.orderDetail}>
-            <button className={detail.btnClose} onClick={props.onHide}>X</button>
             <div className={detail.generalDetail}>
+                <button className={detail.btnClose} onClick={props.onHide}>X</button>
                 <span className={detail.orderId}>Mã đơn hàng: {props.id} </span>
                 <span className={detail.timeOrder}>
                     Thời gian đặt hàng: {props.time}
