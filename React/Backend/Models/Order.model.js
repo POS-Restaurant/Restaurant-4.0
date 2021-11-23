@@ -23,6 +23,7 @@ let Order = new Schema({
     listFood: [{
         type: Schema.Types.ObjectId,
         num: {type: Number},
+        note: {type: String},
         ref: 'Food'
     }],
     total:{
