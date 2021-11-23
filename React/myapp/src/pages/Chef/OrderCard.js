@@ -2,7 +2,7 @@ import React from "react";
 import chef from "./Chef.module.css";
 import { useState } from "react";
 import OrderStatePopup from "./OrderStatePopup";
-
+import OrderDetail from "./OrderDetail/OrderDetail";
 
 function OrderCard(props) {
 
@@ -64,6 +64,7 @@ function OrderCard(props) {
             {/* {chooseStatePopup && <OrderStatePopup onAccept={acceptHandler} onCancel={cancelHandler} onFinish={finishHandler}/>} */}
             {chooseStatePopup && <OrderStatePopup onChooseState={chooseStateHideHandler}/>}
             {/* <OrderStatePopup/> */}
+            <OrderDetail />
         </div>
     );
 }

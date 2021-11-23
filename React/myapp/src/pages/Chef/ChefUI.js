@@ -1,11 +1,10 @@
 
 import chef from "./Chef.module.css";
 import OrderCard from "./OrderCard";
-import OrderDetail from "./OrderDetail/OrderDetail";
 import Sidebar from "../../components/Sidebar"
 import React,{ useState, useEffect} from 'react'
 import axios from 'axios';
-import { Scrollbars } from 'react-custom-scrollbars';
+
 
 
 function ChefUI() {
