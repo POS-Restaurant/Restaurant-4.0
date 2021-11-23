@@ -22,8 +22,12 @@ let Order = new mongoose.Schema({
     },
     listFood: [{
         type: mongoose.Schema.Types.ObjectId,
-        num: {type: Number},
-        note: {type: String},
+    }],
+    listNum: [{
+        type: Number,
+    }],
+    listNote: [{
+        type: String,
     }],
     total:{
         type: Number
