@@ -9,7 +9,10 @@ let Client = new Schema({
     phone: {
         type: String
     },
-    Bday: {
+    email: {
+        type: String
+    },
+    bday: {
         type: Date
     },
     sex: {
@@ -21,7 +24,26 @@ let Client = new Schema({
     }],
     money:{
         type: Number
-    }
+    },
+    idRes: {
+        type: Schema.Types.ObjectId,
+        ref: 'Restaurant'
+    },
+    isChef: {
+        type: Boolean,
+        required: true,
+        default: false
+    },
+    isCustomer: {
+        type: Boolean,
+        required: true,
+        default: false
+    },
+    isManager: {
+        type: Boolean,
+        required: true,
+        default: false
+    },
 }
 );
 
