@@ -1,7 +1,7 @@
 
 import chef from "./Chef.module.css";
 import OrderCard from "./OrderCard";
-import Sidebar from "../../components/Sidebar"
+import Sidebar from "../../components/Sidebar";
 import React,{ useState, useEffect} from 'react'
 import axios from 'axios';
 
@@ -10,41 +10,37 @@ import axios from 'axios';
 function ChefUI() {
     const [orders,setOrders]=useState([]);
     const [clients,setClients]=useState([]);
-    const [foods,setFoods]=useState([]);
+    const idRes=localStorage.getItem("currentRes");
+    const [init, setInit] = useState(true);
     const  checkData=async ()=>{
-        await axios.get('http://localhost:3000/Order/list').then(res=>{
-                // console.log(res.data.results);
-                setOrders(res.data.results);}
-        );
+        // await axios.get('http://localhost:3000/Order/list').then(res=>{
+        //         // console.log(res.data.results);
+        //         setOrders(res.data.results);}
+        // );
+        await axios.get('http://localhost:3000/Order/get/list',{ params: {id: idRes}}).then(res=>{
+        setOrders(res.data.results);
+        });
         await axios.get('http://localhost:3000/Client/list').then(res=>{
                 // console.log(res.data.results);
                 setClients(res.data.results);}
         );
-        await axios.get('http://localhost:3000/Food/list').then(res=>{
-                // console.log(res.data.results);
-                setFoods(res.data.results);}
-        );
     }
+
     useEffect(() => {
         setTimeout(() => {
-            checkData();
-        }, 1500);
+            if (init) {
+                setInit(false);
+                checkData();
+            }
+        }, 100);
     },[]);
+    console.log(orders);
     const searchInfoCus = (data, id) => {
         if(data) {
             for(let i = 0; i < data.length; i++) {
                 if(data[i]._id === id) {return data[i].name}
             }
         }
-    }
-    const list = (data) => {
-        let arr = [];
-        for(let i = 0; i < data.length; i++) {
-            for(let j = 0; j < foods && foods.length; j++) {
-                if(data[i]._id === foods[j]._id) arr.push(foods[j]);
-            }
-        }
-        return arr;
     }
     return (
         <div>
@@ -81,6 +77,10 @@ function ChefUI() {
                                         name={searchInfoCus(clients, order.customer)}
                                         price={order.total}
                                         status={order.state}
+                                        total={order.total}
+                                        listFood = {order.listFood}
+                                        listNum = {order.listNum}
+                                        listNote = {order.listNote}
                                     />
                                 );
                             })}

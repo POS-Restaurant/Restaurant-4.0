@@ -1,11 +1,11 @@
-import React from "react";
+import React,{ useState} from 'react';
 import chef from "./Chef.module.css";
-import { useState } from "react";
 import OrderStatePopup from "./OrderStatePopup";
 import OrderDetail from "./OrderDetail/OrderDetail";
 
 function OrderCard(props) {
     const [popUp, setPopUp] = useState(false);
+
     function translate(status) {
         if (status === "Done") return "Hoàn thành";
         else if (status === "Pending") return "Đang chờ";
@@ -67,7 +67,16 @@ function OrderCard(props) {
                 <OrderStatePopup onChooseState={chooseStateHideHandler} />
             )}
             {/* <OrderStatePopup/> */}
-            {popUp&&<OrderDetail onHide={()=>setPopUp(false)}/>}
+            {popUp&&<OrderDetail 
+                onHide={()=>setPopUp(false)}
+                name={props.name}
+                id={props.id}
+                time={props.time}
+                total={props.total}
+                listFood = {props.listFood}
+                listNum = {props.listNum}
+                listNote = {props.listNote}
+            />}
         </div>
     );
 }
