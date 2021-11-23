@@ -1,45 +1,77 @@
-// import React,{useState} from "react";
-// import { Row, Col, Button } from "reactstrap";
-// import { Scrollbars } from 'react-custom-scrollbars';
+import React,{useState,useEffect} from "react";
+import { Row, Col, Button } from "reactstrap";
+import { Scrollbars } from 'react-custom-scrollbars';
 // import data from './Paydata';
-// import Sidebar from '../components/Sidebar';
-// import searchIcon from '../image/OIP.jpg';
-// import axios from 'axios';
+import Sidebar from '../components/Sidebar';
+import searchIcon from '../image/OIP.jpg';
+import axios from 'axios';
 function Payment(){
-    // function handleSubmit() {
-    //     const client = {
-    //       username: "1",
-    //       password: "2",
-    //     }
-    //     const response = axios.post('http://localhost:3000/Client/', client).then(
-    //       (res) => {
-    //           const token = res.data.token;
-    //           const warning = res.data.msg;
-    //           if (warning !== null && warning !== undefined) {
-    //               alert(warning);
-    //           } else if (token) {
-    //             alert(res.data.Customer.id);
-    //           }
-    //       }
-    //   ).catch((err) => {
-    //     alert("Error");
-    //     })
-    //   }
-    // function fine(a){
-    //     if (a == 1)
-    //         return (
-    //             <p>Nạp Tiền</p>
-    //         );
-    //     else
-    //     return (
-    //         <p>Rút Tiền</p>
-    //     );
-    // }
-    // const [eda,setEDA]= useState(0);
-    // const [landy,setLandy]= useState(0);
+    const [stop,setStop]=useState(0);
+    const [data,setData]=useState([]);
+    function checkData(){
+        if (stop===1)
+            return;
+        if (JSON.parse(sessionStorage.getItem('Data'))){
+            setStop(1)
+            setData(JSON.parse(sessionStorage.getItem('Data')));
+        }
+        else setData([]);
+    }
+    useEffect(() => {
+        setTimeout(() => {
+            checkData();
+        }, 1000);
+      });
+    function handleSubmit() {
+        try {
+            const client = {
+                name: "619c9601a0294f5555f10da4"
+            }
+            const localData = [];
+            const response = axios.post("http://localhost:3000/Pill/",client).then(
+                (res) => {
+                    for(const x in res.data.PillList){
+                        localData.push(JSON.stringify({"1": res.data.PillList[x]['dateOfReceipt'].substring(0,10),"2":res.data.PillList[x]['state'],"3":res.data.PillList[x]['total']}));
+                    }
+                    sessionStorage.setItem('Data',JSON.stringify(localData))
+                })
+          } catch (error) {
+            console.log(error);
+        }
+    }
+    function addMoney() {
+        try {
+            const client = {
+                name: "619c9601a0294f5555f10da4",
+                amount: "20000",
+                stas: "Nạp"
+            }
+            const response = axios.post("http://localhost:3000/Pill/updateMoney/",client).then(
+                (res) => {
+                    console.log(res)
+                    handleSubmit();
+                    setStop(0);
+                })
+          } catch (error) {
+            console.log(error);
+        }
+    }
+    handleSubmit();
+    function fine(a){
+        if (a == 1)
+            return (
+                <p>Nạp Tiền</p>
+            );
+        else
+        return (
+            <p>Rút Tiền</p>
+        );
+    }
+    const [eda,setEDA]= useState(0);
+    const [landy,setLandy]= useState(0);
         return (
             <div>
-                {/* <Sidebar type={0} />
+                <Sidebar type={0} />
                 <Row className="screen">
                     <Col className="Middle">
                     <div style={{display: 'flex'}}>
@@ -48,6 +80,9 @@ function Payment(){
                             </Button>
                             <Button className={eda===1?'type-button active':'type-button'}  onClick={()=>setEDA(1)}>
                                 Giao dịch
+                            </Button>
+                            <Button onClick={()=>addMoney()}>
+                                Test
                             </Button>
                     </div>
                     <Row className={eda===1?'active':'hide'}>
@@ -91,20 +126,21 @@ function Payment(){
                             </div>
                         </div>
                         <Scrollbars>
-                        {data.map(props=>{
+                        {data.map((item,index)=>{
+                            let props=JSON.parse(item)
                             return(
                                 <div className="orderRow">
                                     <div className="piece">
-                                        <p>{props.id}</p>
+                                        <p>{index+1}</p>
                                     </div>
                                     <div className="piece">
-                                        <p>{props.date}</p>
+                                        <p>{props["1"]}</p>
                                     </div>
                                     <div className="piece">
-                                        <p>{fine(props.payment)}</p>
+                                        <p>{props["2"]}</p>
                                     </div>
                                     <div className="piece">
-                                        <p>{props.money}</p>
+                                        <p>{props["3"]}</p>
                                     </div>
                                     <div className="clear">
                                     </div>
@@ -115,7 +151,7 @@ function Payment(){
                     </div>
                     </Row>
                     </Col>
-                </Row> */}
+                </Row>
             </div>
         );
 }
