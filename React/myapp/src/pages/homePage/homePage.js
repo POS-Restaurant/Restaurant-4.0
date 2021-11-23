@@ -37,7 +37,7 @@ function HomePage() {
     const res_list = data.map((res) => { 
         console.log(res.img);
         return (
-            <div className="containCardRes" key={res.id}>
+            <div className="containCardRes" key={res._id}>
                 <Card className="resCard">
                     <Col className="resRow">
                         <Row>
@@ -46,7 +46,7 @@ function HomePage() {
                         <Row>
                         <div className='resName' style={{textAlign:'center'}}> {res.name}</div>
                         <Link className="unitResLink" to="/prelogin"  onClick = {function() {typeRes =res.id}}>
-                            <div className="btn-goto" onClick={(e)=>{SetCurrent(res.id)}}  style={{textAlign:'center'}}>Chọn</div>
+                            <div className="btn-goto" onClick={(e)=>{SetCurrent(res._id)}}  style={{textAlign:'center'}}>Chọn</div>
                         </Link>
                         </Row>
                     </Col>

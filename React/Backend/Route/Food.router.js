@@ -33,7 +33,7 @@ FoodRoutes.get("/get/menu", (req, res) => {
 });
 FoodRoutes.get("/get/food", (req, res) => {
     console.log(req.query);
- Food.find({id:req.query.id},function(err,food){
+ Food.findById(req.query.id,function(err,food){
     res.json(food);
 })
 });

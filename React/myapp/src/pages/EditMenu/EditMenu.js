@@ -14,25 +14,25 @@ import { useEffect } from "react";
 function EditMenu() {
     const [buttonPopup, setButtonPopup] = useState(false);
     const [searchtxt, setTxt] = useState("");
-    const [data, setData] = useState(FoodOrdData);
-    const [display, setDisplay] = useState(FoodOrdData.food_list);
+    const [data, setData] = useState([]);
+    const [display, setDisplay] = useState([]);
     const [init, setInit] = useState(true);
-    // const checkData = async () => {
-    //     await axios.get('http://localhost:3000/Food/get/menu', { params: { id: localStorage.getItem("currentRes") } }).then(res => {
-    //         setData(res.data.result);
-    //         setDisplay(res.data.result);
-    //     }
-    //     );
-    // }
-    // useEffect(() => {
-    //     setTimeout(() => {
-    //         if (init) {
-    //             setInit(false);
-    //             checkData();
+    const checkData = async () => {
+        await axios.get('http://localhost:3000/Food/get/menu', { params: { id: localStorage.getItem("currentRes") } }).then(res => {
+            setData(res.data.result);
+            setDisplay(res.data.result);
+        }
+        );
+    }
+    useEffect(() => {
+        setTimeout(() => {
+            if (init) {
+                setInit(false);
+                checkData();
 
-    //         }
-    //     }, 1000);
-    // }, []);
+            }
+        }, 1000);
+    }, []);
     const search = () => {
         setDisplay(data.filter((food) => food.name.includes(searchtxt)))
     }
@@ -55,7 +55,7 @@ function EditMenu() {
                             onChange={(e) => {
                                 setTxt(e.target.value)
                             }} />
-                        <FaSearch className={styles.searchIcon} onClick={search} />
+                        <FaSearch className={styles.searchIcon} onClick={(e)=> search()} />
                     </div>
                 </div>
                 <div className={styles.filter}>
