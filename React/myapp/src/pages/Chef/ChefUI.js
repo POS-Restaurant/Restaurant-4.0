@@ -11,6 +11,7 @@ import { Scrollbars } from 'react-custom-scrollbars';
 function ChefUI() {
     const [orders,setOrders]=useState([]);
     const [clients,setClients]=useState([]);
+    const [foods,setFoods]=useState([]);
     const  checkData=async ()=>{
         await axios.get('http://localhost:3000/Order/list').then(res=>{
                 console.log(res.data.results);
@@ -20,12 +21,17 @@ function ChefUI() {
                 console.log(res.data.results);
                 setClients(res.data.results);}
         );
+        await axios.get('http://localhost:3000/Food/list').then(res=>{
+                console.log(res.data.results);
+                setFoods(res.data.results);}
+        );
     }
     useEffect(() => {
         setTimeout(() => {
             checkData();
         }, 1500);
     },[]);
+    console.log(foods)
     const searchInfoCus = (data, id) => {
         if(data) {
             for(let i = 0; i < data.length; i++) {
