@@ -1,39 +1,39 @@
-import React,{ useState, useEffect} from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import detail from "./OrderDetail.module.css";
 import OrderDetailCard from "./OrderDetailCard";
 //
 function OrderDetail(props) {
-
-    const [foods,setFoods]=useState([]);
-    const  checkData=async ()=>{
-        await axios.get('http://localhost:3000/Food/list').then(res=>{
-                // console.log(res.data.results);
-                setFoods(res.data.results);}
-        );
-    }
+    const [foods, setFoods] = useState([]);
+    const checkData = async () => {
+        await axios.get("http://localhost:3000/Food/list").then((res) => {
+            // console.log(res.data.results);
+            setFoods(res.data.results);
+        });
+    };
     useEffect(() => {
         setTimeout(() => {
             checkData();
         }, 1500);
-    },[]);
-    function searchFood(data){
-        let arr = []
-        if(foods && data){
-            for(let i=0; i<data.length; i++){
-                for (let j=0; j < foods.length; j++)
-                {
-                    if(data[i] === foods[j]._id) arr.push(foods[j]);
+    }, []);
+    function searchFood(data) {
+        let arr = [];
+        if (foods && data) {
+            for (let i = 0; i < data.length; i++) {
+                for (let j = 0; j < foods.length; j++) {
+                    if (data[i] === foods[j]._id) arr.push(foods[j]);
                 }
             }
         }
-        return arr
+        return arr;
     }
 
     return (
         <div className={detail.orderDetail}>
             <div className={detail.generalDetail}>
-                <button className={detail.btnClose} onClick={props.onHide}>X</button>
+                <button className={detail.btnClose} onClick={props.onHide}>
+                    X
+                </button>
                 <span className={detail.orderId}>Mã đơn hàng: {props.id} </span>
                 <span className={detail.timeOrder}>
                     Thời gian đặt hàng: {props.time}
@@ -52,19 +52,21 @@ function OrderDetail(props) {
                 </div>
                 <div className={detail.infoList}>
                     {searchFood(props.listFood).map((item, index) => {
-                        return(
+                        return (
                             <OrderDetailCard
-                                key = {index}
-                                food = {item}
-                                num = {props.listNum[index]}
-                                note = {props.listNote[index]}
+                                key={index}
+                                food={item}
+                                num={props.listNum[index]}
+                                note={props.listNote[index]}
                             />
-                        )
+                        );
                     })}
                 </div>
-                
             </div>
-            <div className={detail.total}>Tổng tiền: <span className={detail.totalPay}> {props.total} VNĐ </span></div>
+            <div className={detail.total}>
+                Tổng tiền:{" "}
+                <span className={detail.totalPay}> {props.total} VNĐ </span>
+            </div>
         </div>
     );
 }
