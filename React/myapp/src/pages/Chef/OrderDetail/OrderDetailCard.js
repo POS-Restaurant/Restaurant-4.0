@@ -1,7 +1,7 @@
 import React from 'react'
 import detail from './OrderDetail.module.css'
 //
-function OrderDetailCard(data, num, note) {
+function OrderDetailCard() {
     return (
         <div className={detail.orderDetailCard}>
             <div className={detail.product}>
@@ -9,20 +9,20 @@ function OrderDetailCard(data, num, note) {
 
                 </div>
                 <div className={detail.productName}>
-                    {data.name}
+                    Một món gì đó tên rất dài (size M)
                 </div>
             </div>
             <div className={detail.price}>
-                {data.price}
+                100000đ
             </div>
             <div className={detail.quantity}>
-                {num}
+                2
             </div>
             <div className={detail.note}>
-                {note}
+                1 phần không giá, 1 phần không dưa leo
             </div>
             <div className={detail.tempPay}>
-                {num * data.price}
+                200000đ
             </div>
         </div>
     )

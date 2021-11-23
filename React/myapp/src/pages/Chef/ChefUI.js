@@ -38,7 +38,6 @@ function ChefUI() {
             }
         }
     }
-    console.log(orders[0])
     const list = (data) => {
         let arr = [];
         for(let i = 0; i < data.length; i++) {
@@ -48,7 +47,6 @@ function ChefUI() {
         }
         return arr;
     }
-    // console.log(list(orders&&orders[0].listFood))
     return (
         <div>
             <Sidebar type={1}/>
@@ -110,7 +108,7 @@ function ChefUI() {
                         </div>
                     </div>
                 </div>
-                {/* <OrderDetail/> */}
+                <OrderDetail/>
             </div>
         </div>
     );
