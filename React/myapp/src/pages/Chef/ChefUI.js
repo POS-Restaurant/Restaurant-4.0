@@ -51,7 +51,7 @@ function ChefUI() {
         <div>
             <Sidebar type={1}/>
             <div class={chef.chef_ui}>
-                <header className={chef.header}>
+                {/* <header className={chef.header}>
                     <h1 className={chef.title}>Quản lý đơn hàng</h1>
                     <div className={chef.right}>
                         <div className={chef.searchBar}>
@@ -70,7 +70,7 @@ function ChefUI() {
                             </span>
                         </button>
                     </div>
-                </header>
+                </header> */}
                 <div className={chef.mainContent}>
                     <div className={chef.buttonBar}>
                         <button className={`${chef.btnAll} ${chef.active}`}>
@@ -108,7 +108,6 @@ function ChefUI() {
                         </div>
                     </div>
                 </div>
-                <OrderDetail/>
             </div>
         </div>
     );
