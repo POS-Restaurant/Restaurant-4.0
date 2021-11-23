@@ -1,11 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow');
+@import url("https://fonts.googleapis.com/css2?family=Barlow");
 
-
-*{
-    font-family: 'Barlow', sans-serif;
-    
+* {
+    font-family: "Barlow", sans-serif;
 }
-.container{
+.container {
     background-color: #f1f1f1;
     width: 100%;
     height: 100%;
@@ -14,29 +12,29 @@
     position: relative;
 }
 
-.topbar{
+.topbar {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 10px;
-    margin:30px 0;
+    margin: 30px 0;
 }
-.topbarLabel{
+.topbarLabel {
     font-size: 40px;
     font-weight: 900;
     color: black;
     padding-left: 2%;
 }
-.topbarInput{
+.topbarInput {
     width: 55%;
     /* padding: 1px; */
-    border:none;
+    border: none;
     margin-right: 3%;
     border-radius: 10px;
     font-size: 20px;
 }
 
-.filter{
+.filter {
     width: 70%;
     display: flex;
     flex-wrap: wrap;
@@ -45,7 +43,7 @@
     justify-content: space-between;
 }
 
-.btn{
+.btn.category {
     border: none;
     color: black;
     background-color: white;
@@ -58,54 +56,56 @@
     border-radius: 50px;
     /* margin-bottom: 12px; */
 }
-.btn:hover{
+.btn.category:hover {
     background-color: #2685f8;
     color: white;
 }
 
-
-.foodsList{
+.foodsList {
     display: flex;
     flex-wrap: wrap;
     margin-top: 3%;
     justify-content: space-around;
 }
 
-.itemContainer{
+.itemContainer {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     background-color: white;
     width: 350px;
-    min-height: 270px;
-    padding: 10px;
+    height: 270px;
+    padding: 5px;
+    box-sizing: border-box;
+    box-sizing: border-box;
     border-radius: 10px;
     text-overflow: ellipsis;
     margin-bottom: 20px;
-    margin-left: 15px;
+    /* margin-left: 15px; */
     justify-content: space-between;
 }
 
-.itemContainer1{
+.itemContainer.itemContainer1 {
     align-items: center;
     justify-content: center;
+    background-color: white;
 }
 
-.itemIcon{
+.itemIcon {
     font-size: 70px;
     color: rgb(114, 114, 236);
     cursor: pointer;
 }
-.itemIcon:hover{
+.itemIcon:hover {
     color: rgb(157, 157, 240);
 }
-.addItemLabel{
+.addItemLabel {
     font-size: 25px;
     font-weight: 600;
     color: rgb(114, 114, 236);
 }
 
-.itemBody{
+.itemBody {
     display: flex;
     flex-direction: row;
     /* flex-wrap: wrap; */
@@ -113,54 +113,57 @@
     margin-bottom: 10px;
 }
 
-.itemPic{
+.itemPic {
     width: 175px;
     height: 200px;
     border-radius: 10px;
 }
-.itemInfo{
+.itemInfo {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 145px;
     height: 100%;
 }
-.itemName{
+.itemName {
     /* text-align: center; */
     /* text-overflow:ellipsis ; */
-    
+
     font-size: 25px;
     font-weight: 600;
 }
-.itemCharInfo{
+.itemCharInfo {
     color: rgb(110, 110, 110);
 }
-.itemLabelInfo{
-    color:black;
+.itemLabelInfo {
+    color: black;
     font-weight: 600;
     font-size: 18px;
 }
 
-.itemPrice{
+.itemPrice {
     color: blue;
     font-size: 25px;
     /* text-align:center */
 }
 
-.btn1{
+.btn1 {
     background-color: turquoise;
 }
 
-.popupContainer{
+.popupContainer {
+    z-index: 10;
     position: fixed;
-    top: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     justify-self: center;
-    align-self: center; 
+    align-self: center;
     min-width: 680px;
     min-height: 380px;
     background-color: rgb(226, 235, 236);
     border-radius: 50px;
-    text-overflow:clip;
+    text-overflow: clip;
     display: flex;
     flex-direction: column;
     box-shadow: 5px 5px 8px rgb(158, 158, 158);
@@ -168,7 +171,7 @@
     flex-wrap: wrap;
 }
 
-.popupHeader{
+.popupHeader {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -176,67 +179,78 @@
     margin-bottom: 20px;
 }
 
-.popupHeaderLabel{
+.popupHeaderLabel {
     font-size: 25px;
     font-weight: 600;
     line-height: 0px;
 }
 
-
-.popupHeaderButton{
+.btn.popupHeaderButton {
     border: none;
     background-color: inherit;
-    font-size: 30px;
+    font-size: 30px !important;
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 50% !important;
     color: blue;
+    padding: 0px;
 }
-.popupHeaderButton:hover{
+.btn.popupHeaderButton span {
+    width: fit-content;
+    height: fit-content;
+}
+.popupHeaderButton:hover {
     color: red;
 }
 
-
-.popupBody{
+.popupBody {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
-
-.popupBodyPicture{
+.popupBodyPicture {
     display: flex;
     flex-direction: column;
     margin-left: 15px;
 }
 
-.popupBodyPicturePic{
+.popupBodyPicturePic {
     width: 190px;
     height: 200px;
     border-radius: 10px;
 }
 
-.popupBodyPictureButton{
-    min-width: 100px;
+.btn.popupBodyPictureButton {
+    min-width: 80px;
+    height: 40px;
     border-radius: 5px;
     background-color: #8888ff;
     margin: 10px 0;
-    
+    padding: 0px;
+    font-size: 24px;
+    color: white;
+}
+.btn.popupBodyPictureButton:hover {
+    background-color: #1b1bb8;
 }
 
-.popupBodyInfo{
+.popupBodyInfo {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
     margin-right: 15px;
 }
 
-.popupBodyInfoForm{
+.popupBodyInfoForm {
     display: flex;
     flex-direction: column;
     /* justify-content: space-between; */
 }
 
-.popupBodyInfoFormEle{
+.popupBodyInfoFormEle {
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     margin-bottom: 20px;
 }
 
@@ -245,7 +259,7 @@
     margin-right: 20px;
 }
 
-.popupBodyInfoFormEleInput{
+.popupBodyInfoFormEleInput {
     min-width: 300px;
     padding: 9px;
     border: none;
@@ -253,17 +267,17 @@
     font-size: 20px;
 }
 
-.popupBodyInfoCheck{
+.popupBodyInfoCheck {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
 }
 
-.popupBodyInfoCheckName{
+.popupBodyInfoCheckName {
     font-size: 22px;
 }
 
-.popupBodyInfoCheckBlock{
+.popupBodyInfoCheckBlock {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -281,19 +295,19 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none; */
-  }
-  
-  /* Hide the browser's default radio button */
-  .popupBodyInfoCheckLabel input {
+}
+
+/* Hide the browser's default radio button */
+.popupBodyInfoCheckLabel input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
     height: 0;
     width: 0;
-  }
-  
-  /* Create a custom radio button */
-  .popupBodyInfoCheckLabelName {
+}
+
+/* Create a custom radio button */
+.popupBodyInfoCheckLabelName {
     position: absolute;
     top: 0;
     left: 0;
@@ -301,76 +315,85 @@
     width: 25px;
     background-color: rgb(255, 255, 255);
     border-radius: 50%;
-  }
-  
-  /* On mouse-over, add a grey background color */
-  .popupBodyInfoCheckLabel:hover input ~ .popupBodyInfoCheckLabelName {
+}
+
+/* On mouse-over, add a grey background color */
+.popupBodyInfoCheckLabel:hover input ~ .popupBodyInfoCheckLabelName {
     background-color: #ccc;
-  }
-  
-  /* When the radio button is checked, add a blue background */
-  .popupBodyInfoCheckLabel input:checked ~ .popupBodyInfoCheckLabelName {
+}
+
+/* When the radio button is checked, add a blue background */
+.popupBodyInfoCheckLabel input:checked ~ .popupBodyInfoCheckLabelName {
     background-color: #0468b9;
-  }
-  
-  /* Create the indicator (the dot/circle - hidden when not checked) */
-  .popupBodyInfoCheckLabelName:after {
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.popupBodyInfoCheckLabelName:after {
     content: "";
     position: absolute;
     display: none;
-  }
-  
-  /* Show the indicator (dot/circle) when checked */
-  .popupBodyInfoCheckLabel input:checked ~ .popupBodyInfoCheckLabelName:after {
+}
+
+/* Show the indicator (dot/circle) when checked */
+.popupBodyInfoCheckLabel input:checked ~ .popupBodyInfoCheckLabelName:after {
     display: block;
-  }
-  
-  /* Style the indicator (dot/circle) */
-  .popupBodyInfoCheckLabel .popupBodyInfoCheckLabelName:after {
+}
+
+/* Style the indicator (dot/circle) */
+.popupBodyInfoCheckLabel .popupBodyInfoCheckLabelName:after {
     top: 9px;
     left: 9px;
     width: 8px;
     height: 8px;
     border-radius: 50%;
     background: white;
-  }
+}
 
-
-
-  .popupFooter{
+.popupFooter {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
 
-.btn2{
+.btn.btn2 {
     background-color: rgb(228, 100, 100);
     color: white;
     border-radius: 10px;
 }
-.btn2:hover{
-    color: rgb(0, 0, 0);
+.btn.btn2:hover {
+    background-color: rgb(196, 13, 13);
+    /* color: rgb(0, 0, 0); */
 }
-.btn3{
+.btn.btn3 {
     background-color: #8888ff;
     color: white;
     border-radius: 10px;
 }
-.btn3:hover{
-    background-color: rgb(243, 255, 173);
-    color: rgb(0, 0, 0);
+.btn.btn3:hover {
+    background-color: #3b3bc4;
 }
 .searchIcon {
-    height:20px;
-    width:20px;
+    height: 20px;
+    width: 20px;
     top: 5px;
     left: -35px;
     position: relative;
 }
-.searchBar{
+.searchBar {
     border-radius: 20px;
     border: 1px solid black;
+    padding: 0px 20px;
+    box-sizing: border-box;
     border: none;
     font-size: 22px;
     min-width: 800px;
 }
+/* .backdrop{
+    background-color:#00000050;
+    width: 200vw;
+    height: 200vh;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+} */
