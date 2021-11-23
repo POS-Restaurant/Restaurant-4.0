@@ -11,7 +11,8 @@ function OrderStatePopup(props) {
     const update = async () => {
         await axios.post("http://localhost:3000/Order/update/state", {
             params: { id: _id, state: state },
-        }).then((res) => alert(res.data.msg));
+        })
+        // .then((res) => alert(res.data.msg));
     };
     function confirmPopupHandler (status){
         setState(status);
@@ -20,11 +21,10 @@ function OrderStatePopup(props) {
         else if(status === "Doing") setstatusButton("Nhận đơn");
         setconfirmPopup(true);
     }
-    function onConfirmHandler (status){
-        setconfirmPopup(false);
-        update();
-        props.onChooseState(status);
-        
+    const onConfirmHandler = async (status)=>{
+        await setconfirmPopup(false);
+        await update();
+        await props.onChooseState(status);   
     }
     function onCancelHandler (){
         setconfirmPopup(false);

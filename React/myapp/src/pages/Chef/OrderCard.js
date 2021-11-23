@@ -22,6 +22,7 @@ function OrderCard(props) {
     }
     function chooseStateHideHandler() {
         setchooseStatePopup(false);
+        props.onChange();
     }
     function getStatus(status) {
         if (status === "Done") return chef.done;
