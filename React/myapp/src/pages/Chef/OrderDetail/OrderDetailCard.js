@@ -1,28 +1,28 @@
 import React from 'react'
 import detail from './OrderDetail.module.css'
 //
-function OrderDetailCard() {
+function OrderDetailCard(props) {
     return (
         <div className={detail.orderDetailCard}>
             <div className={detail.product}>
                 <div className={detail.productPic}>
-
+                    <img src={props.food.img + ".png"} alt="ImgFood" height="100px" width="80px" />
                 </div>
                 <div className={detail.productName}>
-                    Một món gì đó tên rất dài (size M)
+                    {props.food.name}
                 </div>
             </div>
             <div className={detail.price}>
-                100000đ
+                {props.food.price} VNĐ
             </div>
             <div className={detail.quantity}>
-                2
+                {props.num}
             </div>
             <div className={detail.note}>
-                1 phần không giá, 1 phần không dưa leo
+                {props.note}
             </div>
             <div className={detail.tempPay}>
-                200000đ
+                {props.num * props.food.price} VNĐ
             </div>
         </div>
     )

@@ -1,7 +1,7 @@
 
 import chef from "./Chef.module.css";
 import OrderCard from "./OrderCard";
-import Sidebar from "../../components/Sidebar"
+import Sidebar from "../../components/Sidebar";
 import React,{ useState, useEffect} from 'react'
 import axios from 'axios';
 
@@ -36,15 +36,6 @@ function ChefUI() {
                 if(data[i]._id === id) {return data[i].name}
             }
         }
-    }
-    const list = (data) => {
-        let arr = [];
-        for(let i = 0; i < data.length; i++) {
-            for(let j = 0; j < foods && foods.length; j++) {
-                if(data[i]._id === foods[j]._id) arr.push(foods[j]);
-            }
-        }
-        return arr;
     }
     return (
         <div>
@@ -81,6 +72,10 @@ function ChefUI() {
                                         name={searchInfoCus(clients, order.customer)}
                                         price={order.total}
                                         status={order.state}
+                                        total={order.total}
+                                        listFood = {order.listFood}
+                                        listNum = {order.listNum}
+                                        listNote = {order.listNote}
                                     />
                                 );
                             })}
