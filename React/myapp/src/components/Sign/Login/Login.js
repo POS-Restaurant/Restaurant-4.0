@@ -4,12 +4,15 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import { Input, Row, Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import sign from "../Sign.module.css";
+import axios from "axios";
 
 import { typeUser } from "./prelogin";
 import { useState } from "react";
-import axios from "axios";
+
 function Login(props) {
     const [id, setId] = useState("");
+    const[email,setEmail]=useState("");
+    const [pwd,setPassword]= useState("");
     function handleUserType(Utype) {
         if (Utype === 0) {
             return "customer";
@@ -21,6 +24,16 @@ function Login(props) {
             return "admin";
         }
     }
+    
+    function onSubmit(event) {
+        event.preventDefault();
+        axios.get("http://localhost:3000/Client/username").then((res) => {
+            localStorage.setItem("id", res.data._id);
+            console.log(localStorage.getItem("id"));
+        });
+    }
+
+
     let type = handleUserType(typeUser)
     if (localStorage.getItem("id")) {
         return (
@@ -38,7 +51,12 @@ function Login(props) {
                             <Row>
                                 <label>Email</label>
                             </Row>
-                            <Input name="Phone" type="email" required />
+                            <Input
+                                    name="Phone"
+                                    type="email"
+                                    innerRef={(input) => setEmail(input)}
+                                    required
+                                />
                         </div>
                         <div className={sign.field}>
                             <div>
@@ -46,46 +64,6 @@ function Login(props) {
                                     <label>Mật khẩu</label>
                                 </div>
                                 <div className={sign.col}>
-
-    function onSubmit(event) {
-        event.preventDefault();
-        axios.get("http://localhost:3000/Client/username").then((res) => {
-            localStorage.setItem("id", res.data._id);
-            console.log(localStorage.getItem("id"));
-        });
-    }
-
-    let type = handleUserType(typeUser);
-    if (localStorage.getItem("id")) {
-        return (
-            <Switch>
-                <Redirect to={"/" + type + "/overview"} />
-            </Switch>
-        );
-    } else
-        return (
-            <div className={sign.Login}>
-                <div className={sign.Login}>
-                    <div className={sign.LoginForm}>
-                        <div className={sign.logContent}>
-                            <h1>Đăng Nhập</h1>
-                            <div className={sign.field}>
-                                <Row>
-                                    <label>Email</label>
-                                </Row>
-                                <Input
-                                    name="Phone"
-                                    type="email"
-                                    innerRef={(input) => setEmail(input)}
-                                    required
-                                />
-                            </div>
-                            <div className={sign.field}>
-                                <div>
-                                    <div className={sign.col}>
-                                        <label>Mật khẩu</label>
-                                    </div>
-                                    <div className={sign.col}></div>
                                 </div>
                                 <Input
                                     name="pwd"
@@ -130,6 +108,7 @@ function Login(props) {
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         );
 }
