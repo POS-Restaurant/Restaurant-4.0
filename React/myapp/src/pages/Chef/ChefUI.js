@@ -14,15 +14,15 @@ function ChefUI() {
     const [foods,setFoods]=useState([]);
     const  checkData=async ()=>{
         await axios.get('http://localhost:3000/Order/list').then(res=>{
-                console.log(res.data.results);
+                // console.log(res.data.results);
                 setOrders(res.data.results);}
         );
         await axios.get('http://localhost:3000/Client/list').then(res=>{
-                console.log(res.data.results);
+                // console.log(res.data.results);
                 setClients(res.data.results);}
         );
         await axios.get('http://localhost:3000/Food/list').then(res=>{
-                console.log(res.data.results);
+                // console.log(res.data.results);
                 setFoods(res.data.results);}
         );
     }
@@ -31,7 +31,6 @@ function ChefUI() {
             checkData();
         }, 1500);
     },[]);
-    console.log(foods)
     const searchInfoCus = (data, id) => {
         if(data) {
             for(let i = 0; i < data.length; i++) {
@@ -39,7 +38,17 @@ function ChefUI() {
             }
         }
     }
-
+    console.log(orders[0])
+    const list = (data) => {
+        let arr = [];
+        for(let i = 0; i < data.length; i++) {
+            for(let j = 0; j < foods && foods.length; j++) {
+                if(data[i]._id === foods[j]._id) arr.push(foods[j]);
+            }
+        }
+        return arr;
+    }
+    // console.log(list(orders&&orders[0].listFood))
     return (
         <div>
             <Sidebar type={1}/>
@@ -86,7 +95,7 @@ function ChefUI() {
                             <div className={chef.orderUpdateState}></div>
                         </div>
                         <div className={chef.orderList}>
-                            {orders.map((order) => {
+                            {orders && orders.map((order) => {
                                 return (
                                     <OrderCard
                                         key={order.id}
@@ -101,7 +110,7 @@ function ChefUI() {
                         </div>
                     </div>
                 </div>
-                <OrderDetail/>
+                {/* <OrderDetail/> */}
             </div>
         </div>
     );

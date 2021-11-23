@@ -22,12 +22,10 @@ let Food = new Schema({
     },
     material: {
         type:String
-    }
-    ,
+    },
     decoration: {
         type:String
-    }
-    ,
+    },
     rating: {
         type: Number
     },
