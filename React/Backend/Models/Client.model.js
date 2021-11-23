@@ -37,7 +37,7 @@ let Client = new Schema({
     isCustomer: {
         type: Boolean,
         required: true,
-        default: false
+        default: true
     },
     isManager: {
         type: Boolean,

@@ -279,19 +279,19 @@
     font-weight: bold;
 }
 .orderCardID {
-    width: 15%;
+    width: 23%;
 }
 .orderCardTime {
-    width: 20%;
+    width: 25%;
 }
 .orderCardName {
     width: 15%;
 }
 .orderCardPrice {
-    width: 20%;
+    width: 16%;
 }
 .orderCardStatus {
-    width: 15%;
+    width: 16%;
 }
 .orderUpdateState {
     width: 5%;
@@ -336,33 +336,7 @@
     color: blue;
     background-color: #dddddd;
 }
-.paging ul {
-    display: flex;
-}
-.paging ul li {
-    list-style: none;
-    background-color: #eeeeee;
-    padding: 10px;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 5px;
-}
-.paging ul li:hover {
-    background-color: #ffffff;
-}
-.paging ul li:active {
-    background-color: #dddddd;
-}
 
-.paging ul li a {
-    text-decoration: none;
-    color: black;
-    font-family: Roboto;
-}
 
 .ConfirmState {
     position: absolute;

@@ -7,12 +7,23 @@ let Food = require('../Models/Food.model');
 let Client = require('../Models/Client.model');
 // Food user validation
 
-FoodRoutes.get("/get/", async (req, res) => {
-    console.log(req.query.id);
-Food.find ((err,food)=>{
-    res.json(food);
-})
+// FoodRoutes.get("/get/", async (req, res) => {
+//     console.log(req.query.id);
+// Food.find ((err,food)=>{
+//     res.json(food);
+// })
+// });
+FoodRoutes.get("/list", (req, res) => {
+    Food.find(function (err, results) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            res.json({results});
+        }
+    });
 });
+
 
 FoodRoutes.get("/get/menu", (req, res) => {
     console.log(req.query);

@@ -2,16 +2,15 @@ import React from "react";
 import chef from "./Chef.module.css";
 import { useState } from "react";
 import OrderStatePopup from "./OrderStatePopup";
-// import classname from 'classname'
-//
+
 
 function OrderCard(props) {
 
     function translate(status) {
-        if (status === "done") return "Hoàn thành";
-        else if (status === "pending") return "Đang chờ";
-        else if (status === "canceled") return "Đã hủy";
-        else if (status === "doing") return "Đang thực hiện";
+        if (status === "Done") return "Hoàn thành";
+        else if (status === "Pending") return "Đang chờ";
+        else if (status === "Canceled") return "Đã hủy";
+        else if (status === "Doing") return "Đang thực hiện";
     }
 
     const [chooseStatePopup, setchooseStatePopup] = useState(false);
@@ -32,13 +31,12 @@ function OrderCard(props) {
     function chooseStateHideHandler(status)
     {
         setchooseStatePopup(false);
-
     }
     function getStatus(status) {
-        if (status === "done") return chef.done;
-        if (status === "pending") return chef.pending;
+        if (status === "Done") return chef.done;
+        if (status === "Pending") return chef.pending;
         if (status === "canceled") return chef.canceled;
-        if (status === "doing") return chef.doing;
+        if (status === "Doing") return chef.doing;
     }
 
 

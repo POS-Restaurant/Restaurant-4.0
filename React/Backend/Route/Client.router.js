@@ -5,6 +5,16 @@ const jwt = require('jsonwebtoken');
 
 let Client = require('../Models/Client.model');
 
+ClientRoutes.get("/list", (req, res) => {
+    Client.find(function (err, results) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            res.json({results});
+        }
+    });
+});
 
 ClientRoutes.post("/", async (req, res) => {
     // return res.json({ status:403,msg: "Password is Invalid!" });

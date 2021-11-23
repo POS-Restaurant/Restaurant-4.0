@@ -120,3 +120,6 @@
     /* background-color: magenta; */
     justify-content: center;
 }
+.close{
+    display: none;
+}
