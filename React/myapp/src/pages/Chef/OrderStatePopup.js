@@ -23,8 +23,8 @@ function OrderStatePopup(props) {
         setconfirmPopup(true);
     }
 
-    function confirmUpdateTime(status) {
-        const time = new Date();
+    function confirmUpdateTime() {
+        setTimeDone(Date())
     }
 
     const onConfirmHandler = async (status) => {
@@ -69,7 +69,7 @@ function OrderStatePopup(props) {
 
             {props.currentStatus === "Doing" && (
                 <button
-                    onClick={() => confirmPopupHandler("Done")}
+                    onClick={() => {confirmPopupHandler("Done"); confirmUpdateTime()}}
                     className={chef.finishOrder}
                 >
                     Hoàn thành
