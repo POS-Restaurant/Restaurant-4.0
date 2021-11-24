@@ -24,16 +24,19 @@ PillRoutes.post("/updateMoney", async (req, res) => {
         const { name , amount, stas } = req.body;
         const Clinet = await Client.findOne({ _id: name });
         let count = 0;
+        if (stas =="Nạp")
+            count = Number(Clinet.money)+Number(amount);
+        else{
+            count = Number(Clinet.money)-Number(amount);
+            if (count < 0)
+            res.send({success: "Not enough money"})
+        }
         const newCus = new Pill({
             customer: name,
             dateOfReceipt: new Date(),
             state: stas,
             total: amount
-          });
-        if (stas =="Nạp")
-            count = Number(Clinet.money)+Number(amount);
-        else
-            count = Number(Clinet.money)-Number(amount);
+          });        
         const Check2 = await newCus.save(); 
         const Check1 = await Client.findOneAndUpdate({ _id: name }, {money: count});
         res.send({success: "Success",customer: Clinet})

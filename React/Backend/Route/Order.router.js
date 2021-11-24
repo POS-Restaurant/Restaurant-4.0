@@ -4,7 +4,7 @@ const config = require('../configure.js');
 const jwt = require('jsonwebtoken');
 
 let Order = require('../Models/Order.model');
-
+let Client = require('../Models/Client.model');
 // OrderRoutes.post("/", async (req, res) => {
 
 // });
@@ -19,6 +19,36 @@ let Order = require('../Models/Order.model');
 //         }
 //     });
 // });
+
+OrderRoutes.post("/", async (req, res)=>{
+    try {
+        const { customer , restaurant, dateOfPurchase, dateOfReceipt, listFood, listNote, listNum, total } = req.body;
+        const Clinet = await Client.findOne({ _id: customer });
+        count = Number(Clinet.money)-total;
+        if (count<0){
+            res.send({success:"Get more money bitch"});
+            return;
+        }
+        let state = "Pending";
+        const newCus = new Order({
+            customer,
+            restaurant,
+            state,
+            dateOfPurchase,
+            dateOfReceipt,
+            listFood,
+            listNote,
+            listNum,
+            total
+          });        
+        const Check2 = await newCus.save(); 
+        const Check1 = await Client.findOneAndUpdate({ _id: customer }, {money: count});
+        res.send({success: "Success",customer: Clinet})
+    } catch (err) {
+        res.status(400).json({success: "Fail"});
+    }
+}
+);
 
 OrderRoutes.get("/get/list", (req, res) => {
     console.log(req.query);

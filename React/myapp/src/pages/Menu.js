@@ -113,11 +113,38 @@ class PickFood extends Component {
         });
     }
     togglePay() {
-        this.setState({
-            //   donePay: !this.state.donePay,
-            cart: [],
-            totalCost: 0,
-        });
+        try {
+            let A =[];
+            let B =[];
+            let C =[];
+            for(const x in this.state.cart){
+                A.push(this.state.cart[x]._id)
+                B.push("")
+                C.push(this.state.cart[x].num)
+            }
+            const client = {
+                customer: "619c9601a0294f5555f10da4",
+                restaurant: "61972135c13e6af2a31d8460",
+                dateOfPurchase: new Date(),
+                dateOfReceipt: 0,
+                listFood: A,
+                listNote: B,
+                listNum: C,
+                total: this.state.totalCost
+            }
+            const response = axios.post("http://localhost:3000/Order/",client).then(
+                (res) => {
+                    console.log(res)
+                    if(res.data.success=="Success")
+                        this.setState({
+                            cart: [],
+                            totalCost: 0,
+                        });
+                    alert(res.data.success);
+                })
+          } catch (error) {
+            console.log(error);
+        }
     }
     componentDidMount() {
         const idRes = localStorage.getItem("currentRes");
@@ -141,7 +168,6 @@ class PickFood extends Component {
     }
     render() {
         let food_list = this.state.food_display.map((food) => {
-            console.log(food.img);
             return (
                 <div key={food.id} className="containCard">
                     <Card className="foodCard">
@@ -172,7 +198,6 @@ class PickFood extends Component {
                                     className="addbtn foodItemBtn"
                                     onClick={(e) => {
                                         this.setState({ currentFood: food });
-                                        console.log(food);
                                         this.addFood(food);
                                     }}
                                 >
@@ -346,7 +371,6 @@ class PickFood extends Component {
                             <div
                                 class="btn2"
                                 onClick={(e) => {
-                                    alert("Bạn đã thanh toán thành công!");
                                     this.togglePay();
                                 }}
                             >
