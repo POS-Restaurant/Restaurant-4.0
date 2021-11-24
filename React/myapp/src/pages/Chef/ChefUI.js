@@ -52,7 +52,13 @@ function ChefUI() {
   const [activeCanceled,setActiveCanceled] = useState(false);
   var active = false;
   if(orders && orders.length > 0) active = true;
-  // console.log(orders&&Date(orders[0].dateOfPurchase))
+  
+  function filterOrder(condition) {
+    return orders && orders.length > 0 && orders.filter( e => {
+      if (condition===''||condition===e.state) return e;
+    })
+  }
+
   return (
     <div>
       <Sidebar type={1} />
@@ -110,16 +116,7 @@ function ChefUI() {
               }} 
             >Đã hủy</button>
           </div> : <div className={chef.buttonBar}>
-            <button className={`${chef.btnAll} ${activeAll ? chef.active : chef.close}`} 
-              onClick={() => {
-                setCondition('')
-                setActiveAll(true)
-                setActivePending(false)
-                setActiveDoing(false)
-                setActiveDone(false)
-                setActiveCanceled(false)
-              }}
-            >Tất cả</button>
+            <button className={chef.btnAll} disabled >Tất cả</button>
             <button className={chef.btnPending} disabled >Đang chờ</button>
             <button className={chef.btnDoing} disabled >Đang thực hiện</button>
             <button className={chef.btnDone} disabled >Hoàn thành</button>
@@ -135,9 +132,7 @@ function ChefUI() {
               <div className={chef.orderUpdateState}></div>
             </div>
             <div className={chef.orderList}>
-              {orders && orders.length > 0 ? orders.filter( e => {
-                  if (condition===''||condition===e.state) return e;
-                  }).map((order) => {
+              {filterOrder(condition).length > 0 ? filterOrder(condition).map((order) => {
                   return (
                     <OrderCard
                       key={order.id}
@@ -153,7 +148,7 @@ function ChefUI() {
                       onChange={onChange}
                     />
                   );
-                }) : <div className={chef.exception}> <p>You have no order to do.</p> </div>
+                }) : <div className={chef.exception}> <p>Danh sách đơn hàng trống.</p> </div>
               }
             </div>
           </div>

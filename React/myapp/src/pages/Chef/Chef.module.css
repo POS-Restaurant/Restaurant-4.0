@@ -22,7 +22,7 @@
 /**/
 .buttonBar {
     /* height: 100px; */
-    width: 50%;
+    width: 60%;
     /* background-color: purple; */
     height: 80px;
     display: flex;
@@ -69,7 +69,7 @@
 }
 
 .buttonBar button {
-    width: 20%;
+    width: 30%;
     height: 50px;
     box-sizing: border-box;
     border: none;
