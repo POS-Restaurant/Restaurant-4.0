@@ -45,7 +45,7 @@ function HomePage() {
                         </Row>
                         <Row>
                         <div className='resName' style={{textAlign:'center'}}> {res.name}</div>
-                        <Link className="unitResLink" to="/prelogin"  onClick = {function() {typeRes =res.id}}>
+                        <Link className="unitResLink" to="/login"  onClick = {function() {typeRes =res.id}}>
                             <div className="btn-goto" onClick={(e)=>{SetCurrent(res._id)}}  style={{textAlign:'center'}}>Chọn</div>
                         </Link>
                         </Row>

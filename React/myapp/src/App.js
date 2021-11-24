@@ -14,7 +14,6 @@ import ListOrder from './components/Account/viewOrder/listOrder'
 import Rating from './components/rating/ratingCpn/rating'
 import SignUp from './components/Sign/Signup/SignUp';
 import Login from './components/Sign/Login/Login';
-import PreLogin from './components/Sign/Login/prelogin';
 import ForgetPass from './components/Sign/Forget/Forget';
 import ForgetChangePass from './components/Sign/Forget/ForgetChangePass';
 import CusInfo from './components/Account/cusInfo';
@@ -53,7 +52,6 @@ function App() {
         <Route path='/forgetchangepass' exact component={ForgetChangePass} />
         <Route path='/payment' exact component={Payment} />
         <Route path='/' exact component={HomePage} />
-        <Route path='/prelogin' exact component={PreLogin} />
         <Redirect to='/'/>
       </Switch>
     </Router>

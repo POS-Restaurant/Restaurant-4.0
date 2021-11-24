@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import detail from "./OrderDetail.module.css";
+import detailOrder from "./OrderDetail.module.css";
 import OrderDetailCard from "./OrderDetailCard";
 //
 function OrderDetail(props) {
@@ -11,7 +11,6 @@ function OrderDetail(props) {
         setFoods(res.data.results);
       });
     };
-    console.log(foods);
     useEffect(() => {
         setTimeout(() => {
             checkData();
@@ -30,28 +29,28 @@ function OrderDetail(props) {
     }
 
     return (
-        <div className={detail.orderDetail}>
-            <div className={detail.generalDetail}>
-                <button className={detail.btnClose} onClick={props.onHide}>
+        <div className={detailOrder.orderDetail}>
+            <div className={detailOrder.generalDetail}>
+                <button className={detailOrder.btnClose} onClick={props.onHide}>
                     X
                 </button>
-                <span className={detail.orderId}>Mã đơn hàng: {props.id} </span>
-                <span className={detail.timeOrder}>
+                <span className={detailOrder.orderId}>Mã đơn hàng: {props.id} </span>
+                <span className={detailOrder.timeOrder}>
                     Thời gian đặt hàng: {props.time}
                 </span>
-                <span className={detail.customerName}>
+                <span className={detailOrder.customerName}>
                     Tên khách hàng: {props.name}
                 </span>
             </div>
-            <div className={detail.orderDetailList}>
-                <div className={detail.detailInfoBar}>
-                    <div className={detail.product}>Món</div>
-                    <div className={detail.price}>Giá</div>
-                    <div className={detail.quantity}>Số lượng</div>
-                    <div className={detail.note}>Ghi chú</div>
-                    <div className={detail.tempPay}>Tạm tính</div>
+            <div className={detailOrder.orderDetailList}>
+                <div className={detailOrder.detailInfoBar}>
+                    <div className={detailOrder.product}>Món</div>
+                    <div className={detailOrder.price}>Giá</div>
+                    <div className={detailOrder.quantity}>Số lượng</div>
+                    <div className={detailOrder.note}>Ghi chú</div>
+                    <div className={detailOrder.tempPay}>Tạm tính</div>
                 </div>
-                <div className={detail.infoList}>
+                <div className={detailOrder.infoList}>
                     {searchFood(props.listFood).map((item, index) => {
                         return (
                             <OrderDetailCard
@@ -64,9 +63,9 @@ function OrderDetail(props) {
                     })}
                 </div>
             </div>
-            <div className={detail.total}>
+            <div className={detailOrder.total}>
                 Tổng tiền:{" "}
-                <span className={detail.totalPay}> {props.total} VNĐ </span>
+                <span className={detailOrder.totalPay}> {props.total} VNĐ </span>
             </div>
         </div>
     );
