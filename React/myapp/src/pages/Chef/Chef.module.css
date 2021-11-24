@@ -85,7 +85,7 @@
 }
 .buttonBar button:disabled,
 button[disabled]{
-  background-color: #cccccc;
+  background-color: #f4f4f4;
   color: #666666;
 }
 

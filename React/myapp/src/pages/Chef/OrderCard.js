@@ -61,7 +61,7 @@ function OrderCard(props) {
                 </button>}
             </div>
             {chooseStatePopup && (
-                <OrderStatePopup onChooseState={chooseStateHideHandler} currentStatus={props.status}/>
+                <OrderStatePopup total={props.total} customer={props.customer} onChooseState={chooseStateHideHandler} currentStatus={props.status}/>
             )}
             {popUp&&<OrderDetail 
                 onHide={()=>setPopUp(false)}

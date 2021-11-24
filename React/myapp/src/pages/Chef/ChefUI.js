@@ -39,6 +39,15 @@ function ChefUI() {
       }
     }
   };
+  const searchCus = (data, id) => {
+    if (data) {
+      for (let i = 0; i < data.length; i++) {
+        if (data[i]._id === id) {
+          return data[i];
+        }
+      }
+    }
+  };
   const onChange = async () => {
     await axios
       .get("http://localhost:3000/Order/get/list", { params: { id: idRes } })
@@ -145,6 +154,7 @@ function ChefUI() {
                       id={order._id}
                       time={order.dateOfPurchase}
                       name={searchInfoCus(clients, order.customer)}
+                      customer={searchCus(clients, order.customer)}
                       price={order.total}
                       status={order.state}
                       total={order.total}

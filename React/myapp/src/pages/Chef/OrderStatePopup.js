@@ -7,14 +7,21 @@ function OrderStatePopup(props) {
     const _id = localStorage.getItem("currentOrder");
     const [state, setState] = useState("Pending");
     const [timeDone, setTimeDone] = useState("");
+    const [refund, setRefund] = useState(props.customer.money);
     const [statusButton, setstatusButton] = useState("");
     const [confirmPopup, setconfirmPopup] = useState(false);
     const update = async () => {
         await axios.post("http://localhost:3000/Order/update/state", {
             params: { id: _id, state: state, dateOfReceipt: timeDone },
         });
+        await axios.post("http://localhost:3000/Client/update/money", {
+            params: { id: props.customer._id, money: refund },
+        });
+        
         // .then((res) => alert(res.data.msg));
     };
+
+
     function confirmPopupHandler(status) {
         setState(status);
         if (status === "Done") setstatusButton("Hoàn thành");
@@ -23,8 +30,11 @@ function OrderStatePopup(props) {
         setconfirmPopup(true);
     }
 
-    function confirmUpdateTime() {
+    function confirmUpdateTimeDone() {
         setTimeDone(Date())
+    }
+    function confirmUpdateRefund(total) {
+        setRefund(total)
     }
 
     const onConfirmHandler = async (status) => {
@@ -69,7 +79,7 @@ function OrderStatePopup(props) {
 
             {props.currentStatus === "Doing" && (
                 <button
-                    onClick={() => {confirmPopupHandler("Done"); confirmUpdateTime()}}
+                    onClick={() => {confirmPopupHandler("Done"); confirmUpdateTimeDone()}}
                     className={chef.finishOrder}
                 >
                     Hoàn thành
@@ -79,7 +89,7 @@ function OrderStatePopup(props) {
             {(props.currentStatus === "Pending" ||
                 props.currentStatus === "Doing") && (
                 <button
-                    onClick={() => confirmPopupHandler("Canceled")}
+                    onClick={() => {confirmPopupHandler("Canceled"); confirmUpdateRefund(refund + props.total)}}
                     className={chef.cancelOrder}
                 >
                     Hủy đơn

@@ -81,5 +81,16 @@ ClientRoutes.post("/search", async (req, res) => {
     }
 });
 
+ClientRoutes.post("/update/money", async (req, res) => {
+    Client.findOneAndUpdate({_id:req.body.params.id}, req.body.params, function (err) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            res.json("Thay đổi thành công");
+        }
+    })
+});
+
 module.exports = ClientRoutes;
 
