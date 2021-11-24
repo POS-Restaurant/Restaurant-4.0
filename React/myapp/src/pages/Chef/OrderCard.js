@@ -31,7 +31,6 @@ function OrderCard(props) {
         if (status === "Doing") return chef.doing;
     }
     const timePurchase = new Date(props.time)
-    console.log()
     return (
         <div className={chef.orderCard}>
             <div className={chef.orderCardID} style={{color: "blue", cursor: "pointer"}} onClick={()=>setPopUp(true)}>#{props.id}</div>
