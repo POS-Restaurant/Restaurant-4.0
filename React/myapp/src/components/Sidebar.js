@@ -82,6 +82,7 @@ function Sidebar({type}) {
           </SidebarWrap>
         </SidebarNav>
       </IconContext.Provider>
+      <button onClick={()=>{localStorage.clear("id"); console.log(localStorage.getItem("id"))}}>Đăng xuất</button>
     </div>
   );
 };

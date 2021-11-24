@@ -1,5 +1,5 @@
 export const dataCustomer = {
-    name: "Nguyễn Trường Hải Đăng",
+    name: "Nguyễn Trường Hải Đăng ahahah",
     phone: "0768803077",
     mail: "dang@gmail.com",
     bdate: "2001-04-16",

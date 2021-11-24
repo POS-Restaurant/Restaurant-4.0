@@ -72,7 +72,7 @@ function Info({ data, type }) {
                                     <div className={account.inputGender}>
                                         <div className={account.selectGender}>
                                             <Input
-                                                style={{ cursor: "pointer" }}
+                                                // style={{ cursor: "pointer" }}
                                                 className={account.gender}
                                                 name="gender"
                                                 type="radio"
@@ -82,7 +82,7 @@ function Info({ data, type }) {
                                         </div>
                                         <div className={account.selectGender}>
                                             <Input
-                                                style={{ cursor: "pointer" }}
+                                                // style={{ cursor: "pointer" }}
                                                 className={account.gender}
                                                 name="gender"
                                                 type="radio"
@@ -91,7 +91,7 @@ function Info({ data, type }) {
                                         </div>
                                         <div className={account.selectGender}>
                                             <Input
-                                                style={{ cursor: "pointer" }}
+                                                // style={{ cursor: "pointer" }}
                                                 className={account.gender}
                                                 name="gender"
                                                 type="radio"
