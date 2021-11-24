@@ -5,12 +5,13 @@ import OrderDetailCard from "./OrderDetailCard";
 //
 function OrderDetail(props) {
     const [foods, setFoods] = useState([]);
+    const idRes = localStorage.getItem("currentRes");
     const checkData = async () => {
-        await axios.get("http://localhost:3000/Food/list").then((res) => {
-            // console.log(res.data.results);
-            setFoods(res.data.results);
-        });
+        await axios.get("http://localhost:3000/Food/get/list_food_res", { params: { id: idRes } }).then((res) => {
+        setFoods(res.data.results);
+      });
     };
+    console.log(foods);
     useEffect(() => {
         setTimeout(() => {
             checkData();

@@ -25,6 +25,12 @@ FoodRoutes.get("/list", (req, res) => {
 });
 
 
+FoodRoutes.get("/get/list_food_res", (req, res) => {
+    console.log(req.query);
+    Food.find ({Restaurant:req.query.id},(err, results)=>{
+        res.json({results});
+    })
+});
 FoodRoutes.get("/get/menu", (req, res) => {
     console.log(req.query);
     Food.find ({Restaurant:req.query.id},(err,results)=>{
