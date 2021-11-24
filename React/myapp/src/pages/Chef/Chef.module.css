@@ -81,7 +81,14 @@
     color: rgb(0, 0, 0);
     cursor: pointer;
     border-radius: 0px;
+    font-weight: bold;
 }
+.buttonBar button:disabled,
+button[disabled]{
+  background-color: #cccccc;
+  color: #666666;
+}
+
 .buttonBar button:hover {
     background-color: #ffffff;
 }

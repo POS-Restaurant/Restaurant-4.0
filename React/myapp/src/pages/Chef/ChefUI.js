@@ -51,13 +51,14 @@ function ChefUI() {
   const [activeDoing,setActiveDoing] = useState(false);
   const [activeDone,setActiveDone] = useState(false);
   const [activeCanceled,setActiveCanceled] = useState(false);
-
+  var active = false;
+  if(orders && orders.length > 0) active = true;
   return (
     <div>
       <Sidebar type={1} />
       <div class={chef.chef_ui}>
         <div className={chef.mainContent}>
-          <div className={chef.buttonBar}>
+          {active ? <div className={chef.buttonBar}>
             <button className={`${chef.btnAll} ${activeAll ? chef.active : chef.close}`} 
               onClick={() => {
                 setCondition('')
@@ -108,7 +109,22 @@ function ChefUI() {
                 setActiveCanceled(true)
               }} 
             >Đã hủy</button>
-          </div>
+          </div> : <div className={chef.buttonBar}>
+            <button className={`${chef.btnAll} ${activeAll ? chef.active : chef.close}`} 
+              onClick={() => {
+                setCondition('')
+                setActiveAll(true)
+                setActivePending(false)
+                setActiveDoing(false)
+                setActiveDone(false)
+                setActiveCanceled(false)
+              }}
+            >Tất cả</button>
+            <button className={chef.btnPending} disabled >Đang chờ</button>
+            <button className={chef.btnDoing} disabled >Đang thực hiện</button>
+            <button className={chef.btnDone} disabled >Hoàn thành</button>
+            <button className={chef.btnCancel} disabled>Đã hủy</button>
+          </div>}
           <div className={chef.orderTable}>
             <div className={`${chef.orderListInfoBar} ${chef.orderCard}`}>
               <div className={chef.orderCardID}>Mã đơn</div>
