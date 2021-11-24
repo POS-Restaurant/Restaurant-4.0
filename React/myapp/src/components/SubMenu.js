@@ -44,7 +44,25 @@ const SubMenu = ({ item }) => {
   const [subnav, setSubnav] = useState(false);
 
   const showSubnav = () => setSubnav(!subnav);
-
+  if(item.title==="Đăng xuất"){
+    return(
+      <>
+<SidebarLink to={item.path} onClick={()=>{localStorage.clear("id"); console.log(localStorage.getItem("id"))}}>
+        <div>
+          {item.icon}
+          <SidebarLabel>{item.title}</SidebarLabel>
+        </div>
+        <div>
+          {item.subNav && subnav
+            ? item.iconOpened
+            : item.subNav
+            ? item.iconClosed
+            : null}
+        </div>
+      </SidebarLink>
+      </>
+    )
+  }
   return (
     <>
       <SidebarLink to={item.path} onClick={item.subNav && showSubnav}>
@@ -65,7 +83,7 @@ const SubMenu = ({ item }) => {
           return (
             <DropdownLink to={item.path} key={index}>
               {item.icon}
-              <SidebarLabel>{item.title}</SidebarLabel>
+              <SidebarLabel >{item.title}</SidebarLabel>
             </DropdownLink>
           );
         })}
