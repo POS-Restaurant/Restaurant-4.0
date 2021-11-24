@@ -19,12 +19,13 @@ function OrderCard(props) {
         if (status === "Canceled") return listOrder.canceled;
         if (status === "Doing") return listOrder.doing;
     }
-    const timePurchase = new Date(props.time)
+    const timePurchase = new Date(props.timePurchase)
+    const timeReceipt = new Date(props.timeReceipt)
     return (
         <div className={listOrder.orderCard}>
             <div className={listOrder.orderCardID} style={{color: "blue", cursor: "pointer"}} onClick={()=>setPopUp(true)}>#{props.id}</div>
             <div className={listOrder.orderCardTime}>{timePurchase.toString().slice(0, 24)}</div>
-            <div className={listOrder.orderCardName}>{props.name}</div>
+            <div className={listOrder.orderCardTime}>{props.status === "Done" ? timeReceipt.toString().slice(0, 24) : ""}</div>
             <div className={listOrder.orderCardPrice}>{props.price}đ</div>
             <div className={listOrder.orderCardStatus}>
                 <div
@@ -39,7 +40,9 @@ function OrderCard(props) {
                 onHide={()=>setPopUp(false)}
                 name={props.name}
                 id={props.id}
-                time={props.time}
+                timePurchase={timePurchase.toString().slice(0, 24)}
+                timeReceipt={timeReceipt.toString().slice(0, 24)}
+                status={props.status}
                 total={props.total}
                 listFood = {props.listFood}
                 listNum = {props.listNum}

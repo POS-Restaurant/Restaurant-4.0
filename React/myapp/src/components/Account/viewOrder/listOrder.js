@@ -11,7 +11,7 @@ function ListOrderUI() {
   const [init, setInit] = useState(true);
   const checkData = async () => {
     await axios
-      .get("http://localhost:3000/Order/get/list", { params: { id: idRes } })
+      .get("http://localhost:3000/Order/get/my_orders", { params: { idCus: "619c9601a0294f5555f10da4", idRes: idRes } })
       .then((res) => {
         setOrders(res.data.results);
       });
@@ -50,15 +50,15 @@ function ListOrderUI() {
   };
   const onChange = async () => {
     await axios
-      .get("http://localhost:3000/Order/get/list", { params: { id: idRes } })
+      .get("http://localhost:3000/Order/get/my_orders", { params: { idCus: "619c9601a0294f5555f10da4", idRes: idRes } })
       .then((res) => {
         setOrders(res.data.results);
-    });
+      });
     await axios
       .get("http://localhost:3000/Client/get/list", { params: { id: idRes } })
       .then((res) => {
         setClients(res.data.results);
-    });
+      });
   };
   const [condition,setCondition] = useState('');
   const [activeAll,setActiveAll] = useState(true);
@@ -76,7 +76,7 @@ function ListOrderUI() {
   }
   return (
     <div>
-      <Sidebar type={1} />
+      <Sidebar type={0} />
       <div class={listOrder.listOrder_ui}>
         <div className={listOrder.mainContent}>
           {active ? <div className={listOrder.buttonBar}>
@@ -141,10 +141,9 @@ function ListOrderUI() {
             <div className={`${listOrder.orderListInfoBar} ${listOrder.orderCard}`}>
               <div className={listOrder.orderCardID}>Mã đơn</div>
               <div className={listOrder.orderCardTime}>Thời gian đặt</div>
-              <div className={listOrder.orderCardName}>Người đặt</div>
+              <div className={listOrder.orderCardTime}>Thời gian nhận</div>
               <div className={listOrder.orderCardPrice}>Tổng tiền</div>
               <div className={listOrder.orderCardStatus}>Trạng thái</div>
-              <div className={listOrder.orderUpdateState}></div>
             </div>
             <div className={listOrder.orderList}>
               {filterOrder(condition).length > 0 ? filterOrder(condition).map((order) => {
@@ -152,7 +151,8 @@ function ListOrderUI() {
                     <OrderCard
                       key={order.id}
                       id={order._id}
-                      time={order.dateOfPurchase}
+                      timePurchase={order.dateOfPurchase}
+                      timeReceipt={order.dateOfReceipt}
                       name={searchInfoCus(clients, order.customer)}
                       customer={searchCus(clients, order.customer)}
                       price={order.total}

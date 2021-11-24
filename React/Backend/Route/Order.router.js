@@ -63,7 +63,7 @@ OrderRoutes.get("/get/list", (req, res) => {
 });
 OrderRoutes.get("/get/my_orders", (req, res) => {
     console.log(req.query);
-    Order.find({customer:req.query.id},(err,results)=>{
+    Order.find({customer:req.query.idCus, restaurant:req.query.idRes },(err,results)=>{
         if (err) {
             console.log(err);
         }
