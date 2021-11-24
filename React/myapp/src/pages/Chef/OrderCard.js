@@ -48,12 +48,18 @@ function OrderCard(props) {
                 </div>
             </div>
             <div className={chef.orderUpdateState}>
-                <button
+                {(props.status === "Canceled" || props.status === "Done")? <button
+                    onClick={chooseStatePopHandler}
+                    className={chef.changeStateButton}
+                    disabled
+                >
+                    <span class="material-icons-outlined">more_horiz</span>
+                </button> : <button
                     onClick={chooseStatePopHandler}
                     className={chef.changeStateButton}
                 >
                     <span class="material-icons-outlined">more_horiz</span>
-                </button>
+                </button>}
             </div>
             {chooseStatePopup && (
                 <OrderStatePopup onChooseState={chooseStateHideHandler} currentStatus={props.status}/>
