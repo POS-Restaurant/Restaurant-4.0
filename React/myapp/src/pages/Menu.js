@@ -2,72 +2,73 @@ import React, { Component } from "react";
 // import { FaYenSign } from "react-icons/fa";
 import { Container, Row, Col, Card, Input, Button, Modal } from "reactstrap";
 //import { FoodOrdData } from "./FoodData";
-import Sidebar from "../components/Sidebar"
-import {FaClosedCaptioning, FaSearch} from "react-icons/fa";
-import axios from 'axios';
+import Sidebar from "../components/Sidebar";
+import { FaClosedCaptioning, FaSearch } from "react-icons/fa";
+import axios from "axios";
 class PickFood extends Component {
     constructor(props) {
         super(props);
-        this.state ={
-            food_list:[],
-            food_display:[],
+        this.state = {
+            food_list: [],
+            food_display: [],
             cart: [],
             isModalOpen: false,
-        currentFood:{},
-        totalCost:0,
-    searchTxt:"",};// FoodOrdData;
-        this.state.isModalOpen=false;
-        this.togglePay=this.togglePay.bind(this);
+            currentFood: {},
+            totalCost: 0,
+            searchTxt: "",
+        }; // FoodOrdData;
+        this.state.isModalOpen = false;
+        this.togglePay = this.togglePay.bind(this);
         this.adjustItem = this.adjustItem.bind(this);
         this.toggleModal = this.toggleModal.bind(this);
-        this.adjustFood=this.adjustFood.bind(this);
-        this.addFood=this.addFood.bind(this);
-        this.addcurrFood=this.addcurrFood.bind(this);
-        this.rmvItem=this.rmvItem.bind(this);
-        this.total=this.total.bind(this);
-        this.searchText=this.searchText.bind(this);
+        this.adjustFood = this.adjustFood.bind(this);
+        this.addFood = this.addFood.bind(this);
+        this.addcurrFood = this.addcurrFood.bind(this);
+        this.rmvItem = this.rmvItem.bind(this);
+        this.total = this.total.bind(this);
+        this.searchText = this.searchText.bind(this);
         //     this.addDrug = this.addDrug.bind(this);
     }
     rmvItem(food) {
-        const newCart = this.state.cart.filter((item) => item.name !== food.name);
-        this.state.cart=newCart;
-        food.num=1;
+        const newCart = this.state.cart.filter(
+            (item) => item.name !== food.name
+        );
+        this.state.cart = newCart;
+        food.num = 1;
         this.total();
     }
     adjustItem(foodfix, more) {
         const A = foodfix;
         if (more) A.num++;
         else A.num--;
-        if(A.num<1) alert("Bạn đã nhập sai số lượng!")
+        if (A.num < 1) alert("Bạn đã nhập sai số lượng!");
         else {
             const newcart = this.state.cart.map((food) => {
-            if (food===foodfix) return A;
-            else return food;
-        });
-        this.setState({
-            cart: newcart,
-        });
-        this.total();
+                if (food === foodfix) return A;
+                else return food;
+            });
+            this.setState({
+                cart: newcart,
+            });
+            this.total();
         }
     }
-    adjustFood(event){
-        const fix=this.state.currentCart;
-        const newCart=this.state.cart.map(
-            (item)=>{
-                if (item===fix) {item.num=event.target.value;}
-                return item;
+    adjustFood(event) {
+        const fix = this.state.currentCart;
+        const newCart = this.state.cart.map((item) => {
+            if (item === fix) {
+                item.num = event.target.value;
             }
-        )
-        this.setState({cart:newCart})
+            return item;
+        });
+        this.setState({ cart: newCart });
         this.total();
     }
-    addcurrFood(){
-        this.addFood(this.state.currentFood)
+    addcurrFood() {
+        this.addFood(this.state.currentFood);
     }
     addFood(food) {
-        const exist = this.state.cart.filter(
-            (item) => item.name===food.name
-        );
+        const exist = this.state.cart.filter((item) => item.name === food.name);
         if (exist.length > 0) {
             this.adjustItem(exist[0], true);
         } else {
@@ -81,14 +82,14 @@ class PickFood extends Component {
     search(type) {
         this.setState({
             food_display: this.state.food_list.filter(
-                (food) => food.kind===type
+                (food) => food.kind === type
             ),
         });
     }
     searchText() {
         this.setState({
-            food_display: this.state.food_list.filter(
-                (food) => food.name.includes(this.state.searchTxt)
+            food_display: this.state.food_list.filter((food) =>
+                food.name.includes(this.state.searchTxt)
             ),
         });
         console.log(this.state.searchTxt);
@@ -99,62 +100,83 @@ class PickFood extends Component {
         });
     }
     total() {
-        const sum=this.state.cart.reduce(
-            (total, item) => total + item.price * item.num,0
+        const sum = this.state.cart.reduce(
+            (total, item) => total + item.price * item.num,
+            0
         );
-        this.setState({totalCost:sum});
+        this.setState({ totalCost: sum });
     }
-    
+
     toggleModal() {
         this.setState({
-          isModalOpen: !this.state.isModalOpen
+            isModalOpen: !this.state.isModalOpen,
         });
     }
     togglePay() {
         this.setState({
-        //   donePay: !this.state.donePay,
-          cart:[],
-          totalCost:0,
+            //   donePay: !this.state.donePay,
+            cart: [],
+            totalCost: 0,
         });
     }
     componentDidMount() {
-        const idRes=localStorage.getItem("currentRes");
-    axios.get('http://localhost:3000/Food/get/menu',{params:{id:idRes}}).then(res=>{
-    const FoodList=res.data.result;
-    const returnValue = FoodList.map((food)=>{
-        var newfood=food;
-        newfood.num=1;
-        return newfood;
-    });
-    this.setState({food_list:returnValue});
-    this.setState({
-            food_display: this.state.food_list,
-        });
-        this.total();
-})
+        const idRes = localStorage.getItem("currentRes");
+        axios
+            .get("http://localhost:3000/Food/get/menu", {
+                params: { id: idRes },
+            })
+            .then((res) => {
+                const FoodList = res.data.result;
+                const returnValue = FoodList.map((food) => {
+                    var newfood = food;
+                    newfood.num = 1;
+                    return newfood;
+                });
+                this.setState({ food_list: returnValue });
+                this.setState({
+                    food_display: this.state.food_list,
+                });
+                this.total();
+            });
     }
     render() {
         let food_list = this.state.food_display.map((food) => {
-            console.log(food.img)
+            console.log(food.img);
             return (
                 <div key={food.id} className="containCard">
                     <Card className="foodCard">
                         <Row className="foodRow">
-                            <Col>
-                            <img className= 'menuFoodImg' src={food.img+'.png'} alt="None"/>
+                            <Col className="menuFoodImg">
+                                <img
+                                    className="menuFoodImg"
+                                    src={food.img + ".png"}
+                                    alt="None"
+                                />
                             </Col>
-                            <Col>
-                            <div className='menuFoodName'> {food.name}</div>
-                            <div className='menuFoodPrice'> Giá tiền : {food.price}</div>
-                            <Button className="infobtn" onClick={()=>{this.setState({currentFood:food}); this.toggleModal()}}>Xem chi tiết </Button>
-                            <Button
-                                className="addbtn"
-                                onClick={(e) => {this.setState({currentFood:food});
-                                console.log(food);
-                                    this.addFood(food);
-                                }}
-                            >
-                                Thêm vào giỏ hàng
+                            <Col className="infoFood">
+                                <div className="menuFoodName"> {food.name}</div>
+                                <div className="menuFoodPrice">
+                                    {" "}
+                                    Giá tiền : {food.price}
+                                </div>
+                                <Button
+                                    className="infobtn foodItemBtn"
+                                    onClick={() => {
+                                        this.setState({ currentFood: food });
+                                        this.toggleModal();
+                                    }}
+                                >
+                                    Xem chi tiết{" "}
+                                </Button>
+                                <Button
+                                    className="addbtn foodItemBtn"
+                                    onClick={(e) => {
+                                        this.setState({ currentFood: food });
+                                        console.log(food);
+                                        this.addFood(food);
+                                    }}
+                                >
+                                    Thêm vào giỏ hàng
                                 </Button>
                             </Col>
                         </Row>
@@ -170,7 +192,7 @@ class PickFood extends Component {
                             {" "}
                             <img
                                 className="menuFoodImg2"
-                                src={foodItem.img+'.png'}
+                                src={foodItem.img + ".png"}
                                 alt="Img Food"
                             />
                             <div className="foodCartInfo">
@@ -186,12 +208,23 @@ class PickFood extends Component {
                                     }}
                                 >
                                     <span class="material-icons-outlined">
-remove
-</span>
+                                        remove
+                                    </span>
                                 </Button>
-                                <input type="text" class="addMinusText" value={foodItem.num} name="amount" onChange={(e)=>{this.setState({currentCart:foodItem});this.adjustFood();}}/>
-                            
-                                <Button className='addCartItem'
+                                <input
+                                    type="text"
+                                    class="addMinusText"
+                                    value={foodItem.num}
+                                    name="amount"
+                                    onChange={(e) => {
+                                        this.setState({
+                                            currentCart: foodItem,
+                                        });
+                                        this.adjustFood();
+                                    }}
+                                />
+                                <Button
+                                    className="addCartItem"
                                     onClick={(e) => {
                                         this.adjustItem(foodItem, true);
                                     }}
@@ -232,100 +265,213 @@ remove
 
         return (
             <div>
-                <Sidebar type={0}/>
+                <Sidebar type={0} />
                 <Row className="screen">
                     <Col className="MenuCard">
                         <Row>
-                            <Button className="type-button" onClick={() => {this.showAll();}}>
+                            <Button
+                                className="type-button"
+                                onClick={() => {
+                                    this.showAll();
+                                }}
+                            >
                                 Tất cả
                             </Button>
-                            <Button className="type-button" onClick={() => {this.search("Food");}}>
+                            <Button
+                                className="type-button"
+                                onClick={() => {
+                                    this.search("Food");
+                                }}
+                            >
                                 Món ăn
                             </Button>
-                            <Button className="type-button" onClick={() => {this.search("Drink");}}>
+                            <Button
+                                className="type-button"
+                                onClick={() => {
+                                    this.search("Drink");
+                                }}
+                            >
                                 Nước uống
                             </Button>
-                            <Button className="type-button" onClick={() => {this.search("Combo");}}>
+                            <Button
+                                className="type-button"
+                                onClick={() => {
+                                    this.search("Combo");
+                                }}
+                            >
                                 Combo
                             </Button>
-                            <Input style = {{ height: 46, width: 400}} type="text" 
-                            name="searchFood" id="searchBar" placeholder="Tìm kiếm" 
-                            onChange={(e) => {
-                                this.setState({searchTxt:e.target.value})
-                            }} />
-                    
-                            <FaSearch id = "searchIcon" onClick={(e)=>this.searchText()}/>
-                     
+                            <Input
+                                style={{ height: 46, width: 400 }}
+                                type="text"
+                                name="searchFood"
+                                id="searchBar"
+                                placeholder="Tìm kiếm"
+                                onChange={(e) => {
+                                    this.setState({
+                                        searchTxt: e.target.value,
+                                    });
+                                }}
+                            />
+
+                            <FaSearch
+                                id="searchIcon"
+                                onClick={(e) => this.searchText()}
+                            />
                         </Row>
-                                            <div class="scroll-bg-menu">
+                        <div class="scroll-bg-menu">
                             <div class="scroll-div-menu">
                                 <div class="scroll-object-menu">
-                            
-                                {food_list}
-                        </div>
-                        </div>
+                                    {food_list}
+                                </div>
+                            </div>
                         </div>
                     </Col>
                     <Col className="cart">
                         <div class="scroll-bg-cart">
                             <div class="scroll-div-cart">
                                 <div class="scroll-object-cart">
-                            
-                        {cart_food_list}
+                                    {cart_food_list}
+                                </div>
+                            </div>
                         </div>
-                        </div>
-                        </div>
-                        <Container>
-                            Tổng: <h1>{this.state.totalCost}</h1>
-                            <div class="btn2" onClick={(e) => {alert("Bạn đã thanh toán thành công!");
-                                this.togglePay();
-                                }}>
+                        <Container className="payment">
+                            <h1 className="totalCostBar">
+                                Tổng:{" "}
+                                <span className="totalCost">
+                                    ${this.state.totalCost}
+                                </span>
+                            </h1>
+
+                            <div
+                                class="btn2"
+                                onClick={(e) => {
+                                    alert("Bạn đã thanh toán thành công!");
+                                    this.togglePay();
+                                }}
+                            >
                                 Thanh toán
                             </div>
                         </Container>
                     </Col>
 
-                    <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
-                        <div class='itemContainer'>
+                    <Modal
+                        isOpen={this.state.isModalOpen}
+                        toggle={this.toggleModal}
+                    >
+                        <div class="itemContainer">
                             <div class="itemHeader">
-                            <h2 class='headerName'>Thêm vào giỏ hàng</h2>
-                            <button class="closeBtn" onClick={this.toggleModal}>X</button>
-                        </div>
-                    <div class="itemBody">
-                    <div className="Picbox">
-                    <img class={"itemPic"} src={this.state.currentFood.img} alt="Img Food"/>
-                    </div>
-                    <div class="itemDetail">
-                        <div class="itemPrice">
-                            <div className='itemPrice_1'>
-                                <h4>Name</h4>
-                                <h3>{this.state.currentFood.name}</h3>
+                                <h2 class="headerName">Thêm vào giỏ hàng</h2>
+                                <button
+                                    class="closeBtn"
+                                    onClick={this.toggleModal}
+                                >
+                                    X
+                                </button>
                             </div>
-                            <div className='itemPrice_3'>
-                                <h4>Price</h4>
-                                <h3 class="redColor">{this.state.currentFood.price}</h3>
+                            <div class="itemBody">
+                                <div className="Picbox">
+                                    <img
+                                        class={"itemPic"}
+                                        src={this.state.currentFood.img}
+                                        alt="Img Food"
+                                    />
+                                </div>
+                                <div class="itemDetail">
+                                    <div class="itemPrice">
+                                        <div className="itemPrice_1">
+                                            <h4>Name</h4>
+                                            <h3>
+                                                {this.state.currentFood.name}
+                                            </h3>
+                                        </div>
+                                        <div className="itemPrice_3">
+                                            <h4>Price</h4>
+                                            <h3 class="redColor">
+                                                {this.state.currentFood.price}
+                                            </h3>
+                                        </div>
+                                    </div>
+                                    <div class="itemQuantity">
+                                        <div class="itemQuantityText">
+                                            Quantity
+                                        </div>
+                                        <div class="itemQuantityBtn">
+                                            <button
+                                                type="button"
+                                                class="addMinusBtn"
+                                                onClick={(e) =>
+                                                    this.adjustItem(
+                                                        this.state.currentFood,
+                                                        false
+                                                    )
+                                                }
+                                            >
+                                                -
+                                            </button>
+                                            <input
+                                                type="text"
+                                                class="addMinusText"
+                                                value={
+                                                    this.state.currentFood.num
+                                                }
+                                                name="amount"
+                                                onChange={this.adjustFood}
+                                            />
+                                            <button
+                                                type="button"
+                                                class="addMinusBtn"
+                                                onClick={(e) =>
+                                                    this.adjustItem(
+                                                        this.state.currentFood,
+                                                        true
+                                                    )
+                                                }
+                                            >
+                                                +
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="clear"></div>
+                                <div class="itemNutri">
+                                    <h5>
+                                        Protein:{" "}
+                                        <span class="itemNutriText">
+                                            {this.state.currentFood.protein}
+                                        </span>{" "}
+                                    </h5>
+                                    <h5>
+                                        Baking material:{" "}
+                                        <span class="itemNutriText">
+                                            {this.state.currentFood.material}
+                                        </span>{" "}
+                                    </h5>
+                                    <h5>
+                                        Food decoration:{" "}
+                                        <span class="itemNutriText">
+                                            {this.state.currentFood.decoration}
+                                        </span>{" "}
+                                    </h5>
+                                    <h5>
+                                        Rating:{" "}
+                                        <span class="itemNutriText">
+                                            {this.state.currentFood.rating}
+                                        </span>{" "}
+                                    </h5>
+                                </div>
+                                <button
+                                    class="bottomBtn"
+                                    type="button"
+                                    onClick={() => {
+                                        this.addcurrFood();
+                                        this.toggleModal();
+                                    }}
+                                >
+                                    Xác nhận
+                                </button>
                             </div>
                         </div>
-                        <div class="itemQuantity">
-                            <div class="itemQuantityText">Quantity</div>
-                            <div class="itemQuantityBtn">
-                                <button type="button" class="addMinusBtn" onClick={(e)=>this.adjustItem(this.state.currentFood,false)}>-</button>
-                                <input type="text" class="addMinusText" value={this.state.currentFood.num} name="amount" onChange={this.adjustFood}/>
-                                <button type="button" class="addMinusBtn" onClick={(e)=>this.adjustItem(this.state.currentFood,true)}>+</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="clear"></div>
-                    <div class="itemNutri">
-                            <h5>Protein: <span class="itemNutriText">{this.state.currentFood.protein}</span> </h5>
-                            <h5>Baking material: <span class="itemNutriText">{this.state.currentFood.material}</span> </h5>
-                            <h5>Food decoration: <span class="itemNutriText">{this.state.currentFood.decoration}</span> </h5>
-                        <h5>Rating: <span class="itemNutriText">{this.state.currentFood.rating}</span> </h5>
-                            
-                        </div>
-                        <button class="bottomBtn" type="button" onClick={()=>{this.addcurrFood(); this.toggleModal()}}>Xác nhận</button>
-                    </div>
-                </div>
                     </Modal>
                 </Row>
             </div>
