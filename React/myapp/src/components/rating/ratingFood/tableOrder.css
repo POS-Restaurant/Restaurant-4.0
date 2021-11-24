@@ -1,8 +1,8 @@
 .tableOrder{
-    padding-left: 25px;
-    padding-right: 25px;
+    /* padding-left: 25px;
+    padding-right: 25px; */
     padding-top: 10px;
-    width: 1450px;
+    /* width: 1450px; */
 }
 .tableOrder .titleCol{
     line-height: 50px;
@@ -16,7 +16,7 @@
 }
 .tableOrder .subtitleCol {
     border-bottom: 3px solid #000;
-    width: 1400px;
+    /* width: 1400px; */
     background-color: #0069e6;
     color: white;
     height: 40px
@@ -141,4 +141,10 @@
 .tableOrder .ratingOpen  #cancel-btn {
     background-color: #C4C4C4;
     margin-left: 10px;
+}
+
+.orderCard > div > p{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
 }

@@ -1,12 +1,11 @@
-
-#ratingResCpn #row2 #ratingCmt textarea[type="text"]::placeholder{
+#ratingResCpn #row2 #ratingCmt textarea[type="text"]::placeholder {
     text-align: center;
     font-size: 20px;
 }
-#ratingResCpn #row2 #ratingStar .css-jue3ft-MuiRating-root{
+#ratingResCpn #row2 #ratingStar .css-jue3ft-MuiRating-root {
     font-size: 80px;
 }
-#ratingResCpn #row2 #ratingStar .css-d0uhtl{
+#ratingResCpn #row2 #ratingStar .css-d0uhtl {
     font-size: 30px;
     margin-left: 150px;
     font-weight: bold;
@@ -16,16 +15,16 @@
     height: fit-content;
 } */
 
-#ratingFoodCpn #row2 #ratingStar .css-jue3ft-MuiRating-root{
+#ratingFoodCpn #row2 #ratingStar .css-jue3ft-MuiRating-root {
     font-size: 30px;
 }
-#ratingFoodCpn #row2 #ratingStar .css-d0uhtl{
+#ratingFoodCpn #row2 #ratingStar .css-d0uhtl {
     font-size: 14px;
     padding-left: 30px;
     font-weight: bold;
 }
 /* Prerating */
-.rating .opt{
+.rating .opt {
     border: none;
     height: 30px;
     width: 250px;
@@ -36,41 +35,47 @@
     text-align: center;
     border-radius: 10px;
 }
-.opt.res{
-    background-color:rgb(255, 31, 31);
+.opt.res {
+    background-color: rgb(255, 31, 31);
 }
-.opt.res:hover{
-    background-color:rgb(228, 22, 22);
+.opt.res:hover {
+    background-color: rgb(228, 22, 22);
 }
-.opt.res:active{
-    background-color:rgb(189, 13, 13);
+.opt.res:active {
+    background-color: rgb(189, 13, 13);
 }
-.opt.food{
-    background-color:rgb(30, 101, 255);
-    margin-left: 20px;
-}.opt.food:hover{
-    background-color:rgb(10, 74, 212);
-    margin-left: 20px;
-}.opt.food:active{
-    background-color:rgb(3, 59, 180);
+.opt.food {
+    background-color: rgb(30, 101, 255);
     margin-left: 20px;
 }
-.rating{
+.opt.food:hover {
+    background-color: rgb(10, 74, 212);
+    margin-left: 20px;
+}
+.opt.food:active {
+    background-color: rgb(3, 59, 180);
+    margin-left: 20px;
+}
+.rating {
     padding: 20px;
     height: 610px;
-    width: 1450px;
+    width: 90%;
     background-color: #ffffff;
-    box-shadow: 0px 20px 40px 0px #00000040;
+    box-shadow: 0px 20px 40px 20px #00000040;
     border-radius: 20px;
-    margin-left: 50px;
     margin-top: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
 }
-.rating .btn-opt{
+.rating .btn-opt {
     display: flex;
     padding-top: 10px;
-    padding-left: 20px
+    padding-left: 20px;
 }
-.imgRes{
+.imgRes {
     border-radius: 20px;
-    overflow: hidden
+    overflow: hidden;
 }
