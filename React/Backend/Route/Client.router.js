@@ -32,12 +32,14 @@ ClientRoutes.post('/update', (req,res)=>{
     Client.updateOne({_id: req.query.id},req.query,(err,results)=>{res.json(req.query)});
 });
 ClientRoutes.get("/login", (req, res) => {
+    // console.log(req.query);
     Client.findOne({email:req.query.email,pwd:req.query.pwd},function (err, results) {
+    // Client.findOne({email:"HP",pwd:"123456"},function (err, results) {
         if (err) {
             console.log(err);
         }
         else {
-            res.json(results);
+            res.json({results});
         }
     });
 });
@@ -59,7 +61,7 @@ ClientRoutes.post('/insert/pwd',(req,res)=>{
         res.json(results);
     })
 })
-ClientRoutes.post('/insert/pwd',(req,res)=>{
+ClientRoutes.post('/change/pwd',(req,res)=>{
     const input=req.body.params;
     
     Client.findOneAndUpdate({_id:input.id,pwd:input.pwd},{pwd:input.newpwd},function(err,results){

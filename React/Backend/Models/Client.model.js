@@ -58,5 +58,4 @@ let Client = new Schema({
     },
 }
 );
-
-module.exports = mongoose.model('Client', Client);
+module.exports = mongoose.model('Client', Client, "Client");
