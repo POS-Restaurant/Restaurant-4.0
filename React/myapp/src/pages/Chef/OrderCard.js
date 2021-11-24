@@ -28,7 +28,7 @@ function OrderCard(props) {
     function getStatus(status) {
         if (status === "Done") return chef.done;
         if (status === "Pending") return chef.pending;
-        if (status === "canceled") return chef.canceled;
+        if (status === "Canceled") return chef.canceled;
         if (status === "Doing") return chef.doing;
     }
 

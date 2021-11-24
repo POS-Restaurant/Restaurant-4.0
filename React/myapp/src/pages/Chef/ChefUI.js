@@ -53,6 +53,7 @@ function ChefUI() {
   const [activeCanceled,setActiveCanceled] = useState(false);
   var active = false;
   if(orders && orders.length > 0) active = true;
+  console.log(Date())
   return (
     <div>
       <Sidebar type={1} />
@@ -153,7 +154,7 @@ function ChefUI() {
                       onChange={onChange}
                     />
                   );
-                }) : <div> <p>You have no order to do.</p> </div>
+                }) : <div className={chef.exception}> <p>You have no order to do.</p> </div>
               }
             </div>
           </div>
