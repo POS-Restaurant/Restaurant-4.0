@@ -2,14 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 // Define collection and schema for login
-let subObj = new Schema({
-    note:{
-        type: String
-    },
-    num: {
-        type: Number
-    }
-});
+
 
 let Client = new Schema({
     name: {
@@ -30,10 +23,10 @@ let Client = new Schema({
     sex: {
         type: Number
     },
-    listOrder: {
-        type: [subObj],
-        required: false
-    },
+    listOrder: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Order'
+    }],
     money:{
         type: Number
     },
@@ -41,18 +34,9 @@ let Client = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Restaurant'
     },
-    isChef: {
-        type: Boolean,
-        required: true,
-        default: false
-    },
-    isCustomer: {
-        type: Boolean,
-        required: true,
-        default: true
-    },
-    isManager: {
-        type: Boolean,
+    
+    userType: {
+        type: String,
         required: true,
         default: false
     },

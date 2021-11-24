@@ -1,49 +1,52 @@
 // import React, { Component } from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+// import { Switch, Router, Redirect } from "react-router-dom";
 // import styled from "styled-components";
 import { Input, Row, Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import sign from "../Sign.module.css";
 import axios from "axios";
+import { Route } from "react-router";
+import { Switch } from "react-router";
+import { Router } from "react-router";
+import { Redirect } from "react-router";
 
-import { typeUser } from "./prelogin";
-import { useState } from "react";
+// import { typeUser } from "./prelogin";
+import { useState } from "react"; import OverviewCustomer from "../../../pages/OverView/Overview";
+import { OverviewManager } from "../../../pages/OverView/Overview";
+import { OverviewChef } from "../../../pages/OverView/Overview";
 
 function Login(props) {
     const [id, setId] = useState("");
     const[email,setEmail]=useState("");
     const [pwd,setPassword]= useState("");
-    function handleUserType(Utype) {
-        if (Utype === 0) {
-            return "customer";
-        } else if (Utype === 1) {
-            return "chef";
-        } else if (Utype === 2) {
-            return "manager";
-        } else {
-            return "admin";
-        }
-    }
-    
+    const [userType, setUserType]=useState("");
+   
     function onSubmit(event) {
-        event.preventDefault();
         axios.get("http://localhost:3000/Client/login",{params:{
-            email:email,pwd:pwd
+            _email:email.value,_pwd:pwd.value
         }}).then((res) => {
             localStorage.setItem("id", res.data._id);
             console.log(localStorage.getItem("id"));
+            if(res.data._id){
+                setUserType(res.data.userType);
+               
+            }
+            
         });
     }
 
+    if(localStorage.getItem("id")){ var path=(userType=="Customer")?'/customer/overview':(userType=="Manager")? '/manager/overview':'/chef/overview';
+    return    <Switch>
 
-    let type = handleUserType(typeUser)
-    if (localStorage.getItem("id")) {
-        return (
-            <Switch>
-                <Redirect to={"/" + type + "/overview"} />
-            </Switch>
-        );
-    } else return (
+
+        
+<Route path='/customer/overview' exact component={OverviewCustomer} />
+
+<Route path='/manager/overview' exact component={OverviewManager} />
+        <Route path='/chef/overview' exact component={OverviewChef} />
+        <Redirect to={path} /></Switch>;};
+    
+    return (
         <div className={sign.Login}>
             <div className={sign.Login}>
                 <div className={sign.LoginForm}>
