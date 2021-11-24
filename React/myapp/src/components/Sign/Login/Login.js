@@ -17,35 +17,35 @@ import { OverviewChef } from "../../../pages/OverView/Overview";
 
 function Login(props) {
     const [id, setId] = useState("");
-    const[email,setEmail]=useState("");
-    const [pwd,setPassword]= useState("");
-    const [userType, setUserType]=useState("");
-   
+    const [email, setEmail] = useState("");
+    const [pwd, setPassword] = useState("");
+    const [userType, setUserType] = useState("");
+
     function onSubmit(event) {
-        axios.get("http://localhost:3000/Client/login",{params:{
-            _email:email.value,_pwd:pwd.value
-        }}).then((res) => {
+        axios.get("http://localhost:3000/Client/login", {
+            params: {
+                _email: email.value, _pwd: pwd.value
+            }
+        }).then((res) => {
             localStorage.setItem("id", res.data._id);
             console.log(localStorage.getItem("id"));
-            if(res.data._id){
+            if (res.data._id) {
                 setUserType(res.data.userType);
-               
+
             }
-            
+
         });
     }
 
-    if(localStorage.getItem("id")){ var path=(userType=="Customer")?'/customer/overview':(userType=="Manager")? '/manager/overview':'/chef/overview';
-    return    <Switch>
+    if (localStorage.getItem("id")) {
+        var path = (userType == "Customer") ? '/customer/overview' : (userType == "Manager") ? '/manager/overview' : '/chef/overview';
+        return <Switch>
+            <Route path='/customer/overview' exact component={OverviewCustomer} />
+            <Route path='/manager/overview' exact component={OverviewManager} />
+            <Route path='/chef/overview' exact component={OverviewChef} />
+            <Redirect to={path} /></Switch>;
+    };
 
-
-        
-<Route path='/customer/overview' exact component={OverviewCustomer} />
-
-<Route path='/manager/overview' exact component={OverviewManager} />
-        <Route path='/chef/overview' exact component={OverviewChef} />
-        <Redirect to={path} /></Switch>;};
-    
     return (
         <div className={sign.Login}>
             <div className={sign.Login}>
@@ -57,11 +57,11 @@ function Login(props) {
                                 <label>Email</label>
                             </Row>
                             <Input
-                                    name="Phone"
-                                    type="email"
-                                    innerRef={(input) => setEmail(input)}
-                                    required
-                                />
+                                name="Phone"
+                                type="email"
+                                innerRef={(input) => setEmail(input)}
+                                required
+                            />
                         </div>
                         <div className={sign.field}>
                             <div>
@@ -114,7 +114,7 @@ function Login(props) {
                     </div>
                 </div>
             </div>
-            </div>
-        );
+        </div>
+    );
 }
 export default Login;

@@ -11,21 +11,21 @@ ClientRoutes.get("/username", (req, res) => {
     });
 });
 
-ClientRoutes.get("/username",(req,res)=>{
-    Client.find((err,results)=>{res.json(results[0])})
+ClientRoutes.get("/username", (req, res) => {
+    Client.find((err, results) => { res.json(results[0]) })
 })
 
 
 
 
-ClientRoutes.post('/update', (req,res)=>{
+ClientRoutes.post('/update', (req, res) => {
     console.log(req.query);
-    Client.updateOne({_id: req.query.id},req.query,(err,results)=>{res.json(req.query)});
+    Client.updateOne({ _id: req.query.id }, req.query, (err, results) => { res.json(req.query) });
 });
 ClientRoutes.get("/login", (req, res) => {
     console.log(req.query);
-    Client.findOne({email:req.query._email,pwd:req.query._pwd},function (err, results) {
-    // Client.findOne({email:"HP",pwd:"123456"},function (err, results) {
+    Client.findOne({ email: req.query._email, pwd: req.query._pwd }, function (err, results) {
+        // Client.findOne({email:"HP",pwd:"123456"},function (err, results) {
         if (err) {
             console.log(err);
         }
@@ -38,40 +38,49 @@ ClientRoutes.get("/login", (req, res) => {
 
 ClientRoutes.get("/get/list", (req, res) => {
     console.log(req.query);
-    Client.find({restaurant:req.query.id},(err,results)=>{
+    Client.find({ restaurant: req.query.id }, (err, results) => {
         if (err) {
             console.log(err);
         }
         else {
-            res.json({results});
+            res.json({ results });
         }
     })
 });
-ClientRoutes.post('/insert/pwd',(req,res)=>{
-    Client.updateMany({},{pwd:'123456'},function(err,results){
-        if(err)throw(err);
+ClientRoutes.post('/insert/pwd', (req, res) => {
+    Client.updateMany({}, { pwd: '123456' }, function (err, results) {
+        if (err) throw (err);
         res.json(results);
     })
 })
-ClientRoutes.post('/change/pwd',(req,res)=>{
-    const input=req.body.params;
-    
-    Client.findOneAndUpdate({_id:input.id,pwd:input.pwd},{pwd:input.newpwd},function(err,results){
-        if(err)throw(err);
+ClientRoutes.post('/change/pwd', (req, res) => {
+    const input = req.body.params;
+
+    Client.findOneAndUpdate({ _id: input.id, pwd: input.pwd }, { pwd: input.newpwd }, function (err, results) {
+        if (err) throw (err);
         res.json(results);
     })
 })
-ClientRoutes.post('/register',(req,res)=>{
-    const input=req.body.params;
+ClientRoutes.post('/register', (req, res) => {
+    const input = req.body.params;
     const token = jwt.sign({ id: "1234" }, config.JWT_SECRET, { expiresIn: '1h' });
     
-    Client.insertMany([{name:input.name, email:input.email, pwd:input.pwd}],function(err,results){
-        if(err)res.status(200).json({msg:"Lỗi đăng ký!"});
-else{         const token = jwt.sign({ id: "1234" }, config.JWT_SECRET, { expiresIn: '1h' });
-    res.status(200).json({
-        token,msg:"Đăng ký thành công!"
-    });
-};})})
+    Client.find({ email: input.email }, function (err, results) {
+        if (results[0]) {console.log(input)
+            res.status(200).json({ msg: "Tài khoản đã tồn tại." });
+        }
+        else Client.insertMany([{ name: input.name, email: input.email, pwd: input.pwd , userType:input.userType}], 
+            function (err, results) {
+            if (err) res.status(200).json({ msg: "Lỗi đăng ký!" });
+            else {
+                const token = jwt.sign({ id: "1234" }, config.JWT_SECRET, { expiresIn: '1h' });
+                res.status(200).json({
+                    token, msg: "Đăng ký thành công!"
+                });
+            };
+        })
+    })
+})
 
 
 ClientRoutes.post("/", async (req, res) => {
@@ -154,7 +163,7 @@ ClientRoutes.post("/change_pass", async (req, res) => {
 //     });
 // });
 ClientRoutes.post("/update/money", async (req, res) => {
-    Client.findOneAndUpdate({_id:req.body.params.id}, req.body.params, function (err) {
+    Client.findOneAndUpdate({ _id: req.body.params.id }, req.body.params, function (err) {
         if (err) {
             console.log(err);
         }
