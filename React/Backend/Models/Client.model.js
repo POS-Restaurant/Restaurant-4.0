@@ -21,6 +21,9 @@ let Client = new Schema({
     email: {
         type: String
     },
+    pwd:{
+        type:String
+    },
     bday: {
         type: Date
     },

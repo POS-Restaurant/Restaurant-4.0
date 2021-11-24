@@ -27,7 +27,9 @@ function Login(props) {
     
     function onSubmit(event) {
         event.preventDefault();
-        axios.get("http://localhost:3000/Client/username").then((res) => {
+        axios.get("http://localhost:3000/Client/login",{params:{
+            email:email,pwd:pwd
+        }}).then((res) => {
             localStorage.setItem("id", res.data._id);
             console.log(localStorage.getItem("id"));
         });
