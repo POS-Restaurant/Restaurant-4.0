@@ -16,16 +16,7 @@ ClientRoutes.get("/username",(req,res)=>{
 })
 
 
-ClientRoutes.post('/changepwd', (req,res)=>{
-    console.log(req.query.name);//{ name: 'VHP' }
-    Client.updateOne({name: req.query.name},{name: req.query.newname},(err,results)=>{res.json(req.query.newname)})
-})
 
-
-ClientRoutes.post('/changepwd', (req,res)=>{
-    console.log(req.query.name);//{ name: 'VHP' }
-    Client.updateOne({name: req.query.name},{name: req.query.newname},(err,results)=>{res.json(req.query.newname)})
-})
 
 ClientRoutes.post('/update', (req,res)=>{
     console.log(req.query);
@@ -45,15 +36,16 @@ ClientRoutes.get("/login", (req, res) => {
 });
 
 
-ClientRoutes.get("/list", (req, res) => {
-    Client.find(function (err, results) {
+ClientRoutes.get("/get/list", (req, res) => {
+    console.log(req.query);
+    Client.find({restaurant:req.query.id},(err,results)=>{
         if (err) {
             console.log(err);
         }
         else {
             res.json({results});
         }
-    });
+    })
 });
 ClientRoutes.post('/insert/pwd',(req,res)=>{
     Client.updateMany({},{pwd:'123456'},function(err,results){
@@ -161,5 +153,16 @@ ClientRoutes.post("/change_pass", async (req, res) => {
 //         else res.json('Successfully removed');
 //     });
 // });
+ClientRoutes.post("/update/money", async (req, res) => {
+    Client.findOneAndUpdate({_id:req.body.params.id}, req.body.params, function (err) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            res.json("Thay đổi thành công");
+        }
+    })
+});
+
 
 module.exports = ClientRoutes;

@@ -10,11 +10,11 @@ function TableOrder() {
                 Thông tin của các đơn hàng đã mua
             </div>
             <div className="subtitleCol" style={{display: 'flex'}}>
-                <p style={{width: "200px"}}>Id</p>
-                <p style={{width: "200px"}}>Ngày đặt hàng</p>
-                <p style={{width: "200px"}}>Ngày nhận hàng</p>
-                <p style={{width: "300px"}}>Nhà hàng</p>
-                <p style={{width: "300px"}}>Tổng tiền</p>
+                <p style={{width: "15%"}}>Id</p>
+                <p style={{width: "15%"}}>Ngày đặt hàng</p>
+                <p style={{width: "15%"}}>Ngày nhận hàng</p>
+                <p style={{width: "20%"}}>Nhà hàng</p>
+                <p style={{width: "15%"}}>Tổng tiền</p>
             </div>
             <div style={{height: "500px"}}>
                 <Scrollbars>

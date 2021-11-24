@@ -59,9 +59,9 @@ function HomePage() {
         <div className="homePage">
             <div className="titlePage">Danh sách các nhà hàng</div>
             <div className = "bodyPage">
-                <div class="scroll-bg-menu">
-                    <div class="scroll-div-menu">
-                        <div class="scroll-object-menu">
+                <div class="scroll-bg-res">
+                    <div class="scroll-div-res">
+                        <div class="scroll-object-res">
                             {res_list}
                         </div>
                     </div>

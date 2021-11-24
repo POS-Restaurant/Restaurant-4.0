@@ -4,6 +4,7 @@ import TableRate from './tableRate'
 import TableOrder from '../ratingFood/tableOrder'
 import TableRes from '../ratingRes/tableRes'
 import Sidebar from '../../Sidebar'
+// import Button from ''
 function CheckOpt({option}){
     if(option === 0) {
         return(
@@ -29,8 +30,8 @@ function Rating() {
             <Sidebar type={0} />
             <div className="rating">
                 <div className="btn-opt">
-                    <div className="opt-res" style={{cursor: 'pointer'}} onClick={() =>{setOpt(1)}}>Đánh giá nhà hàng</div>
-                    <div className="opt-food" style={{cursor: 'pointer'}} onClick={() =>{setOpt(2)}} >Đánh giá món ăn</div>
+                    <button className="opt res" style={{cursor: 'pointer'}} onClick={() =>{setOpt(1)}}>Đánh giá nhà hàng</button>
+                    <button className="opt food" style={{cursor: 'pointer'}} onClick={() =>{setOpt(2)}} >Đánh giá món ăn</button>
                 </div>
                 <div className="row2">
                     <CheckOpt option={option} />
