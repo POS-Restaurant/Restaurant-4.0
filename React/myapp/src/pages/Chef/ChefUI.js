@@ -45,17 +45,19 @@ function ChefUI() {
         setOrders(res.data.results);
       });
   };
+  const [condition,setCondition] = useState(''); // -1: All; 0: Pending; 1: Doing; 2: Done; 3: Canceled
+
   return (
     <div>
       <Sidebar type={1} />
       <div class={chef.chef_ui}>
         <div className={chef.mainContent}>
           <div className={chef.buttonBar}>
-            <button className={`${chef.btnAll} ${chef.active}`}>Tất cả</button>
-            <button className={chef.btnPending}>Đang chờ</button>
-            <button className={chef.btnDoing}>Đang thực hiện</button>
-            <button className={chef.btnDone}>Hoàn thành</button>
-            <button className={chef.btnCancel}>Đã hủy</button>
+            <button className={`${chef.btnAll} ${chef.active}`} onClick={() => setCondition('')}>Tất cả</button>
+            <button className={chef.btnPending} onClick={() => setCondition("Pending")} >Đang chờ</button>
+            <button className={chef.btnDoing} onClick={() => setCondition("Doing")} >Đang thực hiện</button>
+            <button className={chef.btnDone} onClick={() => setCondition("Done")} >Hoàn thành</button>
+            <button className={chef.btnCancel} onClick={() => setCondition("Canceled")} >Đã hủy</button>
           </div>
           <div className={chef.orderTable}>
             <div className={`${chef.orderListInfoBar} ${chef.orderCard}`}>
@@ -68,7 +70,9 @@ function ChefUI() {
             </div>
             <div className={chef.orderList}>
               {orders &&
-                orders.map((order) => {
+                orders.filter( e => {
+                  if (condition===''||condition===e.state) return e;
+                  }).map((order) => {
                   return (
                     <OrderCard
                       key={order.id}
