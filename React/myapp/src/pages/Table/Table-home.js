@@ -67,11 +67,11 @@ class Table extends React.Component {
     }
 }
 
-const smallJs = 
-[
-    window.addEventListener('DOMContentLoaded', () =>{
-    document.body.style.visibility = 'visible';
-  })
-];
+// const smallJs = 
+// [
+//     window.addEventListener('DOMContentLoaded', () =>{
+//     document.body.style.visibility = 'visible';
+//   })
+// ];
 
 export default Table;

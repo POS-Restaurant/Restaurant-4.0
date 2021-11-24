@@ -3,10 +3,12 @@ import chef from "./Chef.module.css";
 import OrderStatePopup from "./OrderStatePopup";
 import OrderDetail from "./OrderDetail/OrderDetail";
 
+
 function OrderCard(props) {
     const [popUp, setPopUp] = useState(false);
-
+    localStorage.setItem("currentOrder", props.id);
     function translate(status) {
+        console.log(status);
         if (status === "Done") return "Hoàn thành";
         else if (status === "Pending") return "Đang chờ";
         else if (status === "Canceled") return "Đã hủy";
@@ -19,17 +21,9 @@ function OrderCard(props) {
         if (!chooseStatePopup) setchooseStatePopup(true);
         else setchooseStatePopup(false);
     }
-    function acceptHandler() {
+    function chooseStateHideHandler() {
         setchooseStatePopup(false);
-    }
-    function cancelHandler() {
-        setchooseStatePopup(false);
-    }
-    function finishHandler() {
-        setchooseStatePopup(false);
-    }
-    function chooseStateHideHandler(status) {
-        setchooseStatePopup(false);
+        props.onChange();
     }
     function getStatus(status) {
         if (status === "Done") return chef.done;
@@ -54,19 +48,22 @@ function OrderCard(props) {
                 </div>
             </div>
             <div className={chef.orderUpdateState}>
-                <button
+                {(props.status === "Canceled" || props.status === "Done")? <button
+                    onClick={chooseStatePopHandler}
+                    className={chef.changeStateButton}
+                    disabled
+                >
+                    <span class="material-icons-outlined">more_horiz</span>
+                </button> : <button
                     onClick={chooseStatePopHandler}
                     className={chef.changeStateButton}
                 >
                     <span class="material-icons-outlined">more_horiz</span>
-                    {/* {chooseStatePopup && <OrderStatePopup onAccept={acceptHandler} onCancel={cancelHandler} onFinish={finishHandler}/>} */}
-                </button>
+                </button>}
             </div>
-            {/* {chooseStatePopup && <OrderStatePopup onAccept={acceptHandler} onCancel={cancelHandler} onFinish={finishHandler}/>} */}
             {chooseStatePopup && (
-                <OrderStatePopup onChooseState={chooseStateHideHandler} />
+                <OrderStatePopup onChooseState={chooseStateHideHandler} currentStatus={props.status}/>
             )}
-            {/* <OrderStatePopup/> */}
             {popUp&&<OrderDetail 
                 onHide={()=>setPopUp(false)}
                 name={props.name}
