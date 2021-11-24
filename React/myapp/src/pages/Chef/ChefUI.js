@@ -69,8 +69,7 @@ function ChefUI() {
               <div className={chef.orderUpdateState}></div>
             </div>
             <div className={chef.orderList}>
-              {orders &&
-                orders.filter( e => {
+              {orders && orders.length > 0 ? orders.filter( e => {
                   if (condition===''||condition===e.state) return e;
                   }).map((order) => {
                   return (
@@ -88,7 +87,8 @@ function ChefUI() {
                       onChange={onChange}
                     />
                   );
-                })}
+                }) : <div> <p>You have no order to do.</p> </div>
+              }
             </div>
           </div>
         </div>
