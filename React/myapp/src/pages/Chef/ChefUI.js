@@ -15,9 +15,11 @@ function ChefUI() {
       .then((res) => {
         setOrders(res.data.results);
       });
-    await axios.get("http://localhost:3000/Client/list").then((res) => {
-      setClients(res.data.results);
-    });
+    await axios
+      .get("http://localhost:3000/Client/get/list", { params: { id: idRes } })
+      .then((res) => {
+        setClients(res.data.results);
+      });
   };
 
   useEffect(() => {
@@ -42,7 +44,12 @@ function ChefUI() {
       .get("http://localhost:3000/Order/get/list", { params: { id: idRes } })
       .then((res) => {
         setOrders(res.data.results);
-      });
+    });
+    await axios
+      .get("http://localhost:3000/Client/get/list", { params: { id: idRes } })
+      .then((res) => {
+        setClients(res.data.results);
+    });
   };
   const [condition,setCondition] = useState('');
   const [activeAll,setActiveAll] = useState(true);
@@ -58,7 +65,6 @@ function ChefUI() {
       if (condition===''||condition===e.state) return e;
     })
   }
-
   return (
     <div>
       <Sidebar type={1} />

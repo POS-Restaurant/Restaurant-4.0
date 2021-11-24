@@ -5,15 +5,16 @@ const jwt = require('jsonwebtoken');
 
 let Client = require('../Models/Client.model');
 
-ClientRoutes.get("/list", (req, res) => {
-    Client.find(function (err, results) {
+ClientRoutes.get("/get/list", (req, res) => {
+    console.log(req.query);
+    Client.find({restaurant:req.query.id},(err,results)=>{
         if (err) {
             console.log(err);
         }
         else {
             res.json({results});
         }
-    });
+    })
 });
 
 ClientRoutes.post("/", async (req, res) => {

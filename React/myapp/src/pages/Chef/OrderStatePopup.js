@@ -6,11 +6,12 @@ import axios from "axios";
 function OrderStatePopup(props) {
     const _id = localStorage.getItem("currentOrder");
     const [state, setState] = useState("Pending");
+    const [timeDone, setTimeDone] = useState("");
     const [statusButton, setstatusButton] = useState("");
     const [confirmPopup, setconfirmPopup] = useState(false);
     const update = async () => {
         await axios.post("http://localhost:3000/Order/update/state", {
-            params: { id: _id, state: state },
+            params: { id: _id, state: state, dateOfReceipt: timeDone },
         });
         // .then((res) => alert(res.data.msg));
     };
@@ -21,6 +22,11 @@ function OrderStatePopup(props) {
         else if (status === "Doing") setstatusButton("Nhận đơn");
         setconfirmPopup(true);
     }
+
+    function confirmUpdateTime(status) {
+        const time = new Date();
+    }
+
     const onConfirmHandler = async (status) => {
         await setconfirmPopup(false);
         await update();
