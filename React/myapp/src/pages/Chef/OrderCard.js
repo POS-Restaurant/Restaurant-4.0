@@ -8,7 +8,6 @@ function OrderCard(props) {
     const [popUp, setPopUp] = useState(false);
     localStorage.setItem("currentOrder", props.id);
     function translate(status) {
-        console.log(status);
         if (status === "Done") return "Hoàn thành";
         else if (status === "Pending") return "Đang chờ";
         else if (status === "Canceled") return "Đã hủy";

@@ -28,7 +28,6 @@ function ChefUI() {
       }
     }, 100);
   }, []);
-  console.log(orders);
   const searchInfoCus = (data, id) => {
     if (data) {
       for (let i = 0; i < data.length; i++) {
@@ -53,7 +52,7 @@ function ChefUI() {
   const [activeCanceled,setActiveCanceled] = useState(false);
   var active = false;
   if(orders && orders.length > 0) active = true;
-  console.log(Date())
+  // console.log(orders&&Date(orders[0].dateOfPurchase))
   return (
     <div>
       <Sidebar type={1} />
