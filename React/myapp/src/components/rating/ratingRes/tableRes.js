@@ -5,9 +5,6 @@ import './tableRes.css'
 function TableRes() {
     return (
         <div className="tableRes">
-            <div className="titleCol">
-                Thông tin của nhà hàng
-            </div>
             <div style={{height: "500px"}}>
                 <ItemRes
                 img = {dataRes.img}

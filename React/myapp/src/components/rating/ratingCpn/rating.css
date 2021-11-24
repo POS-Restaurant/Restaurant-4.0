@@ -12,6 +12,9 @@
     font-weight: bold;
     width: 200px;
 }
+/* .ratingResCpn{
+    height: fit-content;
+} */
 
 #ratingFoodCpn #row2 #ratingStar .css-jue3ft-MuiRating-root{
     font-size: 30px;
@@ -22,26 +25,38 @@
     font-weight: bold;
 }
 /* Prerating */
-.rating .opt-res{
+.rating .opt{
+    border: none;
     height: 30px;
     width: 250px;
-    background-color: red;
+    padding: 5px 10px;
+    box-sizing: content-box;
     font-size: 24px;
     color: white;
     text-align: center;
-    border-radius: 15px;
+    border-radius: 10px;
 }
-.rating .opt-food{
-    height: 30px;
-    width: 250px;
-    background-color: blue;
-    font-size: 24px;
-    color: white;
+.opt.res{
+    background-color:rgb(255, 31, 31);
+}
+.opt.res:hover{
+    background-color:rgb(228, 22, 22);
+}
+.opt.res:active{
+    background-color:rgb(189, 13, 13);
+}
+.opt.food{
+    background-color:rgb(30, 101, 255);
     margin-left: 20px;
-    text-align: center;
-    border-radius: 15px;
+}.opt.food:hover{
+    background-color:rgb(10, 74, 212);
+    margin-left: 20px;
+}.opt.food:active{
+    background-color:rgb(3, 59, 180);
+    margin-left: 20px;
 }
 .rating{
+    padding: 20px;
     height: 610px;
     width: 1450px;
     background-color: #ffffff;
@@ -54,4 +69,8 @@
     display: flex;
     padding-top: 10px;
     padding-left: 20px
+}
+.imgRes{
+    border-radius: 20px;
+    overflow: hidden
 }

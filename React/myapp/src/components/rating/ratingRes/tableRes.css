@@ -49,16 +49,21 @@
     height: 450px;
     background-color: white;
     border-radius: 10px;
-    box-shadow: 3px 3px 3px grey;
+    box-shadow: 0px 5px 10px 0px  #00000050;
 }
 .tableRes .ratingOpen p{
     margin: 0;
+    font-size: 30px;
+    line-height: 60px
 }
 .tableRes .ratingOpen #ratingCmt textarea{
+    padding: 20px;
+    box-sizing: border-box;
     height: 200px;
     width: 430px;
     border: 1px dashed #000; 
     border-radius: 10px;
+    font-size: 20px;
 }
 .tableRes .ratingOpen #ratingCmt{
     margin-left: 10px;
