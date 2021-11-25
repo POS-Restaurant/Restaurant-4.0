@@ -5,6 +5,11 @@ import { Container, Row, Col, Card, Input, Button, Modal } from "reactstrap";
 import Sidebar from "../components/Sidebar";
 import { FaClosedCaptioning, FaSearch } from "react-icons/fa";
 import axios from "axios";
+
+const idRes = localStorage.getItem("currentRes");
+const idCus = localStorage.getItem("id");
+console.log(idRes);
+console.log(idCus);
 class PickFood extends Component {
     constructor(props) {
         super(props);
@@ -123,8 +128,8 @@ class PickFood extends Component {
                 C.push(this.state.cart[x].num)
             }
             const client = {
-                customer: "619c9601a0294f5555f10da4",
-                restaurant: "61972135c13e6af2a31d8460",
+                customer: idCus,
+                restaurant: idRes,
                 dateOfPurchase: new Date(),
                 dateOfReceipt: 0,
                 listFood: A,
@@ -397,20 +402,20 @@ class PickFood extends Component {
                                 <div className="Picbox">
                                     <img
                                         class={"itemPic"}
-                                        src={this.state.currentFood.img}
+                                        src={this.state.currentFood.img + ".png"}
                                         alt="Img Food"
                                     />
                                 </div>
                                 <div class="itemDetail">
                                     <div class="itemPrice">
-                                        <div className="itemPrice_1">
-                                            <h4>Name</h4>
+                                        <div className="itemPrice_1" style={{display: "flex"}}>
+                                            <h4>Tên món:</h4>
                                             <h3>
                                                 {this.state.currentFood.name}
                                             </h3>
                                         </div>
-                                        <div className="itemPrice_3">
-                                            <h4>Price</h4>
+                                        <div className="itemPrice_3" style={{display: "flex"}}>
+                                            <h4>Giá:</h4>
                                             <h3 class="redColor">
                                                 {this.state.currentFood.price}
                                             </h3>
@@ -418,7 +423,7 @@ class PickFood extends Component {
                                     </div>
                                     <div class="itemQuantity">
                                         <div class="itemQuantityText">
-                                            Quantity
+                                            Số lượng:
                                         </div>
                                         <div class="itemQuantityBtn">
                                             <button
@@ -460,25 +465,25 @@ class PickFood extends Component {
                                 <div className="clear"></div>
                                 <div class="itemNutri">
                                     <h5>
-                                        Protein:{" "}
+                                        Lượng Protein:{" "}
                                         <span class="itemNutriText">
                                             {this.state.currentFood.protein}
                                         </span>{" "}
                                     </h5>
                                     <h5>
-                                        Baking material:{" "}
+                                        Nguyên liệu:{" "}
                                         <span class="itemNutriText">
                                             {this.state.currentFood.material}
                                         </span>{" "}
                                     </h5>
                                     <h5>
-                                        Food decoration:{" "}
+                                        Trang trí thức ăn:{" "}
                                         <span class="itemNutriText">
                                             {this.state.currentFood.decoration}
                                         </span>{" "}
                                     </h5>
                                     <h5>
-                                        Rating:{" "}
+                                        Đánh giá:{" "}
                                         <span class="itemNutriText">
                                             {this.state.currentFood.rating}
                                         </span>{" "}

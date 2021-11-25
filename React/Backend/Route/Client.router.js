@@ -24,7 +24,7 @@ ClientRoutes.post('/update', (req, res) => {
 });
 ClientRoutes.get("/login", (req, res) => {
     console.log(req.query);
-    Client.findOne({ email: req.query._email, pwd: req.query._pwd }, function (err, results) {
+    Client.findOne({ email: req.query._email, pwd: req.query._pwd, idRes: req.query._idRes }, function (err, results) {
         // Client.findOne({email:"HP",pwd:"123456"},function (err, results) {
         if (err) {
             console.log(err);
@@ -69,7 +69,7 @@ ClientRoutes.post('/register', (req, res) => {
         if (results[0]) {console.log(input)
             res.status(200).json({ msg: "Tài khoản đã tồn tại." });
         }
-        else Client.insertMany([{ name: input.name, email: input.email, pwd: input.pwd , userType:input.userType}], 
+        else Client.insertMany([{ name: input.name, email: input.email, pwd: input.pwd, userType:input.userType}], 
             function (err, results) {
             if (err) res.status(200).json({ msg: "Lỗi đăng ký!" });
             else {

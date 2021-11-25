@@ -16,7 +16,6 @@ import { OverviewManager } from "../../../pages/OverView/Overview";
 import { OverviewChef } from "../../../pages/OverView/Overview";
 
 function Login(props) {
-    const [id, setId] = useState("");
     const [email, setEmail] = useState("");
     const [pwd, setPassword] = useState("");
     const [userType, setUserType] = useState("");
@@ -31,7 +30,6 @@ function Login(props) {
             console.log(localStorage.getItem("id"));
             if (res.data._id) {
                 setUserType(res.data.userType);
-
             }
 
         });

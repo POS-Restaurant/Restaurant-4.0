@@ -21,7 +21,6 @@ function HomePage() {
     // const dispatch = useDispatch();
     const  checkData=async ()=>{
         await axios.get('http://localhost:3000/Restaurant/list').then(res=>{
-                console.log(res.data.results);
                 setData(res.data.results);}
             );
     }
@@ -35,7 +34,6 @@ function HomePage() {
         localStorage.setItem('currentRes',id);
     }
     const res_list = data.map((res) => { 
-        console.log(res.img);
         return (
             <div className="containCardRes" key={res._id}>
                 <Card className="resCard">

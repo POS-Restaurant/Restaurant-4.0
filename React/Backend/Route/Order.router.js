@@ -26,7 +26,7 @@ OrderRoutes.post("/", async (req, res)=>{
         const Clinet = await Client.findOne({ _id: customer });
         count = Number(Clinet.money)-total;
         if (count<0){
-            res.send({success:"Get more money bitch"});
+            res.send({success:"Not enough money"});
             return;
         }
         let state = "Pending";

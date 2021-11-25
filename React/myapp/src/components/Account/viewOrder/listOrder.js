@@ -8,10 +8,12 @@ function ListOrderUI() {
   const [orders, setOrders] = useState([]);
   const [clients, setClients] = useState([]);
   const idRes = localStorage.getItem("currentRes");
+  const idCus = localStorage.getItem("id");
+  console.log(idCus)
   const [init, setInit] = useState(true);
   const checkData = async () => {
     await axios
-      .get("http://localhost:3000/Order/get/my_orders", { params: { idCus: "619c9601a0294f5555f10da4", idRes: idRes } })
+      .get("http://localhost:3000/Order/get/my_orders", { params: { idCus: idCus, idRes: idRes } })
       .then((res) => {
         setOrders(res.data.results);
       });

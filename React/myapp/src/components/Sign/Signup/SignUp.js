@@ -86,11 +86,9 @@ import { Route, NavLink } from 'react-router-dom';
                 <Modal isOpen={popup} toggle={togglePopup}>
                     <Card>{msg}
                     </Card>
-                    {/* <CardSubtitle> */}
-                        <NavLink to='/login'>
-                            Đăng nhập ngay
-                        </NavLink>
-                    {/* </CardSubtitle> */}
+                    {/* <NavLink to='/login'>
+                        Đăng nhập ngay
+                    </NavLink> */}
                 </Modal>
             </div>
         );
