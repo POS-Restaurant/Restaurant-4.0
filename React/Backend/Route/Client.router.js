@@ -69,7 +69,7 @@ ClientRoutes.post('/register', (req, res) => {
         if (results[0]) {console.log(input)
             res.status(200).json({ msg: "Tài khoản đã tồn tại." });
         }
-        else Client.insertMany([{ name: input.name, email: input.email, pwd: input.pwd , userType:input.userType}], 
+        else Client.insertMany([{ name: input.name, email: input.email, pwd: input.pwd, idRes: input.idRes, userType:input.userType}], 
             function (err, results) {
             if (err) res.status(200).json({ msg: "Lỗi đăng ký!" });
             else {

@@ -26,6 +26,7 @@ import { Route, NavLink } from 'react-router-dom';
                     email: email.value, pwd: password.value,
                     name: lname.value + fname.value,
                     userType:"Customer",
+                    idRes:localStorage.getItem("currentRes"),
                 }
             }).then((res) => {
                 setMsg(res.data.msg);
@@ -86,11 +87,9 @@ import { Route, NavLink } from 'react-router-dom';
                 <Modal isOpen={popup} toggle={togglePopup}>
                     <Card>{msg}
                     </Card>
-                    {/* <CardSubtitle> */}
-                        <NavLink to='/login'>
-                            Đăng nhập ngay
-                        </NavLink>
-                    {/* </CardSubtitle> */}
+                    {/* <NavLink to='/login'>
+                        Đăng nhập ngay
+                    </NavLink> */}
                 </Modal>
             </div>
         );
