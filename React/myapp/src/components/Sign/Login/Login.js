@@ -16,22 +16,22 @@ import { OverviewManager } from "../../../pages/OverView/Overview";
 import { OverviewChef } from "../../../pages/OverView/Overview";
 
 function Login(props) {
-    const [id, setId] = useState("");
     const [email, setEmail] = useState("");
     const [pwd, setPassword] = useState("");
+    const [idRes, setIdRes] = useState("");
     const [userType, setUserType] = useState("");
 
     function onSubmit(event) {
+        setIdRes(localStorage.getItem("currentRes"))
         axios.get("http://localhost:3000/Client/login", {
             params: {
-                _email: email.value, _pwd: pwd.value
+                _email: email.value, _pwd: pwd.value, _idRes: idRes
             }
         }).then((res) => {
             localStorage.setItem("id", res.data._id);
             console.log(localStorage.getItem("id"));
             if (res.data._id) {
                 setUserType(res.data.userType);
-
             }
 
         });
