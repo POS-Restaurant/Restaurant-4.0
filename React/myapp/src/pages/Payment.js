@@ -113,7 +113,7 @@ function Payment(){
                         <input className="input" type="text" name="daynumber" placeholder="Nhập số tiền giao dịch" onChange={updatemoney} />
                             <img id="searchIcon" src= {searchIcon} alt="SearchIcon" />
                         </div>
-                        <button class="bottomBtn" type="button" onClick={()=>handleSubmit()}>Xác nhận</button>
+                        <button class="bottomBtn" type="button" onClick={()=>{addMoney();}}>Xác nhận</button>
                     </Row>
                     </Row>
                     <Row className={eda===0?'active':'hide'}>
