@@ -17,6 +17,16 @@ RestaurantRoutes.get("/get/ResInfo:id", async (req, res) => {
         }
     });
 });
+RestaurantRoutes.get("/get/res_info", async (req, res) => {
+    Restaurant.find({_id: req.query.id}, (err, results) => {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            res.json({results});
+        }
+    });
+});
 RestaurantRoutes.get("/list", (req, res) => {
     Restaurant.find(function (err, results) {
         if (err) {
