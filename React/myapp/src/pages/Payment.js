@@ -9,6 +9,7 @@ function Payment(){
     const [stop,setStop]=useState(0);
     const [data,setData]=useState([]);
     const [money,setTotal]=useState(0);
+    const idCus = localStorage.getItem("id");
     function checkData(){
         if (stop===1)
             return;
@@ -26,7 +27,7 @@ function Payment(){
     function handleSubmit() {
         try {
             const client = {
-                name: "619c9601a0294f5555f10da4"
+                name: idCus
             }
             const localData = [];
             const response = axios.post("http://localhost:3000/Pill/",client).then(
@@ -46,7 +47,7 @@ function Payment(){
             if (landy==1) a = "Nạp";
             else a = "Rút";
             const client = {
-                name: "619c9601a0294f5555f10da4",
+                name: idCus,
                 amount: money,
                 stas: a
             }
