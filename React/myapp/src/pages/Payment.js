@@ -8,6 +8,7 @@ import axios from 'axios';
 function Payment(){
     const [stop,setStop]=useState(0);
     const [data,setData]=useState([]);
+    const [money,setTotal]=useState(0);
     function checkData(){
         if (stop===1)
             return;
@@ -41,10 +42,13 @@ function Payment(){
     }
     function addMoney() {
         try {
+            var a;
+            if (landy==1) a = "Nạp";
+            else a = "Rút";
             const client = {
                 name: "619c9601a0294f5555f10da4",
-                amount: "20000",
-                stas: "Nạp"
+                amount: money,
+                stas: a
             }
             const response = axios.post("http://localhost:3000/Pill/updateMoney/",client).then(
                 (res) => {
@@ -55,6 +59,9 @@ function Payment(){
           } catch (error) {
             console.log(error);
         }
+    }
+    function updatemoney(e){
+        setTotal(e.target.value);
     }
     handleSubmit();
     function fine(a){
@@ -103,7 +110,7 @@ function Payment(){
                             <img id="searchIcon" src= {searchIcon} alt="SearchIcon" />
                         <input className="input" type="text" name="daynumber" placeholder="Nhập dd/mm/year" />
                             <img id="searchIcon" src= {searchIcon} alt="SearchIcon" />
-                        <input className="input" type="text" name="daynumber" placeholder="Nhập số tiền giao dịch" />
+                        <input className="input" type="text" name="daynumber" placeholder="Nhập số tiền giao dịch" onChange={updatemoney} />
                             <img id="searchIcon" src= {searchIcon} alt="SearchIcon" />
                         </div>
                         <button class="bottomBtn" type="button" onClick={()=>handleSubmit()}>Xác nhận</button>
