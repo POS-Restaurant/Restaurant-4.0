@@ -408,14 +408,14 @@ class PickFood extends Component {
                                 </div>
                                 <div class="itemDetail">
                                     <div class="itemPrice">
-                                        <div className="itemPrice_1">
-                                            <h4>Name</h4>
+                                        <div className="itemPrice_1" style={{display: "flex"}}>
+                                            <h4>Tên món:</h4>
                                             <h3>
                                                 {this.state.currentFood.name}
                                             </h3>
                                         </div>
-                                        <div className="itemPrice_3">
-                                            <h4>Price</h4>
+                                        <div className="itemPrice_3" style={{display: "flex"}}>
+                                            <h4>Giá:</h4>
                                             <h3 class="redColor">
                                                 {this.state.currentFood.price}
                                             </h3>
@@ -423,7 +423,7 @@ class PickFood extends Component {
                                     </div>
                                     <div class="itemQuantity">
                                         <div class="itemQuantityText">
-                                            Quantity
+                                            Số lượng:
                                         </div>
                                         <div class="itemQuantityBtn">
                                             <button
@@ -465,25 +465,25 @@ class PickFood extends Component {
                                 <div className="clear"></div>
                                 <div class="itemNutri">
                                     <h5>
-                                        Protein:{" "}
+                                        Lượng Protein:{" "}
                                         <span class="itemNutriText">
                                             {this.state.currentFood.protein}
                                         </span>{" "}
                                     </h5>
                                     <h5>
-                                        Baking material:{" "}
+                                        Nguyên liệu:{" "}
                                         <span class="itemNutriText">
                                             {this.state.currentFood.material}
                                         </span>{" "}
                                     </h5>
                                     <h5>
-                                        Food decoration:{" "}
+                                        Trang trí thức ăn:{" "}
                                         <span class="itemNutriText">
                                             {this.state.currentFood.decoration}
                                         </span>{" "}
                                     </h5>
                                     <h5>
-                                        Rating:{" "}
+                                        Đánh giá:{" "}
                                         <span class="itemNutriText">
                                             {this.state.currentFood.rating}
                                         </span>{" "}

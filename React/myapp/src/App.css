@@ -617,10 +617,9 @@ h5.cart-title {
     display: flex;
     flex-direction: column;
     margin-left: 10px;
-    width: 40%;
+    width: 60%;
 }
-.itemPrice {
-    display: flex;
+.itemPrice_1, .itemPrice_3 {
     justify-content: space-between;
 }
 
