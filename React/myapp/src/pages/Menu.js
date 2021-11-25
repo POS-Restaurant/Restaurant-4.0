@@ -5,6 +5,11 @@ import { Container, Row, Col, Card, Input, Button, Modal } from "reactstrap";
 import Sidebar from "../components/Sidebar";
 import { FaClosedCaptioning, FaSearch } from "react-icons/fa";
 import axios from "axios";
+
+const idRes = localStorage.getItem("currentRes");
+const idCus = localStorage.getItem("id");
+console.log(idRes);
+console.log(idCus);
 class PickFood extends Component {
     constructor(props) {
         super(props);
@@ -123,8 +128,8 @@ class PickFood extends Component {
                 C.push(this.state.cart[x].num)
             }
             const client = {
-                customer: "619c9601a0294f5555f10da4",
-                restaurant: "61972135c13e6af2a31d8460",
+                customer: idCus,
+                restaurant: idRes,
                 dateOfPurchase: new Date(),
                 dateOfReceipt: 0,
                 listFood: A,
