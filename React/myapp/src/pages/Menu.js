@@ -402,7 +402,7 @@ class PickFood extends Component {
                                 <div className="Picbox">
                                     <img
                                         class={"itemPic"}
-                                        src={this.state.currentFood.img}
+                                        src={this.state.currentFood.img + ".png"}
                                         alt="Img Food"
                                     />
                                 </div>
