@@ -26,7 +26,6 @@ import { Route, NavLink } from 'react-router-dom';
                     email: email.value, pwd: password.value,
                     name: lname.value + fname.value,
                     userType:"Customer",
-                    idRes:localStorage.getItem("currentRes"),
                 }
             }).then((res) => {
                 setMsg(res.data.msg);

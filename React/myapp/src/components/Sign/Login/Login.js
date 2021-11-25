@@ -18,14 +18,12 @@ import { OverviewChef } from "../../../pages/OverView/Overview";
 function Login(props) {
     const [email, setEmail] = useState("");
     const [pwd, setPassword] = useState("");
-    const [idRes, setIdRes] = useState("");
     const [userType, setUserType] = useState("");
 
     function onSubmit(event) {
-        setIdRes(localStorage.getItem("currentRes"))
         axios.get("http://localhost:3000/Client/login", {
             params: {
-                _email: email.value, _pwd: pwd.value, _idRes: idRes
+                _email: email.value, _pwd: pwd.value
             }
         }).then((res) => {
             localStorage.setItem("id", res.data._id);
