@@ -11,7 +11,8 @@ import { Router } from "react-router";
 import { Redirect } from "react-router";
 import { Modal } from "reactstrap";
 // import { typeUser } from "./prelogin";
-import { useState } from "react"; import OverviewCustomer from "../../../pages/OverView/Overview";
+import { useState } from "react";
+import OverviewCustomer from "../../../pages/OverView/Overview";
 import { OverviewManager } from "../../../pages/OverView/Overview";
 import { OverviewChef } from "../../../pages/OverView/Overview";
 
@@ -19,30 +20,49 @@ function Login(props) {
     const [email, setEmail] = useState("");
     const [pwd, setPassword] = useState("");
     const [userType, setUserType] = useState("");
-var popup=false;
+    const [popup, setPopup] = useState(false);
+    // var popup=false;
     function onSubmit(event) {
-        axios.get("http://localhost:3000/Client/login", {
-            params: {
-                _email: email.value, _pwd: pwd.value
-            }
-        }).then((res) => {
-            if(res.data){
-            localStorage.setItem("id", res.data._id);
-            console.log(localStorage.getItem("id"));
-            setUserType(res.data.userType);
-            }
-else popup=true;
-        });
+        axios
+            .get("http://localhost:3000/Client/login", {
+                params: {
+                    _email: email.value,
+                    _pwd: pwd.value,
+                },
+            })
+            .then((res) => {
+                if (res.data) {
+                    localStorage.setItem("id", res.data._id);
+                    console.log(localStorage.getItem("id"));
+                    setUserType(res.data.userType);
+                } else setPopup(true);
+            });
     }
 
     if (localStorage.getItem("id")) {
-        var path = (userType == "Customer") ? '/customer/overview' : (userType == "Manager") ? '/manager/overview' : '/chef/overview';
-        return <Switch>
-            <Route path='/customer/overview' exact component={OverviewCustomer} />
-            <Route path='/manager/overview' exact component={OverviewManager} />
-            <Route path='/chef/overview' exact component={OverviewChef} />
-            <Redirect to={path} /></Switch>;
-    };
+        var path =
+            userType == "Customer"
+                ? "/customer/overview"
+                : userType == "Manager"
+                ? "/manager/overview"
+                : "/chef/overview";
+        return (
+            <Switch>
+                <Route
+                    path="/customer/overview"
+                    exact
+                    component={OverviewCustomer}
+                />
+                <Route
+                    path="/manager/overview"
+                    exact
+                    component={OverviewManager}
+                />
+                <Route path="/chef/overview" exact component={OverviewChef} />
+                <Redirect to={path} />
+            </Switch>
+        );
+    }
 
     return (
         <div className={sign.Login}>
@@ -66,8 +86,7 @@ else popup=true;
                                 <div className={sign.col}>
                                     <label>Mật khẩu</label>
                                 </div>
-                                <div className={sign.col}>
-                                </div>
+                                <div className={sign.col}></div>
                                 <Input
                                     name="pwd"
                                     type="password"
@@ -113,8 +132,15 @@ else popup=true;
                 </div>
             </div>
 
-            <Modal isOpen={popup} toggle={(e)=>popup=!popup}>
-                "Đăng nhập thất bại"
+            <Modal
+                className={sign.errPopup}
+                isOpen={popup}
+                toggle={(e) => setPopup(!popup)}
+            >
+                <div onClick={()=>setPopup(false)} className={sign.closeBtn}>
+                    <span class="material-icons">close</span>
+                </div>
+                <span className={sign.message}>Đăng nhập thất bại</span>
             </Modal>
         </div>
     );
