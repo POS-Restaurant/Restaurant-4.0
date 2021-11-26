@@ -9,7 +9,7 @@ import { Card } from "reactstrap";
 import { Modal } from 'reactstrap';
 import axios from 'axios';
 import { useEffect } from "react";
-function Info(type) {
+function Info({type}) {
     const [changePass, setChangePass] = useState(false);
     const [_name, setName] = useState("");
     const [_phone, setPhone] = useState("");
@@ -64,7 +64,7 @@ const [edit,setEdit]=useState(true);
         <div>
             <Sidebar type={type} />
             <div className={account.UserInfo}>
-                <h1>Thông tin tài khoản</h1>
+                <h1 style={{width: "90vw", padding: "0 px 5vw"}}>Thông tin tài khoản</h1>
 
                 <div>
                     <div className={`${account.MainContent} ${account.info}`}>

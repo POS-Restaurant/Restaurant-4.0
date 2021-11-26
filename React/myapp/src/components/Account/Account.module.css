@@ -82,15 +82,13 @@ h1{
 .UserInfo {
     position: relative;
     display: inline-block;
-    width: 100%;
- padding: 0px 40px;
+    width: 100vw;
 }
 
 .UserInfo .MainContent {
     box-align: center;
     position: absolute;
-    width: 100%;
-    height: 720px;
+    width: 100vw;
     /* font-size: 20px; */
     display: inline-block;
     /* background-color: white; */

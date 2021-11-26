@@ -2,7 +2,7 @@ import React from 'react'
 import Info from './Info/info'
 function CusInfo() {
     return (
-        <div className="cusInfo">
+        <div className="cusInfo" style={{width: '100vw'}}>
             <Info type={0}/>
         </div>
     )
