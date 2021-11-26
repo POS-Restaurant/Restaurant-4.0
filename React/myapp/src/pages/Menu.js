@@ -275,7 +275,7 @@ class PickFood extends Component {
                                 className="note"
                                 name="note"
                                 type="text"
-                                placeholder="OrderNote"
+                                placeholder="Thêm ghi chú"
                             ></Input>
                             <Button
                                 className="del"
