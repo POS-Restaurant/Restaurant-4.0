@@ -21,16 +21,19 @@ let Restaurant = new Schema({
     },
     managerID: {
         type: Schema.Types.ObjectId,
-        ref: 'Staff'
+        ref: 'Client'
     }
     ,
     chefIDs: {
         type: Schema.Types.ObjectId,
-        ref: 'Staff'
+        ref: 'Client'
     },
     img:{
         type:String
     },
+    imgOverview:[{
+        type:String
+    }],
 }
 );
 

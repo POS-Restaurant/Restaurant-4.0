@@ -617,10 +617,9 @@ h5.cart-title {
     display: flex;
     flex-direction: column;
     margin-left: 10px;
-    width: 40%;
+    width: 60%;
 }
-.itemPrice {
-    display: flex;
+.itemPrice_1, .itemPrice_3 {
     justify-content: space-between;
 }
 
@@ -681,8 +680,8 @@ h5.cart-title {
 }
 
 .itemNutriText {
-    color: thistle;
-    font-size: 12px;
+    color: rgb(248, 0, 54);
+    font-size: 16px;
 }
 
 .textSize {
