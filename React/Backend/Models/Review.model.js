@@ -5,12 +5,14 @@ const Schema = mongoose.Schema;
 let Review = new Schema({
     client: {
         type: mongoose.Schema.Types.ObjectId,
-        required: true,
         ref: 'Client'
     },
-    rating: {type: Number, required: true },
-    comment: {type: String, required: true },
-    name: {type: String, required: true },
+    rating: {type: Number },
+    comment: {type: String },
+    idRes: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Restaurant'
+    },
 });
 
 module.exports = mongoose.model('Review', Review, "Review");
