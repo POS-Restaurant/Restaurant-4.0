@@ -95,15 +95,13 @@ function Login(props) {
                                 />
                             </div>
 
-                            <div className={sign.field}>
-                                {/* <Link to={"/" + type + "/overview"}> */}
+                            <div className={`${sign.field} ${sign.btn}`}>
                                 <Button
                                     onClick={onSubmit}
                                     style={{ cursor: "pointer" }}
                                 >
                                     Đăng nhập
                                 </Button>
-                                {/* </Link> */}
                             </div>
                             <div className={`${sign.field} ${sign.change}`}>
                                 <Row className={sign.ask}>

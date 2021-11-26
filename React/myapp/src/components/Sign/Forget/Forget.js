@@ -18,12 +18,10 @@ function ForgetPass(props) {
                         <Input name="Phone" type="email" required />
                     </div>
 
-                    <div className={sign.field}>
-                        <Row>
-                            {/* <Link to=""> */}
-                                <Button style={{cursor: 'pointer'}}>Gửi mã xác nhận</Button>
-                            {/* </Link> */}
-                        </Row>
+                    <div className={`${sign.field} ${sign.btn}`}>
+                        <Button style={{ cursor: "pointer" }}>
+                            Gửi mã xác nhận
+                        </Button>
                     </div>
 
                     <div className={sign.field}>
@@ -33,20 +31,30 @@ function ForgetPass(props) {
                         <Input name="Phone" type="email" required />
                     </div>
 
-                    <div className={sign.field}>
-                        <Row>
-                            <Link to="/forgetchangepass">
-                            <Button style={{cursor: 'pointer'}} onClick={props.onChange}>
+                    <div className={`${sign.field} ${sign.btn}`}>
+                        {/* <Link to="/forgetchangepass"> */}
+                            <Button
+                                style={{ cursor: "pointer" }}
+                                onClick={props.onChange}
+                            >
                                 Đổi mật khẩu
                             </Button>
-                            </Link>
-                        </Row>
+                        {/* </Link> */}
                     </div>
 
                     <div className={`${sign.field} ${sign.change}`}>
                         <Row>
-                            <Link to="/login" style={{textDecoration: 'none'}}>
-                                <Button style={{cursor: 'pointer'}} className={sign.linkbutton} onClick={props.onLogin}>Đăng nhập</Button>
+                            <Link
+                                to="/login"
+                                style={{ textDecoration: "none" }}
+                            >
+                                <Button
+                                    style={{ cursor: "pointer" }}
+                                    className={sign.linkbutton}
+                                    onClick={props.onLogin}
+                                >
+                                    Đăng nhập
+                                </Button>
                             </Link>
                         </Row>
                     </div>

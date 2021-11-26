@@ -22,6 +22,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
 }
 
 .LoginForm h1 {
@@ -59,10 +61,10 @@
     top: 0%;
 } */
 
-.field button {
-    width: 100%;
+.field.btn button {
+    width: 60%;
     height: 60px;
-    background: #cc101b;
+    background: #0069e6;
     border-radius: 5px;
     font-family: Roboto;
     font-style: normal;
@@ -72,12 +74,22 @@
     align-items: center;
     text-align: center;
     margin: 20px 0px;
+    border: none;
 
     color: #ffffff;
+}
+.field.btn button:hover {
+    background: #005fd3;
+}
+.field.btn button:active {
+    background: #003e8a;
 }
 
 .logContent {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;;
 }
 
 .LoginForm .field Input {
@@ -87,7 +99,11 @@
     background: #ebebeb;
     border-radius: 5px;
     box-sizing: border-box;
+    border: none;
+    padding: 10px;
+    box-sizing: border-box;
 }
+
 .row {
     margin: auto;
     width: auto;
@@ -139,6 +155,11 @@ div .LoginForm .field .col {
 .LoginForm .field {
     margin: 10px auto;
     align-items: center;
+}
+
+.field.btn{
+    display: flex;
+    justify-content:center;
 }
 
 div .LoginForm .field.change {

@@ -23,7 +23,7 @@ function ForgetChangePass(props) {
                         </Row>
                         <Input name="Phone" type="email" required />
                     </div>
-                    <div className={sign.field}>
+                    <div  className={`${sign.field} ${sign.btn}`}>
                         <Row>
                             <Link to='/forgetpass'>
                                 <Button style={{cursor: 'pointer'}} onClick={props.onLogin}>Xác nhận</Button>

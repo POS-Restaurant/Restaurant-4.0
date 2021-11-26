@@ -90,7 +90,7 @@ function SignUp(props) {
 
                         <Input name="pwd" type="password" required />
                     </div> */}
-                    <div className={sign.field}>
+                    <div className={`${sign.field} ${sign.btn}`}>
                         {/* <Link to="/login"> */}
                         <Button
                             onClick={onSubmit}

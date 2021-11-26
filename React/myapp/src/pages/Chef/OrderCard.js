@@ -34,7 +34,7 @@ function OrderCard(props) {
     return (
         <div className={chef.orderCard}>
             <div className={chef.orderCardID} style={{color: "blue", cursor: "pointer"}} onClick={()=>setPopUp(true)}>#{props.id}</div>
-            <div className={chef.orderCardTime}>{timePurchase.toString().slice(0, 24)}</div>
+            <div className={chef.orderCardTime}>{timePurchase.toLocaleTimeString('it-IT')+"   "+timePurchase.toLocaleDateString("pt-PT")}</div>
             <div className={chef.orderCardName}>{props.name}</div>
             <div className={chef.orderCardPrice}>{props.price}đ</div>
             <div className={chef.orderCardStatus}>
