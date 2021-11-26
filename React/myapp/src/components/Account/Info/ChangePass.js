@@ -39,7 +39,7 @@ function ChangePass(props) {
         };
 
         //send request to reset password
-        axios.post("/change_pass", {id: localStorage.getItem("id"), newPassword: newP})
+        axios.post("/change/pass", {id: localStorage.getItem("id"), newPwd: newP.value,oldPwd:oldP.value})
 
         console.log(changePassReq);
     }

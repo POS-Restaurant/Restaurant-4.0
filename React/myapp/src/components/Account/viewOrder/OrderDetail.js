@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import detailOrder from "./OrderDetail.module.css";
 import OrderDetailCard from "./OrderDetailCard";
+import QRCode from 'qrcode.react';
 //
 function OrderDetail(props) {
     const [foods, setFoods] = useState([]);
@@ -27,7 +28,7 @@ function OrderDetail(props) {
         }
         return arr;
     }
-
+var qrText=`Đơn hàng số: "${props.id}\nKhách hàng: ${props.customerName} \n Đặt lúc: ${props.timePurchase}\nGiá tiền: ${props.total}`;
     return (
         <div className={detailOrder.orderDetail}>
             <div className={detailOrder.generalDetail}>
@@ -68,6 +69,7 @@ function OrderDetail(props) {
                 Tổng tiền:{" "}
                 <span className={detailOrder.totalPay}> {props.total} VNĐ </span>
             </div>
+            <QRCode value={qrText} />
         </div>
     );
 }

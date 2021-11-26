@@ -9,7 +9,7 @@ import { Route } from "react-router";
 import { Switch } from "react-router";
 import { Router } from "react-router";
 import { Redirect } from "react-router";
-
+import { Modal } from "reactstrap";
 // import { typeUser } from "./prelogin";
 import { useState } from "react"; import OverviewCustomer from "../../../pages/OverView/Overview";
 import { OverviewManager } from "../../../pages/OverView/Overview";
@@ -19,19 +19,19 @@ function Login(props) {
     const [email, setEmail] = useState("");
     const [pwd, setPassword] = useState("");
     const [userType, setUserType] = useState("");
-
+var popup=false;
     function onSubmit(event) {
         axios.get("http://localhost:3000/Client/login", {
             params: {
                 _email: email.value, _pwd: pwd.value
             }
         }).then((res) => {
+            if(res.data){
             localStorage.setItem("id", res.data._id);
             console.log(localStorage.getItem("id"));
-            if (res.data._id) {
-                setUserType(res.data.userType);
+            setUserType(res.data.userType);
             }
-
+else popup=true;
         });
     }
 
@@ -112,6 +112,10 @@ function Login(props) {
                     </div>
                 </div>
             </div>
+
+            <Modal isOpen={popup} toggle={(e)=>popup=!popup}>
+                "Đăng nhập thất bại"
+            </Modal>
         </div>
     );
 }
