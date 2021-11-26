@@ -17,7 +17,7 @@ function ItemOrder({
         for (let i = 0; i < listFood.length; i++) {
             total += listFood[i].price * listFood[i].num;
         }
-        return <p>{total}</p>;
+        return total;
     }
     const displayInfo = listFood.map((item, index) => {
         return (
@@ -50,7 +50,7 @@ function ItemOrder({
                     <p>{res}</p>
                 </div>
                 <div className="totalBill" style={{ width: "15%" }}>
-                    <TotalBill />
+                    <p>{TotalBill()}₫</p>
                 </div>
                 <div
                     className="btn-view-order"
