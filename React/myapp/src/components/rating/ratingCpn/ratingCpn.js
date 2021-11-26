@@ -43,6 +43,7 @@ function RatingResCpn(props) {
                 idRes: props.idRes,
                 rating: rating,
                 comment: comment,
+                params: {rating: rating, comment: comment,}
             }
             const response = await axios.post("http://localhost:3000/Review/add", review).then(
                 (res) => {
@@ -79,7 +80,7 @@ function RatingResCpn(props) {
                                 setRating(e.target.value); 
                                 }
                             }
-                            style={{height:"50px", width:"450px", margin: "10px 0px",
+                            style={{height:"50px", width:"450px", margin: "10px 10px",
                             borderRadius: "4px"
                             }}
                             >
@@ -96,8 +97,8 @@ function RatingResCpn(props) {
                             type="text"
                             value={comment}
                             onChange={(e) => setComment(e.target.value)}
-                            style={{height:"150px", width:"450px", margin: "0px 0px 5px",
-                            borderRadius: "4px", paddingLeft: "10px", paddingTop: "10px"}}
+                            style={{height:"150px", width:"440px", margin: "10px 10px 10px 10px",
+                            borderRadius: "4px", paddingLeft: "5px", paddingTop: "10px"}}
                             />
                         </label>
                         <button id="btn-submit" onClick={()=>{update();submitHandler()}} >Gửi</button>
