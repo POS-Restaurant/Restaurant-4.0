@@ -12,9 +12,14 @@ let Restaurant = new Schema({
     rateScore: {
         type: Number
     },
+    rateNum: {
+        type: Number
+    },
+    listReview: [{
+        type: mongoose.Schema.Types.ObjectId
+    }],
     listFood: [{
         type: Schema.Types.ObjectId,
-        num: {type: Number},
     }],
     tableList: {
         type: Array
