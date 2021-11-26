@@ -46,6 +46,8 @@ function Payment(){
             var a;
             if (landy==1) a = "Nạp";
             else a = "Rút";
+            console.log(a)
+            console.log(money)
             const client = {
                 name: idCus,
                 amount: money,
@@ -88,9 +90,6 @@ function Payment(){
                             </Button>
                             <Button className={eda===1?'type-button active':'type-button'}  onClick={()=>setEDA(1)}>
                                 Giao dịch
-                            </Button>
-                            <Button onClick={()=>addMoney()}>
-                                Test
                             </Button>
                     </div>
                     <Row className={eda===1?'active':'hide'}>
