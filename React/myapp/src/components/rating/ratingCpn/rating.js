@@ -6,12 +6,7 @@ import TableRes from '../ratingRes/tableRes'
 import Sidebar from '../../Sidebar'
 // import Button from ''
 function CheckOpt({option}){
-    if(option === 0) {
-        return(
-            <TableRate />
-        )
-    }
-    else if(option === 1) {
+    if(option === 1) {
         return(
             <TableRes />
         )
@@ -24,7 +19,7 @@ function CheckOpt({option}){
 }
 
 function Rating() {
-    const [option, setOpt] = useState(0);
+    const [option, setOpt] = useState(1);
     return (
         <div>
             <Sidebar type={0} />

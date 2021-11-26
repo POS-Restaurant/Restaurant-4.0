@@ -57,9 +57,9 @@ function RatingFoodCpn(props) {
                         <option value="">Lựa chọn...</option>
                         <option value={1}>1 - Tệ</option>
                         <option value={2}>2 - Tạm</option>
-                        <option value={3}>3 - Tốt</option>
-                        <option value={4}>4 - Tuyệt</option>
-                        <option value={5}>5 - Xuất sắc</option>
+                        <option value={3}>3 - Bình thường</option>
+                        <option value={4}>4 - Ngon</option>
+                        <option value={5}>5 - Rất ngon</option>
                         </select>
                         <br/>
                         <textarea
