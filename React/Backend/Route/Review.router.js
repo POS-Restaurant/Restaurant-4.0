@@ -7,12 +7,13 @@ let Review = require("../Models/Review.model");
 
 ReviewRoutes.post("/add", async (req, res)=>{
     try {
-        const { customer, idRes, rating, comment } = req.body;
+        const { customer, idRes, rating, idFood, comment } = req.body;
         const newReview = new Review({
             customer,
             idRes,
             rating,
-            comment
+            comment,
+            idFood,
           });        
         const addNewReview = await newReview.save(); 
         res.send({success: "Đánh giá thành công"})

@@ -3,8 +3,8 @@ import RateContent from '../ratingCpn/rateContent'
 import RatingFoodCpn from '../ratingCpn/ratingCpn'
 function checkType(type) {
     var typeOrd = "";
-    if(type === "DoAn") {typeOrd = "Đồ ăn"}
-    else if(type === "Nuoc") {typeOrd = "Nước"}
+    if(type === "Food") {typeOrd = "Đồ ăn"}
+    else if(type === "Drink") {typeOrd = "Nước"}
     else if(type === "Combo") {typeOrd = "Combo"}
     return(
         typeOrd
@@ -18,12 +18,16 @@ function ItemFood({
     priceFood,
     averRate,
     totalRate,
+    idRes,
+    idCus,
+    onChange,
+    idFood,
     callBack = ()=>{}
 }) {
     return (
         <div className="item-food">
             <div className="imgFood" style={{width: "150px"}}>
-                <img src={imgFood} alt="Img Food" height="150px" />
+                <img src={imgFood + ".png"} alt="Img Food" height="150px" />
             </div>
             <div className="col2" style={{width: "400px", height: "150px", borderRight: "1px solid black"}}>
                 <div className="nameFood" style={{fontSize: "24px", fontWeight: "bold", height: "50px"}}>
@@ -44,7 +48,15 @@ function ItemFood({
             </div>
             <div style={{width: "500px"}}>
                 <div className="ratingOpen">
-                    <RatingFoodCpn />
+                    <RatingFoodCpn 
+                        rateScore={averRate}
+                        rateNum={totalRate}
+                        idRes={idRes}
+                        idCus={idCus}
+                        rating={averRate}
+                        onChange={onChange}
+                        idFood={idFood}
+                    />
                 </div>
             </div>
 

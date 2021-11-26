@@ -9,7 +9,7 @@ function OrderDetail(props) {
     const checkData = async () => {
         await axios.get("http://localhost:3000/Food/get/list_food_res", { params: { id: idRes } }).then((res) => {
         setFoods(res.data.results);
-      });
+        });
     };
     console.log(foods);
     useEffect(() => {

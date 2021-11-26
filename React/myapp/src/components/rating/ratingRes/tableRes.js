@@ -33,7 +33,6 @@ function TableRes() {
         setData(res.data.results);
       });
   };
-  console.log(data[0]);
   return (
     <div className="tableRes">
       <div style={{ height: "500px" }}>

@@ -7,50 +7,48 @@ function ItemOrder({
     dateOrder,
     dateRecv,
     listFood,
-    res,
+    total,
+    idRes,
+    idCus,
+    onChange,
     callBack = () => {},
 }) {
     const [click, setClick] = useState(false);
     const handleClick = () => setClick(!click);
-    function TotalBill() {
-        var total = 0;
-        for (let i = 0; i < listFood.length; i++) {
-            total += listFood[i].price * listFood[i].num;
-        }
-        return total;
-    }
     const displayInfo = listFood.map((item, index) => {
         return (
             <div key={index}>
                 <ItemFood
+                    idFood={item._id}
                     imgFood={item.img}
                     nameFood={item.name}
-                    typeFood={item.type}
+                    typeFood={item.kind}
                     priceFood={item.price}
-                    numFood={item.num}
-                    averRate={item.averRate}
-                    totalRate={item.totalRate}
+                    averRate={item.rating}
+                    totalRate={item.rateNum}
+                    idRes={idRes}
+                    idCus={idCus}
+                    onChange={onChange}
                 />
             </div>
         );
     });
+    const timePurchase = new Date(dateOrder)
+    const timeReceipt = new Date(dateRecv)
     return (
         <div className="item-order">
             <div className="orderCard" style={{ display: "flex" }}>
-                <div className="idOrder" style={{ width: "15%" }}>
+                <div className="idOrder" style={{ width: "25%" }}>
                     <p>{id}</p>
                 </div>
-                <div className="dateOrder" style={{ width: "15%" }}>
-                    <p>{dateOrder}</p>
+                <div className="dateOrder" style={{ width: "20%" }}>
+                    <p>{timePurchase.toString().slice(0, 24)}</p>
                 </div>
-                <div className="dateRecv" style={{ width: "15%" }}>
-                    <p>{dateRecv}</p>
-                </div>
-                <div className="res" style={{ width: "20%" }}>
-                    <p>{res}</p>
+                <div className="dateRecv" style={{ width: "20%" }}>
+                    <p>{timeReceipt.toString().slice(0, 24)}</p>
                 </div>
                 <div className="totalBill" style={{ width: "15%" }}>
-                    <p>{TotalBill()}₫</p>
+                    <p>{total}VNĐ</p>
                 </div>
                 <div
                     className="btn-view-order"

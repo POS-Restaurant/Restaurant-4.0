@@ -13,6 +13,10 @@ let Review = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Restaurant'
     },
+    idFood: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Food'
+    },
 });
 
 module.exports = mongoose.model('Review', Review, "Review");

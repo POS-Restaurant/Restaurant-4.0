@@ -44,10 +44,20 @@ FoodRoutes.get("/get/food", (req, res) => {
 })
 });
 
+FoodRoutes.post("/update/rating", async (req, res) => {
+    Food.findByIdAndUpdate({_id: req.body.params.id}, req.body.params,function (err, results) {
+    if (err) {
+        console.log(err);
+    }
+    else {
+        res.json("Thay đổi thành công");
+    }
+})
+});
 
 FoodRoutes.post("/edit/food", async (req, res) => {
     console.log(req.body.params);
-Food.findByIdAndUpdate(req.body.params._id, req.body.params,function (err, results) {
+    Food.findByIdAndUpdate(req.body.params._id, req.body.params,function (err, results) {
     if (err) {
         console.log(err);
     }

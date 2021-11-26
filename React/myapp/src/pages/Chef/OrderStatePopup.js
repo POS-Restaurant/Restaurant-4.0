@@ -49,7 +49,7 @@ function OrderStatePopup(props) {
         return (
             <div className={chef.ConfirmState}>
                 <span className={chef.confirmTitle}>
-                    Xác nhận {props.status}
+                    Xác nhận "{props.status}"
                 </span>
                 <button
                     onClick={props.onConfirm}
