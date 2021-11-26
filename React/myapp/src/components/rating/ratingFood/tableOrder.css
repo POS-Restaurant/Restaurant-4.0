@@ -1,17 +1,17 @@
-.tableOrder{
+.tableOrder {
     /* padding-left: 25px;
     padding-right: 25px; */
     padding-top: 10px;
     /* width: 1450px; */
 }
-.tableOrder .titleCol{
+.tableOrder .titleCol {
     line-height: 50px;
     font-weight: bold;
     text-transform: uppercase;
     font-size: 24px;
     width: 1400px;
 }
-.tableOrder .subtitleCol p{
+.tableOrder .subtitleCol p {
     margin: 0;
 }
 .tableOrder .subtitleCol {
@@ -19,18 +19,18 @@
     /* width: 1400px; */
     background-color: #0069e6;
     color: white;
-    height: 40px
+    height: 40px;
 }
-.tableOrder .subtitleCol p{
+.tableOrder .subtitleCol p {
     display: flex;
-    align-items:center;
-    justify-content:center
+    align-items: center;
+    justify-content: center;
 }
-.tableOrder  #infoOpen{
+.tableOrder #infoOpen {
     height: 50px;
     width: 200px;
 }
-.tableOrder .item-food{
+.tableOrder .item-food {
     width: 1340px;
     padding: 10px 20px 0px;
     border-bottom: 1px solid black;
@@ -39,7 +39,7 @@
     cursor: pointer;
 }
 .tableOrder .nav-menu-info.active {
-    display:flex;
+    display: flex;
     opacity: 1;
     background-color: #fff;
     transition: all 0.5s ease;
@@ -51,29 +51,29 @@
     width: 1400px;
     height: 400px;
 }
-.tableOrder .info-order{
+.tableOrder .info-order {
     width: 100%;
     height: 100%;
 }
-.tableOrder .ratingClose{
+.tableOrder .ratingClose {
     display: none;
 }
 
-.tableOrder .rateContent p{
+.tableOrder .rateContent p {
     margin: 0;
 }
-.tableOrder .rateContent #rateImgStar{
+.tableOrder .rateContent #rateImgStar {
     padding-top: 10px;
     padding-bottom: 10px;
 }
-.tableOrder .rateContent #rateImgStar img{
+.tableOrder .rateContent #rateImgStar img {
     height: auto;
     width: 150px;
 }
-.tableOrder .ratingClose{
+.tableOrder .ratingClose {
     display: none;
 }
-.tableOrder .ratingOpen{
+.tableOrder .ratingOpen {
     margin-left: 20px;
     margin-top: 10px;
     width: 500px;
@@ -82,36 +82,41 @@
     border-radius: 10px;
     box-shadow: 3px 3px 3px grey;
 }
-.tableOrder .ratingOpen p{
+.tableOrder .ratingOpen p {
     margin: 0;
 }
-.tableOrder .ratingOpen #ratingCmt input{
+.tableOrder .ratingOpen #ratingCmt input {
     width: 280px;
     font-size: 14px;
     text-align: center;
 }
-.tableOrder .item-order .btn-view-order p{
+.tableOrder .item-order .btn-view-order p {
     height: 30px;
     padding-top: 5px;
-    background-color: rgb(83, 202, 83);
-    color: black;
+    padding: 2px 0px;
+    background-color: rgb(21, 179, 0);
+    color: white;
     width: 150px;
     text-align: center;
     margin: 0;
     border-radius: 10px;
+    border-radius: 5px;
 }
-.tableOrder .item-order .btn-view-order p:hover{
+.tableOrder .item-order .btn-view-order p:hover {
     background-color: white;
-    color: green;
-    border: 1px solid green;
+    color:  rgb(21, 179, 0);
+    border: solid 1px rgb(21, 179, 0);
 }
-.tableOrder .item-order .btn-view-order{
+.tableOrder .item-order .btn-view-order {
     height: 40px;
     padding-top: 10px;
+    /* padding-top: 10px; */
+    display: flex;
+    align-items: center;
 }
-.tableOrder #ratingCmt textarea{
+.tableOrder #ratingCmt textarea {
     height: 100px;
-    border: 1px dashed #000; 
+    border: 1px dashed #000;
     border-radius: 10px;
     width: 250px;
 }
@@ -134,17 +139,17 @@
 .tableOrder .ratingOpen .btn-save.active {
     display: inline-block;
 }
-.tableOrder .ratingOpen #save-btn {    
+.tableOrder .ratingOpen #save-btn {
     background-color: #44bebe;
     margin-left: 10px;
 }
-.tableOrder .ratingOpen  #cancel-btn {
-    background-color: #C4C4C4;
+.tableOrder .ratingOpen #cancel-btn {
+    background-color: #c4c4c4;
     margin-left: 10px;
 }
 
-.orderCard > div > p{
-    display: flex; 
+.orderCard > div > p {
+    display: flex;
     justify-content: center;
     align-items: center;
 }
