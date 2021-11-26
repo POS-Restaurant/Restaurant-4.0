@@ -55,7 +55,6 @@ function RatingResCpn(props) {
             <div id="ratingResCpn">
                 <div id="titleRating" style={{fontSize: "24px",textAlign:'center', borderBottom: "1px solid #000",fontWeight: "bold", paddingBottom: "5px"}}><p>Vui lòng để lại đánh giá của bạn</p></div>
                 <div id="row2">
-                    <form>
                         <label style={{display: "block"}}>
                             <select
                             name="rating"
@@ -82,8 +81,7 @@ function RatingResCpn(props) {
                             borderRadius: "4px", paddingLeft: "10px", paddingTop: "10px"}}
                             />
                         </label>
-                        <button id="btn-submit" onClick={submitHandler()} >Gửi</button>
-                        </form>
+                        <button id="btn-submit" onClick={()=>submitHandler()} >Gửi</button>
                 </div>
             </div>
         </div>

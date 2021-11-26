@@ -30,7 +30,8 @@ const FoodRoutes = require("./Route/Food.router");
 const RestaurantRoutes = require("./Route/Restaurant.router");
 const ClientRoutes = require("./Route/Client.router");
 const OrderRoutes = require("./Route/Order.router");
-const PillRoutes = require("./Route/Pill.router")
+const PillRoutes = require("./Route/Pill.router");
+const ReviewRoutes = require("./Route/Review.router");
 app.use(cors());
 app.use(morgan('combined'))
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -40,6 +41,7 @@ app.use("/Restaurant/", RestaurantRoutes);
 app.use("/Client/", ClientRoutes);
 app.use("/Pill/", PillRoutes);
 app.use("/Order/", OrderRoutes);
+app.use("/Review/", ReviewRoutes);
 app.use(
   session({
     secret: "kjcxlchiy48236",
