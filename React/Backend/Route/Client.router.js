@@ -15,13 +15,28 @@ ClientRoutes.get("/username", (req, res) => {
     Client.find((err, results) => { res.json(results[0]) })
 })
 
-
+ClientRoutes.get("/get/user", (req, res) => {
+    console.log(req.query);
+    Client.findById(req.query.id, (err, results) => { res.json(results) })
+})
 
 
 ClientRoutes.post('/update', (req, res) => {
-    console.log(req.query);
-    Client.updateOne({ _id: req.query.id }, req.query, (err, results) => { res.json(req.query) });
-});
+    Client.find({ email: req.body.email }, function (err, results) {
+        if (results[0]) {
+            if (results[0]._id != req.body._id) {
+                // console.log("EMKSAJDLKSJH")
+                res.status(200).json({ msg: "Email mới bị trùng lặp!" });
+            }
+        }
+    // console.log("HSAGKDHGKSDJ")
+            Client.findByIdAndUpdate(req.body._id, req.body, (err, results) => {
+                // console.log("ASJKDHKAJSH")
+                res.json({ msg: "Thay đổi thành công" })
+        //     });
+        // }
+    });
+})});
 ClientRoutes.get("/login", (req, res) => {
     console.log(req.query);
     Client.findOne({ email: req.query._email, pwd: req.query._pwd }, function (err, results) {
@@ -56,7 +71,7 @@ ClientRoutes.post('/insert/pwd', (req, res) => {
 ClientRoutes.post('/change/pwd', (req, res) => {
     const input = req.body.params;
 
-    Client.findOneAndUpdate({ _id: input.id, pwd: input.pwd }, { pwd: input.newpwd }, function (err, results) {
+    Client.findOneAndUpdate({ _id: input.id, pwd: input.oldPwd }, { pwd: input.newPwd }, function (err, results) {
         if (err) throw (err);
         res.json(results);
     })
@@ -64,21 +79,22 @@ ClientRoutes.post('/change/pwd', (req, res) => {
 ClientRoutes.post('/register', (req, res) => {
     const input = req.body.params;
     const token = jwt.sign({ id: "1234" }, config.JWT_SECRET, { expiresIn: '1h' });
-    
+
     Client.find({ email: input.email }, function (err, results) {
-        if (results[0]) {console.log(input)
+        if (results[0]) {
+            console.log(input)
             res.status(200).json({ msg: "Tài khoản đã tồn tại." });
         }
-        else Client.insertMany([{ name: input.name, email: input.email, pwd: input.pwd , userType:input.userType}], 
+        else Client.insertMany([{ name: input.name, email: input.email, pwd: input.pwd, userType: input.userType }],
             function (err, results) {
-            if (err) res.status(200).json({ msg: "Lỗi đăng ký!" });
-            else {
-                const token = jwt.sign({ id: "1234" }, config.JWT_SECRET, { expiresIn: '1h' });
-                res.status(200).json({
-                    token, msg: "Đăng ký thành công!"
-                });
-            };
-        })
+                if (err) res.status(200).json({ msg: "Lỗi đăng ký!" });
+                else {
+                    const token = jwt.sign({ id: "1234" }, config.JWT_SECRET, { expiresIn: '1h' });
+                    res.status(200).json({
+                        token, msg: "Đăng ký thành công!"
+                    });
+                };
+            })
     })
 })
 
