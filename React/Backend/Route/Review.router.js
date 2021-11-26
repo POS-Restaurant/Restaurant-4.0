@@ -15,9 +15,9 @@ ReviewRoutes.post("/add", async (req, res)=>{
             comment
           });        
         const addNewReview = await newReview.save(); 
-        res.send({success: "Success"})
+        res.send({success: "Đánh giá thành công"})
     } catch (err) {
-        res.status(400).json({success: "Fail"});
+        res.status(400).json({success: "Đánh giá thất bại"});
     }
 }
 );
