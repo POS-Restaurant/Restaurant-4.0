@@ -77,8 +77,9 @@
     cursor: pointer;
     -webkit-border-radius: 20px;
     border-radius: 25px;
-    color: #f4f4f4;
+    color: #000000;
     margin-top: 10px;
+    background-color: red;
 }
 
 .tableRes .ratingOpen .btn-save {

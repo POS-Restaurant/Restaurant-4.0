@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 // Define collection and schema for login
 let Review = new Schema({
-    client: {
+    customer: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Client'
     },

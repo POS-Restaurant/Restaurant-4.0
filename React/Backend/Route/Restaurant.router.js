@@ -17,6 +17,28 @@ RestaurantRoutes.get("/get/ResInfo:id", async (req, res) => {
         }
     });
 });
+RestaurantRoutes.post("/update/rating", async (req, res) => {
+    Restaurant.findOneAndUpdate({_id:req.body.params.id}, req.body.params, function (err) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            res.json("Thay đổi thành công");
+        }
+    })
+});
+
+RestaurantRoutes.post("/update/state", async (req, res) => {
+    Restaurant.findOneAndUpdate({_id:req.body.params.id}, req.body.params, function (err) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            res.json("Thay đổi thành công");
+        }
+    })
+});
+
 RestaurantRoutes.get("/get/res_info", async (req, res) => {
     Restaurant.find({_id: req.query.id}, (err, results) => {
         if (err) {
