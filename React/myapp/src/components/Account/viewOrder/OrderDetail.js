@@ -37,7 +37,7 @@ function OrderDetail(props) {
                 <span className={detailOrder.orderId}> Mã đơn hàng: {props.id} </span>
                 <span className={detailOrder.timeOrder}>
                     <p>Thời gian đặt hàng: {props.timePurchase}</p>
-                    <p>Thời gian nhận hàng: {props.timeReceipt}</p>
+                    <p>{props.status === "Done" && "Thời gian nhận hàng:" + props.timeReceipt}</p>
                 </span>
                 <span className={detailOrder.customerName}>
                     Tên khách hàng: {props.name}
