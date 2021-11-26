@@ -17,18 +17,18 @@ function EditMenu() {
     const [data, setData] = useState([]);
     const [display, setDisplay] = useState([]);
     const [init, setInit] = useState(true);
-    const checkData = async () => {
-        await axios.get('http://localhost:3000/Food/get/menu', { params: { id: localStorage.getItem("currentRes") } }).then(res => {
+    const checkData = () => {
+        axios.get('http://localhost:3000/Food/get/menu', { params: { id: localStorage.getItem("currentRes") } }).then(res => {
             setData(res.data.result);
         }
         ).then(()=>setDisplay(data));
     }
     useEffect(() => {
         setTimeout(() => {
-            if (init) {
-                setInit(false);
+            // if (init) {
+            //     setInit(false);
+            // }
                 checkData();
-            }
         }, 100);
     }, []);
     const search = () => {
@@ -39,7 +39,7 @@ function EditMenu() {
             setDisplay(data.filter((food) => food.kind === type));
         }
     const foodItems = (display) ? display.map(e => (
-        <FoodItem id={e.id} name={e.name} src={e.img+'.png'} price={e.price} protein={e.protein} material={e.material} decoration={e.decoration} />
+        <FoodItem _id={e._id} name={e.name} src={e.img+'.png'} price={e.price} protein={e.protein} material={e.material} decoration={e.decoration} />
     )) : <div />;
 
     return (
@@ -63,7 +63,7 @@ function EditMenu() {
                     <Button className={`${styles.btn} ${styles.category}`} onClick={(e) => searchKind("Combo")}>Combo</Button>
                 </div>
                 <div className={styles.foodsList}>
-                    <Button  onClick={() => setButtonPopup(true)}  className={`${styles.itemContainer} ${styles.itemContainer1}`}>
+                    <Button  onClick={() => {localStorage.setItem("currentFood",{src:{BanhNgot}}); setButtonPopup(true)}}  className={`${styles.itemContainer} ${styles.itemContainer1}`}>
                         <AiOutlinePlusCircle className={styles.itemIcon} />
                         <p className={styles.addItemLabel} >Thêm món mới</p>
                     </Button>

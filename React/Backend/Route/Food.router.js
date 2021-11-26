@@ -46,8 +46,8 @@ FoodRoutes.get("/get/food", (req, res) => {
 
 
 FoodRoutes.post("/edit/food", async (req, res) => {
-    console.log(req);
-Food.findOneAndUpdate({id:req.body.params.id}, req.body.params,function (err, results) {
+    console.log(req.body.params);
+Food.findByIdAndUpdate(req.body.params._id, req.body.params,function (err, results) {
     if (err) {
         console.log(err);
     }
@@ -57,7 +57,7 @@ Food.findOneAndUpdate({id:req.body.params.id}, req.body.params,function (err, re
 })
 });
 FoodRoutes.post("/delete/food", async (req, res) => {
-    Food.findOneAndRemove({id:req.body.params.id}, req.body.params,function (err, results) {
+    Food.findByIdAndRemove(req.body.params._id,function (err, results) {
         if (err) {
             console.log(err);
         }
@@ -72,7 +72,7 @@ FoodRoutes.post("/add/food", async (req, res) => {
             console.log(err);
         }
         else {
-            res.json(results);
+            res.json({msg:"Thêm món ăn thành công"});
         }
     })
     });
