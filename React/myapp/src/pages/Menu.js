@@ -188,7 +188,7 @@ class PickFood extends Component {
                                 <div className="menuFoodName"> {food.name}</div>
                                 <div className="menuFoodPrice">
                                     {" "}
-                                    Giá tiền : {food.price}
+                                    Giá tiền: {food.price}₫
                                 </div>
                                 <Button
                                     className="infobtn foodItemBtn"
@@ -227,7 +227,7 @@ class PickFood extends Component {
                             />
                             <div className="foodCartInfo">
                                 <span>{foodItem.name}</span>
-                                <a className="singleCost">${foodItem.price}</a>
+                                <a className="singleCost">{foodItem.price}₫</a>
                             </div>
                             <div className="qty">
                                 {" "}
@@ -266,7 +266,7 @@ class PickFood extends Component {
                             </div>
                             <div className="totalFoodPrice">
                                 <a className="totalMoney">
-                                    ${foodItem.price * foodItem.num}
+                                    {foodItem.price * foodItem.num}₫
                                 </a>
                             </div>
                         </Row>
@@ -369,7 +369,7 @@ class PickFood extends Component {
                             <h1 className="totalCostBar">
                                 Tổng:{" "}
                                 <span className="totalCost">
-                                    ${this.state.totalCost}
+                                    {this.state.totalCost}₫
                                 </span>
                             </h1>
 
