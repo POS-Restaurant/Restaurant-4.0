@@ -54,7 +54,7 @@
     cursor: pointer;
     padding: 10px 15px;
     border-radius: 50px;
-    /* margin-bottom: 12px; */
+    margin-bottom: 12px;
 }
 .btn.category:hover {
     background-color: #2685f8;
@@ -93,16 +93,16 @@
 
 .itemIcon {
     font-size: 70px;
-    color: rgb(114, 114, 236);
+    color: #1976d2;
     cursor: pointer;
 }
 .itemIcon:hover {
-    color: rgb(157, 157, 240);
+    color: #1976a1;
 }
 .addItemLabel {
     font-size: 25px;
     font-weight: 600;
-    color: rgb(114, 114, 236);
+    color: #1976d2;
 }
 
 .itemBody {
@@ -225,14 +225,14 @@
     min-width: 80px;
     height: 40px;
     border-radius: 5px;
-    background-color: #8888ff;
+    background-color: #1976d2;
     margin: 10px 0;
     padding: 0px;
     font-size: 24px;
     color: white;
 }
 .btn.popupBodyPictureButton:hover {
-    background-color: #1b1bb8;
+    background-color: #2288ee;
 }
 
 .popupBodyInfo {
@@ -358,19 +358,19 @@
 .btn.btn2 {
     background-color: rgb(228, 100, 100);
     color: white;
-    border-radius: 10px;
+    border-radius: 7px;
 }
 .btn.btn2:hover {
     background-color: rgb(196, 13, 13);
     /* color: rgb(0, 0, 0); */
 }
 .btn.btn3 {
-    background-color: #8888ff;
+    background-color: #1976d2;
     color: white;
-    border-radius: 10px;
+    border-radius: 7px;
 }
 .btn.btn3:hover {
-    background-color: #3b3bc4;
+    background-color: #2288ee;
 }
 .searchIcon {
     height: 20px;

@@ -117,7 +117,7 @@ const PopupFoodItem = (props) => {
                                     className={styles.popupBodyInfoCheckLabel}
                                 >
                                     Sẵn sàng
-                                    <input type="checkbox" />
+                                    <input type="checkbox" checked/>
                                     <span
                                         className={
                                             styles.popupBodyInfoCheckLabelName
