@@ -63,7 +63,7 @@
 
 .field.btn button {
     width: 60%;
-    height: 60px;
+    height: 50px;
     background: #0069e6;
     border-radius: 5px;
     font-family: Roboto;
@@ -102,6 +102,7 @@
     border: none;
     padding: 10px;
     box-sizing: border-box;
+    font-size: 19px;
 }
 
 .row {
@@ -133,6 +134,9 @@ button.linkbutton {
     border: none;
     text-decoration: none;
 }
+button.linkbutton:hover{
+    color: #030377;
+}
 /* button.switchForget{
     
 } */
@@ -141,7 +145,7 @@ button.linkbutton {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    font-size: 17px;
+    font-size: 19px;
     margin: 5px 0px;
     color: #000000;
 }
