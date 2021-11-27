@@ -1,8 +1,7 @@
-import React,{ useState} from 'react';
+import React, { useState } from "react";
 import chef from "./Chef.module.css";
 import OrderStatePopup from "./OrderStatePopup";
 import OrderDetail from "./OrderDetail/OrderDetail";
-
 
 function OrderCard(props) {
     const [popUp, setPopUp] = useState(false);
@@ -30,11 +29,24 @@ function OrderCard(props) {
         if (status === "Canceled") return chef.canceled;
         if (status === "Doing") return chef.doing;
     }
-    const timePurchase = new Date(props.time)
+    const timePurchase = new Date(props.time);
     return (
         <div className={chef.orderCard}>
-            <div className={chef.orderCardID} style={{color: "blue", cursor: "pointer"}} onClick={()=>setPopUp(true)}>#{props.id}</div>
-            <div className={chef.orderCardTime}>{timePurchase.toLocaleTimeString('it-IT')+"   "+timePurchase.toLocaleDateString("pt-PT")}</div>
+            <div
+                className={chef.orderCardID}
+                style={{ color: "blue", cursor: "pointer" }}
+                onClick={() => {
+                    setPopUp(true);
+                    setchooseStatePopup(false);
+                }}
+            >
+                #{props.id}
+            </div>
+            <div className={chef.orderCardTime}>
+                {timePurchase.toLocaleTimeString("it-IT") +
+                    "   " +
+                    timePurchase.toLocaleDateString("pt-PT")}
+            </div>
             <div className={chef.orderCardName}>{props.name}</div>
             <div className={chef.orderCardPrice}>{props.price}đ</div>
             <div className={chef.orderCardStatus}>
@@ -47,32 +59,43 @@ function OrderCard(props) {
                 </div>
             </div>
             <div className={chef.orderUpdateState}>
-                {(props.status === "Canceled" || props.status === "Done")? <button
-                    onClick={chooseStatePopHandler}
-                    className={chef.changeStateButton}
-                    disabled
-                >
-                    <span class="material-icons-outlined">more_horiz</span>
-                </button> : <button
-                    onClick={chooseStatePopHandler}
-                    className={chef.changeStateButton}
-                >
-                    <span class="material-icons-outlined">more_horiz</span>
-                </button>}
+                {props.status === "Canceled" || props.status === "Done" ? (
+                    <button
+                        onClick={chooseStatePopHandler}
+                        className={chef.changeStateButton}
+                        disabled
+                    >
+                        <span class="material-icons-outlined">more_horiz</span>
+                    </button>
+                ) : (
+                    <button
+                        onClick={chooseStatePopHandler}
+                        className={chef.changeStateButton}
+                    >
+                        <span class="material-icons-outlined">more_horiz</span>
+                    </button>
+                )}
             </div>
             {chooseStatePopup && (
-                <OrderStatePopup total={props.total} customer={props.customer} onChooseState={chooseStateHideHandler} currentStatus={props.status}/>
+                <OrderStatePopup
+                    total={props.total}
+                    customer={props.customer}
+                    onChooseState={chooseStateHideHandler}
+                    currentStatus={props.status}
+                />
             )}
-            {popUp&&<OrderDetail 
-                onHide={()=>setPopUp(false)}
-                name={props.name}
-                id={props.id}
-                time={props.time}
-                total={props.total}
-                listFood = {props.listFood}
-                listNum = {props.listNum}
-                listNote = {props.listNote}
-            />}
+            {popUp && (
+                <OrderDetail
+                    onHide={() => setPopUp(false)}
+                    name={props.name}
+                    id={props.id}
+                    time={props.time}
+                    total={props.total}
+                    listFood={props.listFood}
+                    listNum={props.listNum}
+                    listNote={props.listNote}
+                />
+            )}
         </div>
     );
 }

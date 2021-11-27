@@ -7,9 +7,13 @@ function OrderDetail(props) {
     const [foods, setFoods] = useState([]);
     const idRes = localStorage.getItem("currentRes");
     const checkData = async () => {
-        await axios.get("http://localhost:3000/Food/get/list_food_res", { params: { id: idRes } }).then((res) => {
-        setFoods(res.data.results);
-        });
+        await axios
+            .get("http://localhost:3000/Food/get/list_food_res", {
+                params: { id: idRes },
+            })
+            .then((res) => {
+                setFoods(res.data.results);
+            });
     };
     console.log(foods);
     useEffect(() => {
@@ -33,7 +37,7 @@ function OrderDetail(props) {
         <div className={detail.orderDetail}>
             <div className={detail.generalDetail}>
                 <button className={detail.btnClose} onClick={props.onHide}>
-                    X
+                    <span class="material-icons-outlined">close</span>
                 </button>
                 <span className={detail.orderId}>Mã đơn hàng: {props.id} </span>
                 <span className={detail.timeOrder}>

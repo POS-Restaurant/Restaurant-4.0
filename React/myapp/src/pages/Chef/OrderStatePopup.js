@@ -2,7 +2,7 @@ import React from "react";
 import chef from "./Chef.module.css";
 import { useState } from "react";
 import axios from "axios";
-
+import Button from "@mui/material/Button";
 function OrderStatePopup(props) {
     const _id = localStorage.getItem("currentOrder");
     const [state, setState] = useState("Pending");
@@ -17,10 +17,9 @@ function OrderStatePopup(props) {
         await axios.post("http://localhost:3000/Client/update/money", {
             params: { id: props.customer._id, money: refund },
         });
-        
+
         // .then((res) => alert(res.data.msg));
     };
-
 
     function confirmPopupHandler(status) {
         setState(status);
@@ -31,10 +30,10 @@ function OrderStatePopup(props) {
     }
 
     function confirmUpdateTimeDone() {
-        setTimeDone(Date())
+        setTimeDone(Date());
     }
     function confirmUpdateRefund(total) {
-        setRefund(total)
+        setRefund(total);
     }
 
     const onConfirmHandler = async (status) => {
@@ -51,49 +50,55 @@ function OrderStatePopup(props) {
                 <span className={chef.confirmTitle}>
                     Xác nhận "{props.status}"
                 </span>
-                <button
+                <Button
                     onClick={props.onConfirm}
                     className={chef.confirmStateButton}
                 >
                     Xác nhận
-                </button>
-                <button
+                </Button>
+                <Button
                     onClick={props.onCancel}
                     className={chef.cancelStateButton}
                 >
                     Hủy
-                </button>
+                </Button>
             </div>
         );
     }
     return (
         <div className={chef.orderStatePopup}>
             {props.currentStatus === "Pending" && (
-                <button
+                <Button
                     onClick={() => confirmPopupHandler("Doing")}
                     className={chef.acceptOrder}
                 >
                     Nhận đơn
-                </button>
+                </Button>
             )}
 
             {props.currentStatus === "Doing" && (
-                <button
-                    onClick={() => {confirmPopupHandler("Done"); confirmUpdateTimeDone()}}
+                <Button
+                    onClick={() => {
+                        confirmPopupHandler("Done");
+                        confirmUpdateTimeDone();
+                    }}
                     className={chef.finishOrder}
                 >
                     Hoàn thành
-                </button>
+                </Button>
             )}
 
             {(props.currentStatus === "Pending" ||
                 props.currentStatus === "Doing") && (
-                <button
-                    onClick={() => {confirmPopupHandler("Canceled"); confirmUpdateRefund(refund + props.total)}}
+                <Button
+                    onClick={() => {
+                        confirmPopupHandler("Canceled");
+                        confirmUpdateRefund(refund + props.total);
+                    }}
                     className={chef.cancelOrder}
                 >
                     Hủy đơn
-                </button>
+                </Button>
             )}
             {confirmPopup && (
                 <ConfirmState
