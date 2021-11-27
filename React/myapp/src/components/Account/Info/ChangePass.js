@@ -82,7 +82,7 @@ function ChangePass(props) {
                     />
                     {newPassErr && <span>newPassErr</span>}
                 </div>
-                <input type="submit" />
+                {/* <input type="submit" /> */}
                 <div className={style.actions}>
                     {" "}
                     <Button
@@ -90,6 +90,7 @@ function ChangePass(props) {
                         className={style.changePassConfirm}
                         variant="contained"
                         size="large"
+                        style={{color: "white"}}
                     >
                         Sửa mật khẩu
                     </Button>

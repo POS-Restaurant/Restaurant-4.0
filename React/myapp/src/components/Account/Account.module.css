@@ -236,6 +236,7 @@ h1{
     transform: translateX(-50%);
     z-index: 5;
     padding: 40px 0px;
+    padding-bottom: 60px;
 }
 
 .changePassForm {
